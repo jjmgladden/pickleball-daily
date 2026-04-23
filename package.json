@@ -15,7 +15,10 @@
     "fetch:mlp": "node ingestion/fetch-mlp.js",
     "fetch:dupr": "node ingestion/fetch-dupr-leaderboard.js",
     "fetch:highlights": "node ingestion/fetch-highlights.js",
-    "check:esm": "node scripts/check-esm.js"
+    "send:email": "node ingestion/send-email.js",
+    "send:email:dry": "EMAIL_DRY_RUN=1 node ingestion/send-email.js",
+    "check:esm": "node scripts/check-esm.js",
+    "build:icons": "node scripts/build-icons.js"
   },
   "dependencies": {
     "playwright": "^1.49.0"
