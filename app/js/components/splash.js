@@ -5,8 +5,8 @@
 // Non-blocking: returns a Promise so app.js can render in parallel.
 
 const KEY = 'pkb-splash-shown';
-const VISIBLE_MS = 1500;
-const FADE_MS = 250;
+const VISIBLE_MS = 2200;
+const FADE_MS = 300;
 
 export function showSplashIfFirstVisit() {
   let shouldShow = true;
