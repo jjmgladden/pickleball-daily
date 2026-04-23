@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-23T11:40:44.484Z",
-  "startedAt": "2026-04-23T11:40:36.059Z",
-  "durationMs": 8425,
+  "generatedAt": "2026-04-23T19:58:23.041Z",
+  "startedAt": "2026-04-23T19:58:11.049Z",
+  "durationMs": 11992,
   "version": "v1",
   "brand": "Ozark Joe's Pickleball Daily Intelligence Report",
   "errors": [],
@@ -10,7 +10,7 @@
     "tournaments": {
       "sourceId": "tournaments",
       "ok": true,
-      "retrievedAt": "2026-04-23T11:40:36.064Z",
+      "retrievedAt": "2026-04-23T19:58:11.054Z",
       "counts": {
         "inProgress": 0,
         "upcoming": 7,
@@ -212,7 +212,7 @@
     "mlp": {
       "sourceId": "mlp",
       "ok": true,
-      "retrievedAt": "2026-04-23T11:40:42.603Z",
+      "retrievedAt": "2026-04-23T19:58:20.515Z",
       "freshness": "live-verified",
       "teams": [
         {
@@ -277,7 +277,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z",
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z",
           "rosterMissingIds": [
             "6663"
           ]
@@ -333,7 +333,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "brooklyn-pickleball-team",
@@ -402,7 +402,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "california-black-bears",
@@ -455,7 +455,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "carolina-hogs",
@@ -522,7 +522,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "chicago-slice",
@@ -583,7 +583,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z",
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z",
           "rosterMissingIds": [
             "5062"
           ]
@@ -660,7 +660,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "dallas-flash",
@@ -736,7 +736,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "florida-smash",
@@ -789,7 +789,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "las-vegas-night-owls",
@@ -843,7 +843,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "los-angeles-mad-drops",
@@ -904,7 +904,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "miami-pickleball-club",
@@ -976,7 +976,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "new-jersey-5s",
@@ -1043,7 +1043,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "orlando-squeeze",
@@ -1111,7 +1111,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "palm-beach-royals",
@@ -1203,7 +1203,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "socal-hard-eights",
@@ -1263,7 +1263,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z",
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z",
           "rosterMissingIds": [
             "83599"
           ]
@@ -1335,7 +1335,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "texas-ranchers",
@@ -1403,7 +1403,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         },
         {
           "teamId": "utah-black-diamonds",
@@ -1471,7 +1471,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-23T11:40:42.603Z"
+          "rosterRetrievedAt": "2026-04-23T19:58:20.515Z"
         }
       ],
       "teamsCount": 20,
@@ -1495,7 +1495,7 @@
     "dupr": {
       "sourceId": "dupr",
       "ok": true,
-      "retrievedAt": "2026-04-23T11:40:42.920Z",
+      "retrievedAt": "2026-04-23T19:58:21.048Z",
       "freshness": "seed-only",
       "note": "Phase 1 uses seed ratings; Playwright-scrape of public leaderboard deferred to Phase 2.",
       "top20": [
@@ -1675,7 +1675,7 @@
     "highlights": {
       "sourceId": "highlights",
       "ok": true,
-      "retrievedAt": "2026-04-23T11:40:44.484Z",
+      "retrievedAt": "2026-04-23T19:58:23.040Z",
       "quotaEstimate": 6,
       "channels": [
         {
@@ -1683,6 +1683,19 @@
           "channelId": "UCSP6HlrMmRqogym2aHBPHpw",
           "channelTitle": "PPA Tour",
           "videos": [
+            {
+              "videoId": "gkG88LdvSFg",
+              "title": "Top 10 points of the Fasenra Sacramento Open",
+              "channelTitle": "PPA Tour",
+              "publishedAt": "2026-04-23T19:57:08Z",
+              "description": "Watch the Top 10 Points of the Fasenra Sacramento Open. You do not want to miss it!\n\nSubscribe to our channel for premier pickleball coverage: https://www.youtube.com/@PPAtour. \n\nVisit our website to explore tournament details and secure your tickets: https://www.ppatour.com/\n\nFollow us on social media:\n\nFacebook: https://www.facebook.com/OfficialPPATour\nInstagram: https://www.instagram.com/ppatou",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/gkG88LdvSFg/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=gkG88LdvSFg"
+            },
             {
               "videoId": "EsQkYjD2mgU",
               "title": "Who had the quickest hands in Sacramento!? 🙌",
@@ -1734,19 +1747,6 @@
                 "height": 180
               },
               "url": "https://www.youtube.com/watch?v=5uUrHaylhOg"
-            },
-            {
-              "videoId": "AIFUIo4hMOQ",
-              "title": "Federico Staksrud v Zane Ford at the Fasenra Sacramento Open",
-              "channelTitle": "PPA Tour",
-              "publishedAt": "2026-04-20T07:34:50Z",
-              "description": "Watch the Men's Singles Final: (2) Federico Staksrud vs (12) Zane Ford at the Fasenra Sacramento Open\n        •        Federico Staksrud: https://www.instagram.com/federicostaksrud\n        •        Zane Ford: https://www.instagram.com/thezaneford\n\n\nSubscribe to our channel for premier pickleball coverage: https://www.youtube.com/@PPAtour. \n\nVisit our website to explore tournament details and secur",
-              "thumbnail": {
-                "url": "https://i.ytimg.com/vi/AIFUIo4hMOQ/mqdefault.jpg",
-                "width": 320,
-                "height": 180
-              },
-              "url": "https://www.youtube.com/watch?v=AIFUIo4hMOQ"
             }
           ]
         },
