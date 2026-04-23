@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-04-22 (Session 4 shutdown — KB v5, 22 entries; Phase 1.5 Round 2 bundle shipped; MLP WordPress REST API discovered)
+**Last updated:** 2026-04-22 (Session 5 shutdown — KB v6, 23 entries; Phase 3A deployment slice 1 shipped — repo live, GitHub Pages live, daily workflow armed)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -74,8 +74,10 @@ Static types (Reference, Decision, Limitation) omit Tier.
 - **Finding:** Planned repo: `jjmgladden/pickleball-daily` (public). Gate: `scripts/check-secrets.js` pre-commit, CLAUDE.md PII-clean (owner name/email NOT in public file — use "project owner"), narrow file scope, `.gitignore` covers `.env` + credentials + keys. Mirror sibling-project posture. CLAUDE.md v1 is already PII-clean per decision.
 
   **Phase 1 Session 2 update:** Secret scanner implemented (`scripts/check-secrets.js` — 8 patterns: Google API, GitHub PAT classic + fine-grained, AWS, Resend, Anthropic, OpenAI, Slack). Ran clean at session end with real YouTube API key in local `.env`.
-- **Status:** Open (awaiting Phase 1/3 trigger — owner creates repo)
-- **Cross-ref:** CLAUDE.md § Project Context · CLAUDE.md § Secret Safety · scripts/check-secrets.js
+
+  **Session 5 (2026-04-22) — Closed:** Owner created public repo `jjmgladden/pickleball-daily` via web UI. First commit `9f6ac91` pushed (68 files, 12366 insertions) after four-stage pre-push gate: (1) check-secrets clean, (2) `.gitignore` audit, (3) staged-diff PII + real-key grep clean, (4) owner ATP on Option A (gitignore internal workflow docs rather than scrub). Internal workflow docs (`sessions/`, `PICKLEBALL_Session1_KickoffPrompt.md`) are now gitignored — stay local, not public. `docs/knowledge-base.md` KB-0015 scrubbed (removed specific username path; kept the `&`-in-Windows-path technical content). `package-lock.json` un-ignored to allow GH Actions `npm ci`. Git commit metadata shows `jjmgladden@gmail.com` per Option A2 (owner accepted; email was already public via sibling Baseball Project commits).
+- **Status:** Closed (Session 5)
+- **Cross-ref:** CLAUDE.md § Project Context · CLAUDE.md § Secret Safety · scripts/check-secrets.js · https://github.com/jjmgladden/pickleball-daily
 
 ### KB-0006 | YouTube Data API v3 — shared key with sibling project (autopilot local copy)
 - **Type:** Decision
@@ -91,8 +93,10 @@ Static types (Reference, Decision, Limitation) omit Tier.
   **Remote (Phase 3) — owner-paste still pending:** when `jjmgladden/pickleball-daily` repo exists and GitHub Actions cron is wired, owner pastes same value into repo Secret `YOUTUBE_API_KEY`.
 
   Quota strategy: `channels.list` (1u) to resolve handles + `playlistItems.list` (1u) for recent uploads per channel. Current daily spend: ~2 units × N channels. Nowhere near 10k/day limit.
-- **Status:** Local autopilot Closed; Remote Phase 3 owner-paste still Open
-- **Cross-ref:** data/master/video-sources.json · CLAUDE.md § Data Sources · ingestion/lib/youtube-api.js
+
+  **Session 5 (2026-04-22) — Closed:** Owner pasted `YOUTUBE_API_KEY` as repo Secret via web UI (Settings → Secrets and variables → Actions → New repository secret). First workflow_dispatch run `24816711514` succeeded in 1m 9s end-to-end — `fetch-highlights.js` consumed the secret and produced the expected 3-channel highlight payload, proving the paste worked. No key value echoed back to owner or assistant.
+- **Status:** Closed (Session 5 — both halves)
+- **Cross-ref:** data/master/video-sources.json · CLAUDE.md § Data Sources · ingestion/lib/youtube-api.js · .github/workflows/daily.yml
 
 ### KB-0007 | Resend email — shared account, separate recipient list
 - **Type:** Decision
@@ -421,6 +425,31 @@ Static types (Reference, Decision, Limitation) omit Tier.
 - **Status:** Closed (pattern documented and shipped)
 - **Cross-ref:** KB-0018 · KB-0021 · ingestion/lib/mlp-api.js · ingestion/fetch-mlp.js · logs/cache/mlp-wp-json-*.json (Session 4 probe captures)
 
+### KB-0023 | GitHub Actions Node 20 runtime deprecation — v5 migration before 2026-06-02
+- **Type:** Action
+- **Tier:** T2
+- **Dependency:** Claude
+- **Date:** 2026-04-22 (Session 5 — first workflow run flagged it)
+- **Category:** Ops / CI
+- **Tags:** github-actions, node, deprecation, ci, migration
+- **Finding:** First run of `.github/workflows/daily.yml` (run `24816711514`, Phase 3A Step 5 verification) emitted a deprecation warning for every `@v4` action in the workflow. Affected: `actions/checkout@v4`, `actions/setup-node@v4`, `actions/cache@v4` — all three bundle Node 20 internally.
+
+  GitHub's published timeline:
+  - **2026-06-02** — default runtime flips to Node 24 (Node-20 actions start getting forced to Node 24)
+  - **2026-09-16** — Node 20 removed from runners entirely
+
+  Root driver: Node.js LTS lifecycle. Node 20 reaches EOL in April 2026; after that it receives no security patches. GitHub's ~6-week lead-time window lets action maintainers publish `v5` releases on Node 24 before the flip.
+
+  **Mitigation (not urgent — 6 weeks out):** when `@v5` of each action ships, bump the three references in `.github/workflows/daily.yml`. Three one-line edits. No logic changes expected.
+
+  **Opt-in early (optional):** set `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` at workflow env level to run current `@v4` actions on Node 24 today — proves forward-compatibility before the forced flip.
+
+  **Stop-gap if 2026-06-02 arrives before `v5` lands:** set `ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true`. Keeps workflow running but accepts known-unsupported runtime. Not a long-term posture.
+
+  Suggested target session: Phase 3B (Session 6) as a 5-minute polish item if `v5` tags exist by then; otherwise defer to Phase 3C or a dedicated CI-maintenance session.
+- **Status:** Open (monitor `actions/checkout` + `actions/setup-node` + `actions/cache` releases)
+- **Cross-ref:** .github/workflows/daily.yml · https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
 ---
 
-**End of KB. Entry count: 22. Next ID: KB-0023.**
+**End of KB. Entry count: 23. Next ID: KB-0024.**
