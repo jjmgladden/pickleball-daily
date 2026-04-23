@@ -2,13 +2,19 @@
 // RULE: any commit touching SHELL_FILES MUST bump CACHE in the same commit (CLAUDE.md Critical Rule).
 // Paired: `APP_VERSION` in app/js/app.js must match this CACHE version (owner-visible app version).
 
-const CACHE = 'pickleball-daily-v3';
+const CACHE = 'pickleball-daily-v4';
 
 const SHELL_FILES = [
   './',
   './index.html',
   './manifest.webmanifest',
   './icon.svg',
+  './icons/apple-touch-icon-180x180.png',
+  './icons/apple-touch-icon-167x167.png',
+  './icons/apple-touch-icon-152x152.png',
+  './icons/apple-touch-icon-120x120.png',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
   './styles/main.css',
   './js/app.js',
   './js/data-loader.js',
@@ -21,6 +27,7 @@ const SHELL_FILES = [
   './js/components/favorites.js',
   './js/components/highlights.js',
   './js/components/live-scoreboard.js',
+  './js/components/splash.js',
   './js/tabs/daily.js',
   './js/tabs/live.js',
   './js/tabs/tournaments.js',

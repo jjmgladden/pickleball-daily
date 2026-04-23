@@ -365,6 +365,50 @@ h2.section-title:first-child { margin-top: 0; }
   font-size: 0.9rem;
 }
 
+/* Splash screen — once-per-session intro overlay (KB-XXXX, Phase 3B) */
+.splash {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #0e1420 0%, #1f2a44 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 220ms ease-out;
+  cursor: pointer;
+}
+.splash--visible { opacity: 1; }
+.splash--fading  { opacity: 0; pointer-events: none; }
+.splash-inner {
+  text-align: center;
+  padding: 16px;
+  max-width: 320px;
+}
+.splash-icon {
+  display: block;
+  margin: 0 auto 16px;
+  width: 96px; height: 96px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+.splash-title {
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+.splash-tag {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash { transition: opacity 120ms linear; }
+}
+
 footer.app-footer {
   text-align: center;
   color: var(--text-dim);

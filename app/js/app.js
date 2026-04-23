@@ -3,9 +3,10 @@
 // APP_VERSION must stay in sync with `CACHE` in app/sw.js. When a shell-file change rolls the
 // SW cache version, update this constant in the same commit.
 
-const APP_VERSION = 'v3';
+const APP_VERSION = 'v4';
 
 import { loadSnapshot } from './data-loader.js';
+import { showSplashIfFirstVisit } from './components/splash.js';
 import { renderDaily }       from './tabs/daily.js';
 import { renderLive }        from './tabs/live.js';
 import { renderTournaments } from './tabs/tournaments.js';
@@ -83,6 +84,7 @@ function escapeHtml(s) {
 
 async function boot() {
   wireTabs();
+  showSplashIfFirstVisit();
 
   let snapshot = null;
   try { snapshot = await loadSnapshot(); }

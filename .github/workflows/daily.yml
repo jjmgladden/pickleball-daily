@@ -17,9 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 20
           cache: npm
@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Restore ingestion cache (rankings + slugs)
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: logs/cache
           key: ingestion-cache-${{ github.run_id }}
@@ -36,7 +36,7 @@ jobs:
             ingestion-cache-
 
       - name: Cache Playwright browsers
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
