@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-22T00:00:00Z",
+  "note": "Proposed home-screen modules and tab structure for the PWA. Owner may override in blueprint review. Modules are ordered by priority within each phase. MVP = Phase 1 launch scope. Phase 2+ modules are flagged.",
+  "tabs": [
+    {"id": "tab-daily", "displayName": "Daily Report", "priority": 1, "phase": 1, "description": "Morning intelligence landing page. Today's live events, top movers, trending, rules-snippet-of-the-day."},
+    {"id": "tab-live", "displayName": "Live", "priority": 2, "phase": 1, "description": "Currently in-progress matches across PPA and MLP. Real-time-ish scoreboard, bracket state, court assignments."},
+    {"id": "tab-tournaments", "displayName": "Tournaments", "priority": 3, "phase": 1, "description": "Upcoming + past events across both circuits. Filter by circuit (PPA/MLP), tier, country, date."},
+    {"id": "tab-teams", "displayName": "MLP Teams", "priority": 4, "phase": 1, "description": "Team-centric view for MLP. Standings, rosters, schedules, per-team news."},
+    {"id": "tab-players", "displayName": "Players", "priority": 5, "phase": 1, "description": "Player search + per-player pages. Universal search, favorites ★, comparison ⇄ (Phase 2)."},
+    {"id": "tab-rankings", "displayName": "Rankings", "priority": 6, "phase": 1, "description": "PPA Tour rankings (52-week + Race). Separate component from Ratings — do NOT merge."},
+    {"id": "tab-ratings", "displayName": "Ratings", "priority": 7, "phase": 1, "description": "DUPR public leaderboards. Separate component from Rankings — do NOT merge. Explicit visual + label distinction per KB-0009."},
+    {"id": "tab-highlights", "displayName": "Highlights", "priority": 8, "phase": 1, "description": "Recent video (YouTube Data API from official channels allowlist). Thumbnail + click-out default; iframe only if embed verified."},
+    {"id": "tab-learn", "displayName": "Learn", "priority": 9, "phase": 2, "description": "Rules reference (curated rule snippets; link to USAP rulebook PDF). 2026 rule changes. History/founding. Governance explainer."},
+    {"id": "tab-news", "displayName": "News", "priority": 10, "phase": 2, "description": "Curated feed from T1/T2 newsletters + official handles. Phase 2 because ingestion complexity."}
+  ],
+  "homeScreenModules": [
+    {"id": "home-daily-briefing", "displayName": "Daily Briefing", "priority": 1, "phase": 1, "description": "One-paragraph synthesis: today's most significant tournament day, any breaking news, what to watch.", "dataSources": ["data/snapshots/latest.json"]},
+    {"id": "home-live-now", "displayName": "Live Now", "priority": 2, "phase": 1, "description": "Currently in-progress matches with team names, score, court. Collapses when no live events.", "dataSources": ["data/snapshots/latest.json § live", "pickleball-brackets scrape"]},
+    {"id": "home-todays-tournaments", "displayName": "Today's Tournaments", "priority": 3, "phase": 1, "description": "PPA and MLP events active today, with day-of-event context (R32 / QF / Finals).", "dataSources": ["data/master/tournaments-2026.json"]},
+    {"id": "home-mlp-standings", "displayName": "MLP Standings Snapshot", "priority": 4, "phase": 1, "description": "Top 10 MLP teams by current standings points. Click-through to full standings.", "dataSources": ["data/snapshots/latest.json § mlpStandings"]},
+    {"id": "home-trending-players", "displayName": "Trending Players", "priority": 5, "phase": 1, "description": "Players with notable recent activity (event win, upset, deep run).", "dataSources": ["data/snapshots/latest.json § trendingPlayers"]},
+    {"id": "home-rankings-movers", "displayName": "PPA Rankings Movers", "priority": 6, "phase": 1, "description": "Biggest 7-day jumps/drops on PPA 52-week. Separate from Ratings Movers.", "dataSources": ["data/snapshots/latest.json § ppaMovers"]},
+    {"id": "home-ratings-movers", "displayName": "DUPR Ratings Movers", "priority": 7, "phase": 2, "description": "DUPR Risers (Reliability ≥80). Separate from Rankings Movers.", "dataSources": ["data/snapshots/latest.json § duprRisers"], "note": "Phase 2 because DUPR scraping needs login credentials OR partner API."},
+    {"id": "home-latest-results", "displayName": "Latest Results", "priority": 8, "phase": 1, "description": "Gold-medal matches from the last 48h across PPA + MLP.", "dataSources": ["data/snapshots/latest.json § latestResults"]},
+    {"id": "home-top-news", "displayName": "Top News", "priority": 9, "phase": 2, "description": "Curated headlines from T1/T2 sources with 'developing' vs 'confirmed' labels.", "dataSources": ["data/snapshots/latest.json § news"]},
+    {"id": "home-new-highlights", "displayName": "New Highlights", "priority": 10, "phase": 1, "description": "48-hour YouTube highlights from PPA + MLP official channels.", "dataSources": ["data/snapshots/latest.json § highlights"]},
+    {"id": "home-beginner-rules", "displayName": "Rule of the Day", "priority": 11, "phase": 1, "description": "Rotating one-rule explainer (especially 2026 rule changes early in season).", "dataSources": ["data/master/rules-changes-2026.json"]},
+    {"id": "home-on-this-day", "displayName": "On This Day in Pickleball", "priority": 12, "phase": 2, "description": "Date-matched history milestone. Sparse for a young sport — collapses on days without a match.", "dataSources": ["data/master/history-seed.json"]}
+  ],
+  "entityPageTemplates": [
+    {"id": "template-tournament-page", "displayName": "Tournament Page", "phase": 1, "fields": ["displayName", "circuit", "tier", "dates", "venue", "city/state/country", "purse (when known)", "sanctioningBody", "draw/bracket embed or link-out", "live scores (when in-progress)", "historical past winners (Phase 2)", "highlights (when available)", "news feed (Phase 2)"], "sources": ["tournaments-2026.json", "snapshots/latest.json", "pickleball-brackets scrape"]},
+    {"id": "template-team-page", "displayName": "MLP Team Page", "phase": 1, "fields": ["displayName", "homeMarket", "owners (when known)", "current roster", "season standing", "recent match results", "upcoming events", "team news (Phase 2)"], "sources": ["mlp-teams.json", "snapshots/latest.json"]},
+    {"id": "template-player-page", "displayName": "Player Page", "phase": 1, "fields": ["displayName", "country", "handedness", "primaryCategories", "mlpTeam", "ppaRank (per category)", "duprDoubles + duprSingles", "recent results", "upcoming events", "highlights", "bio (when available)"], "sources": ["players-seed.json", "snapshots/latest.json", "YouTube API"]},
+    {"id": "template-match-page", "displayName": "Match Page", "phase": 2, "fields": ["matchId", "participants (playerId/teamId)", "event", "round", "current/final score", "court", "start time", "highlights/replay link (if any)"], "sources": ["snapshots/latest.json § matches", "pickleball-brackets scrape"]},
+    {"id": "template-rule-explainer", "displayName": "Rule Explainer Page", "phase": 2, "fields": ["sectionNumber", "displayName", "summary", "effectiveDate", "changeHistory", "linkToRulebook"], "sources": ["rules-changes-2026.json", "USAP PDF link-out"]},
+    {"id": "template-history-timeline", "displayName": "History Timeline Page", "phase": 2, "fields": ["milestone entries ordered chronologically", "filters by category (founding, governance, professional, growth)"], "sources": ["history-seed.json"]}
+  ],
+  "pinningModel": {
+    "favoriteTeam": {"storage": "localStorage", "key": "pickleball-daily.favoriteTeam.v1", "defaultDisplay": "Top pinned module on Daily Report tab"},
+    "favoritePlayer": {"storage": "localStorage", "key": "pickleball-daily.favoritePlayers.v1", "defaultDisplay": "★ favorite list in Players tab + pinned card on Daily Report"},
+    "rationale": "Baseball Project has a hard-coded 'Cardinals pin'. Pickleball has no equivalent single-institution favorite — no franchise-of-origin. Must be configurable per user. Brother in Virginia may favor a different MLP team than owner."
+  },
+  "confidenceRendering": {
+    "T1": "Display normally. No badge.",
+    "T2": "Display with subtle 'sourced via X' footer link.",
+    "T3": "Display with explicit 'editorial / unverified' badge.",
+    "developing": "Yellow dot + 'Developing' label. Requires T1 confirmation to promote."
+  },
+  "caveats": [
+    "Tab count is 8-10 active — owner may consolidate (e.g., merge Rankings + Ratings into single 'Standings' tab with toggle). Recommendation: keep separate per KB-0009.",
+    "Phase 1 module set (priority 1-6, 8, 10, 11) is intentionally achievable without deep curation. Phase 2+ modules (7, 9, 12, News tab, Learn tab) depend on either DUPR login/partnership, curation workflow, or rules content expansion.",
+    "Splash screen (per Baseball Project pattern) is Phase 3 polish, not Phase 1."
+  ]
+}

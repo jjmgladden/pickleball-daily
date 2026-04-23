@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-22T00:00:00Z",
+  "note": "Newsletters, podcasts, and social accounts that cover pickleball. YouTube channels are in video-sources.json. Tiers: T1 = official authoritative, T2 = reliable creator, T3 = editorial/opinion. News-velocity: 'fast-unverified' (useful for tips, requires T1 confirmation) vs 'verified-authoritative' (publish as fact).",
+  "newsletters": [
+    {"id": "newsletter-the-dink", "displayName": "The Dink", "author": "Thomas Shields et al.", "url": "https://newsletter.thedinkpickleball.com/", "cadence": "3x/week", "access": "free", "tier": "T2", "bestFor": ["news", "analysis"], "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "newsletter-the-kitchen", "displayName": "The Kitchen", "author": "The Kitchen staff", "url": "https://thekitchenpickle.com/", "cadence": "multi-weekly", "access": "free", "tier": "T3", "bestFor": ["editorial-rankings", "commentary"], "confidence": "T3", "lastUpdated": "2026-04-22"},
+    {"id": "newsletter-pickleball-union", "displayName": "Pickleball Union", "author": "Pickleball Union staff", "url": "https://pickleballunion.com/", "cadence": "weekly", "access": "free", "tier": "T2", "bestFor": ["news"], "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "newsletter-love-at-first-dink", "displayName": "Love At First Dink", "author": "unknown", "url": "https://loveatfirstdink.com/", "cadence": "weekly", "access": "free", "tier": "T3", "bestFor": ["community"], "confidence": "T3", "lastUpdated": "2026-04-22"},
+    {"id": "magazine-pickleball-magazine", "displayName": "Pickleball Magazine (USAP-affiliated)", "author": "USAP Pickleball Magazine", "url": "https://pickleballmagazine.com/", "cadence": "monthly", "access": "paid", "tier": "T1", "bestFor": ["features", "interviews", "rules-explainers"], "confidence": "T1", "lastUpdated": "2026-04-22"}
+  ],
+  "podcasts": [
+    {"id": "podcast-picklepod", "displayName": "PicklePod", "host": "Thomas Shields, Zane Navratil", "url": "https://newsletter.thedinkpickleball.com/picklepod", "cadence": "weekly", "tier": "T2", "bestFor": ["pro-interviews", "news"], "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "podcast-pickleball-studio", "displayName": "The Pickleball Studio Podcast", "host": "Chris Olson, Will Chaing", "url": "https://youtube.com/playlist?list=PLd8WdtbnlZd7Q43V3U4WKsGN9Uu-h9Qoo", "cadence": "weekly", "tier": "T2", "bestFor": ["conversational-news", "gear"], "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "podcast-it-feels-right", "displayName": "It Feels Right", "host": "Rob Nunnery, Adam Stone", "url": "https://itfeelsright.com/", "cadence": "weekly", "tier": "T2", "bestFor": ["strategy", "veteran-pro-depth"], "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "podcast-tennis-sucks", "displayName": "The Tennis Sucks Podcast", "host": "Travis Rettenmaier, Graham D'Amico", "url": null, "cadence": "weekly", "tier": "T3", "bestFor": ["tour-insider-banter"], "confidence": "T3", "lastUpdated": "2026-04-22"},
+    {"id": "podcast-pickleball-therapy", "displayName": "Pickleball Therapy", "host": "Tony Roig", "url": "https://betterpickleball.com/podcast", "cadence": "weekly", "tier": "T2", "bestFor": ["mental-game", "50-plus-improvement"], "confidence": "T2", "lastUpdated": "2026-04-22"}
+  ],
+  "socialAccounts": [
+    {"id": "social-x-ppa", "displayName": "@PPAtour on X", "platform": "X", "handle": "@PPAtour", "url": "https://x.com/PPAtour", "bestFor": ["official-ppa-results", "schedule", "rankings-announcements"], "newsVelocity": "verified-authoritative", "tier": "T1", "confidence": "T1", "lastUpdated": "2026-04-22"},
+    {"id": "social-x-mlp", "displayName": "@MLP_Pickleball on X", "platform": "X", "handle": "@MLP_Pickleball", "url": "https://x.com/MLP_Pickleball", "bestFor": ["official-mlp", "trades", "draft"], "newsVelocity": "verified-authoritative", "tier": "T1", "confidence": "T1", "lastUpdated": "2026-04-22"},
+    {"id": "social-x-usap", "displayName": "@USAPickleball on X", "platform": "X", "handle": "@USAPickleball", "url": "https://x.com/USAPickleball", "bestFor": ["governance", "rules-news"], "newsVelocity": "verified-authoritative", "tier": "T1", "confidence": "T1", "lastUpdated": "2026-04-22"},
+    {"id": "social-x-the-dink", "displayName": "@Pickleball on X (The Dink)", "platform": "X", "handle": "@Pickleball", "url": "https://x.com/pickleball", "bestFor": ["breaking-news", "pro-drama"], "newsVelocity": "fast-unverified", "tier": "T2", "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "social-x-picklewave", "displayName": "@PickleWave on X", "platform": "X", "handle": "@PickleWave", "url": "https://x.com/picklewave", "bestFor": ["elo-rankings", "stats-snapshots"], "newsVelocity": "fast-unverified", "tier": "T2", "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "social-x-zane-navratil", "displayName": "@ZaneNavratil on X", "platform": "X", "handle": "@ZaneNavratil", "url": "https://x.com/ZaneNavratil", "bestFor": ["pro-player-takes", "picklepod-co-host"], "newsVelocity": "fast-unverified", "tier": "T2", "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "social-ig-ppa", "displayName": "@ppatour on Instagram", "platform": "Instagram", "handle": "@ppatour", "url": "https://www.instagram.com/ppatour/", "bestFor": ["official-highlights-reels"], "newsVelocity": "verified-authoritative", "tier": "T1", "confidence": "T1", "lastUpdated": "2026-04-22"},
+    {"id": "social-ig-the-dink", "displayName": "@thedinkpickleball on Instagram", "platform": "Instagram", "handle": "@thedinkpickleball", "url": "https://www.instagram.com/thedinkpickleball/", "bestFor": ["viral-rallies", "news-clips"], "newsVelocity": "fast-unverified", "tier": "T2", "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "social-ig-the-kitchen", "displayName": "@thekitchenpickle on Instagram", "platform": "Instagram", "handle": "@thekitchenpickle", "url": "https://www.instagram.com/thekitchenpickle/", "bestFor": ["commentary", "rankings-reveals"], "newsVelocity": "fast-unverified", "tier": "T3", "confidence": "T3", "lastUpdated": "2026-04-22"},
+    {"id": "social-ig-anna-leigh-waters", "displayName": "@annaleighwaters on Instagram", "platform": "Instagram", "handle": "@annaleighwaters", "url": "https://www.instagram.com/annaleighwaters/", "bestFor": ["player-1-feed"], "newsVelocity": "fast-unverified", "tier": "T2", "confidence": "T2", "lastUpdated": "2026-04-22"}
+  ],
+  "caveats": [
+    "X API is paid-tier only since 2023; automated ingestion of X feeds requires either the paid API or compliant third-party. For Phase 1, social surfacing is manual curation or link-out, not automated pulls.",
+    "Instagram Graph API requires a business-account partnership — not viable for our tier. Treat IG accounts as 'watch and link out'.",
+    "'fast-unverified' tier posts must be labeled 'developing' in-app until echoed by a T1 official handle (see sources.json § sourceConflictHierarchy.developingVsConfirmed)."
+  ]
+}

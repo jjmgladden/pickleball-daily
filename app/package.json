@@ -1,0 +1,5 @@
+{
+  "type": "module",
+  "private": true,
+  "description": "app/ tree uses native ES modules in the browser. Inherits from root; this file exists only to set module type."
+}

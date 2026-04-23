@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-22T00:00:00Z",
+  "note": "Milestone events in pickleball history. Sport is young (60 years) — seed will grow slowly. Founding narrative per USAP official position (pickle-boat origin); dog-named-Pickles variant is flagged but not substituted. Each entry carries structured source citations for AI Q&A retrieval (Phase 4).",
+  "milestones": [
+    {
+      "id": "hist-1965-founding",
+      "date": "1965-07-00",
+      "displayName": "Pickleball invented on Bainbridge Island",
+      "summary": "Joel Pritchard, Bill Bell, and Barney McCallum improvise a backyard game at Pritchard's summer cabin at Pleasant Beach on Bainbridge Island, WA, using a badminton court, a perforated plastic ball, and ping-pong paddles. The game becomes pickleball.",
+      "year": 1965,
+      "location": "Bainbridge Island, WA, USA",
+      "people": ["Joel Pritchard", "Bill Bell", "Barney McCallum"],
+      "category": "founding",
+      "significance": "T1",
+      "sources": [
+        {"sourceId": "usap-official", "url": "https://usapickleball.org/what-is-pickleball/history-of-the-game/", "retrievedAt": "2026-04-22"},
+        {"sourceId": "bainbridge-history-museum", "url": "https://www.bainbridgehistorymuseum.org/our-community-past-to-present/pickleball", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-1965-name-origin",
+      "date": "1965-00-00",
+      "displayName": "Name origin — pickle-boat (official) vs. dog 'Pickles' (folk variant)",
+      "summary": "USA Pickleball's official position cites Joan Pritchard's pickle-boat metaphor (leftover crew-racing rowers). A widely circulated folk variant credits the Pritchards' dog 'Pickles.' USAP rejects the dog story on chronology: the dog was born in 1968, after the name was in use.",
+      "year": 1965,
+      "category": "founding",
+      "significance": "T2",
+      "flaggedVariants": true,
+      "officialPosition": "pickle-boat",
+      "sources": [
+        {"sourceId": "usap-official", "url": "https://usapickleball.org/news/how-pickleball-got-its-name/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-1967-first-permanent-court",
+      "date": "1967-00-00",
+      "displayName": "First permanent pickleball court",
+      "summary": "First known permanent pickleball court built in the backyard of Joel Pritchard's neighbor Bob O'Brian.",
+      "year": 1967,
+      "location": "Bainbridge Island, WA, USA",
+      "category": "infrastructure",
+      "significance": "T3",
+      "sources": [
+        {"sourceId": "usap-official", "url": "https://usapickleball.org/what-is-pickleball/history-of-the-game/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-1972-pickleball-inc",
+      "date": "1972-00-00",
+      "displayName": "Pickle Ball, Inc. incorporated",
+      "summary": "Pickle Ball, Inc. incorporated to protect the name and commercialize equipment.",
+      "year": 1972,
+      "category": "business",
+      "significance": "T3",
+      "sources": [
+        {"sourceId": "historylink", "url": "https://www.historylink.org/File/20195", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-1976-first-tournament",
+      "date": "1976-00-00",
+      "displayName": "First known pickleball tournament",
+      "summary": "South Center Athletic Club hosts what is widely considered the first pickleball tournament in Tukwila, WA.",
+      "year": 1976,
+      "location": "Tukwila, WA, USA",
+      "category": "competition",
+      "significance": "T2",
+      "sources": [
+        {"sourceId": "usap-official", "url": "https://usapickleball.org/what-is-pickleball/history-of-the-game/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-1984-usapa-founded",
+      "date": "1984-03-00",
+      "displayName": "USAPA founded; first formal rulebook",
+      "summary": "The United States Amateur Pickleball Association (USAPA) is founded in Tacoma, WA. The first formal rulebook is published in March 1984. The first National Doubles Championships is held the same year.",
+      "year": 1984,
+      "location": "Tacoma, WA, USA",
+      "people": ["Sid Williams", "David 'Bryon' Olson"],
+      "category": "governance",
+      "significance": "T1",
+      "sources": [
+        {"sourceId": "usap-wikipedia", "url": "https://en.wikipedia.org/wiki/USA_Pickleball", "retrievedAt": "2026-04-22"},
+        {"sourceId": "pb5star", "url": "https://www.pb5star.com/a/blog/the-history-and-mission-of-the-united-states-pickleball-association", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-1990-all-50-states",
+      "date": "1990-00-00",
+      "displayName": "Pickleball played in all 50 US states",
+      "summary": "Per USAP narrative, by 1990 pickleball is being played in all 50 US states.",
+      "year": 1990,
+      "category": "growth",
+      "significance": "T3",
+      "sources": [
+        {"sourceId": "usap-official", "url": "https://usapickleball.org/what-is-pickleball/history-of-the-game/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2005-usapa-rebrand",
+      "date": "2005-00-00",
+      "displayName": "USAPA rebrands to USA Pickleball Association",
+      "summary": "The United States Amateur Pickleball Association rebrands to USA Pickleball Association.",
+      "year": 2005,
+      "category": "governance",
+      "significance": "T3",
+      "sources": [
+        {"sourceId": "usap-wikipedia", "url": "https://en.wikipedia.org/wiki/USA_Pickleball", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2008-ifp-founded",
+      "date": "2008-00-00",
+      "displayName": "International Federation of Pickleball founded",
+      "summary": "The International Federation of Pickleball (IFP) is formed to coordinate the sport internationally.",
+      "year": 2008,
+      "category": "governance",
+      "significance": "T2",
+      "sources": [
+        {"sourceId": "usap-official", "url": "https://usapickleball.org/what-is-pickleball/history-of-the-game/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2009-first-national-tournament",
+      "date": "2009-11-00",
+      "displayName": "First USAPA National Tournament",
+      "summary": "First USAPA National Tournament held in Buckeye, AZ — watershed in pickleball's competitive ladder.",
+      "year": 2009,
+      "location": "Buckeye, AZ, USA",
+      "category": "competition",
+      "significance": "T2",
+      "sources": [
+        {"sourceId": "usap-official", "url": "https://usapickleball.org/what-is-pickleball/history-of-the-game/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2018-ppa-founded",
+      "date": "2018-00-00",
+      "displayName": "Professional Pickleball Association (PPA) era begins",
+      "summary": "The PPA Tour era takes shape, organizing professional pickleball events with standardized prize money and broadcasting.",
+      "year": 2018,
+      "category": "professional",
+      "significance": "T2",
+      "sources": [
+        {"sourceId": "ppa-tour", "url": "https://ppatour.com/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2020-usap-rebrand",
+      "date": "2020-00-00",
+      "displayName": "USA Pickleball (USAP) rebrand",
+      "summary": "USA Pickleball Association rebrands to simply 'USA Pickleball' (USAP).",
+      "year": 2020,
+      "category": "governance",
+      "significance": "T3",
+      "sources": [
+        {"sourceId": "usap-wikipedia", "url": "https://en.wikipedia.org/wiki/USA_Pickleball", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2021-fastest-growing",
+      "date": "2021-00-00",
+      "displayName": "Pickleball named fastest-growing sport in the US",
+      "summary": "The Sports & Fitness Industry Association (SFIA) names pickleball the fastest-growing sport in the United States — the first of three consecutive years.",
+      "year": 2021,
+      "category": "growth",
+      "significance": "T2",
+      "sources": [
+        {"sourceId": "sfia", "url": "https://sfia.org/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2021-mlp-founded",
+      "date": "2021-00-00",
+      "displayName": "Major League Pickleball founded",
+      "summary": "Major League Pickleball (MLP) launches as a team-based pro league, introducing mixed-gender team-match formats and the DreamBreaker singles tiebreaker.",
+      "year": 2021,
+      "category": "professional",
+      "significance": "T1",
+      "sources": [
+        {"sourceId": "mlp-official", "url": "https://majorleaguepickleball.co/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2023-upa-merger",
+      "date": "2023-00-00",
+      "displayName": "PPA + MLP merge under United Pickleball Association (UPA)",
+      "summary": "PPA and MLP merge under the United Pickleball Association (UPA) holding company, formally announced March 2024. The two properties retain distinct brands; scheduling, player contracts, and media rights are coordinated through UPA.",
+      "year": 2023,
+      "category": "governance",
+      "significance": "T1",
+      "sources": [
+        {"sourceId": "pickleball-com-upa", "url": "https://pickleball.com/news/united-pickleball-association-unveiled-as-holding-company-for-newly-merged-ppa-mlp", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2024-dupr-usap-partnership",
+      "date": "2024-00-00",
+      "displayName": "DUPR becomes USAP's official exclusive rating system",
+      "summary": "USA Pickleball adopts DUPR as its official exclusive rating partner. Previously, USAP had operated its own rating system. This landmark agreement unifies amateur skill rating.",
+      "year": 2024,
+      "category": "governance",
+      "significance": "T1",
+      "sources": [
+        {"sourceId": "usap-dupr-partnership", "url": "https://usapickleball.org/partnerships/dupr-and-usa-pickleball-announce-landmark-agreement-to-adopt-dupr-as-official-exclusive-rating-system/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2024-dupr-consolidation",
+      "date": "2024-00-00",
+      "displayName": "Pickleball ecosystem consolidation under DUPR umbrella",
+      "summary": "PickleballBrackets, Pickleball.com, and PickleballTournaments align with DUPR, unifying tournament bracket infrastructure and skill rating flows. PickleballBrackets begins auto-pushing match results to DUPR.",
+      "year": 2024,
+      "category": "infrastructure",
+      "significance": "T1",
+      "sources": [
+        {"sourceId": "dupr-alignment-announcement", "url": "https://www.dupr.com/post/pickleballbrackets-pickleball-com-and-pickleball-tournaments-align-with-dupr-marking-a-major-step-forward-for-the-growth-of-the-game", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2024-upa-usap-split",
+      "date": "2024-00-00",
+      "displayName": "UPA–USAP governance rift; UPA-Athletes launches",
+      "summary": "UPA severs ties with USAP sanctioning for pro events, launching UPA-Athletes (UPA-A) as a rival governance track for professional competition. USAP remains the amateur/rulebook authority.",
+      "year": 2024,
+      "category": "governance",
+      "significance": "T1",
+      "sources": [
+        {"sourceId": "the-dink-upa-split", "url": "https://www.thedinkpickleball.com/upa-severs-ties-with-usa-pickleball/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2025-upa-capital-raise",
+      "date": "2025-00-00",
+      "displayName": "UPA announces $150–200M capital raise",
+      "summary": "UPA announces a planned $150–200M capital raise to build a vertically integrated pickleball platform (media, software, venues). ~$15M prize money total across PPA+MLP committed for 2026.",
+      "year": 2025,
+      "category": "business",
+      "significance": "T2",
+      "sources": [
+        {"sourceId": "sportico-upa-expansion", "url": "https://www.sportico.com/leagues/other-sports/2025/united-pickleball-expansion-incentives-1234864397/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2026-ppa-asia-unification",
+      "date": "2026-01-00",
+      "displayName": "PPA Tour rankings unified globally",
+      "summary": "Starting 2026, PPA Tour Asia events count toward the unified global PPA ranking. Previously Asia rankings were regional.",
+      "year": 2026,
+      "category": "professional",
+      "significance": "T2",
+      "sources": [
+        {"sourceId": "pickleball-news-asia-unification", "url": "https://pickleballnewsasia.com/ppa-tour-unifies-rankings-for-truly-global-system-starting-2026/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2026-mlp-20-team-format",
+      "date": "2026-02-27",
+      "displayName": "MLP unifies to 20-team Premier format",
+      "summary": "MLP eliminates the Challenger level and unifies all 20 teams at Premier. Palm Beach Royals is the expansion franchise; Nashville Chefs and DC Pickleball Team sit out; NY Hustlers merges into Brooklyn. 2026 draft held Feb 27, 2026 — Anna Bright is the #1 overall pick (St. Louis Shock, $1.23M).",
+      "year": 2026,
+      "category": "professional",
+      "significance": "T1",
+      "sources": [
+        {"sourceId": "mlp-official-2026-summary", "url": "https://majorleaguepickleball.co/news/summary-of-2026-competition-updates/", "retrievedAt": "2026-04-22"},
+        {"sourceId": "mlp-official-2026-draft", "url": "https://majorleaguepickleball.co/news/2026-mlp-draft-presented-by-skechers-coverage-live-results/", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "hist-2026-rulebook-adaptive",
+      "date": "2026-01-01",
+      "displayName": "Adaptive Standing Division introduced",
+      "summary": "The 2026 USAP rulebook introduces an Adaptive Standing Division (sections 2330–2334) with eligibility criteria, assistive-device rules, two-bounce allowance, and hybrid mixed-ability play — a major inclusion milestone.",
+      "year": 2026,
+      "category": "accessibility",
+      "significance": "T2",
+      "sources": [
+        {"sourceId": "selkirk-2026-summary", "url": "https://www.selkirk.com/blogs/pickleball-education/2026-usa-pickleball-rulebook-changes-key-updates-for-the-new-year", "retrievedAt": "2026-04-22"}
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    }
+  ],
+  "caveats": [
+    "History seed is intentionally sparse for a young sport. Expansion via curation-backlog workflow (Phase 2+).",
+    "Dates with '-00' day/month markers are approximate (year-only known).",
+    "Founding narrative has documented variants (pickle-boat vs. dog 'Pickles'); this seed takes USAP's official position and flags the variant per Critical Rule §4.7 (Be Accurate)."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "pickleball-daily",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ozark Joe's Pickleball Daily Intelligence Report — PPA + MLP + DUPR + USAP + Highlights",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "serve": "node scripts/serve.js",
+    "check:secrets": "node scripts/check-secrets.js",
+    "fetch:daily": "node ingestion/fetch-daily.js",
+    "fetch:ppa-events": "node ingestion/fetch-ppa-events.js",
+    "fetch:ppa-rankings": "node ingestion/fetch-ppa-rankings.js",
+    "fetch:mlp": "node ingestion/fetch-mlp.js",
+    "fetch:dupr": "node ingestion/fetch-dupr-leaderboard.js",
+    "fetch:highlights": "node ingestion/fetch-highlights.js",
+    "check:esm": "node scripts/check-esm.js"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  },
+  "devDependencies": {}
+}

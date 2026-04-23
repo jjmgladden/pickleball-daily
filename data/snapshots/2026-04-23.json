@@ -1,0 +1,2283 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-23T03:53:49.012Z",
+  "startedAt": "2026-04-23T03:53:13.807Z",
+  "durationMs": 35205,
+  "version": "v1",
+  "brand": "Ozark Joe's Pickleball Daily Intelligence Report",
+  "errors": [],
+  "sources": {
+    "tournaments": {
+      "sourceId": "tournaments",
+      "ok": true,
+      "retrievedAt": "2026-04-23T03:53:13.813Z",
+      "counts": {
+        "inProgress": 0,
+        "upcoming": 7,
+        "recent": 1
+      },
+      "buckets": {
+        "inProgress": [],
+        "upcoming": [
+          {
+            "eventId": "ppa-2026-atlanta-championships",
+            "circuit": "PPA",
+            "displayName": "Veolia Atlanta Pickleball Championships",
+            "startDate": "2026-04-27",
+            "endDate": "2026-05-03",
+            "city": "Peachtree Corners",
+            "state": "GA",
+            "country": "US",
+            "venue": "Life Time Peachtree Corners",
+            "tier": "Slam",
+            "purseUsd": null,
+            "status": "upcoming",
+            "sources": [
+              {
+                "sourceId": "ppa-tour",
+                "url": "https://ppatour.com/tournament/2026/atlanta-pickleball-championships/"
+              }
+            ],
+            "confidence": "T1",
+            "lastUpdated": "2026-04-22",
+            "_state": "upcoming"
+          },
+          {
+            "eventId": "ppa-2026-au-250-tweed-head",
+            "circuit": "PPA",
+            "displayName": "PPA Australia 250 Tweed Head",
+            "startDate": "2026-05-01",
+            "endDate": "2026-05-03",
+            "city": "Tweed Head",
+            "state": null,
+            "country": "AU",
+            "venue": null,
+            "tier": "Challenger 250",
+            "purseUsd": null,
+            "status": "upcoming",
+            "sources": [
+              {
+                "sourceId": "ppa-tour",
+                "url": "https://ppatour.com/tournament/2026/ppa-australia-250-tweed-head/"
+              }
+            ],
+            "confidence": "T1",
+            "lastUpdated": "2026-04-22",
+            "_state": "upcoming"
+          },
+          {
+            "eventId": "ppa-2026-black-desert",
+            "circuit": "PPA",
+            "displayName": "Black Desert PPA Challenger",
+            "startDate": "2026-05-01",
+            "endDate": "2026-05-03",
+            "city": "Ivins",
+            "state": "UT",
+            "country": "US",
+            "venue": "Black Desert Resort",
+            "tier": "Challenger",
+            "purseUsd": null,
+            "status": "upcoming",
+            "sources": [
+              {
+                "sourceId": "ppa-tour",
+                "url": "https://ppatour.com/tournament/2026/2026-black-desert-ppa-challenger/"
+              }
+            ],
+            "confidence": "T1",
+            "lastUpdated": "2026-04-22",
+            "_state": "upcoming"
+          },
+          {
+            "eventId": "ppa-2026-finals",
+            "circuit": "PPA",
+            "displayName": "PPA Finals",
+            "startDate": "2026-05-04",
+            "endDate": "2026-05-10",
+            "city": "San Clemente",
+            "state": "CA",
+            "country": "US",
+            "venue": "Life Time Rancho San Clemente",
+            "tier": "Finals",
+            "purseUsd": null,
+            "status": "upcoming",
+            "sources": [
+              {
+                "sourceId": "ppa-tour",
+                "url": "https://ppatour.com/tournament/2026/ppa-finals/"
+              }
+            ],
+            "confidence": "T1",
+            "lastUpdated": "2026-04-22",
+            "_state": "upcoming"
+          },
+          {
+            "eventId": "ppa-2026-asia-500-kl",
+            "circuit": "PPA",
+            "displayName": "PPA Asia 500 Kuala Lumpur Open",
+            "startDate": "2026-05-13",
+            "endDate": "2026-05-17",
+            "city": "Kuala Lumpur",
+            "state": null,
+            "country": "MY",
+            "venue": "9Pickle",
+            "tier": "Open 500",
+            "purseUsd": null,
+            "status": "upcoming",
+            "sources": [
+              {
+                "sourceId": "ppa-tour",
+                "url": "https://ppatour.com/tournament/2026/ppa-asia-kuala-lumpur-500/"
+              }
+            ],
+            "confidence": "T1",
+            "lastUpdated": "2026-04-22",
+            "_state": "upcoming"
+          },
+          {
+            "eventId": "ppa-2026-wilson-nc",
+            "circuit": "PPA",
+            "displayName": "Wilson PPA Challenger",
+            "startDate": "2026-05-22",
+            "endDate": "2026-05-24",
+            "city": "Wilson",
+            "state": "NC",
+            "country": "US",
+            "venue": "Wilson Pickleball Facility",
+            "tier": "Challenger",
+            "purseUsd": null,
+            "status": "upcoming",
+            "sources": [
+              {
+                "sourceId": "ppa-tour",
+                "url": "https://ppatour.com/tournament/2026/2026-wilson-nc/"
+              }
+            ],
+            "confidence": "T1",
+            "lastUpdated": "2026-04-22",
+            "_state": "upcoming"
+          },
+          {
+            "eventId": "mlp-2026-dallas-opener",
+            "circuit": "MLP",
+            "displayName": "MLP Dallas (Season Opener)",
+            "startDate": "2026-05-22",
+            "endDate": "2026-05-25",
+            "city": "Dallas",
+            "state": "TX",
+            "country": "US",
+            "venue": null,
+            "tier": "regular-season",
+            "purseUsd": null,
+            "status": "upcoming",
+            "sources": [
+              {
+                "sourceId": "mlp-official",
+                "url": "https://majorleaguepickleball.co/events-2026/"
+              }
+            ],
+            "confidence": "T1",
+            "lastUpdated": "2026-04-22",
+            "_state": "upcoming"
+          }
+        ],
+        "recent": [
+          {
+            "eventId": "ppa-2026-sacramento-open",
+            "circuit": "PPA",
+            "displayName": "PPA Fasenra Sacramento Open",
+            "startDate": "2026-04-15",
+            "endDate": "2026-04-19",
+            "city": "Sacramento",
+            "state": "CA",
+            "country": "US",
+            "venue": null,
+            "tier": null,
+            "purseUsd": null,
+            "status": "completed",
+            "sources": [
+              {
+                "sourceId": "the-dink",
+                "url": "https://www.thedinkpickleball.com/ppa-fasenra-sacramento-open-tournament-preview/"
+              }
+            ],
+            "confidence": "T2",
+            "lastUpdated": "2026-04-22",
+            "_state": "recent"
+          }
+        ]
+      },
+      "probes": []
+    },
+    "mlp": {
+      "sourceId": "mlp",
+      "ok": true,
+      "retrievedAt": "2026-04-23T03:53:24.260Z",
+      "freshness": "live-verified",
+      "teams": [
+        {
+          "teamId": "atlanta-bouncers",
+          "displayName": "Atlanta Bouncers",
+          "homeMarket": "Atlanta, GA",
+          "owners": [
+            "Anheuser-Busch (reported)"
+          ],
+          "ownersCaveat": "Owner attribution is third-party reported; official MLP team page does not enumerate owners.",
+          "headlinePlayers": [
+            "Kaitlyn Christian",
+            "Jay Devilliers",
+            "Jaume Martinez Vich"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/news/2026-mlp-draft-presented-by-skechers-coverage-live-results/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/atlanta-bouncers/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "jaume-martinez-vich",
+              "wpId": 10188,
+              "displayName": "Jaume Martinez Vich",
+              "duprDoubles": 6.7,
+              "profileUrl": "https://majorleaguepickleball.co/player/jaume-martinez-vich/"
+            },
+            {
+              "playerId": "todd-fought",
+              "wpId": 5169,
+              "displayName": "Todd Fought",
+              "duprDoubles": 6.28,
+              "profileUrl": "https://majorleaguepickleball.co/player/todd-fought/"
+            },
+            {
+              "playerId": "victoria-dimuzio",
+              "wpId": 83466,
+              "displayName": "Victoria Di Muzio",
+              "duprDoubles": 5.99,
+              "profileUrl": "https://majorleaguepickleball.co/player/victoria-dimuzio/"
+            },
+            {
+              "playerId": "rachel-rettger",
+              "wpId": 5165,
+              "displayName": "Rachel Rettger",
+              "duprDoubles": 5.5,
+              "profileUrl": "https://majorleaguepickleball.co/player/rachel-rettger/"
+            },
+            {
+              "playerId": "sam-querrey",
+              "wpId": 5143,
+              "displayName": "Sam Querrey",
+              "duprDoubles": 5.95,
+              "profileUrl": "https://majorleaguepickleball.co/player/sam-querrey/"
+            }
+          ],
+          "rosterFreshness": "live-partial",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.259Z",
+          "rosterMissingIds": [
+            "6663"
+          ]
+        },
+        {
+          "teamId": "bay-area-breakers",
+          "displayName": "Bay Area Breakers",
+          "homeMarket": "San Francisco Bay Area, CA",
+          "owners": [],
+          "headlinePlayers": [
+            "Pablo Tellez",
+            "Genie Erokhina"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/bay-area-breakers/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "allyce-jones",
+              "wpId": 5084,
+              "displayName": "Allyce Jones",
+              "duprDoubles": 5.83,
+              "profileUrl": "https://majorleaguepickleball.co/player/allyce-jones/"
+            },
+            {
+              "playerId": "eric-roddy",
+              "wpId": 83508,
+              "displayName": "Eric Roddy",
+              "duprDoubles": 6.28,
+              "profileUrl": "https://majorleaguepickleball.co/player/eric-roddy/"
+            },
+            {
+              "playerId": "darrian-young",
+              "wpId": 5058,
+              "displayName": "DJ Young",
+              "duprDoubles": 6.29,
+              "profileUrl": "https://majorleaguepickleball.co/player/darrian-young/"
+            },
+            {
+              "playerId": "danna-funaro",
+              "wpId": 83588,
+              "displayName": "Danna Funaro",
+              "duprDoubles": 5.23,
+              "profileUrl": "https://majorleaguepickleball.co/player/danna-funaro/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "brooklyn-pickleball-team",
+          "displayName": "Brooklyn Pickleball Team",
+          "homeMarket": "Brooklyn, NY",
+          "owners": [],
+          "headlinePlayers": [
+            "Riley Newman",
+            "Dylan Frazier",
+            "Rachel Rohrabacher"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "note": "Absorbed NY Hustlers franchise for 2026.",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/brooklyn-pickleball-team/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "rachel-rohrabacher",
+              "wpId": 10148,
+              "displayName": "Rachel Rohrabacher",
+              "duprDoubles": 6.14,
+              "profileUrl": "https://majorleaguepickleball.co/player/rachel-rohrabacher/"
+            },
+            {
+              "playerId": "jackie-kawamoto",
+              "wpId": 4997,
+              "displayName": "Jackie Kawamoto",
+              "duprDoubles": 6.07,
+              "profileUrl": "https://majorleaguepickleball.co/player/jackie-kawamoto/"
+            },
+            {
+              "playerId": "dekel-bar",
+              "wpId": 5036,
+              "displayName": "Dekel Bar",
+              "duprDoubles": 6.77,
+              "profileUrl": "https://majorleaguepickleball.co/player/dekel-bar/"
+            },
+            {
+              "playerId": "riley-newman",
+              "wpId": 5078,
+              "displayName": "Riley Newman",
+              "duprDoubles": 6.83,
+              "profileUrl": "https://majorleaguepickleball.co/player/riley-newman/"
+            },
+            {
+              "playerId": "hannah-blatt",
+              "wpId": 83481,
+              "displayName": "Hannah Blatt",
+              "duprDoubles": 5.3,
+              "profileUrl": "https://majorleaguepickleball.co/player/hannah-blatt/"
+            },
+            {
+              "playerId": "patrick-smith",
+              "wpId": 5175,
+              "displayName": "Patrick Smith",
+              "duprDoubles": 6.49,
+              "profileUrl": "https://majorleaguepickleball.co/player/patrick-smith/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "california-black-bears",
+          "displayName": "California Black Bears",
+          "homeMarket": "California",
+          "owners": [],
+          "headlinePlayers": [
+            "Chris Haworth",
+            "Emma Nelson"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/california-black-bears/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "layne-sleeth",
+              "wpId": 31631,
+              "displayName": "Layne Sleeth",
+              "duprDoubles": 5.36,
+              "profileUrl": "https://majorleaguepickleball.co/player/layne-sleeth/"
+            },
+            {
+              "playerId": "lina-padegimaite",
+              "wpId": 5026,
+              "displayName": "Lina Padegimaite",
+              "duprDoubles": 5.69,
+              "profileUrl": "https://majorleaguepickleball.co/player/lina-padegimaite/"
+            },
+            {
+              "playerId": "rafa-hewett",
+              "wpId": 4985,
+              "displayName": "Rafa Hewett",
+              "duprDoubles": 6.49,
+              "profileUrl": "https://majorleaguepickleball.co/player/rafa-hewett/"
+            },
+            {
+              "playerId": "juan-benitez",
+              "wpId": 83586,
+              "displayName": "Juan Benitez",
+              "duprDoubles": 5.75,
+              "profileUrl": "https://majorleaguepickleball.co/player/juan-benitez/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "carolina-hogs",
+          "displayName": "Carolina Hogs",
+          "homeMarket": "Carolinas",
+          "owners": [],
+          "headlinePlayers": [
+            "Ava Ignatowich",
+            "DJ Young"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/carolina-hogs/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "ben-johns",
+              "wpId": 5070,
+              "displayName": "Ben Johns",
+              "duprDoubles": 7.39,
+              "profileUrl": "https://majorleaguepickleball.co/player/ben-johns/"
+            },
+            {
+              "playerId": "kaitlyn-christian",
+              "wpId": 31412,
+              "displayName": "Kaitlyn Christian",
+              "duprDoubles": 5.65,
+              "profileUrl": "https://majorleaguepickleball.co/player/kaitlyn-christian/"
+            },
+            {
+              "playerId": "collin-johns",
+              "wpId": 5038,
+              "displayName": "Collin Johns",
+              "duprDoubles": 6.55,
+              "profileUrl": "https://majorleaguepickleball.co/player/collin-johns/"
+            },
+            {
+              "playerId": "liz-truluck",
+              "wpId": 83469,
+              "displayName": "Liz Truluck",
+              "duprDoubles": 5.58,
+              "profileUrl": "https://majorleaguepickleball.co/player/liz-truluck/"
+            },
+            {
+              "playerId": "tamaryn-emmrich",
+              "wpId": 10181,
+              "displayName": "Tamaryn Emmrich",
+              "duprDoubles": 5.43,
+              "profileUrl": "https://majorleaguepickleball.co/player/tamaryn-emmrich/"
+            },
+            {
+              "playerId": "brandon-french",
+              "wpId": 5153,
+              "displayName": "Brandon French",
+              "duprDoubles": 5.95,
+              "profileUrl": "https://majorleaguepickleball.co/player/brandon-french/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "chicago-slice",
+          "displayName": "Chicago Slice",
+          "homeMarket": "Chicago, IL",
+          "owners": [],
+          "headlinePlayers": [
+            "Zane Navratil",
+            "Hunter Johnson",
+            "Jamie Wei"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/chicago-slice/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "vivienne-david",
+              "wpId": 5012,
+              "displayName": "Vivienne David",
+              "duprDoubles": 5.87,
+              "profileUrl": "https://majorleaguepickleball.co/player/vivienne-david/"
+            },
+            {
+              "playerId": "max-freeman",
+              "wpId": 83471,
+              "displayName": "Maxwell Freeman",
+              "duprDoubles": 6.31,
+              "profileUrl": "https://majorleaguepickleball.co/player/max-freeman/"
+            },
+            {
+              "playerId": "callie-smith",
+              "wpId": 5050,
+              "displayName": "Callie Jo Smith",
+              "duprDoubles": 5.92,
+              "profileUrl": "https://majorleaguepickleball.co/player/callie-smith/"
+            },
+            {
+              "playerId": "pierina-imparato",
+              "wpId": 83473,
+              "displayName": "Pierina Imparato",
+              "duprDoubles": 5.42,
+              "profileUrl": "https://majorleaguepickleball.co/player/pierina-imparato/"
+            },
+            {
+              "playerId": "carlos-di-laura",
+              "wpId": 83475,
+              "displayName": "Carlos Di Laura",
+              "duprDoubles": 5.56,
+              "profileUrl": "https://majorleaguepickleball.co/player/carlos-di-laura/"
+            }
+          ],
+          "rosterFreshness": "live-partial",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z",
+          "rosterMissingIds": [
+            "5062"
+          ]
+        },
+        {
+          "teamId": "columbus-sliders",
+          "displayName": "Columbus Sliders",
+          "homeMarket": "Columbus, OH",
+          "owners": [],
+          "headlinePlayers": [
+            "Parris Todd",
+            "Andrei Daescu"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/columbus-sliders/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "ross-whittaker",
+              "wpId": 97927,
+              "displayName": "Ross Whittaker",
+              "duprDoubles": 5.89,
+              "profileUrl": "https://majorleaguepickleball.co/player/ross-whittaker/"
+            },
+            {
+              "playerId": "andrei-daescu",
+              "wpId": 5056,
+              "displayName": "Andrei Daescu",
+              "duprDoubles": 7.05,
+              "profileUrl": "https://majorleaguepickleball.co/player/andrei-daescu/"
+            },
+            {
+              "playerId": "parris-todd",
+              "wpId": 10144,
+              "displayName": "Parris Todd",
+              "duprDoubles": 6,
+              "profileUrl": "https://majorleaguepickleball.co/player/parris-todd/"
+            },
+            {
+              "playerId": "cj-klinger",
+              "wpId": 5137,
+              "displayName": "CJ Klinger",
+              "duprDoubles": 6.7,
+              "profileUrl": "https://majorleaguepickleball.co/player/cj-klinger/"
+            },
+            {
+              "playerId": "lea-jansen",
+              "wpId": 5060,
+              "displayName": "Lea Jansen",
+              "duprDoubles": 5.96,
+              "profileUrl": "https://majorleaguepickleball.co/player/lea-jansen/"
+            },
+            {
+              "playerId": "roscoe-bellamy",
+              "wpId": 31588,
+              "displayName": "Roscoe Bellamy",
+              "duprDoubles": 6.11,
+              "profileUrl": "https://majorleaguepickleball.co/player/roscoe-bellamy/"
+            },
+            {
+              "playerId": "marcela-hones",
+              "wpId": 83479,
+              "displayName": "Marcela Hones",
+              "duprDoubles": 5.17,
+              "profileUrl": "https://majorleaguepickleball.co/player/marcela-hones/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "dallas-flash",
+          "displayName": "Dallas Flash",
+          "homeMarket": "Dallas, TX",
+          "owners": [
+            "Mark Cuban",
+            "Todd Wagner",
+            "Mark Marlton"
+          ],
+          "headlinePlayers": [
+            "JW Johnson",
+            "Hurricane Tyra Black",
+            "Callie Smith"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "dallas-flash-official",
+              "url": "https://dallasflashpb.com/pages/owners"
+            },
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/dallas-flash/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "jw-johnson",
+              "wpId": 5006,
+              "displayName": "JW Johnson",
+              "duprDoubles": 7.12,
+              "profileUrl": "https://majorleaguepickleball.co/player/jw-johnson/"
+            },
+            {
+              "playerId": "jorja-johnson",
+              "wpId": 5014,
+              "displayName": "Jorja Johnson",
+              "duprDoubles": 6.25,
+              "profileUrl": "https://majorleaguepickleball.co/player/jorja-johnson/"
+            },
+            {
+              "playerId": "tyra-black",
+              "wpId": 5115,
+              "displayName": "Hurricane Tyra Black",
+              "duprDoubles": 6.12,
+              "profileUrl": "https://majorleaguepickleball.co/player/tyra-black/"
+            },
+            {
+              "playerId": "augustus-ge",
+              "wpId": 31425,
+              "displayName": "Augustus Ge",
+              "duprDoubles": 6.6,
+              "profileUrl": "https://majorleaguepickleball.co/player/augustus-ge/"
+            },
+            {
+              "playerId": "tatiana-ruhl",
+              "wpId": 83484,
+              "displayName": "Tatiana Ruhl",
+              "duprDoubles": 5.01,
+              "profileUrl": "https://majorleaguepickleball.co/player/tatiana-ruhl/"
+            },
+            {
+              "playerId": "wyatt-stone",
+              "wpId": 83510,
+              "displayName": "Wyatt Stone",
+              "duprDoubles": 6.04,
+              "profileUrl": "https://majorleaguepickleball.co/player/wyatt-stone/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "florida-smash",
+          "displayName": "Florida Smash",
+          "homeMarket": "Florida",
+          "owners": [],
+          "headlinePlayers": [
+            "Genie Bouchard",
+            "Travis Rettenmaier"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/florida-smash/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "martina-frantova",
+              "wpId": 6920,
+              "displayName": "Martina Frantova",
+              "duprDoubles": 5.6,
+              "profileUrl": "https://majorleaguepickleball.co/player/martina-frantova/"
+            },
+            {
+              "playerId": "travis-rettenmaier",
+              "wpId": 5017,
+              "displayName": "Travis Rettenmaier",
+              "duprDoubles": 6.63,
+              "profileUrl": "https://majorleaguepickleball.co/player/travis-rettenmaier/"
+            },
+            {
+              "playerId": "sarah-ansboury",
+              "wpId": 5090,
+              "displayName": "Sarah Ansboury",
+              "duprDoubles": 5.52,
+              "profileUrl": "https://majorleaguepickleball.co/player/sarah-ansboury/"
+            },
+            {
+              "playerId": "cason-campbell",
+              "wpId": 83504,
+              "displayName": "Cason Campbell",
+              "duprDoubles": 5.47,
+              "profileUrl": "https://majorleaguepickleball.co/player/cason-campbell/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "las-vegas-night-owls",
+          "displayName": "Las Vegas Night Owls",
+          "homeMarket": "Las Vegas, NV",
+          "owners": [],
+          "headlinePlayers": [
+            "Roscoe Bellamy",
+            "Samantha Parker",
+            "Brooke Buckner"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/las-vegas-night-owls/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "pablo-tellez",
+              "wpId": 5113,
+              "displayName": "Pablo Tellez",
+              "duprDoubles": 6.62,
+              "profileUrl": "https://majorleaguepickleball.co/player/pablo-tellez/"
+            },
+            {
+              "playerId": "brooke-buckner",
+              "wpId": 5098,
+              "displayName": "Brooke Buckner",
+              "duprDoubles": 5.85,
+              "profileUrl": "https://majorleaguepickleball.co/player/brooke-buckner/"
+            },
+            {
+              "playerId": "chao-yi-wang",
+              "wpId": 31569,
+              "displayName": "Chao &#8220;Zoey&#8221; Yi Wang",
+              "duprDoubles": 5.75,
+              "profileUrl": "https://majorleaguepickleball.co/player/chao-yi-wang/"
+            },
+            {
+              "playerId": "james-delgado",
+              "wpId": 83506,
+              "displayName": "James Delgado",
+              "duprDoubles": 5.88,
+              "profileUrl": "https://majorleaguepickleball.co/player/james-delgado/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "los-angeles-mad-drops",
+          "displayName": "Los Angeles Mad Drops",
+          "homeMarket": "Los Angeles, CA",
+          "owners": [],
+          "headlinePlayers": [
+            "Ben Johns",
+            "Max Freeman",
+            "Catherine Parenteau"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/los-angeles-mad-drops/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "catherine-parenteau",
+              "wpId": 5040,
+              "displayName": "Catherine Parenteau",
+              "duprDoubles": 6.2,
+              "profileUrl": "https://majorleaguepickleball.co/player/catherine-parenteau/"
+            },
+            {
+              "playerId": "jade-kawamoto",
+              "wpId": 5004,
+              "displayName": "Jade Kawamoto",
+              "duprDoubles": 5.99,
+              "profileUrl": "https://majorleaguepickleball.co/player/jade-kawamoto/"
+            },
+            {
+              "playerId": "hunter-johnson",
+              "wpId": 5103,
+              "displayName": "Hunter Johnson",
+              "duprDoubles": 6.62,
+              "profileUrl": "https://majorleaguepickleball.co/player/hunter-johnson/"
+            },
+            {
+              "playerId": "angie-walker",
+              "wpId": 31628,
+              "displayName": "Angie Walker",
+              "duprDoubles": 5.38,
+              "profileUrl": "https://majorleaguepickleball.co/player/angie-walker/"
+            },
+            {
+              "playerId": "wesley-burrows",
+              "wpId": 5094,
+              "displayName": "Wesley Burrows",
+              "duprDoubles": 6.41,
+              "profileUrl": "https://majorleaguepickleball.co/player/wesley-burrows/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "miami-pickleball-club",
+          "displayName": "Miami Pickleball Club",
+          "homeMarket": "Miami, FL",
+          "owners": [
+            "Patrick Mahomes",
+            "Naomi Osaka",
+            "Nick Kyrgios"
+          ],
+          "ownersCaveat": "Celebrity owners reported by The Dink; not enumerated on official MLP team page.",
+          "headlinePlayers": [
+            "Alix Truong",
+            "Nico Acevedo"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "the-dink",
+              "url": "https://www.thedinkpickleball.com/mahomes-osaka-krygrios-major-league-pickleball/"
+            }
+          ],
+          "confidence": "T2",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/miami-pickleball-club/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "milan-rane",
+              "wpId": 5131,
+              "displayName": "Milan Rane",
+              "duprDoubles": 5.77,
+              "profileUrl": "https://majorleaguepickleball.co/player/milan-rane/"
+            },
+            {
+              "playerId": "mya-bui",
+              "wpId": 83575,
+              "displayName": "Mya Bui",
+              "duprDoubles": 4.9,
+              "profileUrl": "https://majorleaguepickleball.co/player/mya-bui/"
+            },
+            {
+              "playerId": "jay-devilliers",
+              "wpId": 5086,
+              "displayName": "Jay Devilliers",
+              "duprDoubles": 6.67,
+              "profileUrl": "https://majorleaguepickleball.co/player/jay-devilliers/"
+            },
+            {
+              "playerId": "yuta-funemizu-1",
+              "wpId": 83577,
+              "displayName": "Yuta Funemizu",
+              "duprDoubles": 5.7,
+              "profileUrl": "https://majorleaguepickleball.co/player/yuta-funemizu-1/"
+            },
+            {
+              "playerId": "ava-ignatowich",
+              "wpId": 83579,
+              "displayName": "Ava Ignatowich",
+              "duprDoubles": 5.32,
+              "profileUrl": "https://majorleaguepickleball.co/player/ava-ignatowich/"
+            },
+            {
+              "playerId": "noe-khlif",
+              "wpId": 41926,
+              "displayName": "Noe Khlif",
+              "duprDoubles": 6.49,
+              "profileUrl": "https://majorleaguepickleball.co/player/noe-khlif/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "new-jersey-5s",
+          "displayName": "New Jersey 5s",
+          "homeMarket": "New Jersey",
+          "owners": [],
+          "headlinePlayers": [
+            "Anna Leigh Waters",
+            "Jorja Johnson"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/new-jersey-5s/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "anna-leigh-waters",
+              "wpId": 4947,
+              "displayName": "Anna Leigh Waters",
+              "duprDoubles": 6.69,
+              "profileUrl": "https://majorleaguepickleball.co/player/anna-leigh-waters/"
+            },
+            {
+              "playerId": "zane-navratil",
+              "wpId": 5028,
+              "displayName": "Zane Navratil",
+              "duprDoubles": 6.54,
+              "profileUrl": "https://majorleaguepickleball.co/player/zane-navratil/"
+            },
+            {
+              "playerId": "will-howells",
+              "wpId": 31421,
+              "displayName": "Will Howells",
+              "duprDoubles": 6.64,
+              "profileUrl": "https://majorleaguepickleball.co/player/will-howells/"
+            },
+            {
+              "playerId": "christa-gecheva",
+              "wpId": 5149,
+              "displayName": "Christa Gecheva",
+              "duprDoubles": 5.64,
+              "profileUrl": "https://majorleaguepickleball.co/player/christa-gecheva/"
+            },
+            {
+              "playerId": "craig-johnson",
+              "wpId": 83487,
+              "displayName": "Craig Johnson",
+              "duprDoubles": 6.14,
+              "profileUrl": "https://majorleaguepickleball.co/player/craig-johnson/"
+            },
+            {
+              "playerId": "meghan-dizon",
+              "wpId": 5068,
+              "displayName": "Meghan Dizon",
+              "duprDoubles": 5.8,
+              "profileUrl": "https://majorleaguepickleball.co/player/meghan-dizon/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "orlando-squeeze",
+          "displayName": "Orlando Squeeze",
+          "homeMarket": "Orlando, FL",
+          "owners": [],
+          "headlinePlayers": [
+            "Jack Sock",
+            "Federico Staksrud",
+            "Lacey Schneemann"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/orlando-squeeze/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "federico-staksrud",
+              "wpId": 4883,
+              "displayName": "Federico Staksrud",
+              "duprDoubles": 7,
+              "profileUrl": "https://majorleaguepickleball.co/player/federico-staksrud/"
+            },
+            {
+              "playerId": "dylan-frazier",
+              "wpId": 4881,
+              "displayName": "Dylan Frazier",
+              "duprDoubles": 6.86,
+              "profileUrl": "https://majorleaguepickleball.co/player/dylan-frazier/"
+            },
+            {
+              "playerId": "lacy-schneemann",
+              "wpId": 4991,
+              "displayName": "Lacy Schneemann",
+              "duprDoubles": 5.94,
+              "profileUrl": "https://majorleaguepickleball.co/player/lacy-schneemann/"
+            },
+            {
+              "playerId": "samantha-parker",
+              "wpId": 83591,
+              "displayName": "Samantha Parker",
+              "duprDoubles": 5.4,
+              "profileUrl": "https://majorleaguepickleball.co/player/samantha-parker/"
+            },
+            {
+              "playerId": "tom-evans",
+              "wpId": 83593,
+              "displayName": "Tom Evans",
+              "duprDoubles": 5.6,
+              "profileUrl": "https://majorleaguepickleball.co/player/tom-evans/"
+            },
+            {
+              "playerId": "allison-phillips",
+              "wpId": 10194,
+              "displayName": "Allison Phillips",
+              "duprDoubles": 5.41,
+              "profileUrl": "https://majorleaguepickleball.co/player/allison-phillips/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "palm-beach-royals",
+          "displayName": "Palm Beach Royals",
+          "homeMarket": "Palm Beach, FL",
+          "owners": [],
+          "headlinePlayers": [
+            "Dekel Bar",
+            "Tyson McGuffin",
+            "Sofia Sewing"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official-2026-summary",
+              "url": "https://majorleaguepickleball.co/news/summary-of-2026-competition-updates/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "note": "2026 expansion franchise.",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/palm-beach-royals/",
+          "liveMatched": true,
+          "rosterFreshness": "seed-only",
+          "rosterMissingIds": []
+        },
+        {
+          "teamId": "phoenix-flames",
+          "displayName": "Phoenix Flames",
+          "homeMarket": "Phoenix, AZ",
+          "owners": [],
+          "headlinePlayers": [
+            "Jessie Irvine",
+            "Jonathan Truong"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/phoenix-flames/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "tyson-mcguffin",
+              "wpId": 4989,
+              "displayName": "Tyson McGuffin",
+              "duprDoubles": 6.78,
+              "profileUrl": "https://majorleaguepickleball.co/player/tyson-mcguffin/"
+            },
+            {
+              "playerId": "jessie-irvine",
+              "wpId": 5032,
+              "displayName": "Jessie Irvine",
+              "duprDoubles": 5.93,
+              "profileUrl": "https://majorleaguepickleball.co/player/jessie-irvine/"
+            },
+            {
+              "playerId": "jack-sock",
+              "wpId": 31361,
+              "displayName": "Jack Sock",
+              "duprDoubles": 6.56,
+              "profileUrl": "https://majorleaguepickleball.co/player/jack-sock/"
+            },
+            {
+              "playerId": "alex-walker",
+              "wpId": 83498,
+              "displayName": "Alex Walker",
+              "duprDoubles": 5.34,
+              "profileUrl": "https://majorleaguepickleball.co/player/alex-walker/"
+            },
+            {
+              "playerId": "pesa-teoni",
+              "wpId": 5096,
+              "displayName": "Pesa Teoni",
+              "duprDoubles": 6.37,
+              "profileUrl": "https://majorleaguepickleball.co/player/pesa-teoni/"
+            },
+            {
+              "playerId": "genie-bouchard",
+              "wpId": 56363,
+              "displayName": "Genie Bouchard",
+              "duprDoubles": 5.75,
+              "profileUrl": "https://majorleaguepickleball.co/player/genie-bouchard/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "socal-hard-eights",
+          "displayName": "SoCal Hard Eights",
+          "homeMarket": "Southern California",
+          "owners": [],
+          "headlinePlayers": [
+            "Meghan Dizon",
+            "Will MacKinnon"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/socal-hard-eights/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "irina-tereschenko",
+              "wpId": 5042,
+              "displayName": "Irina Tereschenko",
+              "duprDoubles": 5.65,
+              "profileUrl": "https://majorleaguepickleball.co/player/irina-tereschenko/"
+            },
+            {
+              "playerId": "judit-castillo",
+              "wpId": 6917,
+              "displayName": "Judit Castillo Gargallo",
+              "duprDoubles": 5.65,
+              "profileUrl": "https://majorleaguepickleball.co/player/judit-castillo/"
+            },
+            {
+              "playerId": "ivan-jakovljevic",
+              "wpId": 83597,
+              "displayName": "Ivan Jakovljevic",
+              "duprDoubles": 6.16,
+              "profileUrl": "https://majorleaguepickleball.co/player/ivan-jakovljevic/"
+            },
+            {
+              "playerId": "blaine-hovenier",
+              "wpId": 47352,
+              "displayName": "Blaine Hovenier",
+              "duprDoubles": 5.99,
+              "profileUrl": "https://majorleaguepickleball.co/player/blaine-hovenier/"
+            },
+            {
+              "playerId": "lauren-hidalgo-smith",
+              "wpId": 83601,
+              "displayName": "Lauren Hidalgo-Smith",
+              "duprDoubles": 4.6,
+              "profileUrl": "https://majorleaguepickleball.co/player/lauren-hidalgo-smith/"
+            }
+          ],
+          "rosterFreshness": "live-partial",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z",
+          "rosterMissingIds": [
+            "83599"
+          ]
+        },
+        {
+          "teamId": "st-louis-shock",
+          "displayName": "St. Louis Shock",
+          "homeMarket": "St. Louis, MO",
+          "owners": [],
+          "headlinePlayers": [
+            "Anna Bright",
+            "Gabe Tardio",
+            "Kate Fahey"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "the-dink-draft-record",
+              "url": "https://www.thedinkpickleball.com/the-2026-mlp-draft-a-record-setting-start-to-the-new-season/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "note": "Anna Bright was the #1 overall pick ($1.23M — record-setting 2026 draft).",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/st-louis-shock/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "anna-bright",
+              "wpId": 4987,
+              "displayName": "Anna Bright",
+              "duprDoubles": 6.35,
+              "profileUrl": "https://majorleaguepickleball.co/player/anna-bright/"
+            },
+            {
+              "playerId": "hayden-patriquin",
+              "wpId": 5064,
+              "displayName": "Hayden Patriquin",
+              "duprDoubles": 6.95,
+              "profileUrl": "https://majorleaguepickleball.co/player/hayden-patriquin/"
+            },
+            {
+              "playerId": "gabriel-tardio",
+              "wpId": 5009,
+              "displayName": "Gabriel Tardio",
+              "duprDoubles": 6.88,
+              "profileUrl": "https://majorleaguepickleball.co/player/gabriel-tardio/"
+            },
+            {
+              "playerId": "kate-fahey",
+              "wpId": 31437,
+              "displayName": "Kate Fahey",
+              "duprDoubles": 5.83,
+              "profileUrl": "https://majorleaguepickleball.co/player/kate-fahey/"
+            },
+            {
+              "playerId": "felicity-di-laura",
+              "wpId": 83494,
+              "displayName": "Felicity Di Laura",
+              "duprDoubles": 4.83,
+              "profileUrl": "https://majorleaguepickleball.co/player/felicity-di-laura/"
+            },
+            {
+              "playerId": "erik-lange",
+              "wpId": 5088,
+              "displayName": "Erik Lange",
+              "duprDoubles": 6.63,
+              "profileUrl": "https://majorleaguepickleball.co/player/erik-lange/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "texas-ranchers",
+          "displayName": "Texas Ranchers",
+          "homeMarket": "Texas",
+          "owners": [],
+          "headlinePlayers": [
+            "Christian Alshon",
+            "Lea Jansen",
+            "Layne Sleeth"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/texas-ranchers/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "christian-alshon",
+              "wpId": 5111,
+              "displayName": "Christian Alshon",
+              "duprDoubles": 7.13,
+              "profileUrl": "https://majorleaguepickleball.co/player/christian-alshon/"
+            },
+            {
+              "playerId": "marietta-wright",
+              "wpId": 5066,
+              "displayName": "Marietta Wright",
+              "duprDoubles": 6.07,
+              "profileUrl": "https://majorleaguepickleball.co/player/marietta-wright/"
+            },
+            {
+              "playerId": "tina-pisnik",
+              "wpId": 6914,
+              "displayName": "Tina Pisnik",
+              "duprDoubles": 6.07,
+              "profileUrl": "https://majorleaguepickleball.co/player/tina-pisnik/"
+            },
+            {
+              "playerId": "michael-loyd",
+              "wpId": 56826,
+              "displayName": "Michael Loyd",
+              "duprDoubles": 6.26,
+              "profileUrl": "https://majorleaguepickleball.co/player/michael-loyd/"
+            },
+            {
+              "playerId": "helena-jansen",
+              "wpId": 83492,
+              "displayName": "Helena Jansen",
+              "duprDoubles": 4.96,
+              "profileUrl": "https://majorleaguepickleball.co/player/helena-jansen/"
+            },
+            {
+              "playerId": "eric-oncins",
+              "wpId": 31635,
+              "displayName": "Eric Oncins",
+              "duprDoubles": 6.4,
+              "profileUrl": "https://majorleaguepickleball.co/player/eric-oncins/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        },
+        {
+          "teamId": "utah-black-diamonds",
+          "displayName": "Utah Black Diamonds",
+          "homeMarket": "Utah",
+          "owners": [],
+          "headlinePlayers": [
+            "Connor Garnett",
+            "Tyler Loong",
+            "Allyce Jones"
+          ],
+          "captain": null,
+          "sources": [
+            {
+              "sourceId": "mlp-official",
+              "url": "https://majorleaguepickleball.co/mlp-teams/"
+            }
+          ],
+          "confidence": "T1",
+          "lastUpdated": "2026-04-22",
+          "teamPageUrl": "https://majorleaguepickleball.co/team/utah-black-diamonds/",
+          "liveMatched": true,
+          "roster": [
+            {
+              "playerId": "connor-garnett",
+              "wpId": 5127,
+              "displayName": "Connor Garnett",
+              "duprDoubles": 6.74,
+              "profileUrl": "https://majorleaguepickleball.co/player/connor-garnett/"
+            },
+            {
+              "playerId": "tyler-loong",
+              "wpId": 5072,
+              "displayName": "Tyler Loong",
+              "duprDoubles": 6.52,
+              "profileUrl": "https://majorleaguepickleball.co/player/tyler-loong/"
+            },
+            {
+              "playerId": "alix-truong",
+              "wpId": 5155,
+              "displayName": "Alix Truong",
+              "duprDoubles": 5.71,
+              "profileUrl": "https://majorleaguepickleball.co/player/alix-truong/"
+            },
+            {
+              "playerId": "mehvish-safdar",
+              "wpId": 83490,
+              "displayName": "Mehvish Safdar",
+              "duprDoubles": 5.43,
+              "profileUrl": "https://majorleaguepickleball.co/player/mehvish-safdar/"
+            },
+            {
+              "playerId": "genie-erokhina",
+              "wpId": 5173,
+              "displayName": "Genie Erokhina",
+              "duprDoubles": 5.69,
+              "profileUrl": "https://majorleaguepickleball.co/player/genie-erokhina/"
+            },
+            {
+              "playerId": "yates-johnson",
+              "wpId": 5135,
+              "displayName": "Yates Johnson",
+              "duprDoubles": 6.26,
+              "profileUrl": "https://majorleaguepickleball.co/player/yates-johnson/"
+            }
+          ],
+          "rosterFreshness": "live",
+          "rosterRetrievedAt": "2026-04-23T03:53:24.260Z"
+        }
+      ],
+      "teamsCount": 20,
+      "live": {
+        "ok": true,
+        "status": 200,
+        "liveTeamCount": 20,
+        "unmatchedLive": [],
+        "unmatchedSeed": []
+      },
+      "rosters": {
+        "attempted": true,
+        "ok": true,
+        "teamsRostered": 19,
+        "teamsFailed": 1,
+        "playerIndexSize": 132,
+        "errors": []
+      },
+      "note": "Phase 1.5 Round 2: team list verified + rosters resolved via WordPress REST API."
+    },
+    "dupr": {
+      "sourceId": "dupr",
+      "ok": true,
+      "retrievedAt": "2026-04-23T03:53:48.207Z",
+      "freshness": "seed-only",
+      "note": "Phase 1 uses seed ratings; Playwright-scrape of public leaderboard deferred to Phase 2.",
+      "top20": [
+        {
+          "playerId": "ben-johns",
+          "displayName": "Ben Johns",
+          "rating": 7.094,
+          "categories": [
+            "singles",
+            "doubles",
+            "mixed"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "andrei-daescu",
+          "displayName": "Andrei Daescu",
+          "rating": 7.012,
+          "categories": [
+            "doubles",
+            "mixed"
+          ],
+          "country": "RO"
+        },
+        {
+          "playerId": "jw-johnson",
+          "displayName": "JW Johnson",
+          "rating": 7.011,
+          "categories": [
+            "singles",
+            "doubles",
+            "mixed"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "hayden-patriquin",
+          "displayName": "Hayden Patriquin",
+          "rating": 6.925,
+          "categories": [
+            "singles",
+            "doubles",
+            "mixed"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "anna-leigh-waters",
+          "displayName": "Anna Leigh Waters",
+          "rating": 6.889,
+          "categories": [
+            "singles",
+            "doubles",
+            "mixed"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "gabe-tardio",
+          "displayName": "Gabe Tardio",
+          "rating": 6.867,
+          "categories": [
+            "doubles",
+            "singles",
+            "mixed"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "christian-alshon",
+          "displayName": "Christian Alshon",
+          "rating": 6.861,
+          "categories": [
+            "singles",
+            "doubles"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "federico-staksrud",
+          "displayName": "Federico Staksrud",
+          "rating": 6.721,
+          "categories": [
+            "singles",
+            "doubles",
+            "mixed"
+          ],
+          "country": "AR"
+        },
+        {
+          "playerId": "cj-klinger",
+          "displayName": "CJ Klinger",
+          "rating": 6.695,
+          "categories": [
+            "singles",
+            "doubles"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "anna-bright",
+          "displayName": "Anna Bright",
+          "rating": 6.528,
+          "categories": [
+            "doubles",
+            "mixed",
+            "singles"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "tyra-black",
+          "displayName": "Hurricane Tyra Black",
+          "rating": 6.339,
+          "categories": [
+            "doubles",
+            "singles",
+            "mixed"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "jackie-kawamoto",
+          "displayName": "Jackie Kawamoto",
+          "rating": 6.253,
+          "categories": [
+            "doubles"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "jorja-johnson",
+          "displayName": "Jorja Johnson",
+          "rating": 6.242,
+          "categories": [
+            "doubles",
+            "mixed"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "jade-kawamoto",
+          "displayName": "Jade Kawamoto",
+          "rating": 6.241,
+          "categories": [
+            "doubles"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "parris-todd",
+          "displayName": "Parris Todd",
+          "rating": 6.238,
+          "categories": [
+            "doubles",
+            "singles"
+          ],
+          "country": "US"
+        },
+        {
+          "playerId": "rachel-rohrabacher",
+          "displayName": "Rachel Rohrabacher",
+          "rating": 6.209,
+          "categories": [
+            "doubles",
+            "mixed"
+          ],
+          "country": "US"
+        }
+      ],
+      "probe": {
+        "reachable": false,
+        "status": 404,
+        "bytes": 21351
+      }
+    },
+    "highlights": {
+      "sourceId": "highlights",
+      "ok": true,
+      "retrievedAt": "2026-04-23T03:53:49.002Z",
+      "quotaEstimate": 6,
+      "channels": [
+        {
+          "channelSourceId": "youtube-ppa-tour",
+          "channelId": "UCSP6HlrMmRqogym2aHBPHpw",
+          "channelTitle": "PPA Tour",
+          "videos": [
+            {
+              "videoId": "EsQkYjD2mgU",
+              "title": "Who had the quickest hands in Sacramento!? 🙌",
+              "channelTitle": "PPA Tour",
+              "publishedAt": "2026-04-22T17:40:11Z",
+              "description": "",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/EsQkYjD2mgU/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=EsQkYjD2mgU"
+            },
+            {
+              "videoId": "-b2YP7GvyTs",
+              "title": "Johnson/Johnson v Black/Oncins at the Fasenra Sacramento Open",
+              "channelTitle": "PPA Tour",
+              "publishedAt": "2026-04-20T07:34:51Z",
+              "description": "Timestamps:\n\nPlayers:\n\nSubscribe to our channel for premier pickleball coverage: https://www.youtube.com/@PPAtour. \n\nVisit our website to explore tournament details and secure your tickets: https://www.ppatour.com/\n\nFollow us on social media:\n\nFacebook: https://www.facebook.com/OfficialPPATour\nInstagram: https://www.instagram.com/ppatour/\nTwitter: https://twitter.com/ppatour\n\n#PPATour #Pickleball ",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/-b2YP7GvyTs/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=-b2YP7GvyTs"
+            },
+            {
+              "videoId": "3OtsD8MJO7Y",
+              "title": "Johnson/Black v Todd/Rohrabacher at the Fasenra Sacramento Open",
+              "channelTitle": "PPA Tour",
+              "publishedAt": "2026-04-20T07:34:50Z",
+              "description": "Watch the Women's Doubles Final: (1) Jorja Johnson/Tyra Black vs (2) Parris Todd/Rachel Rohrabacher at the Fasenra Sacramento Open\n        •        Jorja Johnson: https://www.instagram.com/jorjajohnson_pb\n        •        Tyra Black: https://www.instagram.com/hurricanetblack_\n        •        Parris Todd: https://www.instagram.com/itsparristodd\n        •        Rachel Rohrabacher: https://www.inst",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/3OtsD8MJO7Y/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=3OtsD8MJO7Y"
+            },
+            {
+              "videoId": "5uUrHaylhOg",
+              "title": "Kate Fahey v Kaitlyn Christian at the Fasenra Sacramento Open",
+              "channelTitle": "PPA Tour",
+              "publishedAt": "2026-04-20T07:34:50Z",
+              "description": "Watch the Women's Singles Final: (1) Kate Fahey vs (2) Kaitlyn Christian at the Fasenra Sacramento Open\n        •        Kate Fahey: https://www.instagram.com/katetfahey\n        •        Kaitlyn Christian: https://www.instagram.com/kk.christian\n\n\nSubscribe to our channel for premier pickleball coverage: https://www.youtube.com/@PPAtour. \n\nVisit our website to explore tournament details and secure ",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/5uUrHaylhOg/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=5uUrHaylhOg"
+            },
+            {
+              "videoId": "AIFUIo4hMOQ",
+              "title": "Federico Staksrud v Zane Ford at the Fasenra Sacramento Open",
+              "channelTitle": "PPA Tour",
+              "publishedAt": "2026-04-20T07:34:50Z",
+              "description": "Watch the Men's Singles Final: (2) Federico Staksrud vs (12) Zane Ford at the Fasenra Sacramento Open\n        •        Federico Staksrud: https://www.instagram.com/federicostaksrud\n        •        Zane Ford: https://www.instagram.com/thezaneford\n\n\nSubscribe to our channel for premier pickleball coverage: https://www.youtube.com/@PPAtour. \n\nVisit our website to explore tournament details and secur",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/AIFUIo4hMOQ/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=AIFUIo4hMOQ"
+            }
+          ]
+        },
+        {
+          "channelSourceId": "youtube-mlp",
+          "channelId": "UC1_rjn7Y77xzscvYkoA-lDw",
+          "channelTitle": "Major League Pickleball",
+          "videos": [
+            {
+              "videoId": "NfyuvrtrP2c",
+              "title": "This wasn’t planned… 😅",
+              "channelTitle": "Major League Pickleball",
+              "publishedAt": "2026-04-15T15:51:25Z",
+              "description": "",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/NfyuvrtrP2c/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=NfyuvrtrP2c"
+            },
+            {
+              "videoId": "fiStWRrKmbU",
+              "title": "2026 MLP Draft presented by Skechers",
+              "channelTitle": "Major League Pickleball",
+              "publishedAt": "2026-02-27T17:37:13Z",
+              "description": "Tune in starting at 10am ET as the 2026 MLP Draft presented by Skechers unfolds live. Dave Fleming and Will Daughton are breaking down the first 28 picks as the first two male and two female roster slots are filled for each team. Expect real-time reactions, insights, and a front row seat to understanding teams' selections.\n⁠\nThe remaining 38 selections and complete rosters will be posted in real-t",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/fiStWRrKmbU/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=fiStWRrKmbU"
+            },
+            {
+              "videoId": "4tWt92DY4ug",
+              "title": "Inside MLP - 2026 Draft Rules and Preview",
+              "channelTitle": "Major League Pickleball",
+              "publishedAt": "2026-02-25T19:00:05Z",
+              "description": "In this edition of Inside MLP, Will Daughton explains the new rules and parts of the 2026 MLP Draft, previews every team's pre-draft roster, and showcases the MLP Draft Show. All that and more on Inside MLP!\n\nStay connected and never miss an update!\n👉 Live scoring, player stats, and event info: https://www.majorleaguepickleball.co\n👇 Join our community on social!\nInstagram: instagram.com/MajorLea",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/4tWt92DY4ug/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=4tWt92DY4ug"
+            },
+            {
+              "videoId": "YgsqGn5SbS8",
+              "title": "Inside MLP - 2026 Player Keeper Reactions",
+              "channelTitle": "Major League Pickleball",
+              "publishedAt": "2026-02-16T21:01:00Z",
+              "description": "In this episode of Inside MLP, Dave Fleming and Will Daughton provide their initial reactions to the Player Keeper Deadline and discuss how some decisions could have massive implications for the upcoming Major League Pickleball draft on Feb. 27.\n\nSee the full list of Keepers by team here: https://majorleaguepickleball.co/news/major-league-pickleball-announces-2026-player-keepers/. \n\n\nStay connecte",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/YgsqGn5SbS8/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=YgsqGn5SbS8"
+            },
+            {
+              "videoId": "8MLL7d55TQQ",
+              "title": "The 2026 Keeper Deadline is approaching and top teams face tough calls. ⏳",
+              "channelTitle": "Major League Pickleball",
+              "publishedAt": "2026-02-03T16:32:36Z",
+              "description": "Stay connected and never miss an update!\n👉 Live scoring, player stats, and event info: https://www.majorleaguepickleball.net\n👇 Join our community on social!\nInstagram: instagram.com/MajorLeaguePB\nTwitter: twitter.com/MajorLeaguePB\nFacebook: facebook.com/MajorLeaguePickleball\nTikTok: tiktok.com/@MajorLeaguePB\nMajor League Pickleball — There’s Nothing Else Like It!\n#WeAreMLP #MajorLeaguePB #MLP",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/8MLL7d55TQQ/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=8MLL7d55TQQ"
+            }
+          ]
+        },
+        {
+          "channelSourceId": "youtube-usa-pickleball",
+          "channelId": "UC2HmpKPxdCOF0tuYgFjzXxw",
+          "channelTitle": "USA Pickleball",
+          "videos": [
+            {
+              "videoId": "YQq5HP4uXuE",
+              "title": "Forehand vs. Backhand in Pickleball",
+              "channelTitle": "USA Pickleball",
+              "publishedAt": "2026-04-07T22:18:57Z",
+              "description": "Every shot in pickleball, whether it’s a dink, drop, drive, volley, or overhead, is either a forehand or a backhand. In this video, we break down the fundamentals of forehands vs. backhands so you can better understand the differences and apply them to every shot in your game.\n\nForehands are hit on your dominant side. If you’re a right-handed player, that’s your right side; if you’re left-handed, ",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/YQq5HP4uXuE/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=YQq5HP4uXuE"
+            },
+            {
+              "videoId": "edD9zL9Wmt4",
+              "title": "How to Hit a Third Shot Drop",
+              "channelTitle": "USA Pickleball",
+              "publishedAt": "2026-04-02T21:07:17Z",
+              "description": "The third shot drop is one of the most important shots in pickleball and a key to turning defense into offense. In this video, we break down how the serving team can use the third shot drop to neutralize their disadvantage and safely move up to the kitchen.\n\nBecause of the double bounce rule, the serving team must stay back after the serve, while the returning team can immediately advance to the n",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/edD9zL9Wmt4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=edD9zL9Wmt4"
+            },
+            {
+              "videoId": "YldwHI9aTPY",
+              "title": "Elevating the Golden Ticket Experience with Badges and Medals",
+              "channelTitle": "USA Pickleball",
+              "publishedAt": "2026-04-02T19:08:14Z",
+              "description": "USA Pickleball is raising the bar for the athlete experience, right down to the moment players step onto the medal stand.\n\nThrough a new partnership with Badges and Medals, USA Pickleball has introduced custom, one-of-a-kind medals across its Golden Ticket tournaments, giving athletes a meaningful, tangible way to celebrate their performance and remember their journey on the Path to Nationals.",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/YldwHI9aTPY/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=YldwHI9aTPY"
+            },
+            {
+              "videoId": "vSvOg23K-G4",
+              "title": "2026 USA Pickleball Golden Ticket Recap | Boise, ID",
+              "channelTitle": "USA Pickleball",
+              "publishedAt": "2026-03-31T17:31:30Z",
+              "description": "#USAPickleball #GoldenTicket #pickleballrecap \n🏆 2026 USA Pickleball Golden Ticket Tournament – Boise, ID. | Pickleball Tournament Recap\n\nRelive the action from the 2026 USA Pickleball Golden Ticket Tournament in Boise, ID, presented by Tru Moods held March 25-29 at The Flying Pickle! This highlight reel showcases the intense rallies, standout sportsmanship and the vibrant USA Pickleball communit",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/vSvOg23K-G4/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=vSvOg23K-G4"
+            },
+            {
+              "videoId": "JcqwnJYVSdw",
+              "title": "2026 USA Pickleball Golden Ticket Recap | Opelika, AL",
+              "channelTitle": "USA Pickleball",
+              "publishedAt": "2026-03-16T20:13:04Z",
+              "description": "#USAPickleball #GoldenTicket #pickleballrecap \n🏆 2026 USA Pickleball Golden Ticket Tournament – Opelika, AL. | Pickleball Tournament Recap\n\nRelive the action from the 2026 USA Pickleball Golden Ticket Tournament in Opelika, AL, presented by Oceanview held March 11-15 at Opelika Pickleball Facility! This highlight reel showcases the intense rallies, standout sportsmanship and the vibrant USA Pickl",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/JcqwnJYVSdw/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=JcqwnJYVSdw"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    "ppaRankings": {
+      "sourceId": "ppa-rankings",
+      "ok": true,
+      "retrievedAt": "2026-04-23T02:06:51.942Z",
+      "url": "https://www.ppatour.com/player-rankings/",
+      "rowsFound": 50,
+      "rankings": [
+        {
+          "rank": 1,
+          "playerName": "Ben Johns",
+          "bracket": "",
+          "eventsPlayed": 27,
+          "points": 21300
+        },
+        {
+          "rank": 1,
+          "playerName": "Gabriel Tardio",
+          "bracket": "",
+          "eventsPlayed": 20,
+          "points": 21300
+        },
+        {
+          "rank": 3,
+          "playerName": "Christian Alshon",
+          "bracket": "",
+          "eventsPlayed": 25,
+          "points": 15800
+        },
+        {
+          "rank": 4,
+          "playerName": "JW Johnson",
+          "bracket": "",
+          "eventsPlayed": 23,
+          "points": 14700
+        },
+        {
+          "rank": 5,
+          "playerName": "Hayden Patriquin",
+          "bracket": "",
+          "eventsPlayed": 20,
+          "points": 14600
+        },
+        {
+          "rank": 6,
+          "playerName": "Andrei Daescu",
+          "bracket": "",
+          "eventsPlayed": 38,
+          "points": 14300
+        },
+        {
+          "rank": 7,
+          "playerName": "CJ Klinger",
+          "bracket": "",
+          "eventsPlayed": 20,
+          "points": 14200
+        },
+        {
+          "rank": 8,
+          "playerName": "Federico Staksrud",
+          "bracket": "",
+          "eventsPlayed": 30,
+          "points": 13200
+        },
+        {
+          "rank": 9,
+          "playerName": "Eric Oncins",
+          "bracket": "",
+          "eventsPlayed": 24,
+          "points": 7400
+        },
+        {
+          "rank": 10,
+          "playerName": "Dylan Frazier",
+          "bracket": "",
+          "eventsPlayed": 24,
+          "points": 6100
+        },
+        {
+          "rank": 11,
+          "playerName": "Tyson McGuffin",
+          "bracket": "",
+          "eventsPlayed": 36,
+          "points": 5700
+        },
+        {
+          "rank": 12,
+          "playerName": "Jay Devilliers",
+          "bracket": "",
+          "eventsPlayed": 31,
+          "points": 5450
+        },
+        {
+          "rank": 13,
+          "playerName": "Matt Wright",
+          "bracket": "",
+          "eventsPlayed": 48,
+          "points": 4525
+        },
+        {
+          "rank": 14,
+          "playerName": "Noe Khlif",
+          "bracket": "",
+          "eventsPlayed": 27,
+          "points": 4325
+        },
+        {
+          "rank": 15,
+          "playerName": "Riley Newman",
+          "bracket": "",
+          "eventsPlayed": 32,
+          "points": 4312
+        },
+        {
+          "rank": 16,
+          "playerName": "Jaume Martinez Vich",
+          "bracket": "",
+          "eventsPlayed": 32,
+          "points": 4300
+        },
+        {
+          "rank": 17,
+          "playerName": "Augustus Ge",
+          "bracket": "",
+          "eventsPlayed": 29,
+          "points": 3800
+        },
+        {
+          "rank": 18,
+          "playerName": "Dekel Bar",
+          "bracket": "",
+          "eventsPlayed": 33,
+          "points": 3550
+        },
+        {
+          "rank": 19,
+          "playerName": "Pablo Tellez",
+          "bracket": "",
+          "eventsPlayed": 30,
+          "points": 3300
+        },
+        {
+          "rank": 20,
+          "playerName": "Connor Garnett",
+          "bracket": "",
+          "eventsPlayed": 29,
+          "points": 3200
+        },
+        {
+          "rank": 21,
+          "playerName": "Armaan Bhatia",
+          "bracket": "",
+          "eventsPlayed": 27,
+          "points": 3087
+        },
+        {
+          "rank": 22,
+          "playerName": "Jonathan Truong",
+          "bracket": "",
+          "eventsPlayed": 19,
+          "points": 2900
+        },
+        {
+          "rank": 23,
+          "playerName": "Blaine Hovenier",
+          "bracket": "",
+          "eventsPlayed": 25,
+          "points": 2825
+        },
+        {
+          "rank": 24,
+          "playerName": "Zane Navratil",
+          "bracket": "",
+          "eventsPlayed": 30,
+          "points": 2675
+        },
+        {
+          "rank": 25,
+          "playerName": "Max Freeman",
+          "bracket": "",
+          "eventsPlayed": 27,
+          "points": 2637
+        },
+        {
+          "rank": 26,
+          "playerName": "Hunter Johnson",
+          "bracket": "",
+          "eventsPlayed": 31,
+          "points": 2600
+        },
+        {
+          "rank": 27,
+          "playerName": "Jack Sock",
+          "bracket": "",
+          "eventsPlayed": 33,
+          "points": 2437
+        },
+        {
+          "rank": 28,
+          "playerName": "Wyatt Stone",
+          "bracket": "",
+          "eventsPlayed": 20,
+          "points": 2400
+        },
+        {
+          "rank": 29,
+          "playerName": "Collin Johns",
+          "bracket": "",
+          "eventsPlayed": 32,
+          "points": 2375
+        },
+        {
+          "rank": 30,
+          "playerName": "Rafa Hewett",
+          "bracket": "",
+          "eventsPlayed": 31,
+          "points": 2250
+        },
+        {
+          "rank": 31,
+          "playerName": "Tyler Loong",
+          "bracket": "",
+          "eventsPlayed": 34,
+          "points": 2225
+        },
+        {
+          "rank": 31,
+          "playerName": "Darrian Young",
+          "bracket": "",
+          "eventsPlayed": 26,
+          "points": 2225
+        },
+        {
+          "rank": 33,
+          "playerName": "AJ Koller",
+          "bracket": "",
+          "eventsPlayed": 37,
+          "points": 2075
+        },
+        {
+          "rank": 34,
+          "playerName": "Martin Emmrich",
+          "bracket": "",
+          "eventsPlayed": 41,
+          "points": 1975
+        },
+        {
+          "rank": 35,
+          "playerName": "Julian Arnold",
+          "bracket": "",
+          "eventsPlayed": 35,
+          "points": 1875
+        },
+        {
+          "rank": 36,
+          "playerName": "Tama Shimabukuro",
+          "bracket": "",
+          "eventsPlayed": 15,
+          "points": 1850
+        },
+        {
+          "rank": 37,
+          "playerName": "Len Yang",
+          "bracket": "",
+          "eventsPlayed": 22,
+          "points": 1825
+        },
+        {
+          "rank": 38,
+          "playerName": "Brandon French",
+          "bracket": "",
+          "eventsPlayed": 34,
+          "points": 1800
+        },
+        {
+          "rank": 39,
+          "playerName": "Hong kit Wong",
+          "bracket": "",
+          "eventsPlayed": 27,
+          "points": 1700
+        },
+        {
+          "rank": 39,
+          "playerName": "Eunggwon KIM",
+          "bracket": "",
+          "eventsPlayed": 26,
+          "points": 1700
+        },
+        {
+          "rank": 41,
+          "playerName": "Donald Young",
+          "bracket": "",
+          "eventsPlayed": 36,
+          "points": 1662
+        },
+        {
+          "rank": 42,
+          "playerName": "Roscoe Bellamy",
+          "bracket": "",
+          "eventsPlayed": 26,
+          "points": 1650
+        },
+        {
+          "rank": 42,
+          "playerName": "Anouar Braham",
+          "bracket": "",
+          "eventsPlayed": 25,
+          "points": 1650
+        },
+        {
+          "rank": 44,
+          "playerName": "Michael Loyd",
+          "bracket": "",
+          "eventsPlayed": 27,
+          "points": 1600
+        },
+        {
+          "rank": 45,
+          "playerName": "Tom Protzek",
+          "bracket": "",
+          "eventsPlayed": 25,
+          "points": 1575
+        },
+        {
+          "rank": 46,
+          "playerName": "Yuta Funemizu",
+          "bracket": "",
+          "eventsPlayed": 32,
+          "points": 1537
+        },
+        {
+          "rank": 46,
+          "playerName": "Juan Benitez",
+          "bracket": "",
+          "eventsPlayed": 30,
+          "points": 1537
+        },
+        {
+          "rank": 48,
+          "playerName": "John Lucian Goins",
+          "bracket": "",
+          "eventsPlayed": 18,
+          "points": 1500
+        },
+        {
+          "rank": 49,
+          "playerName": "Gregory Dow",
+          "bracket": "",
+          "eventsPlayed": 29,
+          "points": 1450
+        },
+        {
+          "rank": 50,
+          "playerName": "James Ignatowich",
+          "bracket": "",
+          "eventsPlayed": 25,
+          "points": 1425
+        }
+      ],
+      "note": "Columns: rank · playerName · bracket · eventsPlayed · points. Top-20 names linked to ppatour.com/athlete/ profiles when the slug HEADs 200.",
+      "slugCache": {
+        "Ben Johns": "https://ppatour.com/athlete/ben-johns/",
+        "Gabriel Tardio": "https://ppatour.com/athlete/gabriel-tardio/",
+        "Christian Alshon": "https://ppatour.com/athlete/christian-alshon/",
+        "JW Johnson": "https://ppatour.com/athlete/jw-johnson/",
+        "Hayden Patriquin": "https://ppatour.com/athlete/hayden-patriquin/",
+        "Andrei Daescu": "https://ppatour.com/athlete/andrei-daescu/",
+        "CJ Klinger": "https://ppatour.com/athlete/cj-klinger/",
+        "Federico Staksrud": "https://ppatour.com/athlete/federico-staksrud/",
+        "Eric Oncins": "https://ppatour.com/athlete/eric-oncins/",
+        "Dylan Frazier": "https://ppatour.com/athlete/dylan-frazier/",
+        "Tyson McGuffin": "https://ppatour.com/athlete/tyson-mcguffin/",
+        "Jay Devilliers": "https://ppatour.com/athlete/jay-devilliers/",
+        "Matt Wright": "https://ppatour.com/athlete/matt-wright/",
+        "Noe Khlif": "https://ppatour.com/athlete/noe-khlif/",
+        "Riley Newman": "https://ppatour.com/athlete/riley-newman/",
+        "Jaume Martinez Vich": "https://ppatour.com/athlete/jaume-martinez-vich/",
+        "Augustus Ge": "https://ppatour.com/athlete/augustus-ge/",
+        "Dekel Bar": "https://ppatour.com/athlete/dekel-bar/",
+        "Pablo Tellez": "https://ppatour.com/athlete/pablo-tellez/",
+        "Connor Garnett": "https://ppatour.com/athlete/connor-garnett/"
+      }
+    }
+  }
+}

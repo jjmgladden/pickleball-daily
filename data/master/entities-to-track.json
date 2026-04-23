@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-22T00:00:00Z",
+  "note": "Cross-cutting registry of every entity type Phase 1 ingestion should resolve against. IDs are stable across players-seed.json, mlp-teams.json, tournaments-2026.json, and media-sources.json. Phase 4 AI Q&A will retrieve against these IDs — so stability matters. Every entity gets displayName + summary + stable ID per CLAUDE.md § AI-retrievable Schema.",
+  "categories": {
+    "players": "See data/master/players-seed.json for 30-player seed. IDs are slug-case (e.g., 'anna-leigh-waters').",
+    "mlpTeams": "See data/master/mlp-teams.json for all 20 teams. IDs are slug-case (e.g., 'st-louis-shock').",
+    "tournaments": "See data/master/tournaments-2026.json for 57 events. IDs are '<circuit>-<year>-<slug>' (e.g., 'ppa-2026-atlanta-championships').",
+    "organizations": "Governance / pro-circuit bodies. Fixed list below.",
+    "commentators": "TV/stream commentators worth tracking. Thin list; expand in Phase 2+.",
+    "executives": "UPA + USAP + DUPR + MLP leadership worth tracking. Thin list; expand in Phase 2+.",
+    "coaches": "Top professional coaches. Thin list; expand in Phase 2+.",
+    "mediaCreators": "See data/master/media-sources.json (newsletters, podcasts, social) and data/master/video-sources.json (YouTube channels)."
+  },
+  "organizations": [
+    {"id": "upa", "displayName": "United Pickleball Association (UPA)", "summary": "Holding company unifying PPA Tour and MLP since 2023-2024 merger. Coordinates schedules, player contracts, and media rights.", "type": "commercial-holding", "url": "https://pickleball.com/news/united-pickleball-association-unveiled-as-holding-company-for-newly-merged-ppa-mlp", "confidence": "T1", "lastUpdated": "2026-04-22"},
+    {"id": "upa-athletes", "displayName": "UPA-Athletes (UPA-A)", "summary": "Professional-tier governance body launched 2024 as alternative to USAP for pro events after UPA–USAP rift.", "type": "pro-governance", "url": "https://www.thedinkpickleball.com/upa-severs-ties-with-usa-pickleball/", "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "usap", "displayName": "USA Pickleball (USAP)", "summary": "National governing body. Publishes the Official Rulebook, certifies referees, approves paddles/balls, manages amateur ratings via DUPR partnership since 2024.", "type": "governing-body", "url": "https://usapickleball.org/", "confidence": "T1", "lastUpdated": "2026-04-22"},
+    {"id": "ppa", "displayName": "Professional Pickleball Association (PPA Tour)", "summary": "The largest professional pickleball tour. Weekly events with prize purses. Rankings use rolling 52-week + 'The Race' calendar-year formats. Now under UPA umbrella.", "type": "pro-tour", "url": "https://ppatour.com/", "confidence": "T1", "lastUpdated": "2026-04-22"},
+    {"id": "mlp", "displayName": "Major League Pickleball (MLP)", "summary": "Team franchise league. 20 teams in 2026 (Premier-only after Challenger elimination). Mixed-gender team-match format with DreamBreaker tiebreaker. Owned by DUPR consolidation; under UPA umbrella.", "type": "pro-league", "url": "https://majorleaguepickleball.co/", "confidence": "T1", "lastUpdated": "2026-04-22"},
+    {"id": "dupr", "displayName": "Dynamic/Dreamland Universal Pickleball Rating (DUPR)", "summary": "Official exclusive skill-rating system for USA Pickleball since 2024. Elo-style 2.0–8.0+ scale. Powers MLP, Collegiate Pickleball, National Junior Pickleball.", "type": "rating-system", "url": "https://www.dupr.com/", "confidence": "T1", "lastUpdated": "2026-04-22"},
+    {"id": "ifp", "displayName": "International Federation of Pickleball (IFP)", "summary": "International coordinating body, founded 2008. Relatively dormant governance role; member federations handle most cross-border sanctioning.", "type": "international-federation", "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "app-tour", "displayName": "APP Tour (Association of Pickleball Players)", "summary": "Secondary professional tour. Tier below PPA; mixed pro-amateur fields.", "type": "pro-tour", "url": "https://apptour.org/", "confidence": "T2", "lastUpdated": "2026-04-22"}
+  ],
+  "commentators": [
+    {"id": "commentator-kyle-whatnall", "displayName": "Kyle Whatnall", "summary": "Primary PPA play-by-play voice.", "affiliation": "PPA Tour broadcast", "confidence": "T3", "lastUpdated": "2026-04-22"},
+    {"id": "commentator-barry-tompkins", "displayName": "Barry Tompkins", "summary": "Veteran broadcaster on PPA coverage.", "affiliation": "PPA Tour broadcast", "confidence": "T3", "lastUpdated": "2026-04-22"},
+    {"id": "commentator-lauren-stratman", "displayName": "Lauren Stratman", "summary": "Pickleball analyst + broadcaster.", "affiliation": "PPA/MLP broadcast", "confidence": "T3", "lastUpdated": "2026-04-22"}
+  ],
+  "executives": [
+    {"id": "exec-connor-pardoe", "displayName": "Connor Pardoe", "summary": "PPA Tour founder/CEO. Central figure in the UPA merger.", "affiliation": "PPA / UPA", "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "exec-steve-kuhn", "displayName": "Steve Kuhn", "summary": "MLP founder.", "affiliation": "MLP", "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "exec-jeff-reed-zhang", "displayName": "DUPR leadership", "summary": "DUPR founding and product leadership — exact executive identities to be filled via Phase 2 research.", "affiliation": "DUPR", "confidence": "T3", "lastUpdated": "2026-04-22"}
+  ],
+  "coaches": [
+    {"id": "coach-leigh-waters", "displayName": "Leigh Waters", "summary": "Mother and mixed-doubles partner of Anna Leigh Waters; successful pro in her own right.", "affiliation": "Waters family", "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "coach-tony-roig", "displayName": "Tony Roig", "summary": "Pickleball Therapy host; coach focused on 50+ player development.", "affiliation": "Better Pickleball", "confidence": "T2", "lastUpdated": "2026-04-22"},
+    {"id": "coach-nicole-havlicek", "displayName": "Nicole Havlicek", "summary": "IPTPA 5.0. PrimeTime Pickleball YouTube host.", "affiliation": "PrimeTime Pickleball", "confidence": "T2", "lastUpdated": "2026-04-22"}
+  ],
+  "caveats": [
+    "Commentators, executives, and coaches are intentionally thin — Phase 2+ content expansion. Phase 0 captures the scaffolding.",
+    "Stable IDs are a Phase 4 requirement (AI Q&A retrieval). Any rename must go through an ID-alias mechanism — do not break IDs mid-project."
+  ]
+}

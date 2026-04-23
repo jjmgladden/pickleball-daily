@@ -1,0 +1,766 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-04-22T00:00:00Z",
+  "note": "Top ~30 players as of 2026-04-22. Minimal record: stable playerId, displayName, country, primary_categories, mlp_team_2026 (where known), DUPR doubles rating (where public), PPA rank flag (as-of sources vary — Kitchen editorial for some women's singles), handedness, source URL. DUPR numbers are snapshot values from dupr.com/rankings; treat as fluid. This is NOT an all-time player index — Phase 2+ may expand. v2 (Session 4): added optional ppaPlayerUrl + wikipediaUrl per player via best-effort curation (PPA slug HEAD-verified; Wikipedia HEAD-verified and disambiguation-safe). Unresolved entries intentionally left empty; see KB for Phase 2 curation backlog.",
+  "players": [
+    {
+      "playerId": "anna-leigh-waters",
+      "displayName": "Anna Leigh Waters",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles",
+        "mixed"
+      ],
+      "handedness": "left",
+      "mlpTeam2026": "new-jersey-5s",
+      "ppaRankFlag": "top-1 singles / top-1 doubles / top-1 mixed",
+      "duprDoubles": 6.889,
+      "knownFor": "World #1 all three disciplines; 40+ Triple Crowns; the sport's benchmark pro",
+      "sources": [
+        {
+          "sourceId": "ppa-tour",
+          "url": "https://ppatour.com/athlete/anna-leigh-waters/"
+        },
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/anna-leigh-waters/",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Anna_Leigh_Waters"
+    },
+    {
+      "playerId": "ben-johns",
+      "displayName": "Ben Johns",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles",
+        "mixed"
+      ],
+      "handedness": "right",
+      "mlpTeam2026": "los-angeles-mad-drops",
+      "ppaRankFlag": "top-5 across disciplines",
+      "duprDoubles": 7.094,
+      "duprSingles": 7.098,
+      "knownFor": "Most-decorated men's pro; men's doubles GOAT",
+      "sources": [
+        {
+          "sourceId": "pickleball-com",
+          "url": "https://pickleball.com/players/ben-johns"
+        },
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/ben-johns/"
+    },
+    {
+      "playerId": "gabe-tardio",
+      "displayName": "Gabe Tardio",
+      "country": "US",
+      "primaryCategories": [
+        "doubles",
+        "singles",
+        "mixed"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "st-louis-shock",
+      "ppaRankFlag": "top-3 men's doubles",
+      "duprDoubles": 6.867,
+      "knownFor": "Ben Johns's primary doubles partner; 20th career PPA Tour title",
+      "sources": [
+        {
+          "sourceId": "pickleball-com-recap",
+          "url": "https://pickleball.com/news/johns-tardio-outclass-johnson-klinger-as-tardio-secures-20th-career-ppa-tour-title"
+        },
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "playerId": "federico-staksrud",
+      "displayName": "Federico Staksrud",
+      "country": "AR",
+      "primaryCategories": [
+        "singles",
+        "doubles",
+        "mixed"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "orlando-squeeze",
+      "ppaRankFlag": "top-3 men's singles",
+      "duprDoubles": 6.721,
+      "knownFor": "Argentine elite men's singles; 2 PPA titles in early 2026",
+      "sources": [
+        {
+          "sourceId": "picklewave",
+          "url": "https://www.picklewave.com/players/413928-federico-staksrud"
+        }
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/federico-staksrud/",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Federico_Staksrud"
+    },
+    {
+      "playerId": "chris-haworth",
+      "displayName": "Christopher Haworth",
+      "country": "US",
+      "primaryCategories": [
+        "singles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "california-black-bears",
+      "ppaRankFlag": "top-1 men's singles (April 2026, first-time)",
+      "duprDoubles": null,
+      "knownFor": "First-time #1 men's singles PPA seed April 2026",
+      "sources": [
+        {
+          "sourceId": "picklewave-mens-singles",
+          "url": "https://www.picklewave.com/rankings/mens-singles"
+        },
+        {
+          "sourceId": "the-dink-sacramento",
+          "url": "https://www.thedinkpickleball.com/ppa-fasenra-sacramento-open-tournament-preview/"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/christopher-haworth/"
+    },
+    {
+      "playerId": "hunter-johnson",
+      "displayName": "Hunter Johnson",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "chicago-slice",
+      "ppaRankFlag": "top-5 men's singles (PickleWave ELO)",
+      "duprDoubles": null,
+      "knownFor": "Top-3 men's singles ELO trajectory",
+      "sources": [
+        {
+          "sourceId": "picklewave-mens-singles",
+          "url": "https://www.picklewave.com/rankings/mens-singles"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/hunter-johnson/"
+    },
+    {
+      "playerId": "jw-johnson",
+      "displayName": "JW Johnson",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles",
+        "mixed"
+      ],
+      "handedness": "right",
+      "mlpTeam2026": "dallas-flash",
+      "ppaRankFlag": "top-10 singles / top-10 doubles",
+      "duprDoubles": 7.011,
+      "knownFor": "Tennis convert; precision play; Florida-based family operation",
+      "sources": [
+        {
+          "sourceId": "ppa-tour",
+          "url": "https://ppatour.com/rankings/"
+        },
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/jw-johnson/",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/JW_Johnson"
+    },
+    {
+      "playerId": "hayden-patriquin",
+      "displayName": "Hayden Patriquin",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles",
+        "mixed"
+      ],
+      "handedness": null,
+      "mlpTeam2026": null,
+      "ppaRankFlag": "top-2 men's singles (The Kitchen editorial)",
+      "duprDoubles": 6.925,
+      "duprSingles": 6.925,
+      "knownFor": "Rapid rise 2025-2026 across all three disciplines",
+      "sources": [
+        {
+          "sourceId": "the-kitchen-mens-singles",
+          "url": "https://thekitchenpickle.com/blogs/news/top-20-pickleball-players-mens-singles-ranked-by-the-kitchen"
+        },
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/hayden-patriquin/"
+    },
+    {
+      "playerId": "andrei-daescu",
+      "displayName": "Andrei Daescu",
+      "country": "RO",
+      "primaryCategories": [
+        "doubles",
+        "mixed"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "columbus-sliders",
+      "ppaRankFlag": "top-5 men's doubles (ELO)",
+      "duprDoubles": 7.012,
+      "duprSingles": 7.022,
+      "knownFor": "Romanian doubles specialist; top-3 DUPR",
+      "sources": [
+        {
+          "sourceId": "picklewave-mens-doubles",
+          "url": "https://www.picklewave.com/rankings/mens-doubles"
+        },
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/andrei-daescu/"
+    },
+    {
+      "playerId": "dylan-frazier",
+      "displayName": "Dylan Frazier",
+      "country": "US",
+      "primaryCategories": [
+        "doubles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "brooklyn-pickleball-team",
+      "ppaRankFlag": "top-10 men's doubles",
+      "duprDoubles": null,
+      "knownFor": "Often partners JW Johnson",
+      "sources": [
+        {
+          "sourceId": "picklewave-all-doubles",
+          "url": "https://www.picklewave.com/rankings/all-doubles"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/dylan-frazier/",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Dylan_Frazier"
+    },
+    {
+      "playerId": "cj-klinger",
+      "displayName": "CJ Klinger",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": null,
+      "ppaRankFlag": "top-10 men's doubles",
+      "duprDoubles": 6.695,
+      "knownFor": "Doubles specialist; recent finalist vs Johns/Tardio",
+      "sources": [
+        {
+          "sourceId": "pickleball-com-recap",
+          "url": "https://pickleball.com/news/johns-tardio-outclass-johnson-klinger-as-tardio-secures-20th-career-ppa-tour-title"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/cj-klinger/"
+    },
+    {
+      "playerId": "christian-alshon",
+      "displayName": "Christian Alshon",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "texas-ranchers",
+      "ppaRankFlag": null,
+      "duprDoubles": 6.861,
+      "knownFor": "Rising pro across singles + doubles",
+      "sources": [
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/christian-alshon/"
+    },
+    {
+      "playerId": "tyson-mcguffin",
+      "displayName": "Tyson McGuffin",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles"
+      ],
+      "handedness": "right",
+      "mlpTeam2026": "palm-beach-royals",
+      "ppaRankFlag": "top-15 men's doubles",
+      "duprDoubles": null,
+      "knownFor": "Veteran 4x national champion; content creator",
+      "sources": [
+        {
+          "sourceId": "ppa-tour",
+          "url": "https://ppatour.com/player-rankings/"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/tyson-mcguffin/",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Tyson_McGuffin"
+    },
+    {
+      "playerId": "quang-duong",
+      "displayName": "Quang Duong",
+      "country": "VN",
+      "primaryCategories": [
+        "singles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": null,
+      "ppaRankFlag": "top-6 men's singles",
+      "duprDoubles": null,
+      "knownFor": "International singles rise",
+      "sources": [
+        {
+          "sourceId": "ppa-tour",
+          "url": "https://ppatour.com/player-rankings/"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Quang_Duong"
+    },
+    {
+      "playerId": "james-ignatowich",
+      "displayName": "James Ignatowich",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles",
+        "mixed"
+      ],
+      "handedness": "right",
+      "mlpTeam2026": null,
+      "ppaRankFlag": "top-10 men's singles/doubles",
+      "duprDoubles": null,
+      "knownFor": "Versatile all-three; UPA contract news 2026",
+      "sources": [
+        {
+          "sourceId": "the-dink",
+          "url": "https://www.thedinkpickleball.com/"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/James_Ignatowich"
+    },
+    {
+      "playerId": "jack-sock",
+      "displayName": "Jack Sock",
+      "country": "US",
+      "primaryCategories": [
+        "singles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "orlando-squeeze",
+      "ppaRankFlag": null,
+      "duprDoubles": null,
+      "knownFor": "Former pro tennis top-10 → pickleball pro",
+      "sources": [
+        {
+          "sourceId": "picklewave-mens-singles",
+          "url": "https://www.picklewave.com/rankings/mens-singles"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/jack-sock/",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Jack_Sock"
+    },
+    {
+      "playerId": "anna-bright",
+      "displayName": "Anna Bright",
+      "country": "US",
+      "primaryCategories": [
+        "doubles",
+        "mixed",
+        "singles"
+      ],
+      "handedness": "right",
+      "mlpTeam2026": "st-louis-shock",
+      "ppaRankFlag": "top-3 women's doubles; top-2 women's singles (Kitchen)",
+      "duprDoubles": 6.528,
+      "knownFor": "MLP 2026 #1 overall pick ($1.23M, St. Louis Shock)",
+      "sources": [
+        {
+          "sourceId": "mlp-draft",
+          "url": "https://majorleaguepickleball.co/news/2026-mlp-draft-presented-by-skechers-coverage-live-results/"
+        },
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/anna-bright/"
+    },
+    {
+      "playerId": "jorja-johnson",
+      "displayName": "Jorja Johnson",
+      "country": "US",
+      "primaryCategories": [
+        "doubles",
+        "mixed"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "new-jersey-5s",
+      "ppaRankFlag": "top-3 women's doubles",
+      "duprDoubles": 6.242,
+      "knownFor": "2025 MLP MVP; 2026 MLP #2 pick",
+      "sources": [
+        {
+          "sourceId": "mlp-draft",
+          "url": "https://majorleaguepickleball.co/news/2026-mlp-draft-presented-by-skechers-coverage-live-results/"
+        },
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T1",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/jorja-johnson/"
+    },
+    {
+      "playerId": "kate-fahey",
+      "displayName": "Kate Fahey",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "st-louis-shock",
+      "ppaRankFlag": "top-2 women's singles (most consistent challenger to Waters)",
+      "duprDoubles": null,
+      "knownFor": "Consistent women's singles contender",
+      "sources": [
+        {
+          "sourceId": "ppa-tour",
+          "url": "https://ppatour.com/player-rankings/"
+        },
+        {
+          "sourceId": "the-kitchen-womens",
+          "url": "https://thekitchenpickle.com/blogs/news/top-20-womens-pickleball-players-ranked-by-anonymous-pro"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/kate-fahey/"
+    },
+    {
+      "playerId": "kaitlyn-christian",
+      "displayName": "Kaitlyn Christian",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "atlanta-bouncers",
+      "ppaRankFlag": "top-3 women's singles (Kitchen)",
+      "duprDoubles": null,
+      "knownFor": "Former pro tennis; women's singles top-3",
+      "sources": [
+        {
+          "sourceId": "the-kitchen-womens",
+          "url": "https://thekitchenpickle.com/blogs/news/top-20-womens-pickleball-players-ranked-by-anonymous-pro"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/kaitlyn-christian/"
+    },
+    {
+      "playerId": "tyra-black",
+      "displayName": "Hurricane Tyra Black",
+      "country": "US",
+      "primaryCategories": [
+        "doubles",
+        "singles",
+        "mixed"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "dallas-flash",
+      "ppaRankFlag": "top-5 women's doubles",
+      "duprDoubles": 6.339,
+      "knownFor": "Upset Waters in 2025; Sacramento mixed gold 2026",
+      "sources": [
+        {
+          "sourceId": "the-dink-sacramento",
+          "url": "https://www.thedinkpickleball.com/ppa-fasenra-sacramento-open-tournament-preview/"
+        },
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/hurricane-tyra-black/",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Hurricane_Tyra_Black"
+    },
+    {
+      "playerId": "catherine-parenteau",
+      "displayName": "Catherine Parenteau",
+      "country": "CA",
+      "primaryCategories": [
+        "doubles",
+        "singles"
+      ],
+      "handedness": "right",
+      "mlpTeam2026": "los-angeles-mad-drops",
+      "ppaRankFlag": "top-10 women's doubles",
+      "duprDoubles": null,
+      "knownFor": "Canadian veteran; long top-10 tenure",
+      "sources": [
+        {
+          "sourceId": "ppa-tour",
+          "url": "https://ppatour.com/player-rankings/"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/catherine-parenteau/",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Catherine_Parenteau"
+    },
+    {
+      "playerId": "rachel-rohrabacher",
+      "displayName": "Rachel Rohrabacher",
+      "country": "US",
+      "primaryCategories": [
+        "doubles",
+        "mixed"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "brooklyn-pickleball-team",
+      "ppaRankFlag": "top-10 women's doubles",
+      "duprDoubles": 6.209,
+      "knownFor": "2026 Sacramento women's doubles gold (with Todd)",
+      "sources": [
+        {
+          "sourceId": "pickleball-com-rankings",
+          "url": "https://pickleball.com/rankings"
+        },
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/rachel-rohrabacher/"
+    },
+    {
+      "playerId": "parris-todd",
+      "displayName": "Parris Todd",
+      "country": "US",
+      "primaryCategories": [
+        "doubles",
+        "singles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "columbus-sliders",
+      "ppaRankFlag": "top-10 women's doubles",
+      "duprDoubles": 6.238,
+      "knownFor": "2026 Sacramento women's doubles gold",
+      "sources": [
+        {
+          "sourceId": "pickleball-com-rankings",
+          "url": "https://pickleball.com/rankings"
+        },
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/parris-todd/"
+    },
+    {
+      "playerId": "jackie-kawamoto",
+      "displayName": "Jackie Kawamoto",
+      "country": "US",
+      "primaryCategories": [
+        "doubles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": null,
+      "ppaRankFlag": "top-10 women's doubles",
+      "duprDoubles": 6.253,
+      "knownFor": "Kawamoto twins; top-3 WD team",
+      "sources": [
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/jackie-kawamoto/"
+    },
+    {
+      "playerId": "jade-kawamoto",
+      "displayName": "Jade Kawamoto",
+      "country": "US",
+      "primaryCategories": [
+        "doubles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": null,
+      "ppaRankFlag": "top-10 women's doubles",
+      "duprDoubles": 6.241,
+      "knownFor": "Kawamoto twins; top-3 WD team",
+      "sources": [
+        {
+          "sourceId": "dupr-official",
+          "url": "https://www.dupr.com/rankings"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/jade-kawamoto/"
+    },
+    {
+      "playerId": "lea-jansen",
+      "displayName": "Lea Jansen",
+      "country": "US",
+      "primaryCategories": [
+        "singles",
+        "doubles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "texas-ranchers",
+      "ppaRankFlag": "top-10 women's singles",
+      "duprDoubles": null,
+      "knownFor": "PPA Houston 2025 singles winner; outspoken pro",
+      "sources": [
+        {
+          "sourceId": "ppa-tour",
+          "url": "https://ppatour.com/player-rankings/"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/lea-jansen/"
+    },
+    {
+      "playerId": "brooke-buckner",
+      "displayName": "Brooke Buckner",
+      "country": "US",
+      "primaryCategories": [
+        "singles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": "las-vegas-night-owls",
+      "ppaRankFlag": "top-7 women's singles (Kitchen)",
+      "duprDoubles": null,
+      "knownFor": "Rising women's singles",
+      "sources": [
+        {
+          "sourceId": "the-kitchen-womens",
+          "url": "https://thekitchenpickle.com/blogs/news/top-20-womens-pickleball-players-ranked-by-anonymous-pro"
+        }
+      ],
+      "confidence": "T3",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/brooke-buckner/"
+    },
+    {
+      "playerId": "salome-devidze",
+      "displayName": "Salome Devidze",
+      "country": "GE",
+      "primaryCategories": [
+        "singles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": null,
+      "ppaRankFlag": "top-10 women's singles",
+      "duprDoubles": null,
+      "knownFor": "Georgian singles specialist; last player to beat Waters in singles (May 2024)",
+      "sources": [
+        {
+          "sourceId": "ppa-tour",
+          "url": "https://ppatour.com/player-rankings/"
+        }
+      ],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "playerId": "chao-yi-wang",
+      "displayName": "Chao Yi Wang",
+      "country": "TW",
+      "primaryCategories": [
+        "singles"
+      ],
+      "handedness": null,
+      "mlpTeam2026": null,
+      "ppaRankFlag": "top-10 women's singles (Kitchen)",
+      "duprDoubles": null,
+      "knownFor": "Taiwanese singles rise",
+      "sources": [
+        {
+          "sourceId": "the-kitchen-womens",
+          "url": "https://thekitchenpickle.com/blogs/news/top-20-womens-pickleball-players-ranked-by-anonymous-pro"
+        }
+      ],
+      "confidence": "T3",
+      "lastUpdated": "2026-04-22",
+      "ppaPlayerUrl": "https://ppatour.com/athlete/chao-yi-wang/"
+    }
+  ],
+  "caveats": [
+    "DUPR numbers snapshotted 2026-04-21 from dupr.com/rankings; expect weekly-cadence movement.",
+    "PPA rank flags use prose ('top-10', 'top-3') rather than precise numbers because ppatour.com/player-rankings/ is JS-hydrated and did not yield numbers via static fetch. Phase 1 ingestion should snapshot precise numbers via headless browser.",
+    "Handedness is sparsely populated; Phase 1 should verify per-player via ppatour.com/athlete/{slug}/.",
+    "Several Kitchen-sourced ranks are T3 (editorial 'ranked by anonymous pro') — flagged in confidence.",
+    "List is biased toward currently-active PPA/MLP pros. Amateur DUPR leaderboards (5.0 senior, 4.5 amateur, juniors) are out-of-scope for seed.",
+    "Player index is top-N, not all-time. Scope decision: KB-0004."
+  ]
+}

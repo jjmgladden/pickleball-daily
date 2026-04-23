@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-22T00:00:00Z",
+  "rulebookEdition": "2026",
+  "publishedDate": "2025-12-22",
+  "effectiveDate": "2026-01-01",
+  "primarySource": {
+    "sourceId": "usap-rulebook-2026-pdf",
+    "url": "https://usapickleball.org/docs/rules/USAP-Official-Rulebook.pdf",
+    "retrievedAt": "2026-04-22"
+  },
+  "changeDocument": {
+    "url": "https://usapickleball.org/docs/rules/USAP-Rulebook-Change-Document.pdf",
+    "notes": "Companion PDF summarizing deltas from 2025."
+  },
+  "note": "Section numbers per Selkirk 2026 summary (https://www.selkirk.com/blogs/pickleball-education/2026-usa-pickleball-rulebook-changes-key-updates-for-the-new-year) and The Dink's 7-rule brief. **Section numbers should be verified against the primary USAP PDF before user-facing citation.** 2026 rulebook uses 4-digit numbering (e.g., 2070, 2221) per secondary sources.",
+  "changes": [
+    {
+      "id": "rc-2026-net-post-winner",
+      "section": "2070",
+      "displayName": "Net Post Winner clarification",
+      "summary": "A ball that legally crosses the net and bounces in the receiving court, then contacts the net post, is not an automatic fault.",
+      "category": "play",
+      "impact": "reduces marginal faults; favors the hitter",
+      "sources": [{"sourceId": "usap-rulebook-2026-pdf", "url": "https://usapickleball.org/docs/rules/USAP-Official-Rulebook.pdf"}, {"sourceId": "selkirk-2026-summary", "url": "https://www.selkirk.com/blogs/pickleball-education/2026-usa-pickleball-rulebook-changes-key-updates-for-the-new-year"}],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "rc-2026-prompt-line-calls",
+      "section": "2221",
+      "displayName": "Prompt line calls required",
+      "summary": "Line calls must be made promptly. Delayed 'out' calls after partner conferences are disallowed.",
+      "category": "officiating",
+      "impact": "tightens officiating; reduces gamesmanship",
+      "sources": [{"sourceId": "selkirk-2026-summary", "url": "https://www.selkirk.com/blogs/pickleball-education/2026-usa-pickleball-rulebook-changes-key-updates-for-the-new-year"}],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "rc-2026-pre-match-penalties",
+      "section": "2093",
+      "displayName": "Pre-match penalty authority",
+      "summary": "Officials may issue warnings and penalties during pre-match briefings and warmup, not only during play.",
+      "category": "officiating",
+      "impact": "broadens referee authority",
+      "sources": [{"sourceId": "selkirk-2026-summary", "url": "https://www.selkirk.com/blogs/pickleball-education/2026-usa-pickleball-rulebook-changes-key-updates-for-the-new-year"}],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "rc-2026-ejection-authority",
+      "section": "2090, 2091",
+      "displayName": "Explicit ejection authority",
+      "summary": "Explicit ejection authority for assault causing injury, and for damage to venue property.",
+      "category": "officiating",
+      "impact": "codifies prior discretionary practice",
+      "sources": [{"sourceId": "selkirk-2026-summary", "url": "https://www.selkirk.com/blogs/pickleball-education/2026-usa-pickleball-rulebook-changes-key-updates-for-the-new-year"}],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "rc-2026-rally-scoring-formats",
+      "section": "2242",
+      "displayName": "Rally scoring formats formalized",
+      "summary": "Rally scoring formats are formally documented in the rulebook. Remains optional for many events; restricted in some championship-qualifying events.",
+      "category": "format",
+      "impact": "provides sanctioned reference for rally scoring; does not mandate it",
+      "sources": [{"sourceId": "selkirk-2026-summary", "url": "https://www.selkirk.com/blogs/pickleball-education/2026-usa-pickleball-rulebook-changes-key-updates-for-the-new-year"}],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "rc-2026-adaptive-standing-division",
+      "section": "2330-2334",
+      "displayName": "New Adaptive Standing Division",
+      "summary": "Eligibility criteria, assistive-device rules, two-bounce allowance, and hybrid mixed-ability play introduced.",
+      "category": "accessibility",
+      "impact": "major inclusion milestone",
+      "sources": [{"sourceId": "selkirk-2026-summary", "url": "https://www.selkirk.com/blogs/pickleball-education/2026-usa-pickleball-rulebook-changes-key-updates-for-the-new-year"}],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "rc-2026-volley-serve-clearly",
+      "section": "volley serve (4.A.5 family)",
+      "displayName": "'Clearly' added to volley-serve requirements",
+      "summary": "The word 'clearly' is added to all three volley-serve requirements (below waist, paddle head below wrist, upward arc). Borderline serves are now faulted.",
+      "category": "serve",
+      "impact": "tightens serve legality; favors referee discretion against borderline serves",
+      "sources": [{"sourceId": "the-dink-2026-rules", "url": "https://www.thedinkpickleball.com/7-new-usap-pickleball-rules-for-2026-you-need-to-know/"}],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "rc-2026-visible-second-ball",
+      "section": "tbd",
+      "displayName": "Visible second ball fault",
+      "summary": "A visible second ball (e.g., peeking from a pocket) during a live rally is now an explicit fault.",
+      "category": "play",
+      "impact": "codifies referee discretion",
+      "sources": [{"sourceId": "the-dink-2026-rules", "url": "https://www.thedinkpickleball.com/7-new-usap-pickleball-rules-for-2026-you-need-to-know/"}],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "rc-2026-paddle-verification",
+      "section": "tbd",
+      "displayName": "Mandatory pre-match paddle inspection",
+      "summary": "Paddles must display 'USA Pickleball Approved' marking and appear on the approved list. Pre-match inspection is mandatory.",
+      "category": "equipment",
+      "impact": "raises enforcement of paddle certification; notable for pros using prototypes",
+      "sources": [{"sourceId": "the-dink-2026-rules", "url": "https://www.thedinkpickleball.com/7-new-usap-pickleball-rules-for-2026-you-need-to-know/"}],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    },
+    {
+      "id": "rc-2026-multiple-hits",
+      "section": "tbd",
+      "displayName": "Legal multi-hit extension",
+      "summary": "Legal double-hit rule extended to triple-plus hits within one continuous motion.",
+      "category": "play",
+      "impact": "expands what's legal in unusual contacts",
+      "sources": [{"sourceId": "the-dink-2026-rules", "url": "https://www.thedinkpickleball.com/7-new-usap-pickleball-rules-for-2026-you-need-to-know/"}],
+      "confidence": "T2",
+      "lastUpdated": "2026-04-22"
+    }
+  ],
+  "caveats": [
+    "Section numbers marked 'tbd' or citing the older 4.A.5-family scheme must be verified against the primary USAP PDF before publishing as user-facing rule citations. Current entries rely on Selkirk and The Dink as secondary sources.",
+    "The change document (USAP-Rulebook-Change-Document.pdf) is the authoritative delta reference and should be the canonical source for user-facing 'what changed in 2026' widgets.",
+    "Phase 1 ingestion: pull the rulebook PDF once per year (post-December publication), extract changes, and render in a 'Rule Changes' module. Do not attempt to render the full rulebook in-app — link out."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Ozark Joe's Pickleball Daily Intelligence Report",
+  "short_name": "Pickleball Daily",
+  "description": "PPA Tour + MLP + DUPR + USAP — daily pickleball intelligence.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#0e1420",
+  "background_color": "#0e1420",
+  "orientation": "any",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
