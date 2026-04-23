@@ -1,0 +1,77 @@
+name: Daily ingestion
+
+on:
+  schedule:
+    - cron: '0 7 * * *'        # 07:00 UTC daily
+  workflow_dispatch: {}         # manual trigger
+
+permissions:
+  contents: write               # push snapshot back to main
+
+concurrency:
+  group: daily-ingestion
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore ingestion cache (rankings + slugs)
+        uses: actions/cache@v4
+        with:
+          path: logs/cache
+          key: ingestion-cache-${{ github.run_id }}
+          restore-keys: |
+            ingestion-cache-
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Playwright (Chromium + deps)
+        run: npx playwright install chromium --with-deps
+
+      - name: Fetch PPA rankings (non-fatal — yesterday's cache stays on failure)
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          node ingestion/fetch-ppa-rankings.js || \
+            echo "::warning::fetch-ppa-rankings.js failed — falling back to prior cache"
+
+      - name: Run daily ingestion
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node ingestion/fetch-daily.js
+
+      - name: Verify snapshot schema
+        run: |
+          test -s data/snapshots/latest.json
+          node -e "const j=require('./data/snapshots/latest.json'); \
+            if(!j.schemaVersion) throw new Error('latest.json missing schemaVersion'); \
+            if(!j.generatedAt) throw new Error('latest.json missing generatedAt'); \
+            console.log('snapshot ok — schemaVersion='+j.schemaVersion+' generatedAt='+j.generatedAt);"
+
+      - name: Commit snapshot back to main
+        run: |
+          git config user.name  "pickleball-daily-bot"
+          git config user.email "noreply@github.com"
+          git add data/snapshots/
+          if git diff --cached --quiet; then
+            echo "no snapshot changes — skipping commit"
+          else
+            git commit -m "data: daily snapshot $(date -u +%F)"
+            git push
+          fi
