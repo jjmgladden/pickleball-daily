@@ -1,0 +1,14 @@
+{
+  "name": "pickleball-daily-submit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker that receives submissions from the Pickleball Daily site and opens GitHub Issues.",
+  "scripts": {
+    "deploy": "npx wrangler deploy",
+    "dev": "npx wrangler dev",
+    "tail": "npx wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

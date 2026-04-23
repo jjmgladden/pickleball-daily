@@ -1,0 +1,16 @@
+name = "pickleball-daily-submit"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# Free tier: 100k requests/day. This Worker serves a single endpoint that
+# accepts form submissions and opens GitHub Issues via the REST API.
+
+[vars]
+GITHUB_REPO     = "jjmgladden/pickleball-daily"
+ALLOWED_ORIGINS = "https://jjmgladden.github.io,http://localhost:1965"
+ALLOWED_TYPES   = "player,event,moment,other"
+WORKER_NAME     = "pickleball-daily-submit"
+
+# Secret (set via `wrangler secret put GITHUB_TOKEN`):
+#   GITHUB_TOKEN — fine-grained PAT, Issues:write scope on
+#                  jjmgladden/pickleball-daily only.
