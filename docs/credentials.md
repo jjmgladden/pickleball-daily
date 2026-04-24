@@ -171,16 +171,16 @@ If you've lost a credential or suspect it's been exposed (committed to git accid
 - **Format example:** `you@example.com,reader@example.com`
 - **Editing:** GitHub Secrets are pure-replace — to add or remove a recipient, click the edit icon next to the secret on the Repo Secrets page, paste the new full comma-separated list, save. **Always include EVERY current recipient + EVERY new recipient in one full string.** Forgetting an existing recipient silently drops them from future sends.
 - **Where the canonical list lives:** owner's password manager has the actual comma-separated string. This doc tracks WHO is on the list (descriptors only, no actual addresses) so future sessions can see membership without seeing values.
-- **Current value:** 3 recipients as of 2026-04-24:
-  - Owner's primary address (added 2026-04-23, Session 6)
-  - Owner's brother (eastern-zone reader, added 2026-04-24, Session 6)
-  - Owner's brother's wife (added 2026-04-24, Session 6)
+- **Current value:** 1 recipient as of 2026-04-24 (REVERTED from 3 — see Recipient change log):
+  - Owner's primary address only
+- **Multi-recipient blocker:** Resend free tier with default `onboarding@resend.dev` sender restricts sends to *the Resend account's own email address only* (HTTP 403 with message *"You can only send testing emails to your own email address... To send emails to other recipients, please verify a domain..."*). Multi-recipient sending requires Path B (verify a domain at resend.com/domains + set `EMAIL_FROM` Secret to a sender on that domain). Path B is owner-action; not yet completed.
 - **Recipient change log:**
   - 2026-04-23 (Session 6) — initial: owner only
-  - 2026-04-24 (Session 6) — added owner's brother + brother's wife (now 3 recipients total)
+  - 2026-04-24 (Session 6, ~05:06 UTC) — expanded to 3 recipients (owner + brother + brother's wife). Verification dispatched as run `24873265142` and **failed at the Send morning email step with Resend 403 due to the free-tier sender restriction described above.**
+  - 2026-04-24 (Session 6, ~05:15 UTC) — owner reverted to 1 recipient (owner only) to stop daily failure-email noise. Multi-recipient deferred until Path B (domain verification) lands in a future session.
 - **Maintenance log:**
   - 2026-04-23 (Session 6) — initial set with owner only; first email confirmed delivered.
-  - 2026-04-24 (Session 6) — recipient list expanded from 1 to 3.
+  - 2026-04-24 (Session 6) — recipient list expanded from 1 to 3 — failed (free-tier restriction). Reverted to 1.
 
 ### `EMAIL_FROM` (optional override)
 
@@ -266,7 +266,8 @@ Significant credential events worth recording:
 - **2026-04-22 (Session 5)** — `YOUTUBE_API_KEY` pasted as GitHub Secret; first workflow run consumed it successfully.
 - **2026-04-23 (Session 6)** — Resend account created at `jjmgladden`; `RESEND_API_KEY` + `EMAIL_RECIPIENTS` created and pasted as GitHub Secrets; first email send (workflow run `24869972946`, Resend id `d2b4f1e7-9b04-4df8-8d99-2b4eefeac646`) confirmed delivered to owner's primary address; KB-0007 revised to reflect that the original "shared with sibling Baseball Project" assumption was inaccurate (account is a fresh Resend signup specific to this project).
 - **2026-04-23 (Session 6)** — Doc itself created and made canonical via CLAUDE.md v2 Session-End Protocol Step 2 mandate.
-- **2026-04-24 (Session 6)** — `EMAIL_RECIPIENTS` expanded from 1 to 3 recipients (owner + brother + brother's wife) per owner-led GitHub Secret update; per-recipient descriptors + change log added to the EMAIL_RECIPIENTS detail section. Verification dispatched as workflow run `24873265142`.
+- **2026-04-24 (Session 6)** — `EMAIL_RECIPIENTS` expanded from 1 to 3 recipients (owner + brother + brother's wife) per owner-led GitHub Secret update; per-recipient descriptors + change log added to the EMAIL_RECIPIENTS detail section. Verification dispatched as workflow run `24873265142` — **failed with Resend 403 (free-tier sender restriction).**
+- **2026-04-24 (Session 6)** — `EMAIL_RECIPIENTS` reverted to 1 recipient (owner only) to stop daily failure-email noise. Multi-recipient deferred until Path B (Resend domain verification) lands in a future session. Verification dispatched as workflow run `24873522457`.
 
 ---
 

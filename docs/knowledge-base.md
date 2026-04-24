@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-04-23 (Session 6 shutdown — **KB v7**, 32 entries; Phase 3B polish + Phase 3C.1 Resend email activated end-to-end + Phase 3C.2 Worker scaffolding dormant + CI hardening + splash polish + credentials doc + concepts primer + CLAUDE.md v1→v2)
+**Last updated:** 2026-04-24 (Session 6 post-shutdown extension — **KB v7 + KB-0033 added**, 33 entries; Resend free-tier sender restriction discovered when expanding EMAIL_RECIPIENTS, multi-recipient deferred to Path B in a future session)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -111,9 +111,13 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
   **Session 6 (2026-04-23) — Closed:** Account created. `RESEND_API_KEY` + `EMAIL_RECIPIENTS` GitHub Secrets pasted. First test workflow_dispatch (run `24869972946`) succeeded — email delivered, owner visually confirmed correct rendering in Gmail dark-theme inbox. Resend id `d2b4f1e7-9b04-4df8-8d99-2b4eefeac646` recorded as receipt.
 
-  Default sender = `Ozark Joe's Pickleball Daily <onboarding@resend.dev>` (Resend's free generic sender). `EMAIL_FROM` Secret left unset — Path A per the Session 6 walkthrough. Path B (verify own domain → custom sender like `daily@ozarkjoe.com`) deferred indefinitely; would only require setting `EMAIL_FROM` Secret value after domain verification.
-- **Status:** Closed (Session 6 — code shipped, account created, secrets pasted, end-to-end verified)
-- **Cross-ref:** ingestion/send-email.js · ingestion/lib/email-template.js · .github/workflows/daily.yml · docs/credentials.md § RESEND_API_KEY
+  Default sender = `Ozark Joe's Pickleball Daily <onboarding@resend.dev>` (Resend's free generic sender). `EMAIL_FROM` Secret left unset — Path A per the Session 6 walkthrough.
+
+  **Free-tier sender restriction discovered late Session 6 (2026-04-24):** With the default `onboarding@resend.dev` sender, Resend's free tier ONLY allows sending to the Resend account's own email address. Attempting to send to any other recipient returns HTTP 403 with message *"You can only send testing emails to your own email address... To send emails to other recipients, please verify a domain..."*. Surfaced when the recipient list was expanded from 1 to 3 (run `24873265142` failed). Recipient list reverted to owner-only to stop daily failure-email noise.
+
+  **Multi-recipient unblocking = Path B owner-action (deferred to future session):** verify a domain at resend.com/domains (3 DNS records: SPF, DKIM, DMARC) → set `EMAIL_FROM` GitHub Secret to a sender on that domain (e.g., `daily@yourdomain.com`) → re-expand `EMAIL_RECIPIENTS`. Total owner time ~30-45 min plus DNS propagation wait. Future-session candidate.
+- **Status:** Closed for owner-only path (Session 6 — code shipped, account created, secrets pasted, owner-only sending verified). **Multi-recipient blocked pending Path B (domain verification) — see KB-0033.**
+- **Cross-ref:** KB-0033 · ingestion/send-email.js · ingestion/lib/email-template.js · .github/workflows/daily.yml · docs/credentials.md § RESEND_API_KEY · docs/credentials.md § EMAIL_RECIPIENTS
 
 ### KB-0008 | Future AI Q&A layer (Phase 4, schema constraints now)
 - **Type:** Decision
@@ -612,6 +616,39 @@ Static types (Reference, Decision, Limitation) omit Tier.
 - **Status:** Closed (not-a-bug; reference recorded)
 - **Cross-ref:** app/js/tabs/*.js · app/js/components/highlights.js
 
+### KB-0033 | Resend free-tier sender restriction blocks multi-recipient until domain verified
+- **Type:** Limitation
+- **Date:** 2026-04-24 (Session 6 — discovered when expanding EMAIL_RECIPIENTS from 1 to 3)
+- **Category:** Email / Resend / Free-tier
+- **Tags:** resend, email, free-tier, restriction, domain-verification, path-b
+- **Finding:** Resend's free tier with the default `onboarding@resend.dev` sender (Path A from the Session 6 walkthrough) **only allows sending to the Resend account's own email address.** Attempting to send to any other recipient returns:
+
+  ```
+  HTTP 403 Forbidden
+  {"statusCode":403,"name":"validation_error","message":"You can only send testing
+  emails to your own email address (<owner-email>). To send emails to other
+  recipients, please verify a domain at resend.com/domains, and change the `from`
+  address to an email using this domain."}
+  ```
+
+  Workflow run `24873265142` (Session 6, 2026-04-24 ~05:06 UTC) hit this when `EMAIL_RECIPIENTS` was expanded from 1 (owner) to 3 (owner + brother + brother's wife). The send-email step exited 1, the workflow job failed, GitHub sent a failure-email notification.
+
+  This restriction was **not surfaced during the Session 6 Resend walkthrough** — Claude described Path A as "works immediately, no setup needed" and Path B as "skip for v1; can do later." That description was incomplete: Path A works ONLY for sending to yourself.
+
+  **Mitigation Session 6:** owner reverted `EMAIL_RECIPIENTS` to 1 recipient (owner only). Verified via run `24873522457` — clean send to owner, no Resend rejection. Daily cron will succeed.
+
+  **To unblock multi-recipient (Path B owner-action, deferred to future session):**
+  1. Resend dashboard → Domains → Add Domain → enter a domain you own
+  2. Resend provides 3 DNS records (SPF, DKIM, DMARC) to add at your domain registrar
+  3. Add records, wait ~10-30 min for DNS propagation
+  4. Click Verify on Resend
+  5. Add new GitHub Secret `EMAIL_FROM` = `Ozark Joe's Pickleball Daily <daily@yourdomain.com>` (sender using the verified domain)
+  6. Re-expand `EMAIL_RECIPIENTS` Secret to include desired recipients
+
+  Total owner time: ~30-45 min + DNS propagation wait. Requires owner to own a domain (or buy one ~$10-15/year if not).
+- **Status:** Open (Path B owner-action — multi-recipient blocked until completed)
+- **Cross-ref:** KB-0007 · docs/credentials.md § EMAIL_RECIPIENTS · docs/credentials.md § EMAIL_FROM · run 24873265142 (failure) · run 24873522457 (revert verification)
+
 ---
 
-**End of KB. Entry count: 32. Next ID: KB-0033.**
+**End of KB. Entry count: 33. Next ID: KB-0034.**
