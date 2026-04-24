@@ -1,6 +1,6 @@
 # Credentials Inventory
 
-**Version:** 1 | **Last updated:** 2026-04-23 (Session 6 shutdown — initial creation + first maintenance-log entry for Resend activation end-to-end)
+**Version:** 1 | **Last updated:** 2026-04-24 (Session 6 — EMAIL_RECIPIENTS expanded from 1 to 3 recipients per CLAUDE.md v2 Step 2 mandate)
 
 This is the canonical, living record of every credential (API key, token, account login) that the **pickleball-daily** project uses. Updated whenever a credential is added, rotated, or revoked.
 
@@ -169,10 +169,18 @@ If you've lost a credential or suspect it's been exposed (committed to git accid
 - **Used by:** `ingestion/send-email.js`.
 - **Storage:** GitHub Secret named `EMAIL_RECIPIENTS`.
 - **Format example:** `you@example.com,reader@example.com`
-- **Editing:** GitHub Secrets are pure-replace — to add or remove a recipient, click the edit icon next to the secret on the Repo Secrets page, paste the new full comma-separated list, save.
-- **Current value:** 1 recipient (owner's primary address — actual value in password manager + GitHub Secret) as of 2026-04-23. Plan to add the eastern-zone reader after first email reviewed.
+- **Editing:** GitHub Secrets are pure-replace — to add or remove a recipient, click the edit icon next to the secret on the Repo Secrets page, paste the new full comma-separated list, save. **Always include EVERY current recipient + EVERY new recipient in one full string.** Forgetting an existing recipient silently drops them from future sends.
+- **Where the canonical list lives:** owner's password manager has the actual comma-separated string. This doc tracks WHO is on the list (descriptors only, no actual addresses) so future sessions can see membership without seeing values.
+- **Current value:** 3 recipients as of 2026-04-24:
+  - Owner's primary address (added 2026-04-23, Session 6)
+  - Owner's brother (eastern-zone reader, added 2026-04-24, Session 6)
+  - Owner's brother's wife (added 2026-04-24, Session 6)
+- **Recipient change log:**
+  - 2026-04-23 (Session 6) — initial: owner only
+  - 2026-04-24 (Session 6) — added owner's brother + brother's wife (now 3 recipients total)
 - **Maintenance log:**
   - 2026-04-23 (Session 6) — initial set with owner only; first email confirmed delivered.
+  - 2026-04-24 (Session 6) — recipient list expanded from 1 to 3.
 
 ### `EMAIL_FROM` (optional override)
 
@@ -258,6 +266,7 @@ Significant credential events worth recording:
 - **2026-04-22 (Session 5)** — `YOUTUBE_API_KEY` pasted as GitHub Secret; first workflow run consumed it successfully.
 - **2026-04-23 (Session 6)** — Resend account created at `jjmgladden`; `RESEND_API_KEY` + `EMAIL_RECIPIENTS` created and pasted as GitHub Secrets; first email send (workflow run `24869972946`, Resend id `d2b4f1e7-9b04-4df8-8d99-2b4eefeac646`) confirmed delivered to owner's primary address; KB-0007 revised to reflect that the original "shared with sibling Baseball Project" assumption was inaccurate (account is a fresh Resend signup specific to this project).
 - **2026-04-23 (Session 6)** — Doc itself created and made canonical via CLAUDE.md v2 Session-End Protocol Step 2 mandate.
+- **2026-04-24 (Session 6)** — `EMAIL_RECIPIENTS` expanded from 1 to 3 recipients (owner + brother + brother's wife) per owner-led GitHub Secret update; per-recipient descriptors + change log added to the EMAIL_RECIPIENTS detail section. Verification dispatched as workflow run `24873265142`.
 
 ---
 
