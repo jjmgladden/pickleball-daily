@@ -1,6 +1,6 @@
 # Concepts Primer
 
-**Version:** 1 | **Last updated:** 2026-04-23 (Session 6 — initial)
+**Version:** 1 | **Last updated:** 2026-04-24 (Session 6 post-shutdown — added Section 11 on GitHub Actions Secrets management + Section 12 on Resend free-tier sender restriction)
 
 A reference for the foundational concepts behind external services, deployment, and auth used in this project. Read once to build the mental model; come back when a term feels foggy.
 
@@ -22,7 +22,9 @@ This doc explains the *what* and the *why* — not the *how-to-do-it-step-by-ste
 8. [Complete deployment walkthrough](#8-complete-deployment-walkthrough)
 9. [Personal Access Tokens (PATs)](#9-personal-access-tokens-pats)
 10. [GitHub auth methods — PAT vs browser vs git](#10-github-auth-methods--pat-vs-browser-vs-git)
-11. [Related documents](#related-documents)
+11. [GitHub Actions Secrets — write-only behavior + tracking pattern](#11-github-actions-secrets--write-only-behavior--tracking-pattern)
+12. [Resend free-tier sender restriction — Path A vs Path B](#12-resend-free-tier-sender-restriction--path-a-vs-path-b)
+13. [Related documents](#related-documents)
 
 ---
 
@@ -420,6 +422,128 @@ Side note on the name conflict: GitHub Actions has a built-in variable called `$
 
 ---
 
+## 11. GitHub Actions Secrets — write-only behavior + tracking pattern
+
+GitHub gives you two kinds of repository-level configuration storage for use in workflows: **Secrets** (encrypted) and **Variables** (plaintext). Both can be referenced in workflow YAML — `${{ secrets.NAME }}` or `${{ vars.NAME }}` — but they behave very differently in the UI.
+
+### Why Secrets are write-only
+
+When you create a Secret on github.com → Settings → Secrets and variables → Actions, GitHub:
+1. Encrypts the value using GitHub's vault
+2. Stores it server-side
+3. **Never exposes the value back to the UI** — not to you, not to admins, not to anyone
+
+When you click the edit pencil next to an existing Secret, the Value box is **always blank**. GitHub is not hiding the value behind a `••••••••` mask — the value is genuinely unreadable from the UI. The only way to "see" a Secret is to write a workflow that prints it (which GitHub will then redact in logs anyway, replacing the value with `***`).
+
+**Why this design:** if Secrets were readable from the UI, anyone with repo admin access could exfiltrate every API key the project uses. Read-only-by-design forces overwriting rather than viewing — even compromised admin credentials can't extract secret values without leaving evidence (a workflow change, a log line, etc.).
+
+### The "Update secret" overwrite gotcha
+
+Editing a Secret is a **complete overwrite**, not an append. Whatever you type in the Value box becomes the entire new value the moment you click Update. The previous value is gone forever the moment you save.
+
+This matters most for Secrets that hold lists (like a comma-separated `EMAIL_RECIPIENTS`):
+
+- If the current value is `you@example.com,reader@example.com`
+- And you type just `new-person@example.com` and click Update
+- The Secret is now just `new-person@example.com`
+- You and the reader fall off the list silently
+- Tomorrow's email goes only to the new person
+- You wouldn't know until no email arrives in your inbox
+
+To safely add or remove recipients, you must always type the **full new list** — every existing recipient you want to keep, plus any new ones. Forgetting an existing recipient drops them silently.
+
+### How to track who's in a Secret over time
+
+Because Secrets are unreadable, you need an external source of truth. Three viable approaches:
+
+| Approach | Pros | Cons |
+|---|---|---|
+| **Password manager** | Canonical, contains actual values, you always have them ready to paste | Personal-only; not visible to future Claude sessions or collaborators |
+| **`docs/credentials.md`** (descriptors only, no actual values) | Visible in repo; CLAUDE.md v2 Step 2 mandates updates on every change; survives across sessions | Doesn't store actual values (per the doc's own "no actual values" rule) |
+| **Switch Secret → Variable** | Variables ARE readable in the UI — full transparency | Loses privacy hygiene (anyone with Settings access can read); not appropriate for actual secrets, only for non-sensitive config |
+
+**Recommended pattern (used by this project):** combine the password manager + `docs/credentials.md`.
+- The password manager holds the canonical comma-separated value. Always.
+- `docs/credentials.md` mirrors the descriptor-level info (e.g., "owner + brother + brother's wife") with add/remove dates and a change log
+- When you change the Secret: copy current value from password manager → edit (add/remove) → paste new full value into the Secret → save the new value back to your password manager → tell Claude to update `docs/credentials.md` with the descriptor change
+
+That way: future-you (or future Claude) reading `docs/credentials.md` knows **who** is on the list and **when**, and you personally always have the **exact value** ready for the next edit.
+
+### Variables vs Secrets — when to use which
+
+- **Use a Secret when:** the value is a true credential (API key, token, password). Or when the value is sensitive enough that you don't want it visible in repo settings (e.g., personal email addresses for privacy hygiene).
+- **Use a Variable when:** the value is operational config that's safe to read openly — environment names, feature flag values, URLs of public services, version pins.
+
+For this project: `YOUTUBE_API_KEY`, `RESEND_API_KEY`, `EMAIL_RECIPIENTS`, `EMAIL_FROM` are all Secrets. We have no Variables yet.
+
+---
+
+## 12. Resend free-tier sender restriction — Path A vs Path B
+
+Resend is the email-sending service this project uses for the daily morning briefing (see `ingestion/send-email.js`). The free tier is generous (100 emails/day, 3,000/month) but has one significant restriction that's easy to miss until it bites you.
+
+### The two senders Resend offers
+
+When sending an email through Resend, every message has a `from:` address. You have two choices for what to put there:
+
+| Path | Sender address | Setup required | Limitation |
+|---|---|---|---|
+| **Path A — default sender** | `onboarding@resend.dev` (provided by Resend, no setup) | None | **Can ONLY send to your Resend account's own email address.** Sending to any other recipient returns HTTP 403. |
+| **Path B — verified domain** | Any address on a domain you own and verify (e.g. `daily@yourdomain.com`) | Add 3 DNS records to your domain registrar; wait for DNS propagation; click Verify on Resend | None — send to any recipient. |
+
+This was an unwelcome surprise during Session 6. The original Resend walkthrough framed Path A as "works immediately, no setup needed" and Path B as "skip for v1; can do later." That description was incomplete: Path A works only when sending to yourself. The instant the recipient list expanded beyond the owner's own email, Resend rejected the send with:
+
+```
+HTTP 403 Forbidden
+{"statusCode":403,"name":"validation_error","message":"You can only send testing
+emails to your own email address (<owner-email>). To send emails to other
+recipients, please verify a domain at resend.com/domains, and change the `from`
+address to an email using this domain."}
+```
+
+### Why Resend does this
+
+Anti-abuse. If any free Resend account could send to any address using `onboarding@resend.dev`, spammers would create thousands of throwaway accounts and blast `onboarding@resend.dev` mail to the world. Tying free-tier sends to the account's own email address means Resend can't be exploited as a free spam relay — you can only send to yourself.
+
+The domain-verification step in Path B proves you own a domain. That gives Resend recourse if you abuse the system: they can suspend the domain, the account, or both.
+
+### The Path B unblocking process (~30-45 min owner action)
+
+Required only when you want to email someone other than yourself. One-time per project.
+
+1. **Resend dashboard → Domains → Add Domain.** Enter a domain you own (e.g. `ozarkjoe.com`).
+2. **Resend gives you 3 DNS records** to add at your domain's registrar:
+   - **SPF** (TXT record) — declares Resend is authorized to send mail "as" your domain
+   - **DKIM** (TXT record, longer) — cryptographic signing key Resend uses to sign each message; receiving servers verify the signature
+   - **DMARC** (TXT record, optional but recommended) — tells receiving servers what to do with mail that fails SPF/DKIM
+3. **Add the records in your registrar's DNS panel.** Wherever you bought the domain (Namecheap, Cloudflare, Google Domains, GoDaddy, etc.), there's a DNS settings panel. Each registrar's UI is slightly different but the pattern is the same: "add TXT record" → paste the values Resend gave you.
+4. **Wait 10-30 minutes for DNS propagation.** DNS changes don't take effect instantly — they propagate across the internet's DNS servers. Sometimes faster, sometimes slower.
+5. **Click "Verify" on Resend.** Resend queries the DNS records; if all 3 are visible, your domain is verified. You can re-click Verify if it fails the first time (DNS still propagating).
+6. **Set `EMAIL_FROM` GitHub Secret** to a sender address using your verified domain:
+   ```
+   Ozark Joe's Pickleball Daily <daily@yourdomain.com>
+   ```
+   The local-part (`daily`) doesn't have to be a real mailbox — it just has to be on your verified domain. You can pick anything that reads well.
+7. **Re-expand `EMAIL_RECIPIENTS`** to include all the people you want on the list.
+
+After all that, Resend will accept multi-recipient sends.
+
+### What if you don't own a domain?
+
+You'd need to buy one. Cheap TLDs (`.com`, `.me`, `.pro`, etc.) run ~$10-15/year at most registrars. One-time decision; once owned, the domain belongs to you forever as long as you renew. Examples:
+- Namecheap, Cloudflare Registrar — usually cheapest
+- Google Domains (now Squarespace) — slightly more expensive but clean UI
+- GoDaddy — often pricier, more upsells
+
+Buying takes ~5 min. Then you're ready for Path B.
+
+### Quick reference: which path do you need?
+
+- **Owner-only morning email (just you):** Path A is fine. No setup. Use the default sender.
+- **Multi-recipient morning email (you + family/friends):** Path B is required. Verify a domain.
+
+---
+
 ## Related documents
 
 - **`docs/credentials.md`** — the inventory of every credential, including the Worker's PAT (when created).
@@ -429,3 +553,4 @@ Side note on the name conflict: GitHub Actions has a built-in variable called `$
 ## Maintenance log
 
 - **2026-04-23 (Session 6)** — initial creation. Covers Cloudflare Workers, wrangler/npx, the Worker URL concept, deployment walkthrough, PATs, and GitHub auth methods. Built from a Session 6 dialog where these concepts were explained for the first time.
+- **2026-04-24 (Session 6 post-shutdown)** — added Section 11 (GitHub Actions Secrets — write-only behavior + tracking pattern) and Section 12 (Resend free-tier sender restriction — Path A vs Path B). Built from a Session 6 dialog about email recipient management that surfaced both the GitHub Secrets overwrite gotcha and the Resend Path A limitation when expanding the recipient list from 1 to 3 failed with a 403. KB-0033 covers the same Resend limitation from a project-history angle; this primer captures the reusable concept.
