@@ -1,6 +1,6 @@
 # Credentials Inventory
 
-**Version:** 1 | **Last updated:** 2026-04-23 (Session 6 — initial)
+**Version:** 1 | **Last updated:** 2026-04-23 (Session 6 shutdown — initial creation + first maintenance-log entry for Resend activation end-to-end)
 
 This is the canonical, living record of every credential (API key, token, account login) that the **pickleball-daily** project uses. Updated whenever a credential is added, rotated, or revoked.
 
@@ -256,7 +256,8 @@ Significant credential events worth recording:
 
 - **2026-04-22 (Session 2)** — `YOUTUBE_API_KEY` set up; ingestion verified end-to-end.
 - **2026-04-22 (Session 5)** — `YOUTUBE_API_KEY` pasted as GitHub Secret; first workflow run consumed it successfully.
-- **2026-04-23 (Session 6)** — `RESEND_API_KEY` + `EMAIL_RECIPIENTS` created and pasted as GitHub Secrets; first email send confirmed delivered to owner's primary address.
+- **2026-04-23 (Session 6)** — Resend account created at `jjmgladden`; `RESEND_API_KEY` + `EMAIL_RECIPIENTS` created and pasted as GitHub Secrets; first email send (workflow run `24869972946`, Resend id `d2b4f1e7-9b04-4df8-8d99-2b4eefeac646`) confirmed delivered to owner's primary address; KB-0007 revised to reflect that the original "shared with sibling Baseball Project" assumption was inaccurate (account is a fresh Resend signup specific to this project).
+- **2026-04-23 (Session 6)** — Doc itself created and made canonical via CLAUDE.md v2 Session-End Protocol Step 2 mandate.
 
 ---
 

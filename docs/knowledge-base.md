@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-04-22 (Session 5 shutdown — KB v6, 23 entries; Phase 3A deployment slice 1 shipped — repo live, GitHub Pages live, daily workflow armed)
+**Last updated:** 2026-04-23 (Session 6 shutdown — **KB v7**, 32 entries; Phase 3B polish + Phase 3C.1 Resend email activated end-to-end + Phase 3C.2 Worker scaffolding dormant + CI hardening + splash polish + credentials doc + concepts primer + CLAUDE.md v1→v2)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -98,18 +98,22 @@ Static types (Reference, Decision, Limitation) omit Tier.
 - **Status:** Closed (Session 5 — both halves)
 - **Cross-ref:** data/master/video-sources.json · CLAUDE.md § Data Sources · ingestion/lib/youtube-api.js · .github/workflows/daily.yml
 
-### KB-0007 | Resend email — shared account, separate recipient list
+### KB-0007 | Resend email — shared account assumption was wrong; fresh account created
 - **Type:** Decision
 - **Tier:** T2
-- **Dependency:** Owner + Claude
-- **Date:** 2026-04-22
+- **Dependency:** Claude
+- **Date:** 2026-04-22 (original) · revised 2026-04-23 (Session 6)
 - **Category:** Features / Delivery / Ops
-- **Tags:** email, resend, notifications, sharing
-- **Finding:** Share sibling project's Resend.com account + `re_...` API key (free tier covers both projects). `EMAIL_RECIPIENTS` is per-repo Secret (independent list — owner may manually sync if identical recipients desired; two-parallel-lists problem is real but manageable per sibling's ~1-3 changes/year estimate).
+- **Tags:** email, resend, notifications, account
+- **Finding:** Original v6 finding assumed the project would share the sibling Baseball Project's Resend.com account + `re_...` API key. **That assumption turned out to be wrong** — owner had never opened a Resend account, and the sibling project's Resend status is not currently verified. Session 6 walked owner through fresh Resend signup (account `jjmgladden`, free tier — 100 emails/day / 3,000/month) and a brand-new API key creation specific to this project.
 
-  Phase 3 scope: rich HTML preview + CTA link — today's live events, top movers, new highlights, rule-of-the-day. Triggered after daily ingestion (GitHub Actions cron 07:00 UTC, same slot as sibling). Brother-in-Virginia friendly (arrives before both time zones start morning).
-- **Status:** Open (Phase 3)
-- **Cross-ref:** CLAUDE.md § Current Phase · CLAUDE.md § Session-End Protocol
+  Phase 3 scope (delivered Session 6): rich HTML preview + CTA link — today's live events, top movers, new highlights, future rule-of-the-day expansion. Triggered after daily ingestion (GitHub Actions cron 07:00 UTC). Currently sends to 1 recipient (owner). `EMAIL_RECIPIENTS` is a per-repo Secret with comma-separated list — additional recipients (e.g., eastern-zone family member) will be added once initial email format is reviewed.
+
+  **Session 6 (2026-04-23) — Closed:** Account created. `RESEND_API_KEY` + `EMAIL_RECIPIENTS` GitHub Secrets pasted. First test workflow_dispatch (run `24869972946`) succeeded — email delivered, owner visually confirmed correct rendering in Gmail dark-theme inbox. Resend id `d2b4f1e7-9b04-4df8-8d99-2b4eefeac646` recorded as receipt.
+
+  Default sender = `Ozark Joe's Pickleball Daily <onboarding@resend.dev>` (Resend's free generic sender). `EMAIL_FROM` Secret left unset — Path A per the Session 6 walkthrough. Path B (verify own domain → custom sender like `daily@ozarkjoe.com`) deferred indefinitely; would only require setting `EMAIL_FROM` Secret value after domain verification.
+- **Status:** Closed (Session 6 — code shipped, account created, secrets pasted, end-to-end verified)
+- **Cross-ref:** ingestion/send-email.js · ingestion/lib/email-template.js · .github/workflows/daily.yml · docs/credentials.md § RESEND_API_KEY
 
 ### KB-0008 | Future AI Q&A layer (Phase 4, schema constraints now)
 - **Type:** Decision
@@ -425,11 +429,11 @@ Static types (Reference, Decision, Limitation) omit Tier.
 - **Status:** Closed (pattern documented and shipped)
 - **Cross-ref:** KB-0018 · KB-0021 · ingestion/lib/mlp-api.js · ingestion/fetch-mlp.js · logs/cache/mlp-wp-json-*.json (Session 4 probe captures)
 
-### KB-0023 | GitHub Actions Node 20 runtime deprecation — v5 migration before 2026-06-02
+### KB-0023 | GitHub Actions Node 20 runtime deprecation — bumped to @v6/@v6/@v5 (closed)
 - **Type:** Action
 - **Tier:** T2
 - **Dependency:** Claude
-- **Date:** 2026-04-22 (Session 5 — first workflow run flagged it)
+- **Date:** 2026-04-22 (Session 5 — first workflow run flagged it) · closed 2026-04-23 (Session 6)
 - **Category:** Ops / CI
 - **Tags:** github-actions, node, deprecation, ci, migration
 - **Finding:** First run of `.github/workflows/daily.yml` (run `24816711514`, Phase 3A Step 5 verification) emitted a deprecation warning for every `@v4` action in the workflow. Affected: `actions/checkout@v4`, `actions/setup-node@v4`, `actions/cache@v4` — all three bundle Node 20 internally.
@@ -438,18 +442,176 @@ Static types (Reference, Decision, Limitation) omit Tier.
   - **2026-06-02** — default runtime flips to Node 24 (Node-20 actions start getting forced to Node 24)
   - **2026-09-16** — Node 20 removed from runners entirely
 
-  Root driver: Node.js LTS lifecycle. Node 20 reaches EOL in April 2026; after that it receives no security patches. GitHub's ~6-week lead-time window lets action maintainers publish `v5` releases on Node 24 before the flip.
+  **Session 6 (2026-04-23) — Closed:** All three publishers had already shipped past v4 by the time Session 6 started — better than expected. Bumped:
+  - `actions/checkout` `@v4` → `@v6` (jumped past v5 entirely)
+  - `actions/setup-node` `@v4` → `@v6` (jumped past v5 entirely)
+  - `actions/cache` `@v4` → `@v5`
 
-  **Mitigation (not urgent — 6 weeks out):** when `@v5` of each action ships, bump the three references in `.github/workflows/daily.yml`. Three one-line edits. No logic changes expected.
+  Bumped as part of Phase 3B bundle commit `dffbca6`. First workflow run on the new versions (`24817810744`) completed successfully in 1m13s with no deprecation warnings or runtime regressions. Subsequent runs all green. KB-0023 closes here.
+- **Status:** Closed (Session 6 — bumped + verified)
+- **Cross-ref:** .github/workflows/daily.yml · commit `dffbca6` · https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
 
-  **Opt-in early (optional):** set `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` at workflow env level to run current `@v4` actions on Node 24 today — proves forward-compatibility before the forced flip.
+### KB-0024 | Phase 3B Polish shipped — iOS PNG icons + splash + manifest + SW v4
+- **Type:** Action
+- **Tier:** T1
+- **Dependency:** Claude
+- **Date:** 2026-04-23 (Session 6)
+- **Category:** Build / Delivery / PWA
+- **Tags:** phase-3b, polish, ios, icons, splash, manifest, pwa
+- **Finding:** Phase 3B Polish bundle shipped end-to-end as commit `dffbca6`. Five tracks:
 
-  **Stop-gap if 2026-06-02 arrives before `v5` lands:** set `ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true`. Keeps workflow running but accepts known-unsupported runtime. Not a long-term posture.
+  1. **iOS PNG icons** — generated via `sharp` (devDependency) from `app/icon.svg`. Six PNGs in `app/icons/`: `apple-touch-icon-{180,167,152,120}x...png` (iOS) + `icon-{192,512}.png` (PWA manifest). New `scripts/build-icons.js` regenerates on demand (`npm run build:icons`). Sibling Baseball Project had identified the same gap but hadn't shipped it; we did first.
 
-  Suggested target session: Phase 3B (Session 6) as a 5-minute polish item if `v5` tags exist by then; otherwise defer to Phase 3C or a dedicated CI-maintenance session.
-- **Status:** Open (monitor `actions/checkout` + `actions/setup-node` + `actions/cache` releases)
-- **Cross-ref:** .github/workflows/daily.yml · https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+  2. **Splash screen** — new `app/js/components/splash.js` + CSS in `app/styles/main.css`. Once-per-session overlay (sessionStorage-gated), 2200ms visible + 300ms fade (Session 6 polish bumped from initial 1500/250), respects `prefers-reduced-motion`, click-to-dismiss, non-blocking (data fetches in parallel).
+
+  3. **Manifest polish** — `app/manifest.webmanifest` rewrote icons array with all 4 PNG sizes declared with `type: image/png` + `purpose: any maskable` where relevant. Tightened description, set `start_url` + `scope` to `.` (relative — works at both local-dev and Pages paths).
+
+  4. **SW cache + APP_VERSION bump** — `pickleball-daily-v3` → `v4` in `app/sw.js`; `APP_VERSION = 'v3'` → `'v4'` in `app/js/app.js`. SHELL_FILES gained `splash.js` + 6 PNG icons.
+
+  5. **KB-0023 piggyback** — bumped GitHub Actions `@v4` → `@v6/@v6/@v5` in same commit (closes KB-0023).
+
+  Verified end-to-end: owner installed on iPhone Safari + Chrome — pickleball-ball icon renders correctly (was generic placeholder before). Live deploy curl-verified all 6 PNGs serving 200 OK with byte counts matching local. Workflow `24817810744` ✓ green on @v6/@v5 actions. Splash verified on desktop (V4 pill, sessionStorage gating, opacity transition).
+
+  Splash duration tweak shipped post-feedback: VISIBLE_MS 1500→2200 + FADE_MS 250→300 in commit `0317972`, paired with SW cache v4→v5 + APP_VERSION v4→v5.
+- **Status:** Closed
+- **Cross-ref:** commit dffbca6 · commit 0317972 · scripts/build-icons.js · app/icons/ · app/js/components/splash.js
+
+### KB-0025 | Phase 3C.1 Resend email shipped + activated end-to-end
+- **Type:** Action
+- **Tier:** T1
+- **Dependency:** Claude (code) + Owner (account + secret paste)
+- **Date:** 2026-04-23 (Session 6)
+- **Category:** Build / Delivery / Email
+- **Tags:** phase-3c, email, resend, ingestion, workflow
+- **Finding:** Phase 3C slice 1 shipped end-to-end as commit `6e5db3e`:
+
+  - **`ingestion/send-email.js`** — skip-without-failing design (no API key → log + exit 0, workflow stays green pre-secret-paste). Supports `EMAIL_DRY_RUN=1` for local preview.
+  - **`ingestion/lib/email-template.js`** — pickleball-tailored HTML + plain-text + subject. Sections: Live Now / Upcoming / Top PPA Rankings / Top DUPR Ratings / Top Highlights / CTA. Inline styles only (Gmail-safe), palette mirrors `app/styles/main.css`.
+  - **Workflow wire-in** — new `Send morning email` step in `.github/workflows/daily.yml` after snapshot commit, gated `if: success()`, reads `RESEND_API_KEY` + `EMAIL_RECIPIENTS` + `EMAIL_FROM` from repo Secrets.
+  - **npm scripts** — `send:email`, `send:email:dry`, `build:icons`.
+  - **`.env.example`** — Resend env vars documented.
+
+  Verified twice — first as skip-without-failing (workflow `24833067571` logged `[send-email] RESEND_API_KEY not set — skipping`); second as actual-send (workflow `24869972946` logged `[send-email] Sent. Resend id: d2b4f1e7-9b04-4df8-8d99-2b4eefeac646`). Owner visually confirmed email delivered to Gmail inbox with correct rendering of all sections (header, Upcoming events, Top PPA Rankings, Top DUPR Ratings, Top Highlights with thumbnails, yellow CTA button, footer).
+
+  Bonus observed: Gmail auto-detected the YouTube links in the highlights section and rendered a separate "video gallery" preview at the bottom of the inbox view — Gmail-native feature, not in our template.
+
+  Owner-side completed: Resend account created (KB-0007 revision), `RESEND_API_KEY` + `EMAIL_RECIPIENTS` Secrets pasted via owner-led walkthrough.
+- **Status:** Closed
+- **Cross-ref:** KB-0007 · commit 6e5db3e · ingestion/send-email.js · ingestion/lib/email-template.js · docs/credentials.md § RESEND_API_KEY
+
+### KB-0026 | Phase 3C.2 Cloudflare Worker scaffolding shipped (dormant)
+- **Type:** Action
+- **Tier:** T2
+- **Dependency:** Owner (deployment is owner-action)
+- **Date:** 2026-04-23 (Session 6)
+- **Category:** Build / Delivery / Worker
+- **Tags:** phase-3c, worker, cloudflare, scaffolding, dormant
+- **Finding:** Phase 3C slice 2 shipped as commit `fe6fd9c`:
+
+  - **`worker/src/index.js`** — reusable POST → GitHub Issue Worker per KB-0012. All project-specific values in env (GITHUB_REPO, ALLOWED_ORIGINS, ALLOWED_TYPES, WORKER_NAME); src is identical across future projects.
+  - **`worker/wrangler.toml`** — repo + origins + submission types + worker name.
+  - **`worker/package.json`** — wrangler devDep + deploy/dev/tail npm scripts.
+  - **`worker/README.md`** — first-time setup walkthrough (~15 min owner action: Cloudflare account → wrangler login → fine-grained PAT → wrangler secret put → wrangler deploy). "Porting to other projects" section documents the 5-min reuse path.
+
+  Pickleball-specific tweak: submission types = `player,event,moment,other` (adds `event` vs sibling's `player,moment,other`, reflecting tournament-centric content model).
+
+  **Status: dormant.** Code lives in repo but no Worker is deployed. No public URL exists. The Suggest modal UI on the site (which would consume the Worker URL) is a future-session deliverable. KB-0012 stays open until owner deploys.
+- **Status:** Open (awaiting owner deployment when ready)
+- **Cross-ref:** KB-0012 · commit fe6fd9c · worker/README.md · docs/credentials.md § GITHUB_TOKEN (Worker — fine-grained PAT) · docs/concepts-primer.md
+
+### KB-0027 | CI hardening — push-race retry-with-rebase loop
+- **Type:** Action
+- **Tier:** T2
+- **Dependency:** Claude
+- **Date:** 2026-04-23 (Session 6)
+- **Category:** Ops / CI
+- **Tags:** ci, github-actions, race-condition, hardening, snapshot-commit
+- **Finding:** Two daily.yml workflow runs dispatched ~20 seconds apart during Session 6 verification both completed ingestion successfully and tried to `git push` their snapshot commits at almost the same time. Whichever finished first won; the loser saw `[rejected] main -> main (fetch first)` and the job failed with exit 1 — sending the owner a "All jobs have failed" email at 6:40 AM despite the underlying ingestion being healthy.
+
+  Failed run: `24833051976`. Cause: snapshot commit step had a single non-retried `git push`. Race only triggers when two runs overlap (rare under cron-only operation; this happened during burst of manual dispatches).
+
+  **Fix shipped as commit `c670e09`:** wrapped the push step in a 3-attempt loop. On rejection, `git pull --rebase -X theirs origin main` keeps our fresher snapshot on conflict, then retries. Upper bound prevents runaway loop. Verified via test run `24855830738` — `push succeeded (attempt 1)`, no regression.
+- **Status:** Closed
+- **Cross-ref:** commit c670e09 · .github/workflows/daily.yml · run 24833051976 (failed) · run 24855830738 (verified)
+
+### KB-0028 | Splash screen UX polish — duration tuned post-feedback
+- **Type:** Action
+- **Tier:** T3
+- **Dependency:** Claude
+- **Date:** 2026-04-23 (Session 6)
+- **Category:** UI / UX
+- **Tags:** splash, ux, polish, ios
+- **Finding:** Owner verified splash on iPhone (Safari + Chrome) post-Phase 3B and reported it felt "pretty short." Bumped VISIBLE_MS 1500 → 2200ms + FADE_MS 250 → 300ms (total 2.5s on-screen). Paired with SW cache v4→v5 + APP_VERSION v4→v5 per CLAUDE.md Critical Rule. Shipped as commit `0317972`. Owner confirmed splash now feels right on subsequent test.
+
+  Splash kept minimal — fade in / hold / fade out only. No icon scale, no title slide, no shimmer. Decision recorded as "keep minimal for now" per Session 6 dialog. Future richer animation options documented for reference but explicitly deferred.
+- **Status:** Closed
+- **Cross-ref:** commit 0317972 · app/js/components/splash.js
+
+### KB-0029 | Credentials inventory doc + CLAUDE.md v1→v2 maintenance mandate
+- **Type:** Decision
+- **Date:** 2026-04-23 (Session 6)
+- **Category:** Process / Documentation / Security
+- **Tags:** credentials, secrets, documentation, claude-md, versioning, maintenance
+- **Finding:** New living document `docs/credentials.md` shipped as commit `f4c5724`. Captures every credential the project uses (active + pending) with: per-credential format, scope, source dashboard, rotation history, lost-key recovery, source-of-truth posture (password manager → deployment locations, never reverse). Doc never lists actual credential values — placeholders + pointers only.
+
+  To make the maintenance trigger durable across sessions (rather than relying on in-conversation memory), CLAUDE.md rolled v1→v2 in commit `5530041`:
+  - **New Session-End Protocol Step 2:** mandate to update `docs/credentials.md` whenever credentials change (added, rotated, revoked, moved between storage locations, status flipped).
+  - Subsequent steps renumbered (Archive 2→3, Handoff 3→4, Kickoff 4→5, File-changes 5→6, Release-readiness 6→7, Report 7→8).
+  - v1 archived to `archive/CLAUDE_v1.md`.
+  - Self-rule callout added to `docs/credentials.md` pointing back to the CLAUDE.md mandate.
+- **Status:** Closed (doc + mandate both in place)
+- **Cross-ref:** docs/credentials.md · CLAUDE.md v2 § Session-End Protocol Step 2 · archive/CLAUDE_v1.md · commit f4c5724 · commit 5530041
+
+### KB-0030 | Concepts primer doc — foundational reference for Workers, wrangler, PATs, etc.
+- **Type:** Reference
+- **Date:** 2026-04-23 (Session 6)
+- **Category:** Documentation / Education
+- **Tags:** documentation, primer, workers, wrangler, cloudflare, pat, github-auth
+- **Finding:** New reference document `docs/concepts-primer.md` shipped as commit `cfb1366` (431 lines). Built from a Session 6 dialog where the owner asked clarifying questions about external services and deployment concepts; preserved as a standalone reference rather than letting the explanations be lost in chat history.
+
+  Sections: serverless functions general category · Cloudflare Workers · the Worker code in this project · wrangler CLI · `npx` · the deployed Worker URL · why Workers vs alternatives · complete deployment walkthrough (8 steps) · Personal Access Tokens (concept + GitHub flavors classic vs fine-grained) · GitHub auth methods (PAT vs browser vs git, including the `GITHUB_TOKEN` naming-collision warning).
+
+  Maintenance: lighter cadence than credentials doc — concepts don't change session-to-session. Update only when a new major external service or auth concept is introduced, or when a current concept turns out to be inaccurate. No CLAUDE.md mandate added.
+- **Status:** Closed
+- **Cross-ref:** docs/concepts-primer.md · commit cfb1366 · docs/credentials.md · worker/README.md
+
+### KB-0031 | PPA Rankings #1 tie data anomaly — Phase 2 investigation
+- **Type:** Issue
+- **Tier:** T3
+- **Dependency:** Claude
+- **Date:** 2026-04-23 (Session 6)
+- **Category:** Data / Ingestion / PPA
+- **Tags:** ppa-rankings, data-anomaly, tie, parse, phase-2
+- **Finding:** Snapshot data for `ppaRankings.rankings[]` shows two rows at rank `#1`, both with 21,300 points: Ben Johns (27 events) and Gabriel Tardio (20 events). No row at `#2`. First observed in the Phase 3C.1 dry-run email and again in the live Session 6 test send.
+
+  Possibilities (not yet investigated):
+  1. Genuine PPA Tour tied state — both players co-led the season; PPA Tour intentionally publishes a tie at #1.
+  2. Parse anomaly in `ingestion/fetch-ppa-rankings.js` column-mapping (KB-0011 closure context).
+  3. Source-side rendering quirk on `ppatour.com` (e.g., a footnote or annotation row being misclassified as a player row).
+
+  Not blocking — email + Rankings tab render the data faithfully. Visible to anyone reading the email or browsing the Rankings tab.
+
+  Investigation candidate for Phase 2 or any maintenance session that touches rankings ingestion. Sample diagnostic: open `ppatour.com/player-rankings/`, eyeball the top of the table, compare to `data/snapshots/latest.json § sources.ppaRankings.rankings[0..3]`.
+- **Status:** Open (T3 — Phase 2 investigation candidate)
+- **Cross-ref:** KB-0011 · ingestion/fetch-ppa-rankings.js · data/snapshots/latest.json
+
+### KB-0032 | iOS "◀ Gmail" return-pill UX trap — not a code bug
+- **Type:** Reference
+- **Date:** 2026-04-23 (Session 6)
+- **Category:** UX / iOS / External Links
+- **Tags:** ios, ux, safari, back-button, external-links
+- **Finding:** Owner reported during Session 6: "when i select any link within the app and then return - it returns to the previous app, which for me was gmail." Initially diagnosed as missing `target="_blank"` on external links — but full audit of all 11 external `<a>` locations across `app/js/tabs/*.js` + `app/js/components/highlights.js` confirmed every one already has `target="_blank" rel="noopener"` (has been since Phase 1.5).
+
+  Real root cause: the iOS system-level return pill at top-left of Safari (and Chrome). When you launch a URL from another app (Gmail, in this case), iOS shows a small "◀ Gmail" pill in the top-left corner — a system-level navigation affordance that always returns to the launching app, regardless of browser history or tabs. It looks like a back button but isn't. Tapping it consistently returns to Gmail.
+
+  Owner verified post-investigation: pressing the "right back button" (browser back, or tab switcher → original tab) works as expected. The "◀ Gmail" pill was the trap.
+
+  No code change shipped. Recorded as Reference because: (a) future sessions might encounter a similar report and benefit from skipping the misdiagnosis; (b) confirms the existing target=_blank discipline is sound.
+
+  Possible future enhancement (deferred indefinitely — probably not worth the build cost): add a small in-app banner or hint when the user navigates from an external link saying "use the tab switcher or browser back chevron, not the top-left ◀ pill." Likely confusing, marginal value.
+- **Status:** Closed (not-a-bug; reference recorded)
+- **Cross-ref:** app/js/tabs/*.js · app/js/components/highlights.js
 
 ---
 
-**End of KB. Entry count: 23. Next ID: KB-0024.**
+**End of KB. Entry count: 32. Next ID: KB-0033.**
