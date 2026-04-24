@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-24T08:57:14.527Z",
-  "startedAt": "2026-04-24T08:57:04.872Z",
-  "durationMs": 9655,
+  "generatedAt": "2026-04-24T23:01:34.988Z",
+  "startedAt": "2026-04-24T23:01:22.523Z",
+  "durationMs": 12465,
   "version": "v1",
   "brand": "Ozark Joe's Pickleball Daily Intelligence Report",
   "errors": [],
@@ -10,7 +10,7 @@
     "tournaments": {
       "sourceId": "tournaments",
       "ok": true,
-      "retrievedAt": "2026-04-24T08:57:04.877Z",
+      "retrievedAt": "2026-04-24T23:01:22.528Z",
       "counts": {
         "inProgress": 0,
         "upcoming": 7,
@@ -212,7 +212,7 @@
     "mlp": {
       "sourceId": "mlp",
       "ok": true,
-      "retrievedAt": "2026-04-24T08:57:12.205Z",
+      "retrievedAt": "2026-04-24T23:01:33.354Z",
       "freshness": "live-verified",
       "teams": [
         {
@@ -277,7 +277,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z",
+          "rosterRetrievedAt": "2026-04-24T23:01:33.353Z",
           "rosterMissingIds": [
             "6663"
           ]
@@ -333,7 +333,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "brooklyn-pickleball-team",
@@ -402,7 +402,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "california-black-bears",
@@ -455,7 +455,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "carolina-hogs",
@@ -522,7 +522,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "chicago-slice",
@@ -583,7 +583,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z",
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z",
           "rosterMissingIds": [
             "5062"
           ]
@@ -660,7 +660,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "dallas-flash",
@@ -736,7 +736,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "florida-smash",
@@ -789,7 +789,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "las-vegas-night-owls",
@@ -843,7 +843,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "los-angeles-mad-drops",
@@ -904,7 +904,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "miami-pickleball-club",
@@ -976,7 +976,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "new-jersey-5s",
@@ -1043,7 +1043,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "orlando-squeeze",
@@ -1111,7 +1111,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "palm-beach-royals",
@@ -1203,7 +1203,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "socal-hard-eights",
@@ -1263,7 +1263,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z",
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z",
           "rosterMissingIds": [
             "83599"
           ]
@@ -1335,7 +1335,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "texas-ranchers",
@@ -1403,7 +1403,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         },
         {
           "teamId": "utah-black-diamonds",
@@ -1471,7 +1471,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
+          "rosterRetrievedAt": "2026-04-24T23:01:33.354Z"
         }
       ],
       "teamsCount": 20,
@@ -1495,7 +1495,7 @@
     "dupr": {
       "sourceId": "dupr",
       "ok": true,
-      "retrievedAt": "2026-04-24T08:57:12.762Z",
+      "retrievedAt": "2026-04-24T23:01:34.142Z",
       "freshness": "seed-only",
       "note": "Phase 1 uses seed ratings; Playwright-scrape of public leaderboard deferred to Phase 2.",
       "top20": [
@@ -1675,7 +1675,7 @@
     "highlights": {
       "sourceId": "highlights",
       "ok": true,
-      "retrievedAt": "2026-04-24T08:57:14.526Z",
+      "retrievedAt": "2026-04-24T23:01:34.988Z",
       "quotaEstimate": 6,
       "channels": [
         {
@@ -1683,6 +1683,58 @@
           "channelId": "UCSP6HlrMmRqogym2aHBPHpw",
           "channelTitle": "PPA Tour",
           "videos": [
+            {
+              "videoId": "ZzjFFdU9CPM",
+              "title": "DRAW REVEAL SHOW IS LIVE!🔴",
+              "channelTitle": "PPA Tour",
+              "publishedAt": "2026-04-24T19:36:52Z",
+              "description": "",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/ZzjFFdU9CPM/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=ZzjFFdU9CPM"
+            },
+            {
+              "videoId": "0zZnp6oVkDg",
+              "title": "Pranking the pros in ATL 😂",
+              "channelTitle": "PPA Tour",
+              "publishedAt": "2026-04-24T19:16:11Z",
+              "description": "",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/0zZnp6oVkDg/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=0zZnp6oVkDg"
+            },
+            {
+              "videoId": "T8OuoN8PY7Y",
+              "title": "Veolia Atlanta Pickleball Championships Draw Reveal Show Presented by Ensure Max Protein",
+              "channelTitle": "PPA Tour",
+              "publishedAt": "2026-04-24T17:00:06Z",
+              "description": "In the Veolia Atlanta Pickleball Championships Draw Reveal Show Presented by Ensure Max Protein, Dave shares his storylines, reveals the draws, and goes over the Race to the PPA Finals in San Clemente following this event. All that and more on the Draw Reveal Show.\n\nSubscribe to our channel for premier pickleball coverage: https://www.youtube.com/@PPAtour. \n\nVisit our website to explore tournament",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/T8OuoN8PY7Y/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=T8OuoN8PY7Y"
+            },
+            {
+              "videoId": "W9hjhUsRMHs",
+              "title": "Champions are made here 🏆🍑",
+              "channelTitle": "PPA Tour",
+              "publishedAt": "2026-04-24T16:37:06Z",
+              "description": "",
+              "thumbnail": {
+                "url": "https://i.ytimg.com/vi/W9hjhUsRMHs/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+              },
+              "url": "https://www.youtube.com/watch?v=W9hjhUsRMHs"
+            },
             {
               "videoId": "iQrj6OMKT7w",
               "title": "CJ Klinger & JW Johnson’s road to a gold medal in last year’s Atlanta Slam🥇🥇Ca they do it again?",
@@ -1695,58 +1747,6 @@
                 "height": 180
               },
               "url": "https://www.youtube.com/watch?v=iQrj6OMKT7w"
-            },
-            {
-              "videoId": "gkG88LdvSFg",
-              "title": "Top 10 points of the Fasenra Sacramento Open",
-              "channelTitle": "PPA Tour",
-              "publishedAt": "2026-04-23T19:57:08Z",
-              "description": "Watch the Top 10 Points of the Fasenra Sacramento Open. You do not want to miss it!\n\nSubscribe to our channel for premier pickleball coverage: https://www.youtube.com/@PPAtour. \n\nVisit our website to explore tournament details and secure your tickets: https://www.ppatour.com/\n\nFollow us on social media:\n\nFacebook: https://www.facebook.com/OfficialPPATour\nInstagram: https://www.instagram.com/ppatou",
-              "thumbnail": {
-                "url": "https://i.ytimg.com/vi/gkG88LdvSFg/mqdefault.jpg",
-                "width": 320,
-                "height": 180
-              },
-              "url": "https://www.youtube.com/watch?v=gkG88LdvSFg"
-            },
-            {
-              "videoId": "EsQkYjD2mgU",
-              "title": "Who had the quickest hands in Sacramento!? 🙌",
-              "channelTitle": "PPA Tour",
-              "publishedAt": "2026-04-22T17:40:11Z",
-              "description": "",
-              "thumbnail": {
-                "url": "https://i.ytimg.com/vi/EsQkYjD2mgU/mqdefault.jpg",
-                "width": 320,
-                "height": 180
-              },
-              "url": "https://www.youtube.com/watch?v=EsQkYjD2mgU"
-            },
-            {
-              "videoId": "-b2YP7GvyTs",
-              "title": "Johnson/Johnson v Black/Oncins at the Fasenra Sacramento Open",
-              "channelTitle": "PPA Tour",
-              "publishedAt": "2026-04-20T07:34:51Z",
-              "description": "Timestamps:\n\nPlayers:\n\nSubscribe to our channel for premier pickleball coverage: https://www.youtube.com/@PPAtour. \n\nVisit our website to explore tournament details and secure your tickets: https://www.ppatour.com/\n\nFollow us on social media:\n\nFacebook: https://www.facebook.com/OfficialPPATour\nInstagram: https://www.instagram.com/ppatour/\nTwitter: https://twitter.com/ppatour\n\n#PPATour #Pickleball ",
-              "thumbnail": {
-                "url": "https://i.ytimg.com/vi/-b2YP7GvyTs/mqdefault.jpg",
-                "width": 320,
-                "height": 180
-              },
-              "url": "https://www.youtube.com/watch?v=-b2YP7GvyTs"
-            },
-            {
-              "videoId": "3OtsD8MJO7Y",
-              "title": "Johnson/Black v Todd/Rohrabacher at the Fasenra Sacramento Open",
-              "channelTitle": "PPA Tour",
-              "publishedAt": "2026-04-20T07:34:50Z",
-              "description": "Watch the Women's Doubles Final: (1) Jorja Johnson/Tyra Black vs (2) Parris Todd/Rachel Rohrabacher at the Fasenra Sacramento Open\n        •        Jorja Johnson: https://www.instagram.com/jorjajohnson_pb\n        •        Tyra Black: https://www.instagram.com/hurricanetblack_\n        •        Parris Todd: https://www.instagram.com/itsparristodd\n        •        Rachel Rohrabacher: https://www.inst",
-              "thumbnail": {
-                "url": "https://i.ytimg.com/vi/3OtsD8MJO7Y/mqdefault.jpg",
-                "width": 320,
-                "height": 180
-              },
-              "url": "https://www.youtube.com/watch?v=3OtsD8MJO7Y"
             }
           ]
         },
