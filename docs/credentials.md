@@ -6,6 +6,8 @@ This is the canonical, living record of every credential (API key, token, accoun
 
 The doc lists *what exists* and *where it lives* — never the actual values. Real values live only in your password manager + the encrypted secret stores listed below.
 
+> **Maintenance trigger:** Per `CLAUDE.md` § Session-End Protocol Step 2, this doc must be updated in any session where a credential is added, rotated, revoked, moved between storage locations, or has a status change. The KB owner-action list at session end checks this. If you're reading this doc and notice it's out of date with reality, update it as part of whatever session you're in.
+
 ---
 
 ## Table of Contents

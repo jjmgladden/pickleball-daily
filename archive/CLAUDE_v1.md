@@ -1,8 +1,6 @@
 # Ozark Joe's Pickleball Daily Intelligence Report — Claude Code Project Instructions
 
-**Version:** 2 | **Date:** April 23, 2026 | **Previous:** v1 (archived)
-
-**v2 changes:** Added Session-End Protocol Step 2 — mandate to update `docs/credentials.md` whenever credentials change. Subsequent steps renumbered.
+**Version:** 1 | **Date:** April 22, 2026 | **Previous:** stub (archived)
 
 ---
 
@@ -337,9 +335,8 @@ If resumed from a compacted summary, add: `[SESSION HEALTH] Compacted: Yes | Con
 Every session must end with these steps, in order:
 
 1. **Update `docs/knowledge-base.md`** — add new entries, close completed items, flip statuses, bump "Last updated" date. This is a full merged file, never a delta.
-2. **Update `docs/credentials.md`** if any credential was added, rotated, revoked, moved between storage locations, or had its status change this session. Update inventory table + the relevant per-credential detail section + add a maintenance-log entry. Triggers include: new API key created, new Personal Access Token created, new account opened (Resend, Cloudflare, Google Cloud, etc.), key rotation, status flip (⏸ → ✅ or ✅ → ❌), credential moved (e.g., added to local `.env` after only being in GitHub Secrets), or revocation. The doc never lists actual credential values — placeholders + pointers only.
-3. **Archive any previous versions** if a whole number rolled this session (CLAUDE.md, data schemas, etc. → `archive/`). Never delete.
-4. **Write the Handoff Prompt** — `sessions/PICKLEBALL_Handoff_Prompt_V{N+1}.md`. Full session record:
+2. **Archive any previous versions** if a whole number rolled this session (CLAUDE.md, data schemas, etc. → `archive/`). Never delete.
+3. **Write the Handoff Prompt** — `sessions/PICKLEBALL_Handoff_Prompt_V{N+1}.md`. Full session record:
    - Session number, date range, predecessor chain
    - Current-versions table with changes bolded
    - "What Happened" — work tracks chronologically
@@ -347,7 +344,7 @@ Every session must end with these steps, in order:
    - System state at end
    - Known issues / tech debt
    - Open KB items — dumped with tier
-5. **Write the Kickoff Prompt** — `sessions/PICKLEBALL_Kickoff_Prompt_Session{N+2}.md`. Concise start-here for the next session:
+4. **Write the Kickoff Prompt** — `sessions/PICKLEBALL_Kickoff_Prompt_Session{N+2}.md`. Concise start-here for the next session:
    - "Read these first" (ordered list of files)
    - Session-start protocol reminders
    - What just happened (1-paragraph summary)
@@ -357,9 +354,9 @@ Every session must end with these steps, in order:
    - System state snapshot (one-pager)
    - Critical reminders (things that bit us this session)
    - Session-end reminders for next session
-6. **List file changes** explicitly for the owner — what changed, what's new, what moved
-7. **Release-readiness check** — if any user-facing change shipped, note it in CHANGELOG-compatible format (Added / Changed / Fixed / Security)
-8. **Report to owner**: brief summary — what was done, what's next, any blockers
+5. **List file changes** explicitly for the owner — what changed, what's new, what moved
+6. **Release-readiness check** — if any user-facing change shipped, note it in CHANGELOG-compatible format (Added / Changed / Fixed / Security)
+7. **Report to owner**: brief summary — what was done, what's next, any blockers
 
 ### Naming conventions
 - Handoffs are versioned **monotonically** across all sessions: `V1`, `V2`, `V3` (no reset per session)
