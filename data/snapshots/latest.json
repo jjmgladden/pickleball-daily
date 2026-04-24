@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-24T05:17:33.424Z",
-  "startedAt": "2026-04-24T05:17:26.424Z",
-  "durationMs": 7000,
+  "generatedAt": "2026-04-24T08:57:14.527Z",
+  "startedAt": "2026-04-24T08:57:04.872Z",
+  "durationMs": 9655,
   "version": "v1",
   "brand": "Ozark Joe's Pickleball Daily Intelligence Report",
   "errors": [],
@@ -10,7 +10,7 @@
     "tournaments": {
       "sourceId": "tournaments",
       "ok": true,
-      "retrievedAt": "2026-04-24T05:17:26.429Z",
+      "retrievedAt": "2026-04-24T08:57:04.877Z",
       "counts": {
         "inProgress": 0,
         "upcoming": 7,
@@ -212,7 +212,7 @@
     "mlp": {
       "sourceId": "mlp",
       "ok": true,
-      "retrievedAt": "2026-04-24T05:17:31.287Z",
+      "retrievedAt": "2026-04-24T08:57:12.205Z",
       "freshness": "live-verified",
       "teams": [
         {
@@ -277,7 +277,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z",
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z",
           "rosterMissingIds": [
             "6663"
           ]
@@ -333,7 +333,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "brooklyn-pickleball-team",
@@ -402,7 +402,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "california-black-bears",
@@ -455,7 +455,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "carolina-hogs",
@@ -522,7 +522,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "chicago-slice",
@@ -583,7 +583,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z",
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z",
           "rosterMissingIds": [
             "5062"
           ]
@@ -660,7 +660,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "dallas-flash",
@@ -736,7 +736,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "florida-smash",
@@ -789,7 +789,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "las-vegas-night-owls",
@@ -843,7 +843,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "los-angeles-mad-drops",
@@ -904,7 +904,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "miami-pickleball-club",
@@ -976,7 +976,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "new-jersey-5s",
@@ -1043,7 +1043,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "orlando-squeeze",
@@ -1111,7 +1111,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "palm-beach-royals",
@@ -1203,7 +1203,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "socal-hard-eights",
@@ -1263,7 +1263,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z",
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z",
           "rosterMissingIds": [
             "83599"
           ]
@@ -1335,7 +1335,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "texas-ranchers",
@@ -1403,7 +1403,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         },
         {
           "teamId": "utah-black-diamonds",
@@ -1471,7 +1471,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-24T05:17:31.287Z"
+          "rosterRetrievedAt": "2026-04-24T08:57:12.205Z"
         }
       ],
       "teamsCount": 20,
@@ -1495,7 +1495,7 @@
     "dupr": {
       "sourceId": "dupr",
       "ok": true,
-      "retrievedAt": "2026-04-24T05:17:31.631Z",
+      "retrievedAt": "2026-04-24T08:57:12.762Z",
       "freshness": "seed-only",
       "note": "Phase 1 uses seed ratings; Playwright-scrape of public leaderboard deferred to Phase 2.",
       "top20": [
@@ -1675,7 +1675,7 @@
     "highlights": {
       "sourceId": "highlights",
       "ok": true,
-      "retrievedAt": "2026-04-24T05:17:33.424Z",
+      "retrievedAt": "2026-04-24T08:57:14.526Z",
       "quotaEstimate": 6,
       "channels": [
         {
@@ -1900,7 +1900,7 @@
     "ppaRankings": {
       "sourceId": "ppa-rankings",
       "ok": true,
-      "retrievedAt": "2026-04-23T05:05:30.244Z",
+      "retrievedAt": "2026-04-24T08:57:04.760Z",
       "url": "https://www.ppatour.com/player-rankings/",
       "rowsFound": 50,
       "rankings": [
