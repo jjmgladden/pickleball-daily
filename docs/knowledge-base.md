@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-04-24 (Session 6 post-shutdown extension — **KB v7 + KB-0033 added**, 33 entries; Resend free-tier sender restriction discovered when expanding EMAIL_RECIPIENTS, multi-recipient deferred to Path B in a future session)
+**Last updated:** 2026-04-24 (Session 6 post-shutdown extension — **KB v7 + KB-0034 added**, 34 entries; Path B activated end-to-end same-day as KB-0033 surfaced — `glad-fam.com` purchased + verified + EMAIL_FROM set + multi-recipient sending operational)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -111,13 +111,11 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
   **Session 6 (2026-04-23) — Closed:** Account created. `RESEND_API_KEY` + `EMAIL_RECIPIENTS` GitHub Secrets pasted. First test workflow_dispatch (run `24869972946`) succeeded — email delivered, owner visually confirmed correct rendering in Gmail dark-theme inbox. Resend id `d2b4f1e7-9b04-4df8-8d99-2b4eefeac646` recorded as receipt.
 
-  Default sender = `Ozark Joe's Pickleball Daily <onboarding@resend.dev>` (Resend's free generic sender). `EMAIL_FROM` Secret left unset — Path A per the Session 6 walkthrough.
+  **Path A → Path B transition completed Session 6 (2026-04-24):** Resend's free tier with the default `onboarding@resend.dev` sender (Path A) only permits sending to the Resend account's own email address. Discovered when expanding `EMAIL_RECIPIENTS` from 1 to 3 hit HTTP 403 (run `24873265142` failed). See KB-0033 for the full failure dialog and KB-0034 for the Path B activation.
 
-  **Free-tier sender restriction discovered late Session 6 (2026-04-24):** With the default `onboarding@resend.dev` sender, Resend's free tier ONLY allows sending to the Resend account's own email address. Attempting to send to any other recipient returns HTTP 403 with message *"You can only send testing emails to your own email address... To send emails to other recipients, please verify a domain..."*. Surfaced when the recipient list was expanded from 1 to 3 (run `24873265142` failed). Recipient list reverted to owner-only to stop daily failure-email noise.
-
-  **Multi-recipient unblocking = Path B owner-action (deferred to future session):** verify a domain at resend.com/domains (3 DNS records: SPF, DKIM, DMARC) → set `EMAIL_FROM` GitHub Secret to a sender on that domain (e.g., `daily@yourdomain.com`) → re-expand `EMAIL_RECIPIENTS`. Total owner time ~30-45 min plus DNS propagation wait. Future-session candidate.
-- **Status:** Closed for owner-only path (Session 6 — code shipped, account created, secrets pasted, owner-only sending verified). **Multi-recipient blocked pending Path B (domain verification) — see KB-0033.**
-- **Cross-ref:** KB-0033 · ingestion/send-email.js · ingestion/lib/email-template.js · .github/workflows/daily.yml · docs/credentials.md § RESEND_API_KEY · docs/credentials.md § EMAIL_RECIPIENTS
+  Path B unblocked multi-recipient by: (1) owner purchased `glad-fam.com` via Cloudflare Registrar; (2) verified the domain on Resend via Auto-configure (Resend pushed SPF/DKIM/DMARC records into Cloudflare DNS); (3) added GitHub Secret `EMAIL_FROM = "Ozark Joe's Pickleball Daily <daily@glad-fam.com>"`; (4) re-expanded `EMAIL_RECIPIENTS` to 3 recipients. Verification run `24915664144` succeeded with `Recipients: 3`, Resend id `921b759a-caf3-4ca3-9fc9-1147568fe133`. Multi-recipient daily morning email is live.
+- **Status:** Closed (Session 6 — code shipped, account created, secrets pasted, Path A then Path B both verified end-to-end; multi-recipient sending operational)
+- **Cross-ref:** KB-0033 · KB-0034 · ingestion/send-email.js · ingestion/lib/email-template.js · .github/workflows/daily.yml · docs/credentials.md § RESEND_API_KEY · docs/credentials.md § EMAIL_RECIPIENTS · docs/credentials.md § EMAIL_FROM · docs/credentials.md § glad-fam.com domain
 
 ### KB-0008 | Future AI Q&A layer (Phase 4, schema constraints now)
 - **Type:** Decision
@@ -646,9 +644,39 @@ Static types (Reference, Decision, Limitation) omit Tier.
   6. Re-expand `EMAIL_RECIPIENTS` Secret to include desired recipients
 
   Total owner time: ~30-45 min + DNS propagation wait. Requires owner to own a domain (or buy one ~$10-15/year if not).
-- **Status:** Open (Path B owner-action — multi-recipient blocked until completed)
-- **Cross-ref:** KB-0007 · docs/credentials.md § EMAIL_RECIPIENTS · docs/credentials.md § EMAIL_FROM · run 24873265142 (failure) · run 24873522457 (revert verification)
+
+  **Session 6 (2026-04-24) — Closed via Path B activation.** Owner purchased `glad-fam.com` via Cloudflare Registrar (~$10), Resend Auto-configure pushed DNS records into Cloudflare, domain verified within ~3 minutes, `EMAIL_FROM` Secret set to `Ozark Joe's Pickleball Daily <daily@glad-fam.com>`, `EMAIL_RECIPIENTS` re-expanded to 3 recipients. Verification run `24915664144` succeeded — `Recipients: 3`, Resend id `921b759a-caf3-4ca3-9fc9-1147568fe133`. See KB-0034 for Path B activation details.
+- **Status:** Closed (Session 6 — Path B activated, multi-recipient sending operational)
+- **Cross-ref:** KB-0007 · KB-0034 · docs/credentials.md § EMAIL_RECIPIENTS · docs/credentials.md § EMAIL_FROM · docs/credentials.md § glad-fam.com domain · run 24873265142 (Path A failure) · run 24873522457 (revert verification) · run 24915664144 (Path B verification)
+
+### KB-0034 | Path B activated — glad-fam.com domain verified; multi-recipient email operational
+- **Type:** Action
+- **Tier:** T1
+- **Dependency:** Owner (account/domain/DNS owner-actions) + Claude (Secret + verification orchestration)
+- **Date:** 2026-04-24 (Session 6 — same-day after KB-0033 surfaced)
+- **Category:** Email / Resend / Domain / Multi-recipient
+- **Tags:** path-b, resend, domain, dns, email, multi-recipient, cloudflare-registrar
+- **Finding:** Path B (Resend domain verification) activated end-to-end same-session as KB-0033 surfaced. Resolved the free-tier multi-recipient block. Steps executed:
+
+  1. **Domain purchased.** Owner bought `glad-fam.com` via Cloudflare Registrar (at-cost pricing, ~$10/year). Cloudflare auto-configured as DNS host for the domain.
+  2. **Domain added to Resend.** Owner navigated to https://resend.com/domains, clicked Add Domain, entered `glad-fam.com`, region `us-east-1` (North Virginia).
+  3. **Auto-configure used.** Resend detected Cloudflare as DNS host and offered Auto-configure (vs Manual setup). Owner clicked Auto-configure, Cloudflare prompted for one-time authorization, owner clicked Authorize. Resend pushed 3 DNS records into Cloudflare DNS for `glad-fam.com`:
+     - **MX** record on `send` subdomain → `feedback-smtp.us-east-1.amazonses.com` (priority 10) — for bounce handling
+     - **TXT** record `resend._domainkey` — DKIM public key
+     - **TXT** record on `send` subdomain — SPF (`v=spf1 include:amazonses.com ~all`)
+  4. **Domain verified.** Resend status flipped from `Pending` to `Verified` within ~3 minutes (faster than the "may take a few hours" warning banner — Cloudflare DNS propagates fast).
+  5. **`EMAIL_FROM` GitHub Secret added** (new): value = `Ozark Joe's Pickleball Daily <daily@glad-fam.com>`. Send-email script reads this and uses it as the `from:` address.
+  6. **`EMAIL_RECIPIENTS` GitHub Secret re-expanded** from 1 recipient (owner-only revert state) back to 3 recipients (owner + brother + brother's wife).
+  7. **Verification.** Workflow run `24915664144` dispatched; email step logged `Recipients: 3` + `From: ***` + `Sent. Resend id: 921b759a-caf3-4ca3-9fc9-1147568fe133`. Workflow exited 0. All 3 inboxes received the email.
+
+  **Net effect:** Daily 07:00 UTC cron now sends a fresh briefing to all 3 recipients each morning. Closes the multi-recipient gap that KB-0033 documented as a limitation. KB-0007 also updated to reflect Path A → Path B transition complete.
+
+  **New owned asset to track:** `glad-fam.com` domain registered at Cloudflare. Documented as a credential entry in `docs/credentials.md` § glad-fam.com domain. Annual renewal (~$10) required to keep ownership.
+
+  **Resend Auto-configure note:** the Cloudflare-Resend Auto-configure flow worked exactly as advertised. One-time authorization, no manual DNS-record entry needed, no typos possible. Recommended for any future projects that need Resend domain verification with Cloudflare DNS.
+- **Status:** Closed
+- **Cross-ref:** KB-0007 · KB-0033 · docs/credentials.md § EMAIL_FROM · docs/credentials.md § EMAIL_RECIPIENTS · docs/credentials.md § glad-fam.com domain · docs/concepts-primer.md § 12 (Path A vs Path B) · run 24915664144
 
 ---
 
-**End of KB. Entry count: 33. Next ID: KB-0034.**
+**End of KB. Entry count: 34. Next ID: KB-0035.**

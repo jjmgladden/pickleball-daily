@@ -1,6 +1,6 @@
 # Credentials Inventory
 
-**Version:** 1 | **Last updated:** 2026-04-24 (Session 6 — EMAIL_RECIPIENTS expanded from 1 to 3 recipients per CLAUDE.md v2 Step 2 mandate)
+**Version:** 1 | **Last updated:** 2026-04-24 (Session 6 — Path B activated end-to-end: glad-fam.com domain purchased + verified, EMAIL_FROM ✅, EMAIL_RECIPIENTS re-expanded to 3, multi-recipient sending operational)
 
 This is the canonical, living record of every credential (API key, token, account login) that the **pickleball-daily** project uses. Updated whenever a credential is added, rotated, or revoked.
 
@@ -69,7 +69,8 @@ Quick-reference table. Detailed sections below.
 | **`YOUTUBE_API_KEY`** | API key (Google) | ✅ Active | 2026-04-22 (Session 2) | `ingestion/lib/youtube-api.js` (highlight ingestion) | Local `.env` + GitHub Secret | [Google Cloud Console](https://console.cloud.google.com/apis/credentials) |
 | **`RESEND_API_KEY`** | API key (Resend) | ✅ Active | 2026-04-23 (Session 6) | `ingestion/send-email.js` | GitHub Secret | [Resend → API Keys](https://resend.com/api-keys) |
 | **`EMAIL_RECIPIENTS`** | Plain config | ✅ Active | 2026-04-23 (Session 6) | `ingestion/send-email.js` | GitHub Secret | [Repo Secrets](https://github.com/jjmgladden/pickleball-daily/settings/secrets/actions) |
-| **`EMAIL_FROM`** | Plain config (optional override) | ⏸ Not set | — | `ingestion/send-email.js` | GitHub Secret (optional) | [Repo Secrets](https://github.com/jjmgladden/pickleball-daily/settings/secrets/actions) |
+| **`EMAIL_FROM`** | Plain config (sender address) | ✅ Active | 2026-04-24 (Session 6) | `ingestion/send-email.js` | GitHub Secret | [Repo Secrets](https://github.com/jjmgladden/pickleball-daily/settings/secrets/actions) |
+| **`glad-fam.com`** (domain) | Owned domain | ✅ Active | 2026-04-24 (Session 6) | Resend sender + future personal use | Cloudflare Registrar (account credentials in password manager) | [Cloudflare Registrar](https://dash.cloudflare.com/?to=/:account/registrar) |
 | **`GITHUB_TOKEN`** (Worker) | Fine-grained PAT | ⏸ Not yet | — | `worker/src/index.js` | Cloudflare Worker secret | [GitHub PAT settings](https://github.com/settings/personal-access-tokens) |
 | **DUPR username/password** | Account credentials | ⏸ Phase 2 | — | `ingestion/lib/dupr-api.js` (Phase 2) | Local `.env` only | dupr.com |
 | **Cloudflare account login** | Account credentials | ⏸ Not yet | — | `wrangler` CLI | Wrangler config | [Cloudflare dashboard](https://dash.cloudflare.com) |
@@ -171,25 +172,31 @@ If you've lost a credential or suspect it's been exposed (committed to git accid
 - **Format example:** `you@example.com,reader@example.com`
 - **Editing:** GitHub Secrets are pure-replace — to add or remove a recipient, click the edit icon next to the secret on the Repo Secrets page, paste the new full comma-separated list, save. **Always include EVERY current recipient + EVERY new recipient in one full string.** Forgetting an existing recipient silently drops them from future sends.
 - **Where the canonical list lives:** owner's password manager has the actual comma-separated string. This doc tracks WHO is on the list (descriptors only, no actual addresses) so future sessions can see membership without seeing values.
-- **Current value:** 1 recipient as of 2026-04-24 (REVERTED from 3 — see Recipient change log):
-  - Owner's primary address only
-- **Multi-recipient blocker:** Resend free tier with default `onboarding@resend.dev` sender restricts sends to *the Resend account's own email address only* (HTTP 403 with message *"You can only send testing emails to your own email address... To send emails to other recipients, please verify a domain..."*). Multi-recipient sending requires Path B (verify a domain at resend.com/domains + set `EMAIL_FROM` Secret to a sender on that domain). Path B is owner-action; not yet completed.
+- **Current value:** 3 recipients as of 2026-04-24 (Path B activated):
+  - Owner's primary address (added 2026-04-23, Session 6)
+  - Owner's brother (eastern-zone reader, added 2026-04-24, Session 6 via Path B)
+  - Owner's brother's wife (added 2026-04-24, Session 6 via Path B)
 - **Recipient change log:**
   - 2026-04-23 (Session 6) — initial: owner only
-  - 2026-04-24 (Session 6, ~05:06 UTC) — expanded to 3 recipients (owner + brother + brother's wife). Verification dispatched as run `24873265142` and **failed at the Send morning email step with Resend 403 due to the free-tier sender restriction described above.**
-  - 2026-04-24 (Session 6, ~05:15 UTC) — owner reverted to 1 recipient (owner only) to stop daily failure-email noise. Multi-recipient deferred until Path B (domain verification) lands in a future session.
+  - 2026-04-24 (Session 6, ~05:06 UTC) — expanded to 3 recipients. Verification run `24873265142` failed (Resend 403 due to Path A free-tier sender restriction).
+  - 2026-04-24 (Session 6, ~05:15 UTC) — reverted to 1 recipient (owner only) to stop daily failure-email noise.
+  - 2026-04-24 (Session 6, ~22:59 UTC) — Path B activated (see KB-0034 + § glad-fam.com domain section). Re-expanded to 3 recipients. Verification run `24915664144` succeeded — multi-recipient sending operational.
 - **Maintenance log:**
   - 2026-04-23 (Session 6) — initial set with owner only; first email confirmed delivered.
-  - 2026-04-24 (Session 6) — recipient list expanded from 1 to 3 — failed (free-tier restriction). Reverted to 1.
+  - 2026-04-24 (Session 6) — recipient list expanded from 1 to 3 — failed (Path A restriction). Reverted to 1.
+  - 2026-04-24 (Session 6) — Path B activated; recipient list re-expanded to 3; multi-recipient sending verified.
 
-### `EMAIL_FROM` (optional override)
+### `EMAIL_FROM`
 
-- **Type:** Plain config string — sender address.
-- **Used by:** `ingestion/send-email.js`. If unset, defaults to `Ozark Joe's Pickleball Daily <onboarding@resend.dev>`.
-- **Storage:** GitHub Secret named `EMAIL_FROM` (optional).
-- **Current status:** Not set. Default is in use.
-- **When to set:** If you verify a custom domain on Resend (e.g. `ozarkjoe.com`) and want emails to come from `daily@ozarkjoe.com` instead of `onboarding@resend.dev`. Better deliverability + more polished sender.
-- **Format example:** `Ozark Joe's Pickleball Daily <daily@ozarkjoe.com>`
+- **Type:** Plain config string — sender display name + address.
+- **Used by:** `ingestion/send-email.js`. If unset, defaults to `Ozark Joe's Pickleball Daily <onboarding@resend.dev>` (Path A — owner-only sending due to Resend free-tier restriction).
+- **Storage:** GitHub Secret named `EMAIL_FROM`.
+- **Current status:** ✅ Active (2026-04-24 — Path B). Value uses verified domain `glad-fam.com`.
+- **Format:** `Display Name <localpart@verified-domain>` — must be a sender on a domain verified at Resend.
+- **Source dashboard:** [Repo Secrets](https://github.com/jjmgladden/pickleball-daily/settings/secrets/actions) for the value · Resend dashboard for domain verification status (Domains tab).
+- **If lost / accidentally cleared:** the workflow falls back to the Path A default sender (`onboarding@resend.dev`), which silently restricts sends back to owner-only. To restore: edit the Secret with the same value (display + verified-domain address). Domain verification on Resend is unaffected by losing this Secret.
+- **Maintenance log:**
+  - 2026-04-24 (Session 6) — first set; sender on verified `glad-fam.com` domain. Path B activated.
 
 ### `GITHUB_TOKEN` (Worker — fine-grained PAT)
 
@@ -219,11 +226,35 @@ If you've lost a credential or suspect it's been exposed (committed to git accid
 ### Cloudflare account login
 
 - **Type:** Account credentials.
-- **Used by:** `wrangler` CLI for deploying / managing the Worker.
-- **Storage:** Wrangler stores an OAuth token at `~/.wrangler/config/default.toml` (or Windows equivalent) after `wrangler login`. Auto-managed.
-- **Source:** Sign up at https://dash.cloudflare.com/sign-up. Free tier sufficient.
-- **Status:** Not yet created — Worker is not deployed.
-- **Cross-reference:** `worker/README.md`
+- **Used by:** Multiple — (a) owns `glad-fam.com` domain via Cloudflare Registrar; (b) hosts DNS for `glad-fam.com` (Resend SPF/DKIM/DMARC records live here); (c) future Worker deployment will use this same account.
+- **Storage:** Account credentials in owner's password manager. Wrangler will auto-store an OAuth token at `~/.wrangler/config/default.toml` (Windows equivalent) when `wrangler login` runs (not yet, Worker still dormant).
+- **Source:** https://dash.cloudflare.com (existing account — created 2026-04-24 alongside `glad-fam.com` purchase).
+- **Status:** ✅ Active (account exists, owns `glad-fam.com`, hosts its DNS). Worker deployment via wrangler still pending owner action.
+- **Cross-reference:** `worker/README.md` · § glad-fam.com domain section (below)
+
+### `glad-fam.com` domain
+
+- **Type:** Owned domain name.
+- **Used by:** Resend sender address (`daily@glad-fam.com` via `EMAIL_FROM` Secret). Future personal-use possibilities (personal email forwarding, future personal landing page, future projects).
+- **Storage:**
+  - **Registrar:** Cloudflare Registrar (linked to owner's Cloudflare account)
+  - **DNS host:** Cloudflare DNS (auto-set when Cloudflare is the registrar)
+  - **Renewal:** annual, ~$10/year at Cloudflare's at-cost pricing
+- **DNS records currently active:**
+  - `MX send.glad-fam.com → feedback-smtp.us-east-1.amazonses.com` (Resend bounce handling)
+  - `TXT resend._domainkey.glad-fam.com` (Resend DKIM public key)
+  - `TXT send.glad-fam.com` (Resend SPF: `v=spf1 include:amazonses.com ~all`)
+  - All 3 records were pushed automatically by Resend's Auto-configure flow during Session 6 setup. One-time push; Resend cannot modify DNS again without owner re-authorization.
+- **Source dashboard:**
+  - Domain ownership / renewal: [Cloudflare Registrar](https://dash.cloudflare.com/?to=/:account/registrar)
+  - DNS records: Cloudflare DNS dashboard for `glad-fam.com`
+  - Resend domain status: https://resend.com/domains
+- **Verification status on Resend:** ✅ Verified (2026-04-24, ~3 minutes after Auto-configure push)
+- **If lost:** if the domain registration lapses (failure to renew), Resend will eventually fail to verify SPF/DKIM/DMARC and email sending will degrade. To prevent: keep auto-renewal enabled at Cloudflare; renewal reminder emails go to owner's primary address. If domain is deliberately abandoned, the project must either acquire a new domain (repeating Path B) or revert to Path A (owner-only sending via `onboarding@resend.dev`).
+- **Status:** ✅ Active.
+- **Maintenance log:**
+  - 2026-04-24 (Session 6) — purchased via Cloudflare Registrar (~$10/year); Resend Auto-configure pushed 3 DNS records; Resend verification completed ~3 min later; immediately used as the verified sender domain for the daily morning email.
+- **Cross-reference:** KB-0033 (the limitation that drove this purchase) · KB-0034 (the activation record) · § EMAIL_FROM · § Cloudflare account login
 
 ### Google Cloud account
 
@@ -268,6 +299,8 @@ Significant credential events worth recording:
 - **2026-04-23 (Session 6)** — Doc itself created and made canonical via CLAUDE.md v2 Session-End Protocol Step 2 mandate.
 - **2026-04-24 (Session 6)** — `EMAIL_RECIPIENTS` expanded from 1 to 3 recipients (owner + brother + brother's wife) per owner-led GitHub Secret update; per-recipient descriptors + change log added to the EMAIL_RECIPIENTS detail section. Verification dispatched as workflow run `24873265142` — **failed with Resend 403 (free-tier sender restriction).**
 - **2026-04-24 (Session 6)** — `EMAIL_RECIPIENTS` reverted to 1 recipient (owner only) to stop daily failure-email noise. Multi-recipient deferred until Path B (Resend domain verification) lands in a future session. Verification dispatched as workflow run `24873522457`.
+- **2026-04-24 (Session 6, ~22:30 UTC)** — Owner purchased `glad-fam.com` domain via Cloudflare Registrar (~$10/year); domain is now an actively tracked owned asset (see § glad-fam.com domain section).
+- **2026-04-24 (Session 6, ~22:45 UTC)** — Path B activated: Resend Auto-configure pushed SPF/DKIM/DMARC records into Cloudflare DNS, domain verified within ~3 minutes; `EMAIL_FROM` Secret created with `Ozark Joe's Pickleball Daily <daily@glad-fam.com>`; `EMAIL_RECIPIENTS` re-expanded from 1 to 3 recipients. Verification run `24915664144` succeeded with `Recipients: 3`, Resend id `921b759a-caf3-4ca3-9fc9-1147568fe133`. Multi-recipient daily morning email is operational.
 
 ---
 
