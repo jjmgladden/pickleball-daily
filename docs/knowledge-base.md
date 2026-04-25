@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-04-24 (Session 6 FORMAL FINAL SHUTDOWN — **KB v7**, 34 entries through KB-0034; all Phase 3B + Phase 3C.1 + Phase 3C.2 + cross-cutting docs + post-shutdown Path B extensions captured. Session 7 starts fresh with News tab ATP'd as primary agenda)
+**Last updated:** 2026-04-25 (Session 7 shutdown — **KB v8**, 38 entries through KB-0038; News tab + 4 RSS sources + Atom 1.0 support + Learn tab + On-This-Day module + KB-0031 closed via PPA scraper column-mapping fix + KB-0012/KB-0026 closed as deferred-feature pair + KB-0008 trigger conditions updated)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -134,7 +134,13 @@ Static types (Reference, Decision, Limitation) omit Tier.
   7. Snapshots in `data/snapshots/` are append-only.
 
   Phase 1 snapshots (`data/snapshots/latest.json`) preserve these constraints — `schemaVersion: 1`, stable `sourceId` per source, ISO-8601 `generatedAt`, `confidence` passed through from master seeds.
-- **Status:** Open (deferred — Phase 4)
+
+  **Session 7 update (2026-04-25):** Owner clarified the activation triggers — defer until **either**:
+  1. The 3 daily-email recipients are demonstrably relying on the app for daily reading (signal: questions, requests for features, mentions of specific data points), OR
+  2. Owner decides to develop Frontier-Model-LLM integration as a deliberate skill exercise (independent of pickleball value).
+
+  Until one of those conditions surfaces, no Phase 4 work. Schema-readiness is the only Phase-0 commitment and is in place today.
+- **Status:** Open (deferred — Phase 4; awaiting one of two trigger conditions)
 - **Cross-ref:** CLAUDE.md § AI-Retrievable Schema Constraints · docs/phase-0-research.md § 0 · data/snapshots/latest.json
 
 ### KB-0009 | Ratings vs Rankings UI distinction
@@ -212,9 +218,13 @@ Static types (Reference, Decision, Limitation) omit Tier.
   4. `npx wrangler deploy`.
   5. Wire `SUBMIT_URL` constant in suggest-modal component.
 
-  **Session 3 update (2026-04-22):** Owner confirmed the Worker stays in Phase 3 scope (not skippable) and wants the pattern built reusable across future projects. Implementation note: project-specific values (repo name, Issue label, CORS allowlist) must live in env/config so the `worker/` folder can copy-paste into a future project with minimal edits. Tier effectively T2 now despite the T3 label.
-- **Status:** Open (Phase 3)
-- **Cross-ref:** CLAUDE.md § Project File Structure § worker/
+  **Session 3 update (2026-04-22):** Owner confirmed the Worker stays in Phase 3 scope (not skippable) and wants the pattern built reusable across future projects. Implementation note: project-specific values (repo name, Issue label, CORS allowlist) must live in env/config so the `worker/` folder can copy-paste into a future project with minimal edits.
+
+  **Session 6 update (2026-04-23):** Worker code shipped to `worker/` (commit `fe6fd9c`) and remains dormant pending owner deployment. Reframed as one bundled feature with the Suggest modal UI — deploying the Worker without the modal produces no user value. KB-0026 captures the dormant-code state.
+
+  **Session 7 update (2026-04-25):** Owner ATP'd deferral. Closing as **deferred** with the bundled-feature framing and a single trigger condition: **resume work when there is a demonstrated use case for visitor submissions.** Current readership (3 known users — owner + brother + brother's wife) doesn't motivate a public form. KB-0026 is closed as a duplicate (same trigger, same code state). Owner correction noted: this carry-forward should have been recorded at end of Session 6.
+- **Status:** Closed (Session 7 — deferred indefinitely; resume on visitor-submission use case)
+- **Cross-ref:** CLAUDE.md § Project File Structure § worker/ · KB-0026 (closed as duplicate) · worker/README.md · docs/concepts-primer.md § Sections 6-8 · docs/credentials.md § GITHUB_TOKEN (Worker — fine-grained PAT)
 
 ### KB-0013 | YouTube iframe embed — allowed for PPA + MLP (Phase 1 live test)
 - **Type:** Decision
@@ -517,9 +527,11 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
   Pickleball-specific tweak: submission types = `player,event,moment,other` (adds `event` vs sibling's `player,moment,other`, reflecting tournament-centric content model).
 
-  **Status: dormant.** Code lives in repo but no Worker is deployed. No public URL exists. The Suggest modal UI on the site (which would consume the Worker URL) is a future-session deliverable. KB-0012 stays open until owner deploys.
-- **Status:** Open (awaiting owner deployment when ready)
-- **Cross-ref:** KB-0012 · commit fe6fd9c · worker/README.md · docs/credentials.md § GITHUB_TOKEN (Worker — fine-grained PAT) · docs/concepts-primer.md
+  **Status: dormant.** Code lives in repo but no Worker is deployed. No public URL exists. The Suggest modal UI on the site (which would consume the Worker URL) is a future-session deliverable.
+
+  **Session 7 update (2026-04-25):** Closed as **duplicate of KB-0012**. Same trigger, same code state, same deferral. KB-0012 is the single source of truth going forward; this entry stays in the record for chronology only. Resume condition: visitor-submission use case emerges.
+- **Status:** Closed (Session 7 — duplicate of KB-0012; deferred indefinitely)
+- **Cross-ref:** KB-0012 (parent / authoritative) · commit fe6fd9c · worker/README.md · docs/credentials.md § GITHUB_TOKEN (Worker — fine-grained PAT) · docs/concepts-primer.md
 
 ### KB-0027 | CI hardening — push-race retry-with-rebase loop
 - **Type:** Action
@@ -594,8 +606,10 @@ Static types (Reference, Decision, Limitation) omit Tier.
   Not blocking — email + Rankings tab render the data faithfully. Visible to anyone reading the email or browsing the Rankings tab.
 
   Investigation candidate for Phase 2 or any maintenance session that touches rankings ingestion. Sample diagnostic: open `ppatour.com/player-rankings/`, eyeball the top of the table, compare to `data/snapshots/latest.json § sources.ppaRankings.rankings[0..3]`.
-- **Status:** Open (T3 — Phase 2 investigation candidate)
-- **Cross-ref:** KB-0011 · ingestion/fetch-ppa-rankings.js · data/snapshots/latest.json
+
+  **Session 7 update (2026-04-25):** Investigated end-to-end. Result is two-part — see KB-0037 for the full root cause + fix. Summary: PPA Tour itself shows the tie (1224 convention; not a parse error) AND the scraper had a column-mapping bug where "events" was actually "age" (causing the misleading "27 events / 20 events" in the data). Both addressed in commit `6d57b8c`.
+- **Status:** Closed (Session 7 — investigation complete; see KB-0037 for fix)
+- **Cross-ref:** KB-0011 · KB-0037 · ingestion/fetch-ppa-rankings.js · data/snapshots/latest.json · commit 6d57b8c
 
 ### KB-0032 | iOS "◀ Gmail" return-pill UX trap — not a code bug
 - **Type:** Reference
@@ -679,4 +693,108 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
 ---
 
-**End of KB. Entry count: 34. Next ID: KB-0035.**
+### KB-0035 | News tab shipped — RSS-based ingestion across 4 sources (T1+T2+T3 mix)
+- **Type:** Action
+- **Tier:** T1
+- **Dependency:** Claude
+- **Date:** 2026-04-25 (Session 7)
+- **Category:** Build / Delivery / Phase 2 / News
+- **Tags:** phase-2, news, rss, atom, the-dink, pickleball-union, pickleball-magazine, the-kitchen
+- **Finding:** Phase 2's News tab shipped to main across two commits (`a4326bf` initial + `7a11020` source expansion).
+
+  **Architecture:** Minimal no-deps parser at `ingestion/lib/rss-parser.js` handles RSS 2.0 + Atom 1.0 with auto-detection in `fetchFeed()`. Atom support added because The Kitchen's Shopify-default feed is `application/atom+xml` (different element shape: `<entry>` not `<item>`, `<link href="..."/>` attribute not text content, `<published>` not `<pubDate>`, nested `<author><name>`).
+
+  **Sources (4 total, mixed tiers):**
+  | Source | Tier | Format | Feed URL |
+  |---|---|---|---|
+  | Pickleball Magazine (Wix) | T1 | RSS 2.0 | `https://www.pickleballmagazine.com/blog-feed.xml` |
+  | The Dink (Ghost) | T2 | RSS 2.0 | `https://www.thedinkpickleball.com/rss/` |
+  | Pickleball Union (WordPress) | T2 | RSS 2.0 | `https://pickleballunion.com/feed/` |
+  | The Kitchen (Shopify) | T3 | **Atom 1.0** | `https://thekitchenpickle.com/blogs/news.atom` |
+
+  **Pipeline:** `fetch-news.js` → dedupe by URL + normalized title → sort newest-first → cap MAX_PER_SOURCE=15 + MAX_ITEMS=40. Bound to `snapshot.sources.news.items[]` for browser consumption.
+
+  **UI:**
+  - News tab at [app/js/tabs/news.js](app/js/tabs/news.js) — Today / This Week / Recent buckets per `bucketNews()` in [app/js/components/news-card.js](app/js/components/news-card.js).
+  - Top 3 surface on Daily tab as compact cards (`renderNewsCardCompact`).
+  - Email template adds Top News section with purple accent (`#c69aff`) below Top Highlights.
+  - Tier badges per [confidence-badge.js](app/js/components/confidence-badge.js): T1 = no badge (normal render), T2 = explicit T2 badge, T3 = "editorial" badge.
+
+  **`displayNameOverride`** binding in `fetch-news.js` lets Magazine render as "Pickleball Magazine" without modifying [media-sources.json](data/master/media-sources.json)'s accurate "Pickleball Magazine (USAP-affiliated)" label.
+
+  **Note on PickleWave:** Original Kickoff Session 7 named "The Dink + PickleWave" as MVP sources. PickleWave is only an X social account in [media-sources.json](data/master/media-sources.json) (not a newsletter), so pivoted to The Dink + Pickleball Union for MVP, then added Magazine + Kitchen on owner ATP.
+
+  **Verification:** secrets clean · ESM 24/24 · ingestion 0 errors · preview confirms 40 cards rendering with T1+T2+T3 tier mix · email dry-run renders Top News section · production deploy at v6 (initial) and v7 (after KB-0038).
+- **Status:** Closed
+- **Cross-ref:** commit a4326bf (initial) · commit 7a11020 (sources expanded) · ingestion/lib/rss-parser.js · ingestion/fetch-news.js · app/js/components/news-card.js · app/js/tabs/news.js · ingestion/lib/email-template.js · data/master/media-sources.json
+
+### KB-0036 | Learn tab shipped — governance + 2026 rules + history timeline
+- **Type:** Action
+- **Tier:** T1
+- **Dependency:** Claude
+- **Date:** 2026-04-25 (Session 7)
+- **Category:** Build / Delivery / Phase 2 / Learn
+- **Tags:** phase-2, learn, rules, history, governance, usap
+- **Finding:** Phase 2's Learn tab shipped in commit `a4326bf` alongside News. Three sections:
+
+  1. **Governance** — definition list of who-governs-what (USAP, UPA, PPA Tour, MLP, DUPR). Hand-written prose; not data-driven.
+  2. **2026 Rule Changes** — 10 rule cards rendered from [data/master/rules-changes-2026.json](data/master/rules-changes-2026.json), each with section number (where known) + category + impact + source links. Header card surfaces `rulebookEdition`, `effectiveDate`, links to USAP rulebook PDF + change document.
+  3. **History** — 22 milestones from [data/master/history-seed.json](data/master/history-seed.json) sorted ascending by year (1965 → 2026). Founding-narrative variants flagged where they exist (pickle-boat vs dog "Pickles"). Year column uses ranking-text color for visual continuity with rankings palette.
+
+  **Caveat banners** at the bottom of each section: rules section reminds reader that section numbers cite secondary summaries (Selkirk + The Dink) where the primary USAP PDF hasn't been programmatically verified — addresses [rules-changes-2026.json](data/master/rules-changes-2026.json) caveat about "tbd" sections; history section notes USAP's official position with variants flagged.
+
+  **No new ingestion.** Learn tab is purely seed-driven; loads via [data-loader.js](app/js/data-loader.js) `loadMaster()` at render time.
+
+  **Verification:** preview confirms 10 rule cards + 22 history milestones (oldest 1965, newest 2026) + governance card + rulebook header all render with expected structure (preview_snapshot accessibility tree).
+- **Status:** Closed
+- **Cross-ref:** commit a4326bf · app/js/tabs/learn.js · data/master/rules-changes-2026.json · data/master/history-seed.json
+
+### KB-0037 | KB-0031 root cause: PPA scraper column-mapping + networkidle timeout
+- **Type:** Action
+- **Tier:** T2
+- **Dependency:** Claude
+- **Date:** 2026-04-25 (Session 7)
+- **Category:** Ingestion / PPA / Bug Fix
+- **Tags:** ppa-rankings, scraper, column-mapping, playwright, timeout, networkidle, ben-johns, gabriel-tardio
+- **Finding:** KB-0031 investigation completed. Two findings, one fix in commit `6d57b8c`:
+
+  **Finding 1 (real, not our bug):** `ppatour.com/player-rankings/` itself renders Ben Johns + Gabriel Tardio tied at rank #1 with 21,300 pts each, then jumps to rank 3. Standard "1224" tie convention. Verified by direct Playwright extraction — single table on page, two rows with rank=1, no row at rank=2. The data is faithful.
+
+  **Finding 2 (our bug):** Scraper's `mapRow()` labeled the 5 columns as `{rank, playerName, bracket, eventsPlayed, points}`. Live page columns are actually **`PPA Rank · Name · Country · Age · Points`**. So the cached `eventsPlayed: 27` for Ben Johns was always his age, not events played. `bracket` was always empty because country is rendered as a flag image with empty `textContent`. Visible to anyone reading the email or Rankings tab as misleading "27 events" labels.
+
+  **Adjacent bug:** Scraper hung on `waitUntil: 'networkidle'` — PPA's analytics pings keep the network busy past the timeout. Switched to `waitUntil: 'domcontentloaded'` + `waitForSelector('table tbody tr td', { timeout: 15_000 })` + 2s settle. Re-scrape succeeded immediately after the fix.
+
+  **Fix shipped (commit 6d57b8c):**
+  - Scraper output shape: `{rank, playerName, country, age, points}` (was `{rank, playerName, bracket, eventsPlayed, points}`).
+  - `country` may be `null` when the source renders a flag image — documented in scraper note.
+  - [rankings.js](app/js/tabs/rankings.js) updated: shows "age 27" + country chip (when present) instead of "27 events" + bracket.
+  - [email-template.js](ingestion/lib/email-template.js) HTML row updated: shows "21,300 pts · age 27 · US" instead of "21,300 pts · 27 events". Plain text unchanged (already only showed rank + name + points).
+
+  **Verification:** preview_eval confirmed first row "21,300 pts · age 27"; both #1 rows still render (1224 tie preserved); skip to #3 preserved.
+- **Status:** Closed
+- **Cross-ref:** KB-0031 (parent) · KB-0011 · commit 6d57b8c · ingestion/fetch-ppa-rankings.js · app/js/tabs/rankings.js · ingestion/lib/email-template.js
+
+### KB-0038 | On-This-Day module shipped — date-matched history milestones on Daily tab + email
+- **Type:** Action
+- **Tier:** T3
+- **Dependency:** Claude
+- **Date:** 2026-04-25 (Session 7)
+- **Category:** Build / Delivery / Phase 2 / Daily
+- **Tags:** phase-2, on-this-day, history, daily-tab, email, collapse
+- **Finding:** Daily-delight module shipped in commit `6d57b8c`. Surfaces history milestones whose calendar MM-DD matches today's date.
+
+  **Match logic ([on-this-day.js](app/js/components/on-this-day.js) `findOnThisDay`):** strict MM-DD match against `m.date` (skip "00" placeholders for unknown month or day), sort newest-first by year. History seed uses YYYY-MM-DD with "00" for unknowns; only 2 entries currently have full dates (2026-02-27 MLP draft, 2026-01-01 Adaptive Standing Division), so most days produce zero matches and the module collapses entirely.
+
+  **Daily tab placement:** Between "Upcoming (next 30 days)" and "Top Highlights" (renders empty string when no match — no header, no card, fully invisible). Verified today (April 25): no Apr 25 milestone → module collapses correctly.
+
+  **Email parallel:** "On This Day in Pickleball" section in HTML template (green accent `#7be5a7`, matching DUPR ratings palette to keep the green-accent-for-history pattern consistent) and plain-text fallback. Same collapse-when-empty behavior. Email template duplicates the match logic locally rather than importing from `app/` (Node CommonJS vs ESM separation per CLAUDE.md project structure).
+
+  **End-to-end render path** verified via `preview_eval` against synthetic Feb 27 2027 reference date → renders "2026 — MLP unifies to 20-team Premier format" with 1 yr ago label.
+
+  **Future expansion:** As [history-seed.json](data/master/history-seed.json) gains more full-date entries (currently sparse — most "00" placeholder dates), more days will surface a milestone. Curation backlog work could promote "00" dates to full dates over time.
+- **Status:** Closed
+- **Cross-ref:** commit 6d57b8c · app/js/components/on-this-day.js · app/js/tabs/daily.js · ingestion/lib/email-template.js · data/master/history-seed.json · data/master/ui-modules.json § home-on-this-day
+
+---
+
+**End of KB. Entry count: 38. Next ID: KB-0039.**
