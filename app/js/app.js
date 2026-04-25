@@ -3,7 +3,7 @@
 // APP_VERSION must stay in sync with `CACHE` in app/sw.js. When a shell-file change rolls the
 // SW cache version, update this constant in the same commit.
 
-const APP_VERSION = 'v8';
+const APP_VERSION = 'v9';
 
 import { loadSnapshot } from './data-loader.js';
 import { showSplashIfFirstVisit } from './components/splash.js';

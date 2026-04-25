@@ -17,6 +17,9 @@ const mlp         = require('./fetch-mlp');
 const dupr        = require('./fetch-dupr-leaderboard');
 const highlights  = require('./fetch-highlights');
 const news        = require('./fetch-news');
+const { buildPlayersIndex } = require('./lib/players-index');
+
+const SEED_PLAYERS = path.join(ROOT, 'data', 'master', 'players-seed.json');
 
 async function runAll() {
   const started = new Date();
@@ -49,6 +52,18 @@ async function runAll() {
     try { sources.ppaRankings = JSON.parse(fs.readFileSync(lastRankings, 'utf8')); } catch {}
   } else {
     sources.ppaRankings = { sourceId: 'ppa-rankings', ok: false, error: 'not-yet-scraped', note: 'Run `npm run fetch:ppa-rankings` after `npx playwright install chromium`.' };
+  }
+
+  // KB-0004: derived universal players index (seed + MLP rosters + PPA top-200).
+  try {
+    const seed = fs.existsSync(SEED_PLAYERS) ? JSON.parse(fs.readFileSync(SEED_PLAYERS, 'utf8')) : null;
+    const mlpTeams = (sources.mlp && sources.mlp.teams) || [];
+    sources.playersIndex = buildPlayersIndex({ seed, mlpTeams, ppaRankings: sources.ppaRankings });
+    console.log('[fetch-daily]   playersIndex → ' + sources.playersIndex.totalPlayers + ' players (seed=' + sources.playersIndex.sourceCounts.seed + ', mlp=' + sources.playersIndex.sourceCounts.mlp + ', ppa=' + sources.playersIndex.sourceCounts.ppa + ')');
+  } catch (e) {
+    sources.playersIndex = { sourceId: 'players-index', ok: false, error: e.message };
+    errors.push({ source: 'playersIndex', message: e.message });
+    console.error('[fetch-daily]   playersIndex → FAILED: ' + e.message);
   }
 
   const finished = new Date();

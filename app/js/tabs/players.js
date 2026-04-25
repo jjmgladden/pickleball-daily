@@ -1,24 +1,66 @@
-// players.js — player directory (search + favorites). Phase 1 minimum: list from seed, filter-by-name.
+// players.js — universal player directory (search + favorites).
+// KB-0004 Session 8: consumes derived `snapshot.sources.playersIndex` when present
+// (seed + MLP rosters + PPA top-200), with fallback to bare seed when index missing.
 
 import { escapeHtml, confidenceBadgeHtml } from '../components/confidence-badge.js';
 import { getFavorites, togglePlayer } from '../components/favorites.js';
 import { loadMaster } from '../data-loader.js';
 
-export async function renderPlayers(root) {
-  root.innerHTML = '<div class="loading">Loading players…</div>';
-  let master;
-  try { master = await loadMaster('players-seed'); }
-  catch (e) {
-    root.innerHTML = '<div class="error">Could not load players seed: ' + escapeHtml(e.message) + '</div>';
-    return;
+function sourceChips(p) {
+  const out = [];
+  if (p.fromSeed) out.push('<span class="src-chip src-seed" title="In curated seed list">SEED</span>');
+  const srcs = p.sources || [];
+  if (srcs.includes('mlp')) out.push('<span class="src-chip src-mlp" title="MLP rostered player">MLP</span>');
+  if (srcs.includes('ppa')) {
+    const rank = (p.ppaRank != null) ? ' #' + p.ppaRank : '';
+    out.push('<span class="src-chip src-ppa" title="PPA Tour ranked player">PPA' + rank + '</span>');
   }
-  const players = (master.players || []);
+  return out.join('');
+}
+
+export async function renderPlayers(root, snapshot) {
+  root.innerHTML = '<div class="loading">Loading players…</div>';
+
+  // Prefer the derived index when present; fall back to seed-only.
+  let players = [];
+  let counts = null;
+  const idx = snapshot && snapshot.sources && snapshot.sources.playersIndex;
+  if (idx && idx.ok && Array.isArray(idx.players) && idx.players.length) {
+    players = idx.players;
+    counts = idx.sourceCounts || null;
+  } else {
+    try {
+      const master = await loadMaster('players-seed');
+      players = (master.players || []).map(p => ({
+        playerId: p.playerId,
+        displayName: p.displayName,
+        sources: ['seed'],
+        country: p.country,
+        mlpTeam: p.mlpTeam2026,
+        duprDoubles: p.duprDoubles,
+        ppaPlayerUrl: p.ppaPlayerUrl,
+        wikipediaUrl: p.wikipediaUrl,
+        ppaRankFlag: p.ppaRankFlag,
+        knownFor: p.knownFor,
+        confidence: p.confidence,
+        fromSeed: true,
+      }));
+    } catch (e) {
+      root.innerHTML = '<div class="error">Could not load players index or seed: ' + escapeHtml(e.message) + '</div>';
+      return;
+    }
+  }
+
   const favs = getFavorites();
+  const countsLine = counts
+    ? '<div class="muted">' + counts.seed + ' curated · ' + counts.mlp + ' MLP roster · ' + counts.ppa + ' PPA-ranked · ' + players.length + ' total</div>'
+    : '<div class="muted">' + players.length + ' total</div>';
 
   const header =
     '<h2 class="section-title">Players (' + players.length + ')</h2>' +
+    countsLine +
     '<input id="player-filter" type="search" placeholder="Filter by name…" ' +
-    'style="width:100%;padding:8px 10px;background:var(--bg-2);color:var(--text);border:1px solid var(--border);border-radius:8px;margin-bottom:12px">' +
+    'style="width:100%;padding:8px 10px;background:var(--bg-2);color:var(--text);border:1px solid var(--border);border-radius:8px;margin:10px 0 12px">' +
     '<div id="player-list"></div>';
 
   root.innerHTML = header;
@@ -33,24 +75,28 @@ export async function renderPlayers(root) {
       const rating = (p.duprDoubles != null)
         ? '<span class="chip-rating">' + escapeHtml(String(p.duprDoubles)) + '</span>'
         : '';
-      const rank = p.ppaRankFlag
+      const rankFlag = p.ppaRankFlag
         ? '<span class="chip-rank">' + escapeHtml(String(p.ppaRankFlag)) + '</span>'
         : '';
       const profileLinks = [];
       if (p.ppaPlayerUrl) profileLinks.push('<a class="profile-link" href="' + escapeHtml(p.ppaPlayerUrl) + '" target="_blank" rel="noopener">PPA profile ↗</a>');
       if (p.wikipediaUrl) profileLinks.push('<a class="profile-link" href="' + escapeHtml(p.wikipediaUrl) + '" target="_blank" rel="noopener">Wikipedia ↗</a>');
+      if (p.mlpProfileUrl && !p.ppaPlayerUrl) profileLinks.push('<a class="profile-link" href="' + escapeHtml(p.mlpProfileUrl) + '" target="_blank" rel="noopener">MLP profile ↗</a>');
       const profileRow = profileLinks.length
         ? '<div class="profile-row">' + profileLinks.join(' · ') + '</div>'
         : '';
+      const ageNode = (p.age != null) ? '<span class="meta">age ' + escapeHtml(String(p.age)) + '</span>' : '';
+      const ptsNode = (p.ppaPoints != null) ? '<span class="meta">' + Number(p.ppaPoints).toLocaleString() + ' pts</span>' : '';
       return '<div class="card">' +
-        '<h3>' + escapeHtml(p.displayName) + confidenceBadgeHtml(p.confidence) +
+        '<h3>' + escapeHtml(p.displayName) + (p.confidence ? confidenceBadgeHtml(p.confidence) : '') +
           ' <button data-fav="' + escapeHtml(p.playerId) + '" ' +
           'style="background:transparent;border:none;color:' + (isFav ? 'var(--accent)' : 'var(--text-dim)') + ';cursor:pointer;font-size:1rem">' +
           (isFav ? '★' : '☆') + '</button>' +
+          ' <span class="src-chips">' + sourceChips(p) + '</span>' +
         '</h3>' +
-        '<div class="stats-row">' + rank + ' ' + rating +
-          (p.country ? '<span class="meta">' + escapeHtml(p.country) + '</span>' : '') +
-          (p.mlpTeam2026 ? '<span class="meta">MLP: ' + escapeHtml(p.mlpTeam2026) + '</span>' : '') +
+        '<div class="stats-row">' + rankFlag + ' ' + rating + ' ' + ageNode + ' ' + ptsNode +
+          (p.country ? ' <span class="meta">' + escapeHtml(p.country) + '</span>' : '') +
+          (p.mlpTeam ? ' <span class="meta">MLP: ' + escapeHtml(p.mlpTeam) + '</span>' : '') +
         '</div>' +
         (p.knownFor ? '<div class="meta">' + escapeHtml(p.knownFor) + '</div>' : '') +
         profileRow +

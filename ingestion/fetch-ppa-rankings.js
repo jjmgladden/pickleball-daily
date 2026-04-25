@@ -15,6 +15,8 @@ const URL = 'https://www.ppatour.com/player-rankings/';
 const TIMEOUT_MS = 45_000;
 const SLUG_CACHE_PATH = path.resolve(__dirname, '..', 'logs', 'cache', 'ppa-player-slugs.json');
 const PPA_UA = 'Mozilla/5.0 (compatible; PickleballDailyBot/1.0; +https://github.com/jjmgladden/pickleball-daily)';
+const MAX_PAGES = 4;            // 4 pages × 50 rows = top 200 (KB-0004)
+const PAGE_DELAY_MS = 3_500;    // > robots.txt Crawl-delay: 3
 
 function isCleanName(name) {
   // Conservative: ASCII letters + spaces only, <= 3 tokens. Accented, hyphenated,
@@ -120,24 +122,86 @@ async function run() {
     // Brief settle so any post-paint hydration completes before snapshotting.
     await page.waitForTimeout(2000);
 
-    // Extract via generic table parse — resilient across layout tweaks.
-    const rows = await page.evaluate(() => {
-      const out = [];
-      const tables = Array.from(document.querySelectorAll('table'));
-      for (const t of tables) {
-        const trs = Array.from(t.querySelectorAll('tr'));
-        for (const tr of trs) {
-          const tds = Array.from(tr.querySelectorAll('td')).map(td => td.textContent.trim());
-          if (tds.length >= 2) out.push(tds);
+    // Extract rows from the currently-rendered table page.
+    async function scrapeCurrentPage() {
+      return page.evaluate(() => {
+        const out = [];
+        const tables = Array.from(document.querySelectorAll('table'));
+        for (const t of tables) {
+          const trs = Array.from(t.querySelectorAll('tr'));
+          for (const tr of trs) {
+            const tds = Array.from(tr.querySelectorAll('td')).map(td => td.textContent.trim());
+            if (tds.length >= 2) out.push(tds);
+          }
         }
-      }
-      return out;
-    });
+        return out;
+      });
+    }
 
-    // Observed column order (Phase 1 live inspection): rank · name · bracket · events · points.
-    const rankings = rows
-      .map(r => mapRow(r))
-      .filter(x => x && x.playerName);
+    // KB-0004 expansion: paginate to top-200 by clicking page links 2..MAX_PAGES.
+    // The rendered page is allowed by ppatour.com/robots.txt (admin-ajax JSON
+    // endpoint is disallowed by `/*?` wildcard); navigation via clicks fires the
+    // same internal JSON request the page would issue for a real user.
+    const rows = await scrapeCurrentPage();
+    const allRows = [...rows];
+    let highestRank = 0;
+    for (const r of rows) {
+      const n = parseInt(String(r[0] || '').replace(/[,\s]/g, ''), 10);
+      if (Number.isFinite(n) && n > highestRank) highestRank = n;
+    }
+
+    for (let pageNum = 2; pageNum <= MAX_PAGES; pageNum++) {
+      // Throttle per robots.txt Crawl-delay: 3 (we use 3.5s for safety).
+      await page.waitForTimeout(PAGE_DELAY_MS);
+      const link = page.locator('a.page-link').filter({ hasText: new RegExp('^' + pageNum + '$') }).first();
+      const exists = await link.count();
+      if (!exists) break;
+      try {
+        await link.click();
+      } catch (e) {
+        // Click failed (rare — link could detach during re-render). Stop pagination
+        // and use whatever we have.
+        break;
+      }
+      // Detect re-render: wait until top-row rank exceeds previous high-water mark.
+      try {
+        await page.waitForFunction(
+          (prevHigh) => {
+            const tr = document.querySelector('table tbody tr');
+            if (!tr) return false;
+            const txt = (tr.querySelector('td') || {}).textContent || '';
+            const n = parseInt(String(txt).replace(/[,\s]/g, ''), 10);
+            return Number.isFinite(n) && n > prevHigh;
+          },
+          highestRank,
+          { timeout: 12_000 }
+        );
+      } catch {
+        // Table didn't re-render — bail out, keep what we have.
+        break;
+      }
+      const moreRows = await scrapeCurrentPage();
+      allRows.push(...moreRows);
+      for (const r of moreRows) {
+        const n = parseInt(String(r[0] || '').replace(/[,\s]/g, ''), 10);
+        if (Number.isFinite(n) && n > highestRank) highestRank = n;
+      }
+    }
+
+    // Observed column order (Phase 1 live inspection, KB-0037 column-mapping fix):
+    //   rank · playerName · country · age · points
+    // Dedupe by (rank, playerName) — defensive against header rows reappearing
+    // and against any rare server-side mid-scrape re-ordering.
+    const seenKey = new Set();
+    const rankings = [];
+    for (const raw of allRows) {
+      const m = mapRow(raw);
+      if (!m || !m.playerName) continue;
+      const k = m.rank + '|' + m.playerName.toLowerCase();
+      if (seenKey.has(k)) continue;
+      seenKey.add(k);
+      rankings.push(m);
+    }
 
     // Resolve + cache PPA profile slugs for the top-20 rows (names already seen
     // are skipped; only new entrants pay the HEAD cost).
@@ -149,10 +213,11 @@ async function run() {
       ok: rankings.length > 0,
       retrievedAt: new Date().toISOString(),
       url: URL,
-      rowsFound: rows.length,
+      rowsFound: allRows.length,
+      pagesScanned: Math.min(MAX_PAGES, 1 + Math.floor((rankings.length - 1) / 50)),
       rankings,
       slugCache: slugCache.mapping,
-      note: 'Columns: rank · playerName · country · age · points. Country may be empty when rendered as flag image. Ties share rank and skip the next ordinal (1224 convention). Top-20 names linked to ppatour.com/athlete/ profiles when the slug HEADs 200.'
+      note: 'Columns: rank · playerName · country · age · points. Country may be empty when rendered as flag image. Ties share rank and skip the next ordinal (1224 convention). Up to top-200 via pagination clicks (KB-0004). Top-20 names linked to ppatour.com/athlete/ profiles when the slug HEADs 200.'
     };
     writeCache('ppa-rankings', result);
     return result;

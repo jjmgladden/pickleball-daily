@@ -55,13 +55,16 @@ function renderFavoritesStrip(favs, playersById, teamsById) {
   const playersBlock = favPlayers.length
     ? '<div class="fav-players">' +
         '<span class="fav-label">Players:</span> ' +
-        favPlayers.map(p =>
-          '<span class="fav-chip">' +
+        favPlayers.map(p => {
+          const rankNode = p.ppaRankFlag
+            ? ' <span class="chip-rank">' + escapeHtml(String(p.ppaRankFlag)) + '</span>'
+            : (p.ppaRank != null ? ' <span class="chip-rank">#' + escapeHtml(String(p.ppaRank)) + '</span>' : '');
+          return '<span class="fav-chip">' +
             escapeHtml(p.displayName) +
             (p.duprDoubles != null ? ' <span class="chip-rating">' + escapeHtml(String(p.duprDoubles)) + '</span>' : '') +
-            (p.ppaRankFlag ? ' <span class="chip-rank">' + escapeHtml(String(p.ppaRankFlag)) + '</span>' : '') +
-          '</span>'
-        ).join(' ') +
+            rankNode +
+          '</span>';
+        }).join(' ') +
       '</div>'
     : '';
 
@@ -69,7 +72,15 @@ function renderFavoritesStrip(favs, playersById, teamsById) {
     '<div class="card fav-strip">' + teamBlock + playersBlock + '</div>';
 }
 
-async function loadPlayersSeed() {
+async function loadPlayersById(snapshot) {
+  // KB-0004: prefer the derived index (covers seed + MLP + PPA-only favorites);
+  // fall back to seed-only when the index isn't in the snapshot yet.
+  const idx = snapshot && snapshot.sources && snapshot.sources.playersIndex;
+  if (idx && idx.ok && Array.isArray(idx.players) && idx.players.length) {
+    const map = {};
+    for (const p of idx.players) map[p.playerId] = p;
+    return map;
+  }
   try {
     const m = await loadMaster('players-seed');
     const map = {};
@@ -93,7 +104,7 @@ export async function renderDaily(root, snapshot) {
   for (const team of mlpTeams) teamsById[team.teamId] = team;
 
   const favs = getFavorites();
-  const playersById = (favs.players && favs.players.length) ? await loadPlayersSeed() : {};
+  const playersById = (favs.players && favs.players.length) ? await loadPlayersById(snapshot) : {};
 
   let history = null;
   try { history = await loadMaster('history-seed'); } catch { /* On-This-Day collapses if seed unavailable */ }

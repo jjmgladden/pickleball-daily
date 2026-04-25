@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-25T13:26:04.826Z",
-  "startedAt": "2026-04-25T13:25:50.228Z",
-  "durationMs": 14598,
+  "generatedAt": "2026-04-25T19:49:05.552Z",
+  "startedAt": "2026-04-25T19:48:53.428Z",
+  "durationMs": 12124,
   "version": "v1",
   "brand": "Ozark Joe's Pickleball Daily Intelligence Report",
   "errors": [],
@@ -10,7 +10,7 @@
     "tournaments": {
       "sourceId": "tournaments",
       "ok": true,
-      "retrievedAt": "2026-04-25T13:25:50.238Z",
+      "retrievedAt": "2026-04-25T19:48:53.433Z",
       "counts": {
         "inProgress": 0,
         "upcoming": 7,
@@ -212,7 +212,7 @@
     "mlp": {
       "sourceId": "mlp",
       "ok": true,
-      "retrievedAt": "2026-04-25T13:26:00.871Z",
+      "retrievedAt": "2026-04-25T19:49:00.448Z",
       "freshness": "live-verified",
       "teams": [
         {
@@ -277,7 +277,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.870Z",
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z",
           "rosterMissingIds": [
             "6663"
           ]
@@ -333,7 +333,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "brooklyn-pickleball-team",
@@ -402,7 +402,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "california-black-bears",
@@ -455,7 +455,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "carolina-hogs",
@@ -522,7 +522,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "chicago-slice",
@@ -583,7 +583,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z",
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z",
           "rosterMissingIds": [
             "5062"
           ]
@@ -660,7 +660,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "dallas-flash",
@@ -736,7 +736,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "florida-smash",
@@ -789,7 +789,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "las-vegas-night-owls",
@@ -843,7 +843,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "los-angeles-mad-drops",
@@ -904,7 +904,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "miami-pickleball-club",
@@ -976,7 +976,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "new-jersey-5s",
@@ -1043,7 +1043,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "orlando-squeeze",
@@ -1111,7 +1111,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "palm-beach-royals",
@@ -1203,7 +1203,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "socal-hard-eights",
@@ -1263,7 +1263,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z",
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z",
           "rosterMissingIds": [
             "83599"
           ]
@@ -1335,7 +1335,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "texas-ranchers",
@@ -1403,7 +1403,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         },
         {
           "teamId": "utah-black-diamonds",
@@ -1471,7 +1471,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
+          "rosterRetrievedAt": "2026-04-25T19:49:00.447Z"
         }
       ],
       "teamsCount": 20,
@@ -1495,7 +1495,7 @@
     "dupr": {
       "sourceId": "dupr",
       "ok": true,
-      "retrievedAt": "2026-04-25T13:26:01.455Z",
+      "retrievedAt": "2026-04-25T19:49:00.851Z",
       "freshness": "seed-only",
       "note": "Phase 1 uses seed ratings; Playwright-scrape of public leaderboard deferred to Phase 2.",
       "top20": [
@@ -1675,7 +1675,7 @@
     "highlights": {
       "sourceId": "highlights",
       "ok": true,
-      "retrievedAt": "2026-04-25T13:26:03.606Z",
+      "retrievedAt": "2026-04-25T19:49:01.879Z",
       "quotaEstimate": 6,
       "channels": [
         {
@@ -1900,7 +1900,7 @@
     "news": {
       "sourceId": "news",
       "ok": true,
-      "retrievedAt": "2026-04-25T13:26:04.806Z",
+      "retrievedAt": "2026-04-25T19:49:05.508Z",
       "sources": [
         {
           "sourceId": "newsletter-the-dink",
@@ -2742,9 +2742,10 @@
     "ppaRankings": {
       "sourceId": "ppa-rankings",
       "ok": true,
-      "retrievedAt": "2026-04-25T13:25:39.499Z",
+      "retrievedAt": "2026-04-25T19:48:37.625Z",
       "url": "https://www.ppatour.com/player-rankings/",
-      "rowsFound": 50,
+      "rowsFound": 200,
+      "pagesScanned": 4,
       "rankings": [
         {
           "rank": 1,
@@ -3095,6 +3096,1056 @@
           "country": null,
           "age": 25,
           "points": 1425
+        },
+        {
+          "rank": 51,
+          "playerName": "James Delgado",
+          "country": null,
+          "age": 22,
+          "points": 1400
+        },
+        {
+          "rank": 52,
+          "playerName": "Anderson Scarpa",
+          "country": null,
+          "age": 32,
+          "points": 1315
+        },
+        {
+          "rank": 53,
+          "playerName": "Marshall Brown",
+          "country": null,
+          "age": 30,
+          "points": 1287
+        },
+        {
+          "rank": 54,
+          "playerName": "Mohaned Alhouni",
+          "country": null,
+          "age": 30,
+          "points": 1275
+        },
+        {
+          "rank": 55,
+          "playerName": "Travis Rettenmaier",
+          "country": null,
+          "age": 42,
+          "points": 1271
+        },
+        {
+          "rank": 56,
+          "playerName": "Grayson Goldin",
+          "country": null,
+          "age": 30,
+          "points": 1265
+        },
+        {
+          "rank": 57,
+          "playerName": "Patrick Smith",
+          "country": null,
+          "age": 41,
+          "points": 1212
+        },
+        {
+          "rank": 58,
+          "playerName": "Yates Johnson",
+          "country": null,
+          "age": 31,
+          "points": 1200
+        },
+        {
+          "rank": 59,
+          "playerName": "Zane Ford",
+          "country": null,
+          "age": 21,
+          "points": 1127
+        },
+        {
+          "rank": 60,
+          "playerName": "Carlos Di Laura",
+          "country": null,
+          "age": 32,
+          "points": 1100
+        },
+        {
+          "rank": 60,
+          "playerName": "Adam Harvey",
+          "country": null,
+          "age": 24,
+          "points": 1100
+        },
+        {
+          "rank": 60,
+          "playerName": "Kenta Miyoshi",
+          "country": null,
+          "age": 30,
+          "points": 1100
+        },
+        {
+          "rank": 63,
+          "playerName": "Will Mackinnon",
+          "country": null,
+          "age": 17,
+          "points": 1068
+        },
+        {
+          "rank": 64,
+          "playerName": "Tam Trinh",
+          "country": null,
+          "age": 32,
+          "points": 1037
+        },
+        {
+          "rank": 65,
+          "playerName": "Christopher Crouch",
+          "country": null,
+          "age": 25,
+          "points": 1026
+        },
+        {
+          "rank": 66,
+          "playerName": "Pesa Teoni",
+          "country": null,
+          "age": 27,
+          "points": 1025
+        },
+        {
+          "rank": 67,
+          "playerName": "Cason Campbell",
+          "country": null,
+          "age": 19,
+          "points": 1012
+        },
+        {
+          "rank": 68,
+          "playerName": "Chuck Taylor",
+          "country": null,
+          "age": 42,
+          "points": 1011
+        },
+        {
+          "rank": 69,
+          "playerName": "Ivan Jakovljevic",
+          "country": null,
+          "age": 35,
+          "points": 987
+        },
+        {
+          "rank": 69,
+          "playerName": "Ryan Fu",
+          "country": null,
+          "age": 26,
+          "points": 987
+        },
+        {
+          "rank": 71,
+          "playerName": "Camden Chaffin",
+          "country": null,
+          "age": -1,
+          "points": 955
+        },
+        {
+          "rank": 72,
+          "playerName": "Quan Do",
+          "country": null,
+          "age": 42,
+          "points": 950
+        },
+        {
+          "rank": 72,
+          "playerName": "Eric Roddy",
+          "country": null,
+          "age": 32,
+          "points": 950
+        },
+        {
+          "rank": 74,
+          "playerName": "Luc Pham",
+          "country": null,
+          "age": 22,
+          "points": 943
+        },
+        {
+          "rank": 75,
+          "playerName": "Hien Truong",
+          "country": null,
+          "age": 21,
+          "points": 900
+        },
+        {
+          "rank": 76,
+          "playerName": "Ross Whittaker",
+          "country": null,
+          "age": 31,
+          "points": 875
+        },
+        {
+          "rank": 77,
+          "playerName": "Austin Bricker",
+          "country": null,
+          "age": 26,
+          "points": 850
+        },
+        {
+          "rank": 78,
+          "playerName": "Connor Mogle",
+          "country": null,
+          "age": 26,
+          "points": 837
+        },
+        {
+          "rank": 79,
+          "playerName": "George Wall",
+          "country": null,
+          "age": 30,
+          "points": 825
+        },
+        {
+          "rank": 80,
+          "playerName": "Mota Alhouni",
+          "country": null,
+          "age": 33,
+          "points": 812
+        },
+        {
+          "rank": 81,
+          "playerName": "Thomas Yu",
+          "country": null,
+          "age": 24,
+          "points": 800
+        },
+        {
+          "rank": 82,
+          "playerName": "John Cincola",
+          "country": null,
+          "age": 45,
+          "points": 787
+        },
+        {
+          "rank": 83,
+          "playerName": "Lucas Pascoe",
+          "country": null,
+          "age": 19,
+          "points": 773
+        },
+        {
+          "rank": 84,
+          "playerName": "Christopher Haworth",
+          "country": null,
+          "age": 32,
+          "points": 765
+        },
+        {
+          "rank": 85,
+          "playerName": "Edward Perez",
+          "country": null,
+          "age": 27,
+          "points": 762
+        },
+        {
+          "rank": 86,
+          "playerName": "Joseph Wild",
+          "country": null,
+          "age": 29,
+          "points": 750
+        },
+        {
+          "rank": 87,
+          "playerName": "Riley Inn",
+          "country": null,
+          "age": 29,
+          "points": 737
+        },
+        {
+          "rank": 88,
+          "playerName": "Luke Wasson",
+          "country": null,
+          "age": 20,
+          "points": 724
+        },
+        {
+          "rank": 89,
+          "playerName": "Caden Nemoff",
+          "country": null,
+          "age": 25,
+          "points": 712
+        },
+        {
+          "rank": 89,
+          "playerName": "Rafael Lenhard",
+          "country": null,
+          "age": 29,
+          "points": 712
+        },
+        {
+          "rank": 91,
+          "playerName": "Vanshik Kapadia",
+          "country": null,
+          "age": 21,
+          "points": 700
+        },
+        {
+          "rank": 92,
+          "playerName": "Craig Johnson",
+          "country": null,
+          "age": 40,
+          "points": 693
+        },
+        {
+          "rank": 93,
+          "playerName": "Etienne Blaszkewycz",
+          "country": null,
+          "age": 34,
+          "points": 674
+        },
+        {
+          "rank": 94,
+          "playerName": "Robert Stirling",
+          "country": null,
+          "age": 31,
+          "points": 650
+        },
+        {
+          "rank": 95,
+          "playerName": "Alexander Crum",
+          "country": null,
+          "age": 34,
+          "points": 643
+        },
+        {
+          "rank": 96,
+          "playerName": "Wesley Burrows",
+          "country": null,
+          "age": 38,
+          "points": 642
+        },
+        {
+          "rank": 97,
+          "playerName": "Andre Mercado",
+          "country": null,
+          "age": 16,
+          "points": 636
+        },
+        {
+          "rank": 98,
+          "playerName": "Sanil Jagtiani",
+          "country": null,
+          "age": 27,
+          "points": 617
+        },
+        {
+          "rank": 99,
+          "playerName": "Gabriel Joseph",
+          "country": null,
+          "age": 29,
+          "points": 611
+        },
+        {
+          "rank": 100,
+          "playerName": "Oscar Serra",
+          "country": null,
+          "age": 26,
+          "points": 605
+        },
+        {
+          "rank": 101,
+          "playerName": "Mitchell Hargreaves",
+          "country": null,
+          "age": 28,
+          "points": 600
+        },
+        {
+          "rank": 101,
+          "playerName": "Harsh Mehta",
+          "country": null,
+          "age": 27,
+          "points": 600
+        },
+        {
+          "rank": 103,
+          "playerName": "Braden Jacobson",
+          "country": null,
+          "age": 16,
+          "points": 599
+        },
+        {
+          "rank": 104,
+          "playerName": "Aryaan Bhatia",
+          "country": null,
+          "age": 23,
+          "points": 587
+        },
+        {
+          "rank": 105,
+          "playerName": "Alex Emery",
+          "country": null,
+          "age": 38,
+          "points": 565
+        },
+        {
+          "rank": 106,
+          "playerName": "Luca Mack",
+          "country": null,
+          "age": 25,
+          "points": 562
+        },
+        {
+          "rank": 107,
+          "playerName": "Will Howells",
+          "country": null,
+          "age": 27,
+          "points": 550
+        },
+        {
+          "rank": 107,
+          "playerName": "Spencer Smith",
+          "country": null,
+          "age": 35,
+          "points": 550
+        },
+        {
+          "rank": 109,
+          "playerName": "Spartak Rahachou",
+          "country": null,
+          "age": 33,
+          "points": 549
+        },
+        {
+          "rank": 110,
+          "playerName": "Jace Morris",
+          "country": null,
+          "age": 17,
+          "points": 524
+        },
+        {
+          "rank": 111,
+          "playerName": "Wil Shaffer",
+          "country": null,
+          "age": 17,
+          "points": 519
+        },
+        {
+          "rank": 112,
+          "playerName": "Prycen Haas",
+          "country": null,
+          "age": 32,
+          "points": 512
+        },
+        {
+          "rank": 113,
+          "playerName": "Marco Leung",
+          "country": null,
+          "age": 31,
+          "points": 500
+        },
+        {
+          "rank": 114,
+          "playerName": "Jhonnatan Medina Alvarez",
+          "country": null,
+          "age": 44,
+          "points": 493
+        },
+        {
+          "rank": 115,
+          "playerName": "Troy Akin",
+          "country": null,
+          "age": 33,
+          "points": 487
+        },
+        {
+          "rank": 116,
+          "playerName": "George Rangelov",
+          "country": null,
+          "age": -1,
+          "points": 484
+        },
+        {
+          "rank": 117,
+          "playerName": "Bret Berryman",
+          "country": null,
+          "age": 38,
+          "points": 471
+        },
+        {
+          "rank": 118,
+          "playerName": "Aanik Lohani",
+          "country": null,
+          "age": 27,
+          "points": 465
+        },
+        {
+          "rank": 119,
+          "playerName": "Andrew Caldarella",
+          "country": null,
+          "age": 16,
+          "points": 462
+        },
+        {
+          "rank": 120,
+          "playerName": "Stephen Madonia",
+          "country": null,
+          "age": 29,
+          "points": 455
+        },
+        {
+          "rank": 121,
+          "playerName": "Phuc Huynh",
+          "country": null,
+          "age": 26,
+          "points": 450
+        },
+        {
+          "rank": 121,
+          "playerName": "Hoang Nam Ly",
+          "country": null,
+          "age": 29,
+          "points": 450
+        },
+        {
+          "rank": 123,
+          "playerName": "Freddie Powell",
+          "country": null,
+          "age": 27,
+          "points": 448
+        },
+        {
+          "rank": 124,
+          "playerName": "Eli Steiner",
+          "country": null,
+          "age": 27,
+          "points": 442
+        },
+        {
+          "rank": 125,
+          "playerName": "Steve Deakin",
+          "country": null,
+          "age": 52,
+          "points": 437
+        },
+        {
+          "rank": 126,
+          "playerName": "Naveen Beasley",
+          "country": null,
+          "age": 33,
+          "points": 437
+        },
+        {
+          "rank": 127,
+          "playerName": "Eduardo Santini Ayon",
+          "country": null,
+          "age": 24,
+          "points": 431
+        },
+        {
+          "rank": 127,
+          "playerName": "Joel Poland",
+          "country": null,
+          "age": 25,
+          "points": 431
+        },
+        {
+          "rank": 129,
+          "playerName": "jimmy liong kai long",
+          "country": null,
+          "age": 23,
+          "points": 425
+        },
+        {
+          "rank": 130,
+          "playerName": "Brandon Nsekpong",
+          "country": null,
+          "age": 36,
+          "points": 411
+        },
+        {
+          "rank": 131,
+          "playerName": "Giang Trinh",
+          "country": null,
+          "age": 28,
+          "points": 400
+        },
+        {
+          "rank": 131,
+          "playerName": "Leander Lazaro",
+          "country": null,
+          "age": 33,
+          "points": 400
+        },
+        {
+          "rank": 133,
+          "playerName": "Claudio Quinones Garcia",
+          "country": null,
+          "age": 29,
+          "points": 393
+        },
+        {
+          "rank": 134,
+          "playerName": "Daniel De La Rosa",
+          "country": null,
+          "age": 32,
+          "points": 387
+        },
+        {
+          "rank": 135,
+          "playerName": "Juan Varon",
+          "country": null,
+          "age": 24,
+          "points": 377
+        },
+        {
+          "rank": 136,
+          "playerName": "Kailas Shekar",
+          "country": null,
+          "age": 27,
+          "points": 362
+        },
+        {
+          "rank": 137,
+          "playerName": "Nicholas Romano",
+          "country": null,
+          "age": 29,
+          "points": 360
+        },
+        {
+          "rank": 138,
+          "playerName": "Zach Gonnering",
+          "country": null,
+          "age": 22,
+          "points": 359
+        },
+        {
+          "rank": 139,
+          "playerName": "Jackson Ayotte",
+          "country": null,
+          "age": 23,
+          "points": 342
+        },
+        {
+          "rank": 140,
+          "playerName": "Bruno Faletto",
+          "country": null,
+          "age": 28,
+          "points": 337
+        },
+        {
+          "rank": 141,
+          "playerName": "Jason TAYLOR",
+          "country": null,
+          "age": 32,
+          "points": 325
+        },
+        {
+          "rank": 142,
+          "playerName": "Victor Rodrigo",
+          "country": null,
+          "age": 31,
+          "points": 324
+        },
+        {
+          "rank": 143,
+          "playerName": "Tristan Dussault",
+          "country": null,
+          "age": -1,
+          "points": 319
+        },
+        {
+          "rank": 144,
+          "playerName": "Rio Newcombe",
+          "country": null,
+          "age": 23,
+          "points": 317
+        },
+        {
+          "rank": 145,
+          "playerName": "Luke Williams",
+          "country": null,
+          "age": 25,
+          "points": 300
+        },
+        {
+          "rank": 145,
+          "playerName": "Nicholas Maleganeas",
+          "country": null,
+          "age": 21,
+          "points": 300
+        },
+        {
+          "rank": 147,
+          "playerName": "Indigo Dagnall",
+          "country": null,
+          "age": 16,
+          "points": 293
+        },
+        {
+          "rank": 148,
+          "playerName": "Usama Khalid",
+          "country": null,
+          "age": 35,
+          "points": 292
+        },
+        {
+          "rank": 149,
+          "playerName": "Easton Horricks",
+          "country": null,
+          "age": 21,
+          "points": 288
+        },
+        {
+          "rank": 150,
+          "playerName": "Sammy Lee",
+          "country": null,
+          "age": 20,
+          "points": 283
+        },
+        {
+          "rank": 151,
+          "playerName": "GuangSian Lin",
+          "country": null,
+          "age": 36,
+          "points": 275
+        },
+        {
+          "rank": 152,
+          "playerName": "Mouaad Alhouni",
+          "country": null,
+          "age": 27,
+          "points": 268
+        },
+        {
+          "rank": 153,
+          "playerName": "Matthew Barlow",
+          "country": null,
+          "age": 31,
+          "points": 255
+        },
+        {
+          "rank": 154,
+          "playerName": "Santhosh Narayanan",
+          "country": null,
+          "age": 26,
+          "points": 250
+        },
+        {
+          "rank": 154,
+          "playerName": "Nguyen Thang",
+          "country": null,
+          "age": 38,
+          "points": 250
+        },
+        {
+          "rank": 154,
+          "playerName": "Sam Querrey",
+          "country": null,
+          "age": 38,
+          "points": 250
+        },
+        {
+          "rank": 154,
+          "playerName": "Harrison Brown",
+          "country": null,
+          "age": 26,
+          "points": 250
+        },
+        {
+          "rank": 154,
+          "playerName": "Aidan Schenk",
+          "country": null,
+          "age": 20,
+          "points": 250
+        },
+        {
+          "rank": 159,
+          "playerName": "Miles Hoover",
+          "country": null,
+          "age": 20,
+          "points": 246
+        },
+        {
+          "rank": 160,
+          "playerName": "Armaan Jiwa Mawji",
+          "country": null,
+          "age": 20,
+          "points": 239
+        },
+        {
+          "rank": 161,
+          "playerName": "Connor McCartney",
+          "country": null,
+          "age": 26,
+          "points": 238
+        },
+        {
+          "rank": 162,
+          "playerName": "Clayton Powell",
+          "country": null,
+          "age": 19,
+          "points": 231
+        },
+        {
+          "rank": 163,
+          "playerName": "Jake Anderson",
+          "country": null,
+          "age": 30,
+          "points": 229
+        },
+        {
+          "rank": 164,
+          "playerName": "Cameron Luhring",
+          "country": null,
+          "age": 23,
+          "points": 225
+        },
+        {
+          "rank": 164,
+          "playerName": "Kento Tamaki",
+          "country": null,
+          "age": 32,
+          "points": 225
+        },
+        {
+          "rank": 166,
+          "playerName": "Jose Martinez",
+          "country": null,
+          "age": 32,
+          "points": 224
+        },
+        {
+          "rank": 167,
+          "playerName": "Jaikin Gomez",
+          "country": null,
+          "age": 25,
+          "points": 217
+        },
+        {
+          "rank": 168,
+          "playerName": "Erik Pailet",
+          "country": null,
+          "age": 27,
+          "points": 212
+        },
+        {
+          "rank": 169,
+          "playerName": "Mike Radermacher",
+          "country": null,
+          "age": 33,
+          "points": 212
+        },
+        {
+          "rank": 170,
+          "playerName": "Ryan Ng",
+          "country": null,
+          "age": 22,
+          "points": 200
+        },
+        {
+          "rank": 170,
+          "playerName": "Muhammad Aiman",
+          "country": null,
+          "age": 25,
+          "points": 200
+        },
+        {
+          "rank": 170,
+          "playerName": "Nasa Hatakeyama",
+          "country": null,
+          "age": 29,
+          "points": 200
+        },
+        {
+          "rank": 170,
+          "playerName": "Robert Nunnery",
+          "country": null,
+          "age": 40,
+          "points": 200
+        },
+        {
+          "rank": 170,
+          "playerName": "Khuong Huynh",
+          "country": null,
+          "age": 43,
+          "points": 200
+        },
+        {
+          "rank": 170,
+          "playerName": "Zachary Grabovic",
+          "country": null,
+          "age": 30,
+          "points": 200
+        },
+        {
+          "rank": 170,
+          "playerName": "Colin Wong",
+          "country": null,
+          "age": 30,
+          "points": 200
+        },
+        {
+          "rank": 170,
+          "playerName": "Ryan Henry",
+          "country": null,
+          "age": 41,
+          "points": 200
+        },
+        {
+          "rank": 178,
+          "playerName": "Albert Wan",
+          "country": null,
+          "age": 24,
+          "points": 199
+        },
+        {
+          "rank": 179,
+          "playerName": "Matt Burkhardt",
+          "country": null,
+          "age": 33,
+          "points": 197
+        },
+        {
+          "rank": 180,
+          "playerName": "Oliver Frank",
+          "country": null,
+          "age": 32,
+          "points": 193
+        },
+        {
+          "rank": 181,
+          "playerName": "Adair Garcia",
+          "country": null,
+          "age": 20,
+          "points": 189
+        },
+        {
+          "rank": 182,
+          "playerName": "Nick Black",
+          "country": null,
+          "age": 24,
+          "points": 187
+        },
+        {
+          "rank": 183,
+          "playerName": "Lucas Pereyra",
+          "country": null,
+          "age": 21,
+          "points": 180
+        },
+        {
+          "rank": 184,
+          "playerName": "Sergey Afanasenka",
+          "country": null,
+          "age": 30,
+          "points": 175
+        },
+        {
+          "rank": 184,
+          "playerName": "Callan Dawson",
+          "country": null,
+          "age": 34,
+          "points": 175
+        },
+        {
+          "rank": 184,
+          "playerName": "Jase Edwards",
+          "country": null,
+          "age": 26,
+          "points": 175
+        },
+        {
+          "rank": 184,
+          "playerName": "Andrew Anh Pham",
+          "country": null,
+          "age": 32,
+          "points": 175
+        },
+        {
+          "rank": 184,
+          "playerName": "Zak Parks",
+          "country": null,
+          "age": 31,
+          "points": 175
+        },
+        {
+          "rank": 189,
+          "playerName": "Daniel Miron",
+          "country": null,
+          "age": 29,
+          "points": 174
+        },
+        {
+          "rank": 190,
+          "playerName": "Yaamunan Venkatesan",
+          "country": null,
+          "age": 39,
+          "points": 165
+        },
+        {
+          "rank": 190,
+          "playerName": "Louis Laville",
+          "country": null,
+          "age": 30,
+          "points": 165
+        },
+        {
+          "rank": 192,
+          "playerName": "Kentaro Hamaguchi",
+          "country": null,
+          "age": 31,
+          "points": 164
+        },
+        {
+          "rank": 193,
+          "playerName": "Jericho Grollman",
+          "country": null,
+          "age": 26,
+          "points": 162
+        },
+        {
+          "rank": 194,
+          "playerName": "Maximilian Wild",
+          "country": null,
+          "age": 26,
+          "points": 161
+        },
+        {
+          "rank": 195,
+          "playerName": "Daniel Phillips",
+          "country": null,
+          "age": 15,
+          "points": 158
+        },
+        {
+          "rank": 196,
+          "playerName": "Hsieh Chen-An",
+          "country": null,
+          "age": 28,
+          "points": 150
+        },
+        {
+          "rank": 196,
+          "playerName": "Ngoc Trieu Tran",
+          "country": null,
+          "age": -1,
+          "points": 150
+        },
+        {
+          "rank": 196,
+          "playerName": "Syed uzair sufi",
+          "country": null,
+          "age": 21,
+          "points": 150
+        },
+        {
+          "rank": 196,
+          "playerName": "Purav Raja",
+          "country": null,
+          "age": -1,
+          "points": 150
+        },
+        {
+          "rank": 196,
+          "playerName": "Rougel Jon Lutz Aninon",
+          "country": null,
+          "age": 27,
+          "points": 150
         }
       ],
       "slugCache": {
@@ -3119,7 +4170,3263 @@
         "Pablo Tellez": "https://ppatour.com/athlete/pablo-tellez/",
         "Connor Garnett": "https://ppatour.com/athlete/connor-garnett/"
       },
-      "note": "Columns: rank · playerName · country · age · points. Country may be empty when rendered as flag image. Ties share rank and skip the next ordinal (1224 convention). Top-20 names linked to ppatour.com/athlete/ profiles when the slug HEADs 200."
+      "note": "Columns: rank · playerName · country · age · points. Country may be empty when rendered as flag image. Ties share rank and skip the next ordinal (1224 convention). Up to top-200 via pagination clicks (KB-0004). Top-20 names linked to ppatour.com/athlete/ profiles when the slug HEADs 200."
+    },
+    "playersIndex": {
+      "sourceId": "players-index",
+      "ok": true,
+      "retrievedAt": "2026-04-25T19:49:05.541Z",
+      "derivedFrom": [
+        "seed",
+        "mlp",
+        "ppa-rankings"
+      ],
+      "totalPlayers": 261,
+      "sourceCounts": {
+        "seed": 30,
+        "mlp": 103,
+        "ppa": 200
+      },
+      "players": [
+        {
+          "playerId": "andrei-daescu",
+          "displayName": "Andrei Daescu",
+          "sources": [
+            "seed",
+            "mlp",
+            "ppa"
+          ],
+          "country": "RO",
+          "mlpTeam": "columbus-sliders",
+          "duprDoubles": 7.012,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/andrei-daescu/",
+          "ppaRankFlag": "top-5 men's doubles (ELO)",
+          "knownFor": "Romanian doubles specialist; top-3 DUPR",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/andrei-daescu/",
+          "ppaRank": 6,
+          "ppaPoints": 14300,
+          "age": 38
+        },
+        {
+          "playerId": "anna-bright",
+          "displayName": "Anna Bright",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "st-louis-shock",
+          "duprDoubles": 6.528,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/anna-bright/",
+          "ppaRankFlag": "top-3 women's doubles; top-2 women's singles (Kitchen)",
+          "knownFor": "MLP 2026 #1 overall pick ($1.23M, St. Louis Shock)",
+          "confidence": "T1",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/anna-bright/"
+        },
+        {
+          "playerId": "anna-leigh-waters",
+          "displayName": "Anna Leigh Waters",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "new-jersey-5s",
+          "duprDoubles": 6.889,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/anna-leigh-waters/",
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Anna_Leigh_Waters",
+          "ppaRankFlag": "top-1 singles / top-1 doubles / top-1 mixed",
+          "knownFor": "World #1 all three disciplines; 40+ Triple Crowns; the sport's benchmark pro",
+          "confidence": "T1",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/anna-leigh-waters/"
+        },
+        {
+          "playerId": "ben-johns",
+          "displayName": "Ben Johns",
+          "sources": [
+            "seed",
+            "mlp",
+            "ppa"
+          ],
+          "country": "US",
+          "mlpTeam": "los-angeles-mad-drops",
+          "duprDoubles": 7.094,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/ben-johns/",
+          "ppaRankFlag": "top-5 across disciplines",
+          "knownFor": "Most-decorated men's pro; men's doubles GOAT",
+          "confidence": "T1",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/ben-johns/",
+          "ppaRank": 1,
+          "ppaPoints": 21300,
+          "age": 27
+        },
+        {
+          "playerId": "brooke-buckner",
+          "displayName": "Brooke Buckner",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "las-vegas-night-owls",
+          "duprDoubles": 5.85,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/brooke-buckner/",
+          "ppaRankFlag": "top-7 women's singles (Kitchen)",
+          "knownFor": "Rising women's singles",
+          "confidence": "T3",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/brooke-buckner/"
+        },
+        {
+          "playerId": "catherine-parenteau",
+          "displayName": "Catherine Parenteau",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "CA",
+          "mlpTeam": "los-angeles-mad-drops",
+          "duprDoubles": 6.2,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/catherine-parenteau/",
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Catherine_Parenteau",
+          "ppaRankFlag": "top-10 women's doubles",
+          "knownFor": "Canadian veteran; long top-10 tenure",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/catherine-parenteau/"
+        },
+        {
+          "playerId": "chao-yi-wang",
+          "displayName": "Chao Yi Wang",
+          "sources": [
+            "seed"
+          ],
+          "country": "TW",
+          "ppaPlayerUrl": "https://ppatour.com/athlete/chao-yi-wang/",
+          "ppaRankFlag": "top-10 women's singles (Kitchen)",
+          "knownFor": "Taiwanese singles rise",
+          "confidence": "T3",
+          "fromSeed": true
+        },
+        {
+          "playerId": "christian-alshon",
+          "displayName": "Christian Alshon",
+          "sources": [
+            "seed",
+            "mlp",
+            "ppa"
+          ],
+          "country": "US",
+          "mlpTeam": "texas-ranchers",
+          "duprDoubles": 6.861,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/christian-alshon/",
+          "knownFor": "Rising pro across singles + doubles",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/christian-alshon/",
+          "ppaRank": 3,
+          "ppaPoints": 15800,
+          "age": 25
+        },
+        {
+          "playerId": "chris-haworth",
+          "displayName": "Christopher Haworth",
+          "sources": [
+            "seed",
+            "ppa"
+          ],
+          "country": "US",
+          "mlpTeam": "california-black-bears",
+          "ppaPlayerUrl": "https://ppatour.com/athlete/christopher-haworth/",
+          "ppaRankFlag": "top-1 men's singles (April 2026, first-time)",
+          "knownFor": "First-time #1 men's singles PPA seed April 2026",
+          "confidence": "T2",
+          "fromSeed": true,
+          "ppaRank": 84,
+          "ppaPoints": 765,
+          "age": 32
+        },
+        {
+          "playerId": "cj-klinger",
+          "displayName": "CJ Klinger",
+          "sources": [
+            "seed",
+            "mlp",
+            "ppa"
+          ],
+          "country": "US",
+          "mlpTeam": "Columbus Sliders",
+          "duprDoubles": 6.695,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/cj-klinger/",
+          "ppaRankFlag": "top-10 men's doubles",
+          "knownFor": "Doubles specialist; recent finalist vs Johns/Tardio",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/cj-klinger/",
+          "ppaRank": 7,
+          "ppaPoints": 14200,
+          "age": 20
+        },
+        {
+          "playerId": "dylan-frazier",
+          "displayName": "Dylan Frazier",
+          "sources": [
+            "seed",
+            "mlp",
+            "ppa"
+          ],
+          "country": "US",
+          "mlpTeam": "brooklyn-pickleball-team",
+          "duprDoubles": 6.86,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/dylan-frazier/",
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Dylan_Frazier",
+          "ppaRankFlag": "top-10 men's doubles",
+          "knownFor": "Often partners JW Johnson",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/dylan-frazier/",
+          "ppaRank": 10,
+          "ppaPoints": 6100,
+          "age": 24
+        },
+        {
+          "playerId": "federico-staksrud",
+          "displayName": "Federico Staksrud",
+          "sources": [
+            "seed",
+            "mlp",
+            "ppa"
+          ],
+          "country": "AR",
+          "mlpTeam": "orlando-squeeze",
+          "duprDoubles": 6.721,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/federico-staksrud/",
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Federico_Staksrud",
+          "ppaRankFlag": "top-3 men's singles",
+          "knownFor": "Argentine elite men's singles; 2 PPA titles in early 2026",
+          "confidence": "T1",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/federico-staksrud/",
+          "ppaRank": 8,
+          "ppaPoints": 13200,
+          "age": 30
+        },
+        {
+          "playerId": "gabe-tardio",
+          "displayName": "Gabe Tardio",
+          "sources": [
+            "seed"
+          ],
+          "country": "US",
+          "mlpTeam": "st-louis-shock",
+          "duprDoubles": 6.867,
+          "ppaRankFlag": "top-3 men's doubles",
+          "knownFor": "Ben Johns's primary doubles partner; 20th career PPA Tour title",
+          "confidence": "T1",
+          "fromSeed": true
+        },
+        {
+          "playerId": "hayden-patriquin",
+          "displayName": "Hayden Patriquin",
+          "sources": [
+            "seed",
+            "mlp",
+            "ppa"
+          ],
+          "country": "US",
+          "mlpTeam": "St. Louis Shock",
+          "duprDoubles": 6.925,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/hayden-patriquin/",
+          "ppaRankFlag": "top-2 men's singles (The Kitchen editorial)",
+          "knownFor": "Rapid rise 2025-2026 across all three disciplines",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/hayden-patriquin/",
+          "ppaRank": 5,
+          "ppaPoints": 14600,
+          "age": 20
+        },
+        {
+          "playerId": "hunter-johnson",
+          "displayName": "Hunter Johnson",
+          "sources": [
+            "seed",
+            "mlp",
+            "ppa"
+          ],
+          "country": "US",
+          "mlpTeam": "chicago-slice",
+          "duprDoubles": 6.62,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/hunter-johnson/",
+          "ppaRankFlag": "top-5 men's singles (PickleWave ELO)",
+          "knownFor": "Top-3 men's singles ELO trajectory",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/hunter-johnson/",
+          "ppaRank": 26,
+          "ppaPoints": 2600,
+          "age": 31
+        },
+        {
+          "playerId": "tyra-black",
+          "displayName": "Hurricane Tyra Black",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "dallas-flash",
+          "duprDoubles": 6.339,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/hurricane-tyra-black/",
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Hurricane_Tyra_Black",
+          "ppaRankFlag": "top-5 women's doubles",
+          "knownFor": "Upset Waters in 2025; Sacramento mixed gold 2026",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/tyra-black/"
+        },
+        {
+          "playerId": "jack-sock",
+          "displayName": "Jack Sock",
+          "sources": [
+            "seed",
+            "mlp",
+            "ppa"
+          ],
+          "country": "US",
+          "mlpTeam": "orlando-squeeze",
+          "duprDoubles": 6.56,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/jack-sock/",
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Jack_Sock",
+          "knownFor": "Former pro tennis top-10 → pickleball pro",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/jack-sock/",
+          "ppaRank": 27,
+          "ppaPoints": 2437,
+          "age": 33
+        },
+        {
+          "playerId": "jackie-kawamoto",
+          "displayName": "Jackie Kawamoto",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "Brooklyn Pickleball Team",
+          "duprDoubles": 6.253,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/jackie-kawamoto/",
+          "ppaRankFlag": "top-10 women's doubles",
+          "knownFor": "Kawamoto twins; top-3 WD team",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/jackie-kawamoto/"
+        },
+        {
+          "playerId": "jade-kawamoto",
+          "displayName": "Jade Kawamoto",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "Los Angeles Mad Drops",
+          "duprDoubles": 6.241,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/jade-kawamoto/",
+          "ppaRankFlag": "top-10 women's doubles",
+          "knownFor": "Kawamoto twins; top-3 WD team",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/jade-kawamoto/"
+        },
+        {
+          "playerId": "james-ignatowich",
+          "displayName": "James Ignatowich",
+          "sources": [
+            "seed",
+            "ppa"
+          ],
+          "country": "US",
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/James_Ignatowich",
+          "ppaRankFlag": "top-10 men's singles/doubles",
+          "knownFor": "Versatile all-three; UPA contract news 2026",
+          "confidence": "T2",
+          "fromSeed": true,
+          "ppaRank": 50,
+          "ppaPoints": 1425,
+          "age": 25
+        },
+        {
+          "playerId": "jorja-johnson",
+          "displayName": "Jorja Johnson",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "new-jersey-5s",
+          "duprDoubles": 6.242,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/jorja-johnson/",
+          "ppaRankFlag": "top-3 women's doubles",
+          "knownFor": "2025 MLP MVP; 2026 MLP #2 pick",
+          "confidence": "T1",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/jorja-johnson/"
+        },
+        {
+          "playerId": "jw-johnson",
+          "displayName": "JW Johnson",
+          "sources": [
+            "seed",
+            "mlp",
+            "ppa"
+          ],
+          "country": "US",
+          "mlpTeam": "dallas-flash",
+          "duprDoubles": 7.011,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/jw-johnson/",
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/JW_Johnson",
+          "ppaRankFlag": "top-10 singles / top-10 doubles",
+          "knownFor": "Tennis convert; precision play; Florida-based family operation",
+          "confidence": "T1",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/jw-johnson/",
+          "ppaRank": 4,
+          "ppaPoints": 14700,
+          "age": 23
+        },
+        {
+          "playerId": "kaitlyn-christian",
+          "displayName": "Kaitlyn Christian",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "atlanta-bouncers",
+          "duprDoubles": 5.65,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/kaitlyn-christian/",
+          "ppaRankFlag": "top-3 women's singles (Kitchen)",
+          "knownFor": "Former pro tennis; women's singles top-3",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/kaitlyn-christian/"
+        },
+        {
+          "playerId": "kate-fahey",
+          "displayName": "Kate Fahey",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "st-louis-shock",
+          "duprDoubles": 5.83,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/kate-fahey/",
+          "ppaRankFlag": "top-2 women's singles (most consistent challenger to Waters)",
+          "knownFor": "Consistent women's singles contender",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/kate-fahey/"
+        },
+        {
+          "playerId": "lea-jansen",
+          "displayName": "Lea Jansen",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "texas-ranchers",
+          "duprDoubles": 5.96,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/lea-jansen/",
+          "ppaRankFlag": "top-10 women's singles",
+          "knownFor": "PPA Houston 2025 singles winner; outspoken pro",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/lea-jansen/"
+        },
+        {
+          "playerId": "parris-todd",
+          "displayName": "Parris Todd",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "columbus-sliders",
+          "duprDoubles": 6.238,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/parris-todd/",
+          "ppaRankFlag": "top-10 women's doubles",
+          "knownFor": "2026 Sacramento women's doubles gold",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/parris-todd/"
+        },
+        {
+          "playerId": "quang-duong",
+          "displayName": "Quang Duong",
+          "sources": [
+            "seed"
+          ],
+          "country": "VN",
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Quang_Duong",
+          "ppaRankFlag": "top-6 men's singles",
+          "knownFor": "International singles rise",
+          "confidence": "T2",
+          "fromSeed": true
+        },
+        {
+          "playerId": "rachel-rohrabacher",
+          "displayName": "Rachel Rohrabacher",
+          "sources": [
+            "seed",
+            "mlp"
+          ],
+          "country": "US",
+          "mlpTeam": "brooklyn-pickleball-team",
+          "duprDoubles": 6.209,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/rachel-rohrabacher/",
+          "ppaRankFlag": "top-10 women's doubles",
+          "knownFor": "2026 Sacramento women's doubles gold (with Todd)",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/rachel-rohrabacher/"
+        },
+        {
+          "playerId": "salome-devidze",
+          "displayName": "Salome Devidze",
+          "sources": [
+            "seed"
+          ],
+          "country": "GE",
+          "ppaRankFlag": "top-10 women's singles",
+          "knownFor": "Georgian singles specialist; last player to beat Waters in singles (May 2024)",
+          "confidence": "T2",
+          "fromSeed": true
+        },
+        {
+          "playerId": "tyson-mcguffin",
+          "displayName": "Tyson McGuffin",
+          "sources": [
+            "seed",
+            "mlp",
+            "ppa"
+          ],
+          "country": "US",
+          "mlpTeam": "palm-beach-royals",
+          "duprDoubles": 6.78,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/tyson-mcguffin/",
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Tyson_McGuffin",
+          "ppaRankFlag": "top-15 men's doubles",
+          "knownFor": "Veteran 4x national champion; content creator",
+          "confidence": "T2",
+          "fromSeed": true,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/tyson-mcguffin/",
+          "ppaRank": 11,
+          "ppaPoints": 5700,
+          "age": 36
+        },
+        {
+          "playerId": "mlp-83498",
+          "displayName": "Alex Walker",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Phoenix Flames",
+          "duprDoubles": 5.34,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/alex-walker/"
+        },
+        {
+          "playerId": "mlp-5155",
+          "displayName": "Alix Truong",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Utah Black Diamonds",
+          "duprDoubles": 5.71,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/alix-truong/"
+        },
+        {
+          "playerId": "mlp-10194",
+          "displayName": "Allison Phillips",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Orlando Squeeze",
+          "duprDoubles": 5.41,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/allison-phillips/"
+        },
+        {
+          "playerId": "mlp-5084",
+          "displayName": "Allyce Jones",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Bay Area Breakers",
+          "duprDoubles": 5.83,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/allyce-jones/"
+        },
+        {
+          "playerId": "mlp-31628",
+          "displayName": "Angie Walker",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Los Angeles Mad Drops",
+          "duprDoubles": 5.38,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/angie-walker/"
+        },
+        {
+          "playerId": "mlp-31425",
+          "displayName": "Augustus Ge",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Dallas Flash",
+          "duprDoubles": 6.6,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/augustus-ge/",
+          "ppaRank": 17,
+          "ppaPoints": 3800,
+          "age": 29,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/augustus-ge/"
+        },
+        {
+          "playerId": "mlp-83579",
+          "displayName": "Ava Ignatowich",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Miami Pickleball Club",
+          "duprDoubles": 5.32,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/ava-ignatowich/"
+        },
+        {
+          "playerId": "mlp-47352",
+          "displayName": "Blaine Hovenier",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "SoCal Hard Eights",
+          "duprDoubles": 5.99,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/blaine-hovenier/",
+          "ppaRank": 23,
+          "ppaPoints": 2825,
+          "age": 25
+        },
+        {
+          "playerId": "mlp-5153",
+          "displayName": "Brandon French",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Carolina Hogs",
+          "duprDoubles": 5.95,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/brandon-french/",
+          "ppaRank": 38,
+          "ppaPoints": 1800,
+          "age": 34
+        },
+        {
+          "playerId": "mlp-5050",
+          "displayName": "Callie Jo Smith",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Chicago Slice",
+          "duprDoubles": 5.92,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/callie-smith/"
+        },
+        {
+          "playerId": "mlp-83475",
+          "displayName": "Carlos Di Laura",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Chicago Slice",
+          "duprDoubles": 5.56,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/carlos-di-laura/",
+          "ppaRank": 60,
+          "ppaPoints": 1100,
+          "age": 32
+        },
+        {
+          "playerId": "mlp-83504",
+          "displayName": "Cason Campbell",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Florida Smash",
+          "duprDoubles": 5.47,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/cason-campbell/",
+          "ppaRank": 67,
+          "ppaPoints": 1012,
+          "age": 19
+        },
+        {
+          "playerId": "mlp-31569",
+          "displayName": "Chao &#8220;Zoey&#8221; Yi Wang",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Las Vegas Night Owls",
+          "duprDoubles": 5.75,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/chao-yi-wang/"
+        },
+        {
+          "playerId": "mlp-5149",
+          "displayName": "Christa Gecheva",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "New Jersey 5s",
+          "duprDoubles": 5.64,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/christa-gecheva/"
+        },
+        {
+          "playerId": "mlp-5038",
+          "displayName": "Collin Johns",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Carolina Hogs",
+          "duprDoubles": 6.55,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/collin-johns/",
+          "ppaRank": 29,
+          "ppaPoints": 2375,
+          "age": 32
+        },
+        {
+          "playerId": "mlp-5127",
+          "displayName": "Connor Garnett",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Utah Black Diamonds",
+          "duprDoubles": 6.74,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/connor-garnett/",
+          "ppaRank": 20,
+          "ppaPoints": 3200,
+          "age": 29,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/connor-garnett/"
+        },
+        {
+          "playerId": "mlp-83487",
+          "displayName": "Craig Johnson",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "New Jersey 5s",
+          "duprDoubles": 6.14,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/craig-johnson/",
+          "ppaRank": 92,
+          "ppaPoints": 693,
+          "age": 40
+        },
+        {
+          "playerId": "mlp-83588",
+          "displayName": "Danna Funaro",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Bay Area Breakers",
+          "duprDoubles": 5.23,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/danna-funaro/"
+        },
+        {
+          "playerId": "mlp-5036",
+          "displayName": "Dekel Bar",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Brooklyn Pickleball Team",
+          "duprDoubles": 6.77,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/dekel-bar/",
+          "ppaRank": 18,
+          "ppaPoints": 3550,
+          "age": 33,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/dekel-bar/"
+        },
+        {
+          "playerId": "mlp-5058",
+          "displayName": "DJ Young",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Bay Area Breakers",
+          "duprDoubles": 6.29,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/darrian-young/"
+        },
+        {
+          "playerId": "mlp-31635",
+          "displayName": "Eric Oncins",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Texas Ranchers",
+          "duprDoubles": 6.4,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/eric-oncins/",
+          "ppaRank": 9,
+          "ppaPoints": 7400,
+          "age": 24,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/eric-oncins/"
+        },
+        {
+          "playerId": "mlp-83508",
+          "displayName": "Eric Roddy",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Bay Area Breakers",
+          "duprDoubles": 6.28,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/eric-roddy/",
+          "ppaRank": 72,
+          "ppaPoints": 950,
+          "age": 32
+        },
+        {
+          "playerId": "mlp-5088",
+          "displayName": "Erik Lange",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "St. Louis Shock",
+          "duprDoubles": 6.63,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/erik-lange/"
+        },
+        {
+          "playerId": "mlp-83494",
+          "displayName": "Felicity Di Laura",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "St. Louis Shock",
+          "duprDoubles": 4.83,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/felicity-di-laura/"
+        },
+        {
+          "playerId": "mlp-5009",
+          "displayName": "Gabriel Tardio",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "St. Louis Shock",
+          "duprDoubles": 6.88,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/gabriel-tardio/",
+          "ppaRank": 1,
+          "ppaPoints": 21300,
+          "age": 20,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/gabriel-tardio/"
+        },
+        {
+          "playerId": "mlp-56363",
+          "displayName": "Genie Bouchard",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Phoenix Flames",
+          "duprDoubles": 5.75,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/genie-bouchard/"
+        },
+        {
+          "playerId": "mlp-5173",
+          "displayName": "Genie Erokhina",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Utah Black Diamonds",
+          "duprDoubles": 5.69,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/genie-erokhina/"
+        },
+        {
+          "playerId": "mlp-83481",
+          "displayName": "Hannah Blatt",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Brooklyn Pickleball Team",
+          "duprDoubles": 5.3,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/hannah-blatt/"
+        },
+        {
+          "playerId": "mlp-83492",
+          "displayName": "Helena Jansen",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Texas Ranchers",
+          "duprDoubles": 4.96,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/helena-jansen/"
+        },
+        {
+          "playerId": "mlp-5042",
+          "displayName": "Irina Tereschenko",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "SoCal Hard Eights",
+          "duprDoubles": 5.65,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/irina-tereschenko/"
+        },
+        {
+          "playerId": "mlp-83597",
+          "displayName": "Ivan Jakovljevic",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "SoCal Hard Eights",
+          "duprDoubles": 6.16,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/ivan-jakovljevic/",
+          "ppaRank": 69,
+          "ppaPoints": 987,
+          "age": 35
+        },
+        {
+          "playerId": "mlp-83506",
+          "displayName": "James Delgado",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Las Vegas Night Owls",
+          "duprDoubles": 5.88,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/james-delgado/",
+          "ppaRank": 51,
+          "ppaPoints": 1400,
+          "age": 22
+        },
+        {
+          "playerId": "mlp-10188",
+          "displayName": "Jaume Martinez Vich",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Atlanta Bouncers",
+          "duprDoubles": 6.7,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/jaume-martinez-vich/",
+          "ppaRank": 16,
+          "ppaPoints": 4300,
+          "age": 32,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/jaume-martinez-vich/"
+        },
+        {
+          "playerId": "mlp-5086",
+          "displayName": "Jay Devilliers",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Miami Pickleball Club",
+          "duprDoubles": 6.67,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/jay-devilliers/",
+          "ppaRank": 12,
+          "ppaPoints": 5450,
+          "age": 31,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/jay-devilliers/"
+        },
+        {
+          "playerId": "mlp-5032",
+          "displayName": "Jessie Irvine",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Phoenix Flames",
+          "duprDoubles": 5.93,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/jessie-irvine/"
+        },
+        {
+          "playerId": "mlp-83586",
+          "displayName": "Juan Benitez",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "California Black Bears",
+          "duprDoubles": 5.75,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/juan-benitez/",
+          "ppaRank": 46,
+          "ppaPoints": 1537,
+          "age": 30
+        },
+        {
+          "playerId": "mlp-6917",
+          "displayName": "Judit Castillo Gargallo",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "SoCal Hard Eights",
+          "duprDoubles": 5.65,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/judit-castillo/"
+        },
+        {
+          "playerId": "mlp-4991",
+          "displayName": "Lacy Schneemann",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Orlando Squeeze",
+          "duprDoubles": 5.94,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/lacy-schneemann/"
+        },
+        {
+          "playerId": "mlp-83601",
+          "displayName": "Lauren Hidalgo-Smith",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "SoCal Hard Eights",
+          "duprDoubles": 4.6,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/lauren-hidalgo-smith/"
+        },
+        {
+          "playerId": "mlp-31631",
+          "displayName": "Layne Sleeth",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "California Black Bears",
+          "duprDoubles": 5.36,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/layne-sleeth/"
+        },
+        {
+          "playerId": "mlp-5026",
+          "displayName": "Lina Padegimaite",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "California Black Bears",
+          "duprDoubles": 5.69,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/lina-padegimaite/"
+        },
+        {
+          "playerId": "mlp-83469",
+          "displayName": "Liz Truluck",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Carolina Hogs",
+          "duprDoubles": 5.58,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/liz-truluck/"
+        },
+        {
+          "playerId": "mlp-83479",
+          "displayName": "Marcela Hones",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Columbus Sliders",
+          "duprDoubles": 5.17,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/marcela-hones/"
+        },
+        {
+          "playerId": "mlp-5066",
+          "displayName": "Marietta Wright",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Texas Ranchers",
+          "duprDoubles": 6.07,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/marietta-wright/"
+        },
+        {
+          "playerId": "mlp-6920",
+          "displayName": "Martina Frantova",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Florida Smash",
+          "duprDoubles": 5.6,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/martina-frantova/"
+        },
+        {
+          "playerId": "mlp-83471",
+          "displayName": "Maxwell Freeman",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Chicago Slice",
+          "duprDoubles": 6.31,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/max-freeman/"
+        },
+        {
+          "playerId": "mlp-5068",
+          "displayName": "Meghan Dizon",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "New Jersey 5s",
+          "duprDoubles": 5.8,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/meghan-dizon/"
+        },
+        {
+          "playerId": "mlp-83490",
+          "displayName": "Mehvish Safdar",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Utah Black Diamonds",
+          "duprDoubles": 5.43,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/mehvish-safdar/"
+        },
+        {
+          "playerId": "mlp-56826",
+          "displayName": "Michael Loyd",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Texas Ranchers",
+          "duprDoubles": 6.26,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/michael-loyd/",
+          "ppaRank": 44,
+          "ppaPoints": 1600,
+          "age": 27
+        },
+        {
+          "playerId": "mlp-5131",
+          "displayName": "Milan Rane",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Miami Pickleball Club",
+          "duprDoubles": 5.77,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/milan-rane/"
+        },
+        {
+          "playerId": "mlp-83575",
+          "displayName": "Mya Bui",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Miami Pickleball Club",
+          "duprDoubles": 4.9,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/mya-bui/"
+        },
+        {
+          "playerId": "mlp-41926",
+          "displayName": "Noe Khlif",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Miami Pickleball Club",
+          "duprDoubles": 6.49,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/noe-khlif/",
+          "ppaRank": 14,
+          "ppaPoints": 4325,
+          "age": 27,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/noe-khlif/"
+        },
+        {
+          "playerId": "mlp-5113",
+          "displayName": "Pablo Tellez",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Las Vegas Night Owls",
+          "duprDoubles": 6.62,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/pablo-tellez/",
+          "ppaRank": 19,
+          "ppaPoints": 3300,
+          "age": 30,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/pablo-tellez/"
+        },
+        {
+          "playerId": "mlp-5175",
+          "displayName": "Patrick Smith",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Brooklyn Pickleball Team",
+          "duprDoubles": 6.49,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/patrick-smith/",
+          "ppaRank": 57,
+          "ppaPoints": 1212,
+          "age": 41
+        },
+        {
+          "playerId": "mlp-5096",
+          "displayName": "Pesa Teoni",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Phoenix Flames",
+          "duprDoubles": 6.37,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/pesa-teoni/",
+          "ppaRank": 66,
+          "ppaPoints": 1025,
+          "age": 27
+        },
+        {
+          "playerId": "mlp-83473",
+          "displayName": "Pierina Imparato",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Chicago Slice",
+          "duprDoubles": 5.42,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/pierina-imparato/"
+        },
+        {
+          "playerId": "mlp-5165",
+          "displayName": "Rachel Rettger",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Atlanta Bouncers",
+          "duprDoubles": 5.5,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/rachel-rettger/"
+        },
+        {
+          "playerId": "mlp-4985",
+          "displayName": "Rafa Hewett",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "California Black Bears",
+          "duprDoubles": 6.49,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/rafa-hewett/",
+          "ppaRank": 30,
+          "ppaPoints": 2250,
+          "age": 31
+        },
+        {
+          "playerId": "mlp-5078",
+          "displayName": "Riley Newman",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Brooklyn Pickleball Team",
+          "duprDoubles": 6.83,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/riley-newman/",
+          "ppaRank": 15,
+          "ppaPoints": 4312,
+          "age": 32,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/riley-newman/"
+        },
+        {
+          "playerId": "mlp-31588",
+          "displayName": "Roscoe Bellamy",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Columbus Sliders",
+          "duprDoubles": 6.11,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/roscoe-bellamy/",
+          "ppaRank": 42,
+          "ppaPoints": 1650,
+          "age": 26
+        },
+        {
+          "playerId": "mlp-97927",
+          "displayName": "Ross Whittaker",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Columbus Sliders",
+          "duprDoubles": 5.89,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/ross-whittaker/",
+          "ppaRank": 76,
+          "ppaPoints": 875,
+          "age": 31
+        },
+        {
+          "playerId": "mlp-5143",
+          "displayName": "Sam Querrey",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Atlanta Bouncers",
+          "duprDoubles": 5.95,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/sam-querrey/",
+          "ppaRank": 154,
+          "ppaPoints": 250,
+          "age": 38
+        },
+        {
+          "playerId": "mlp-83591",
+          "displayName": "Samantha Parker",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Orlando Squeeze",
+          "duprDoubles": 5.4,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/samantha-parker/"
+        },
+        {
+          "playerId": "mlp-5090",
+          "displayName": "Sarah Ansboury",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Florida Smash",
+          "duprDoubles": 5.52,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/sarah-ansboury/"
+        },
+        {
+          "playerId": "mlp-10181",
+          "displayName": "Tamaryn Emmrich",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Carolina Hogs",
+          "duprDoubles": 5.43,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/tamaryn-emmrich/"
+        },
+        {
+          "playerId": "mlp-83484",
+          "displayName": "Tatiana Ruhl",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Dallas Flash",
+          "duprDoubles": 5.01,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/tatiana-ruhl/"
+        },
+        {
+          "playerId": "mlp-6914",
+          "displayName": "Tina Pisnik",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Texas Ranchers",
+          "duprDoubles": 6.07,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/tina-pisnik/"
+        },
+        {
+          "playerId": "mlp-5169",
+          "displayName": "Todd Fought",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Atlanta Bouncers",
+          "duprDoubles": 6.28,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/todd-fought/"
+        },
+        {
+          "playerId": "mlp-83593",
+          "displayName": "Tom Evans",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Orlando Squeeze",
+          "duprDoubles": 5.6,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/tom-evans/"
+        },
+        {
+          "playerId": "mlp-5017",
+          "displayName": "Travis Rettenmaier",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Florida Smash",
+          "duprDoubles": 6.63,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/travis-rettenmaier/",
+          "ppaRank": 55,
+          "ppaPoints": 1271,
+          "age": 42
+        },
+        {
+          "playerId": "mlp-5072",
+          "displayName": "Tyler Loong",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Utah Black Diamonds",
+          "duprDoubles": 6.52,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/tyler-loong/",
+          "ppaRank": 31,
+          "ppaPoints": 2225,
+          "age": 34
+        },
+        {
+          "playerId": "mlp-83466",
+          "displayName": "Victoria Di Muzio",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Atlanta Bouncers",
+          "duprDoubles": 5.99,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/victoria-dimuzio/"
+        },
+        {
+          "playerId": "mlp-5012",
+          "displayName": "Vivienne David",
+          "sources": [
+            "mlp"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Chicago Slice",
+          "duprDoubles": 5.87,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/vivienne-david/"
+        },
+        {
+          "playerId": "mlp-5094",
+          "displayName": "Wesley Burrows",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Los Angeles Mad Drops",
+          "duprDoubles": 6.41,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/wesley-burrows/",
+          "ppaRank": 96,
+          "ppaPoints": 642,
+          "age": 38
+        },
+        {
+          "playerId": "mlp-31421",
+          "displayName": "Will Howells",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "New Jersey 5s",
+          "duprDoubles": 6.64,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/will-howells/",
+          "ppaRank": 107,
+          "ppaPoints": 550,
+          "age": 27
+        },
+        {
+          "playerId": "mlp-83510",
+          "displayName": "Wyatt Stone",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Dallas Flash",
+          "duprDoubles": 6.04,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/wyatt-stone/",
+          "ppaRank": 28,
+          "ppaPoints": 2400,
+          "age": 20
+        },
+        {
+          "playerId": "mlp-5135",
+          "displayName": "Yates Johnson",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Utah Black Diamonds",
+          "duprDoubles": 6.26,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/yates-johnson/",
+          "ppaRank": 58,
+          "ppaPoints": 1200,
+          "age": 31
+        },
+        {
+          "playerId": "mlp-83577",
+          "displayName": "Yuta Funemizu",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "Miami Pickleball Club",
+          "duprDoubles": 5.7,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/yuta-funemizu-1/",
+          "ppaRank": 46,
+          "ppaPoints": 1537,
+          "age": 32
+        },
+        {
+          "playerId": "mlp-5028",
+          "displayName": "Zane Navratil",
+          "sources": [
+            "mlp",
+            "ppa"
+          ],
+          "fromSeed": false,
+          "mlpTeam": "New Jersey 5s",
+          "duprDoubles": 6.54,
+          "mlpProfileUrl": "https://majorleaguepickleball.co/player/zane-navratil/",
+          "ppaRank": 24,
+          "ppaPoints": 2675,
+          "age": 30
+        },
+        {
+          "playerId": "ppa-aanik-lohani",
+          "displayName": "Aanik Lohani",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 118,
+          "ppaPoints": 465,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-adair-garcia",
+          "displayName": "Adair Garcia",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 181,
+          "ppaPoints": 189,
+          "age": 20
+        },
+        {
+          "playerId": "ppa-adam-harvey",
+          "displayName": "Adam Harvey",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 60,
+          "ppaPoints": 1100,
+          "age": 24
+        },
+        {
+          "playerId": "ppa-aidan-schenk",
+          "displayName": "Aidan Schenk",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 154,
+          "ppaPoints": 250,
+          "age": 20
+        },
+        {
+          "playerId": "ppa-aj-koller",
+          "displayName": "AJ Koller",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 33,
+          "ppaPoints": 2075,
+          "age": 37
+        },
+        {
+          "playerId": "ppa-albert-wan",
+          "displayName": "Albert Wan",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 178,
+          "ppaPoints": 199,
+          "age": 24
+        },
+        {
+          "playerId": "ppa-alex-emery",
+          "displayName": "Alex Emery",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 105,
+          "ppaPoints": 565,
+          "age": 38
+        },
+        {
+          "playerId": "ppa-alexander-crum",
+          "displayName": "Alexander Crum",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 95,
+          "ppaPoints": 643,
+          "age": 34
+        },
+        {
+          "playerId": "ppa-anderson-scarpa",
+          "displayName": "Anderson Scarpa",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 52,
+          "ppaPoints": 1315,
+          "age": 32
+        },
+        {
+          "playerId": "ppa-andre-mercado",
+          "displayName": "Andre Mercado",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 97,
+          "ppaPoints": 636,
+          "age": 16
+        },
+        {
+          "playerId": "ppa-andrew-anh-pham",
+          "displayName": "Andrew Anh Pham",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 184,
+          "ppaPoints": 175,
+          "age": 32
+        },
+        {
+          "playerId": "ppa-andrew-caldarella",
+          "displayName": "Andrew Caldarella",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 119,
+          "ppaPoints": 462,
+          "age": 16
+        },
+        {
+          "playerId": "ppa-anouar-braham",
+          "displayName": "Anouar Braham",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 42,
+          "ppaPoints": 1650,
+          "age": 25
+        },
+        {
+          "playerId": "ppa-armaan-bhatia",
+          "displayName": "Armaan Bhatia",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 21,
+          "ppaPoints": 3087,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-armaan-jiwa-mawji",
+          "displayName": "Armaan Jiwa Mawji",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 160,
+          "ppaPoints": 239,
+          "age": 20
+        },
+        {
+          "playerId": "ppa-aryaan-bhatia",
+          "displayName": "Aryaan Bhatia",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 104,
+          "ppaPoints": 587,
+          "age": 23
+        },
+        {
+          "playerId": "ppa-austin-bricker",
+          "displayName": "Austin Bricker",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 77,
+          "ppaPoints": 850,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-braden-jacobson",
+          "displayName": "Braden Jacobson",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 103,
+          "ppaPoints": 599,
+          "age": 16
+        },
+        {
+          "playerId": "ppa-brandon-nsekpong",
+          "displayName": "Brandon Nsekpong",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 130,
+          "ppaPoints": 411,
+          "age": 36
+        },
+        {
+          "playerId": "ppa-bret-berryman",
+          "displayName": "Bret Berryman",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 117,
+          "ppaPoints": 471,
+          "age": 38
+        },
+        {
+          "playerId": "ppa-bruno-faletto",
+          "displayName": "Bruno Faletto",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 140,
+          "ppaPoints": 337,
+          "age": 28
+        },
+        {
+          "playerId": "ppa-caden-nemoff",
+          "displayName": "Caden Nemoff",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 89,
+          "ppaPoints": 712,
+          "age": 25
+        },
+        {
+          "playerId": "ppa-callan-dawson",
+          "displayName": "Callan Dawson",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 184,
+          "ppaPoints": 175,
+          "age": 34
+        },
+        {
+          "playerId": "ppa-camden-chaffin",
+          "displayName": "Camden Chaffin",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 71,
+          "ppaPoints": 955,
+          "age": -1
+        },
+        {
+          "playerId": "ppa-cameron-luhring",
+          "displayName": "Cameron Luhring",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 164,
+          "ppaPoints": 225,
+          "age": 23
+        },
+        {
+          "playerId": "ppa-christopher-crouch",
+          "displayName": "Christopher Crouch",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 65,
+          "ppaPoints": 1026,
+          "age": 25
+        },
+        {
+          "playerId": "ppa-chuck-taylor",
+          "displayName": "Chuck Taylor",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 68,
+          "ppaPoints": 1011,
+          "age": 42
+        },
+        {
+          "playerId": "ppa-claudio-quinones-garcia",
+          "displayName": "Claudio Quinones Garcia",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 133,
+          "ppaPoints": 393,
+          "age": 29
+        },
+        {
+          "playerId": "ppa-clayton-powell",
+          "displayName": "Clayton Powell",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 162,
+          "ppaPoints": 231,
+          "age": 19
+        },
+        {
+          "playerId": "ppa-colin-wong",
+          "displayName": "Colin Wong",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 170,
+          "ppaPoints": 200,
+          "age": 30
+        },
+        {
+          "playerId": "ppa-connor-mccartney",
+          "displayName": "Connor McCartney",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 161,
+          "ppaPoints": 238,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-connor-mogle",
+          "displayName": "Connor Mogle",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 78,
+          "ppaPoints": 837,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-daniel-de-la-rosa",
+          "displayName": "Daniel De La Rosa",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 134,
+          "ppaPoints": 387,
+          "age": 32
+        },
+        {
+          "playerId": "ppa-daniel-miron",
+          "displayName": "Daniel Miron",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 189,
+          "ppaPoints": 174,
+          "age": 29
+        },
+        {
+          "playerId": "ppa-daniel-phillips",
+          "displayName": "Daniel Phillips",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 195,
+          "ppaPoints": 158,
+          "age": 15
+        },
+        {
+          "playerId": "ppa-darrian-young",
+          "displayName": "Darrian Young",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 31,
+          "ppaPoints": 2225,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-donald-young",
+          "displayName": "Donald Young",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 41,
+          "ppaPoints": 1662,
+          "age": 36
+        },
+        {
+          "playerId": "ppa-easton-horricks",
+          "displayName": "Easton Horricks",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 149,
+          "ppaPoints": 288,
+          "age": 21
+        },
+        {
+          "playerId": "ppa-eduardo-santini-ayon",
+          "displayName": "Eduardo Santini Ayon",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 127,
+          "ppaPoints": 431,
+          "age": 24
+        },
+        {
+          "playerId": "ppa-edward-perez",
+          "displayName": "Edward Perez",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 85,
+          "ppaPoints": 762,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-eli-steiner",
+          "displayName": "Eli Steiner",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 124,
+          "ppaPoints": 442,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-erik-pailet",
+          "displayName": "Erik Pailet",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 168,
+          "ppaPoints": 212,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-etienne-blaszkewycz",
+          "displayName": "Etienne Blaszkewycz",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 93,
+          "ppaPoints": 674,
+          "age": 34
+        },
+        {
+          "playerId": "ppa-eunggwon-kim",
+          "displayName": "Eunggwon KIM",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 39,
+          "ppaPoints": 1700,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-freddie-powell",
+          "displayName": "Freddie Powell",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 123,
+          "ppaPoints": 448,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-gabriel-joseph",
+          "displayName": "Gabriel Joseph",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 99,
+          "ppaPoints": 611,
+          "age": 29
+        },
+        {
+          "playerId": "ppa-george-rangelov",
+          "displayName": "George Rangelov",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 116,
+          "ppaPoints": 484,
+          "age": -1
+        },
+        {
+          "playerId": "ppa-george-wall",
+          "displayName": "George Wall",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 79,
+          "ppaPoints": 825,
+          "age": 30
+        },
+        {
+          "playerId": "ppa-giang-trinh",
+          "displayName": "Giang Trinh",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 131,
+          "ppaPoints": 400,
+          "age": 28
+        },
+        {
+          "playerId": "ppa-grayson-goldin",
+          "displayName": "Grayson Goldin",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 56,
+          "ppaPoints": 1265,
+          "age": 30
+        },
+        {
+          "playerId": "ppa-gregory-dow",
+          "displayName": "Gregory Dow",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 49,
+          "ppaPoints": 1450,
+          "age": 29
+        },
+        {
+          "playerId": "ppa-guangsian-lin",
+          "displayName": "GuangSian Lin",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 151,
+          "ppaPoints": 275,
+          "age": 36
+        },
+        {
+          "playerId": "ppa-harrison-brown",
+          "displayName": "Harrison Brown",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 154,
+          "ppaPoints": 250,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-harsh-mehta",
+          "displayName": "Harsh Mehta",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 101,
+          "ppaPoints": 600,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-hien-truong",
+          "displayName": "Hien Truong",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 75,
+          "ppaPoints": 900,
+          "age": 21
+        },
+        {
+          "playerId": "ppa-hoang-nam-ly",
+          "displayName": "Hoang Nam Ly",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 121,
+          "ppaPoints": 450,
+          "age": 29
+        },
+        {
+          "playerId": "ppa-hong-kit-wong",
+          "displayName": "Hong kit Wong",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 39,
+          "ppaPoints": 1700,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-hsieh-chenan",
+          "displayName": "Hsieh Chen-An",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 196,
+          "ppaPoints": 150,
+          "age": 28
+        },
+        {
+          "playerId": "ppa-indigo-dagnall",
+          "displayName": "Indigo Dagnall",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 147,
+          "ppaPoints": 293,
+          "age": 16
+        },
+        {
+          "playerId": "ppa-jace-morris",
+          "displayName": "Jace Morris",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 110,
+          "ppaPoints": 524,
+          "age": 17
+        },
+        {
+          "playerId": "ppa-jackson-ayotte",
+          "displayName": "Jackson Ayotte",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 139,
+          "ppaPoints": 342,
+          "age": 23
+        },
+        {
+          "playerId": "ppa-jaikin-gomez",
+          "displayName": "Jaikin Gomez",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 167,
+          "ppaPoints": 217,
+          "age": 25
+        },
+        {
+          "playerId": "ppa-jake-anderson",
+          "displayName": "Jake Anderson",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 163,
+          "ppaPoints": 229,
+          "age": 30
+        },
+        {
+          "playerId": "ppa-jase-edwards",
+          "displayName": "Jase Edwards",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 184,
+          "ppaPoints": 175,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-jason-taylor",
+          "displayName": "Jason TAYLOR",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 141,
+          "ppaPoints": 325,
+          "age": 32
+        },
+        {
+          "playerId": "ppa-jericho-grollman",
+          "displayName": "Jericho Grollman",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 193,
+          "ppaPoints": 162,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-jhonnatan-medina-alvarez",
+          "displayName": "Jhonnatan Medina Alvarez",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 114,
+          "ppaPoints": 493,
+          "age": 44
+        },
+        {
+          "playerId": "ppa-jimmy-liong-kai-long",
+          "displayName": "jimmy liong kai long",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 129,
+          "ppaPoints": 425,
+          "age": 23
+        },
+        {
+          "playerId": "ppa-joel-poland",
+          "displayName": "Joel Poland",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 127,
+          "ppaPoints": 431,
+          "age": 25
+        },
+        {
+          "playerId": "ppa-john-cincola",
+          "displayName": "John Cincola",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 82,
+          "ppaPoints": 787,
+          "age": 45
+        },
+        {
+          "playerId": "ppa-john-lucian-goins",
+          "displayName": "John Lucian Goins",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 48,
+          "ppaPoints": 1500,
+          "age": 18
+        },
+        {
+          "playerId": "ppa-jonathan-truong",
+          "displayName": "Jonathan Truong",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 22,
+          "ppaPoints": 2900,
+          "age": 19
+        },
+        {
+          "playerId": "ppa-jose-martinez",
+          "displayName": "Jose Martinez",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 166,
+          "ppaPoints": 224,
+          "age": 32
+        },
+        {
+          "playerId": "ppa-joseph-wild",
+          "displayName": "Joseph Wild",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 86,
+          "ppaPoints": 750,
+          "age": 29
+        },
+        {
+          "playerId": "ppa-juan-varon",
+          "displayName": "Juan Varon",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 135,
+          "ppaPoints": 377,
+          "age": 24
+        },
+        {
+          "playerId": "ppa-julian-arnold",
+          "displayName": "Julian Arnold",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 35,
+          "ppaPoints": 1875,
+          "age": 35
+        },
+        {
+          "playerId": "ppa-kailas-shekar",
+          "displayName": "Kailas Shekar",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 136,
+          "ppaPoints": 362,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-kenta-miyoshi",
+          "displayName": "Kenta Miyoshi",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 60,
+          "ppaPoints": 1100,
+          "age": 30
+        },
+        {
+          "playerId": "ppa-kentaro-hamaguchi",
+          "displayName": "Kentaro Hamaguchi",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 192,
+          "ppaPoints": 164,
+          "age": 31
+        },
+        {
+          "playerId": "ppa-kento-tamaki",
+          "displayName": "Kento Tamaki",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 164,
+          "ppaPoints": 225,
+          "age": 32
+        },
+        {
+          "playerId": "ppa-khuong-huynh",
+          "displayName": "Khuong Huynh",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 170,
+          "ppaPoints": 200,
+          "age": 43
+        },
+        {
+          "playerId": "ppa-leander-lazaro",
+          "displayName": "Leander Lazaro",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 131,
+          "ppaPoints": 400,
+          "age": 33
+        },
+        {
+          "playerId": "ppa-len-yang",
+          "displayName": "Len Yang",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 37,
+          "ppaPoints": 1825,
+          "age": 22
+        },
+        {
+          "playerId": "ppa-louis-laville",
+          "displayName": "Louis Laville",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 190,
+          "ppaPoints": 165,
+          "age": 30
+        },
+        {
+          "playerId": "ppa-luc-pham",
+          "displayName": "Luc Pham",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 74,
+          "ppaPoints": 943,
+          "age": 22
+        },
+        {
+          "playerId": "ppa-luca-mack",
+          "displayName": "Luca Mack",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 106,
+          "ppaPoints": 562,
+          "age": 25
+        },
+        {
+          "playerId": "ppa-lucas-pascoe",
+          "displayName": "Lucas Pascoe",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 83,
+          "ppaPoints": 773,
+          "age": 19
+        },
+        {
+          "playerId": "ppa-lucas-pereyra",
+          "displayName": "Lucas Pereyra",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 183,
+          "ppaPoints": 180,
+          "age": 21
+        },
+        {
+          "playerId": "ppa-luke-wasson",
+          "displayName": "Luke Wasson",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 88,
+          "ppaPoints": 724,
+          "age": 20
+        },
+        {
+          "playerId": "ppa-luke-williams",
+          "displayName": "Luke Williams",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 145,
+          "ppaPoints": 300,
+          "age": 25
+        },
+        {
+          "playerId": "ppa-marco-leung",
+          "displayName": "Marco Leung",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 113,
+          "ppaPoints": 500,
+          "age": 31
+        },
+        {
+          "playerId": "ppa-marshall-brown",
+          "displayName": "Marshall Brown",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 53,
+          "ppaPoints": 1287,
+          "age": 30
+        },
+        {
+          "playerId": "ppa-martin-emmrich",
+          "displayName": "Martin Emmrich",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 34,
+          "ppaPoints": 1975,
+          "age": 41
+        },
+        {
+          "playerId": "ppa-matt-burkhardt",
+          "displayName": "Matt Burkhardt",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 179,
+          "ppaPoints": 197,
+          "age": 33
+        },
+        {
+          "playerId": "ppa-matt-wright",
+          "displayName": "Matt Wright",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 13,
+          "ppaPoints": 4525,
+          "age": 48,
+          "ppaPlayerUrl": "https://ppatour.com/athlete/matt-wright/"
+        },
+        {
+          "playerId": "ppa-matthew-barlow",
+          "displayName": "Matthew Barlow",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 153,
+          "ppaPoints": 255,
+          "age": 31
+        },
+        {
+          "playerId": "ppa-max-freeman",
+          "displayName": "Max Freeman",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 25,
+          "ppaPoints": 2637,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-maximilian-wild",
+          "displayName": "Maximilian Wild",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 194,
+          "ppaPoints": 161,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-mike-radermacher",
+          "displayName": "Mike Radermacher",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 169,
+          "ppaPoints": 212,
+          "age": 33
+        },
+        {
+          "playerId": "ppa-miles-hoover",
+          "displayName": "Miles Hoover",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 159,
+          "ppaPoints": 246,
+          "age": 20
+        },
+        {
+          "playerId": "ppa-mitchell-hargreaves",
+          "displayName": "Mitchell Hargreaves",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 101,
+          "ppaPoints": 600,
+          "age": 28
+        },
+        {
+          "playerId": "ppa-mohaned-alhouni",
+          "displayName": "Mohaned Alhouni",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 54,
+          "ppaPoints": 1275,
+          "age": 30
+        },
+        {
+          "playerId": "ppa-mota-alhouni",
+          "displayName": "Mota Alhouni",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 80,
+          "ppaPoints": 812,
+          "age": 33
+        },
+        {
+          "playerId": "ppa-mouaad-alhouni",
+          "displayName": "Mouaad Alhouni",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 152,
+          "ppaPoints": 268,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-muhammad-aiman",
+          "displayName": "Muhammad Aiman",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 170,
+          "ppaPoints": 200,
+          "age": 25
+        },
+        {
+          "playerId": "ppa-nasa-hatakeyama",
+          "displayName": "Nasa Hatakeyama",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 170,
+          "ppaPoints": 200,
+          "age": 29
+        },
+        {
+          "playerId": "ppa-naveen-beasley",
+          "displayName": "Naveen Beasley",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 126,
+          "ppaPoints": 437,
+          "age": 33
+        },
+        {
+          "playerId": "ppa-ngoc-trieu-tran",
+          "displayName": "Ngoc Trieu Tran",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 196,
+          "ppaPoints": 150,
+          "age": -1
+        },
+        {
+          "playerId": "ppa-nguyen-thang",
+          "displayName": "Nguyen Thang",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 154,
+          "ppaPoints": 250,
+          "age": 38
+        },
+        {
+          "playerId": "ppa-nicholas-maleganeas",
+          "displayName": "Nicholas Maleganeas",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 145,
+          "ppaPoints": 300,
+          "age": 21
+        },
+        {
+          "playerId": "ppa-nicholas-romano",
+          "displayName": "Nicholas Romano",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 137,
+          "ppaPoints": 360,
+          "age": 29
+        },
+        {
+          "playerId": "ppa-nick-black",
+          "displayName": "Nick Black",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 182,
+          "ppaPoints": 187,
+          "age": 24
+        },
+        {
+          "playerId": "ppa-oliver-frank",
+          "displayName": "Oliver Frank",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 180,
+          "ppaPoints": 193,
+          "age": 32
+        },
+        {
+          "playerId": "ppa-oscar-serra",
+          "displayName": "Oscar Serra",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 100,
+          "ppaPoints": 605,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-phuc-huynh",
+          "displayName": "Phuc Huynh",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 121,
+          "ppaPoints": 450,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-prycen-haas",
+          "displayName": "Prycen Haas",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 112,
+          "ppaPoints": 512,
+          "age": 32
+        },
+        {
+          "playerId": "ppa-purav-raja",
+          "displayName": "Purav Raja",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 196,
+          "ppaPoints": 150,
+          "age": -1
+        },
+        {
+          "playerId": "ppa-quan-do",
+          "displayName": "Quan Do",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 72,
+          "ppaPoints": 950,
+          "age": 42
+        },
+        {
+          "playerId": "ppa-rafael-lenhard",
+          "displayName": "Rafael Lenhard",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 89,
+          "ppaPoints": 712,
+          "age": 29
+        },
+        {
+          "playerId": "ppa-riley-inn",
+          "displayName": "Riley Inn",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 87,
+          "ppaPoints": 737,
+          "age": 29
+        },
+        {
+          "playerId": "ppa-rio-newcombe",
+          "displayName": "Rio Newcombe",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 144,
+          "ppaPoints": 317,
+          "age": 23
+        },
+        {
+          "playerId": "ppa-robert-nunnery",
+          "displayName": "Robert Nunnery",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 170,
+          "ppaPoints": 200,
+          "age": 40
+        },
+        {
+          "playerId": "ppa-robert-stirling",
+          "displayName": "Robert Stirling",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 94,
+          "ppaPoints": 650,
+          "age": 31
+        },
+        {
+          "playerId": "ppa-rougel-jon-lutz-aninon",
+          "displayName": "Rougel Jon Lutz Aninon",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 196,
+          "ppaPoints": 150,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-ryan-fu",
+          "displayName": "Ryan Fu",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 69,
+          "ppaPoints": 987,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-ryan-henry",
+          "displayName": "Ryan Henry",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 170,
+          "ppaPoints": 200,
+          "age": 41
+        },
+        {
+          "playerId": "ppa-ryan-ng",
+          "displayName": "Ryan Ng",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 170,
+          "ppaPoints": 200,
+          "age": 22
+        },
+        {
+          "playerId": "ppa-sammy-lee",
+          "displayName": "Sammy Lee",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 150,
+          "ppaPoints": 283,
+          "age": 20
+        },
+        {
+          "playerId": "ppa-sanil-jagtiani",
+          "displayName": "Sanil Jagtiani",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 98,
+          "ppaPoints": 617,
+          "age": 27
+        },
+        {
+          "playerId": "ppa-santhosh-narayanan",
+          "displayName": "Santhosh Narayanan",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 154,
+          "ppaPoints": 250,
+          "age": 26
+        },
+        {
+          "playerId": "ppa-sergey-afanasenka",
+          "displayName": "Sergey Afanasenka",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 184,
+          "ppaPoints": 175,
+          "age": 30
+        },
+        {
+          "playerId": "ppa-spartak-rahachou",
+          "displayName": "Spartak Rahachou",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 109,
+          "ppaPoints": 549,
+          "age": 33
+        },
+        {
+          "playerId": "ppa-spencer-smith",
+          "displayName": "Spencer Smith",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 107,
+          "ppaPoints": 550,
+          "age": 35
+        },
+        {
+          "playerId": "ppa-stephen-madonia",
+          "displayName": "Stephen Madonia",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 120,
+          "ppaPoints": 455,
+          "age": 29
+        },
+        {
+          "playerId": "ppa-steve-deakin",
+          "displayName": "Steve Deakin",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 125,
+          "ppaPoints": 437,
+          "age": 52
+        },
+        {
+          "playerId": "ppa-syed-uzair-sufi",
+          "displayName": "Syed uzair sufi",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 196,
+          "ppaPoints": 150,
+          "age": 21
+        },
+        {
+          "playerId": "ppa-tam-trinh",
+          "displayName": "Tam Trinh",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 64,
+          "ppaPoints": 1037,
+          "age": 32
+        },
+        {
+          "playerId": "ppa-tama-shimabukuro",
+          "displayName": "Tama Shimabukuro",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 36,
+          "ppaPoints": 1850,
+          "age": 15
+        },
+        {
+          "playerId": "ppa-thomas-yu",
+          "displayName": "Thomas Yu",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 81,
+          "ppaPoints": 800,
+          "age": 24
+        },
+        {
+          "playerId": "ppa-tom-protzek",
+          "displayName": "Tom Protzek",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 45,
+          "ppaPoints": 1575,
+          "age": 25
+        },
+        {
+          "playerId": "ppa-tristan-dussault",
+          "displayName": "Tristan Dussault",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 143,
+          "ppaPoints": 319,
+          "age": -1
+        },
+        {
+          "playerId": "ppa-troy-akin",
+          "displayName": "Troy Akin",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 115,
+          "ppaPoints": 487,
+          "age": 33
+        },
+        {
+          "playerId": "ppa-usama-khalid",
+          "displayName": "Usama Khalid",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 148,
+          "ppaPoints": 292,
+          "age": 35
+        },
+        {
+          "playerId": "ppa-vanshik-kapadia",
+          "displayName": "Vanshik Kapadia",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 91,
+          "ppaPoints": 700,
+          "age": 21
+        },
+        {
+          "playerId": "ppa-victor-rodrigo",
+          "displayName": "Victor Rodrigo",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 142,
+          "ppaPoints": 324,
+          "age": 31
+        },
+        {
+          "playerId": "ppa-wil-shaffer",
+          "displayName": "Wil Shaffer",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 111,
+          "ppaPoints": 519,
+          "age": 17
+        },
+        {
+          "playerId": "ppa-will-mackinnon",
+          "displayName": "Will Mackinnon",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 63,
+          "ppaPoints": 1068,
+          "age": 17
+        },
+        {
+          "playerId": "ppa-yaamunan-venkatesan",
+          "displayName": "Yaamunan Venkatesan",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 190,
+          "ppaPoints": 165,
+          "age": 39
+        },
+        {
+          "playerId": "ppa-zach-gonnering",
+          "displayName": "Zach Gonnering",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 138,
+          "ppaPoints": 359,
+          "age": 22
+        },
+        {
+          "playerId": "ppa-zachary-grabovic",
+          "displayName": "Zachary Grabovic",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 170,
+          "ppaPoints": 200,
+          "age": 30
+        },
+        {
+          "playerId": "ppa-zak-parks",
+          "displayName": "Zak Parks",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 184,
+          "ppaPoints": 175,
+          "age": 31
+        },
+        {
+          "playerId": "ppa-zane-ford",
+          "displayName": "Zane Ford",
+          "sources": [
+            "ppa"
+          ],
+          "fromSeed": false,
+          "ppaRank": 59,
+          "ppaPoints": 1127,
+          "age": 21
+        }
+      ],
+      "note": "Derived index — seed entries are authoritative; MLP + PPA enrich rather than overwrite. Universal Players tab consumes this. KB-0004."
     }
   }
 }
