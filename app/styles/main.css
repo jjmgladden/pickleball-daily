@@ -224,6 +224,19 @@ h2.section-title:first-child { margin-top: 0; }
   letter-spacing: 0.02em;
 }
 
+/* Stats tab — Rankings + Ratings two-column layout (Session 8 consolidation) */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.stats-col { min-width: 0; }
+.stats-col h2.section-title { margin-top: 0; }
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
 /* Source-of-truth chips on Players tab cards (KB-0004) */
 .src-chips { display: inline-flex; gap: 4px; vertical-align: middle; margin-left: 4px; }
 .src-chip {
