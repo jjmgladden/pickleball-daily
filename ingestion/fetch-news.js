@@ -20,17 +20,22 @@ const { fetchFeed } = require('./lib/rss-parser');
 const ROOT = path.resolve(__dirname, '..');
 const MEDIA_SOURCES = path.join(ROOT, 'data', 'master', 'media-sources.json');
 
-// MVP source set — newsletter ids from media-sources.json plus their RSS feed URLs.
-// Probe results 2026-04-24:
-//   The Dink (Ghost):           https://www.thedinkpickleball.com/rss/   200 application/rss+xml
-//   Pickleball Union (WP):      https://pickleballunion.com/feed/        200 application/rss+xml
+// Source set — newsletter ids from media-sources.json plus their feed URLs.
+// Probe results:
+//   The Dink (Ghost):           https://www.thedinkpickleball.com/rss/             RSS 2.0
+//   Pickleball Union (WP):      https://pickleballunion.com/feed/                  RSS 2.0
+//   Pickleball Magazine (Wix):  https://www.pickleballmagazine.com/blog-feed.xml   RSS 2.0
+//   The Kitchen (Shopify):      https://thekitchenpickle.com/blogs/news.atom       Atom 1.0
 const FEED_BINDINGS = [
-  { newsletterId: 'newsletter-the-dink',          feedUrl: 'https://www.thedinkpickleball.com/rss/' },
-  { newsletterId: 'newsletter-pickleball-union',  feedUrl: 'https://pickleballunion.com/feed/' }
+  { newsletterId: 'newsletter-the-dink',           feedUrl: 'https://www.thedinkpickleball.com/rss/' },
+  { newsletterId: 'newsletter-pickleball-union',   feedUrl: 'https://pickleballunion.com/feed/' },
+  { newsletterId: 'magazine-pickleball-magazine',  feedUrl: 'https://www.pickleballmagazine.com/blog-feed.xml',
+    displayNameOverride: 'Pickleball Magazine' },
+  { newsletterId: 'newsletter-the-kitchen',        feedUrl: 'https://thekitchenpickle.com/blogs/news.atom' }
 ];
 
-const MAX_ITEMS = 30;
-const MAX_PER_SOURCE = 20;
+const MAX_ITEMS = 40;
+const MAX_PER_SOURCE = 15;
 
 function normalizeTitle(t) {
   return String(t || '').toLowerCase().replace(/[^a-z0-9]+/g, '').slice(0, 80);
@@ -55,7 +60,9 @@ async function run() {
   for (const binding of FEED_BINDINGS) {
     const meta = sourceMeta[binding.newsletterId];
     const tier = meta && meta.tier ? meta.tier : 'T2';
-    const sourceName = meta && meta.displayName ? meta.displayName : binding.newsletterId;
+    const sourceName = binding.displayNameOverride
+      || (meta && meta.displayName)
+      || binding.newsletterId;
     try {
       const items = await fetchFeed({
         sourceId: binding.newsletterId,

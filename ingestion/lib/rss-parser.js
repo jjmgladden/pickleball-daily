@@ -134,9 +134,82 @@ function parseRss(xml, { sourceId, sourceName, tier, feedUrl }) {
   return items;
 }
 
+// Atom 1.0 parser. Used by The Kitchen (Shopify default feed). Atom uses
+// <entry> instead of <item>, <link href="..."/> attribute instead of text,
+// <published> instead of <pubDate>, <author><name>...</name></author> nested.
+function parseAtom(xml, { sourceId, sourceName, tier, feedUrl }) {
+  const items = [];
+  const entryRe = /<entry\b[^>]*>([\s\S]*?)<\/entry>/g;
+  let m;
+  while ((m = entryRe.exec(xml)) !== null) {
+    const block = m[1];
+    const title = stripHtml(firstTag(block, 'title'));
+
+    // Atom <link> uses href attribute. Prefer rel="alternate" type="text/html"; fall back to first link.
+    let link = '';
+    const altLinkMatch = block.match(/<link\b[^>]*rel="alternate"[^>]*href="([^"]+)"/i);
+    if (altLinkMatch) link = altLinkMatch[1];
+    if (!link) {
+      const anyLinkMatch = block.match(/<link\b[^>]*href="([^"]+)"/i);
+      if (anyLinkMatch) link = anyLinkMatch[1];
+    }
+
+    const published = firstTag(block, 'published') || firstTag(block, 'updated');
+    const summary = firstTag(block, 'summary');
+    const content = firstTag(block, 'content');
+
+    // Author is nested: <author><name>...</name></author>
+    let author = '';
+    const authorBlock = block.match(/<author\b[^>]*>([\s\S]*?)<\/author>/);
+    if (authorBlock) author = stripHtml(firstTag(authorBlock[1], 'name'));
+
+    const id = firstTag(block, 'id');
+
+    const categories = [];
+    const catRe = /<category\b[^>]*term="([^"]+)"/g;
+    let cm;
+    while ((cm = catRe.exec(block)) !== null) categories.push(cm[1]);
+
+    let publishedAt = null;
+    if (published) {
+      const d = new Date(published);
+      if (!isNaN(d.getTime())) publishedAt = d.toISOString();
+    }
+
+    const summaryText = stripHtml(summary || content).slice(0, 280);
+
+    if (!title || !link) continue;
+
+    items.push({
+      id: id || link,
+      title,
+      url: link,
+      summary: summaryText,
+      author: author || null,
+      categories,
+      imageUrl: null,
+      publishedAt,
+      sourceId,
+      sourceName,
+      tier,
+      feedUrl
+    });
+  }
+  return items;
+}
+
+function isAtomFeed(xml) {
+  // Detect Atom by namespace declaration or <feed> root + <entry> presence.
+  return /<feed\b[^>]*xmlns="http:\/\/www\.w3\.org\/2005\/Atom"/.test(xml) ||
+         (/<feed\b/.test(xml) && /<entry\b/.test(xml));
+}
+
 async function fetchFeed({ sourceId, sourceName, tier, feedUrl }) {
   const xml = await fetchText(feedUrl);
+  if (isAtomFeed(xml)) {
+    return parseAtom(xml, { sourceId, sourceName, tier, feedUrl });
+  }
   return parseRss(xml, { sourceId, sourceName, tier, feedUrl });
 }
 
-module.exports = { fetchFeed, parseRss, fetchText, stripHtml };
+module.exports = { fetchFeed, parseRss, parseAtom, isAtomFeed, fetchText, stripHtml };

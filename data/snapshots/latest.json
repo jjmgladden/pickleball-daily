@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-25T08:02:29.475Z",
-  "startedAt": "2026-04-25T08:02:22.645Z",
-  "durationMs": 6830,
+  "generatedAt": "2026-04-25T12:13:17.549Z",
+  "startedAt": "2026-04-25T12:13:02.539Z",
+  "durationMs": 15010,
   "version": "v1",
   "brand": "Ozark Joe's Pickleball Daily Intelligence Report",
   "errors": [],
@@ -10,7 +10,7 @@
     "tournaments": {
       "sourceId": "tournaments",
       "ok": true,
-      "retrievedAt": "2026-04-25T08:02:22.648Z",
+      "retrievedAt": "2026-04-25T12:13:03.177Z",
       "counts": {
         "inProgress": 0,
         "upcoming": 7,
@@ -212,7 +212,7 @@
     "mlp": {
       "sourceId": "mlp",
       "ok": true,
-      "retrievedAt": "2026-04-25T08:02:27.673Z",
+      "retrievedAt": "2026-04-25T12:13:13.906Z",
       "freshness": "live-verified",
       "teams": [
         {
@@ -277,7 +277,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z",
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z",
           "rosterMissingIds": [
             "6663"
           ]
@@ -333,7 +333,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "brooklyn-pickleball-team",
@@ -402,7 +402,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "california-black-bears",
@@ -455,7 +455,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "carolina-hogs",
@@ -522,7 +522,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "chicago-slice",
@@ -583,7 +583,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z",
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z",
           "rosterMissingIds": [
             "5062"
           ]
@@ -660,7 +660,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "dallas-flash",
@@ -736,7 +736,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "florida-smash",
@@ -789,7 +789,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "las-vegas-night-owls",
@@ -843,7 +843,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "los-angeles-mad-drops",
@@ -904,7 +904,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "miami-pickleball-club",
@@ -976,7 +976,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "new-jersey-5s",
@@ -1043,7 +1043,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "orlando-squeeze",
@@ -1111,7 +1111,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "palm-beach-royals",
@@ -1203,7 +1203,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "socal-hard-eights",
@@ -1263,7 +1263,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z",
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z",
           "rosterMissingIds": [
             "83599"
           ]
@@ -1335,7 +1335,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "texas-ranchers",
@@ -1403,7 +1403,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         },
         {
           "teamId": "utah-black-diamonds",
@@ -1471,7 +1471,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T08:02:27.673Z"
+          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
         }
       ],
       "teamsCount": 20,
@@ -1495,7 +1495,7 @@
     "dupr": {
       "sourceId": "dupr",
       "ok": true,
-      "retrievedAt": "2026-04-25T08:02:28.347Z",
+      "retrievedAt": "2026-04-25T12:13:14.121Z",
       "freshness": "seed-only",
       "note": "Phase 1 uses seed ratings; Playwright-scrape of public leaderboard deferred to Phase 2.",
       "top20": [
@@ -1675,7 +1675,7 @@
     "highlights": {
       "sourceId": "highlights",
       "ok": true,
-      "retrievedAt": "2026-04-25T08:02:29.043Z",
+      "retrievedAt": "2026-04-25T12:13:16.374Z",
       "quotaEstimate": 6,
       "channels": [
         {
@@ -1900,7 +1900,7 @@
     "news": {
       "sourceId": "news",
       "ok": true,
-      "retrievedAt": "2026-04-25T08:02:29.474Z",
+      "retrievedAt": "2026-04-25T12:13:17.533Z",
       "sources": [
         {
           "sourceId": "newsletter-the-dink",
@@ -1915,9 +1915,37 @@
           "tier": "T2",
           "ok": true,
           "count": 10
+        },
+        {
+          "sourceId": "magazine-pickleball-magazine",
+          "sourceName": "Pickleball Magazine",
+          "tier": "T1",
+          "ok": true,
+          "count": 15
+        },
+        {
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "ok": true,
+          "count": 15
         }
       ],
       "items": [
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/cailyn-campbell-q-a-ppa-tour-major-league-pickleball",
+          "title": "Q&A with rising young pickleball pro Cailyn Campbell",
+          "url": "https://thekitchenpickle.com/blogs/news/cailyn-campbell-q-a-ppa-tour-major-league-pickleball",
+          "summary": "Cailyn Campbell has been on the pro pickleball scene for more than a year, but she's still only 15 years old and is rapidly climbing the PPA Tour rankings. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-24T18:43:21.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
         {
           "id": "69ea83a84945320001d0033c",
           "title": "Don't Sleep on the Boomstik Widebody",
@@ -2296,6 +2324,34 @@
           "feedUrl": "https://www.thedinkpickleball.com/rss/"
         },
         {
+          "id": "https://thekitchenpickle.com/blogs/news/proton-pickleball-paddles-approval-ppa-tour-major-league-pickleball",
+          "title": "Proton paddles OK'd for use in PPA Tour, Major League Pickleball events, officials say",
+          "url": "https://thekitchenpickle.com/blogs/news/proton-pickleball-paddles-approval-ppa-tour-major-league-pickleball",
+          "summary": "Proton Pickleball and the United Pickleball Association have resolved their contract dispute, and Proton paddles are now permitted for use in PPA Tour and Major League Pickleball events going forward. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-22T21:33:55.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/pro-pickleball-2026-anna-bright-breakout-players",
+          "title": "Anna Bright reveals which pro players have impressed her the most in 2026",
+          "url": "https://thekitchenpickle.com/blogs/news/pro-pickleball-2026-anna-bright-breakout-players",
+          "summary": "In a recent newsletter, Anna Bright went into detail on which pro players have impressed her the most in 2026. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-22T17:52:21.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
           "id": "https://pickleballunion.com/?p=61578",
           "title": "You Need Both of These Forehand Drops in Pickleball",
           "url": "https://pickleballunion.com/forehand-drop-variations-pickleball/",
@@ -2375,6 +2431,48 @@
           "sourceName": "Pickleball Union",
           "tier": "T2",
           "feedUrl": "https://pickleballunion.com/feed/"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/pro-pickleball-sibling-duos",
+          "title": "Ranking the best sibling duos in pickleball",
+          "url": "https://thekitchenpickle.com/blogs/news/pro-pickleball-sibling-duos",
+          "summary": "There are more than a dozen sibling duos in pro pickleball. We recently put our heads together to rank the Top 10. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-21T15:21:08.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/vair-pickleball-rating-system-how-it-works",
+          "title": "VAIR is rewriting how skill is measured in pickleball – and where players belong",
+          "url": "https://thekitchenpickle.com/blogs/news/vair-pickleball-rating-system-how-it-works",
+          "summary": "The VAIR pickleball rating system is designed to bring greater accuracy, transparency and structure to amateur and competitive play. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-21T14:28:59.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/ppa-tour-sacramento-open-2026-recap-pro-pickleball-chris-cali",
+          "title": "PPA Tour Sacramento Open recap: Eric Oncins wins fist mixed gold, Hunter Johnson disqualified",
+          "url": "https://thekitchenpickle.com/blogs/news/ppa-tour-sacramento-open-2026-recap-pro-pickleball-chris-cali",
+          "summary": "The PPA Tour Sacramento Open went down last week and we saw some crazy moments. Chris Cali from Sorry Not Sorry Pickleball is here to break it all down. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-20T21:24:19.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
         },
         {
           "id": "https://pickleballunion.com/?p=61506",
@@ -2511,6 +2609,132 @@
           "sourceName": "Pickleball Union",
           "tier": "T2",
           "feedUrl": "https://pickleballunion.com/feed/"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/jw-jorja-johnson-2026-results-losses-finals-drought",
+          "title": "Pro pickleball case study: Why JW and Jorja Johnson have taken a step back in 2026",
+          "url": "https://thekitchenpickle.com/blogs/news/jw-jorja-johnson-2026-results-losses-finals-drought",
+          "summary": "JW Johnson and Jorja Johnson have had a down year by their standards in mixed doubles. In this article we take a closer look at a recent match to see what's causing them to fall short. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-15T20:08:51.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/pickleballers-anna-bright-season-3-episode-10",
+          "title": "Pickleballers Season 3, Episode 10: Anna Bright on new partnerships and past breakups",
+          "url": "https://thekitchenpickle.com/blogs/news/pickleballers-anna-bright-season-3-episode-10",
+          "summary": "In this episode of Pickleballers, Anna Bright sits down with Roscoe and Jared to pull back the curtain on her journey from junior tennis to the top of pickleball. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-15T16:53:17.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/ppa-tour-sacramento-open-2026-draws-schedule-tv-information",
+          "title": "PPA Tour Sacramento Open: Draws, schedule, TV information",
+          "url": "https://thekitchenpickle.com/blogs/news/ppa-tour-sacramento-open-2026-draws-schedule-tv-information",
+          "summary": "There are a few notable players who are skipping this week's PPA Tour event in Sacramento, which means the door is wide open for other players to take advantage. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-14T14:56:32.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/ppa-tour-asia-mb-hanoi-cup-2026-takeaways-anna-bright",
+          "title": "Recent PPA Tour Asia event highlighted potential for international team competitions",
+          "url": "https://thekitchenpickle.com/blogs/news/ppa-tour-asia-mb-hanoi-cup-2026-takeaways-anna-bright",
+          "summary": "The most recent PPA Tour Asia event -- the MB Hanoi Cup in Vietnam -- featured many of the top players from both the U.S. and overseas, highlighting the potential for future international team competitions. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-10T18:50:40.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/watch-partners-pickleball-reality-series-trailer",
+          "title": "Watch: Trailer for new reality series gives behind-the-scenes glimpse at pro pickleball",
+          "url": "https://thekitchenpickle.com/blogs/news/watch-partners-pickleball-reality-series-trailer",
+          "summary": "A new reality series called \"Partners\" is set to be released next month, showcasing the inner-workings of pro pickleball and the players who compete on the PPA Tour. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-10T17:38:38.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/james-ignatowich-pballers-episode-1",
+          "title": "PBallers Episode 1: James Ignatowich on the PPA termination and building RPM from China",
+          "url": "https://thekitchenpickle.com/blogs/news/james-ignatowich-pballers-episode-1",
+          "summary": "Pro pickleball player James Ignatowich recently joined PBallers to discuss his PPA Tour termination at the end of 2025 and how he built his paddle brand -- RPM -- from scratch. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-07T21:24:38.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/joola-pickleball-patent-infringement-lawsuit-2026",
+          "title": "JOOLA files patent infringement lawsuit against 11 other pickleball paddle manufacturers",
+          "url": "https://thekitchenpickle.com/blogs/news/joola-pickleball-patent-infringement-lawsuit-2026",
+          "summary": "JOOLA Pickleball this week filed a patent infringement lawsuit against 11 paddle companies, alleging that the competitors copied JOOLA's \"propulsion core technology.\" More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-07T16:03:41.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/pro-pickleball-anna-leigh-waters-singles-matchups",
+          "title": "Pro player opinion: Who is most likely to beat Anna Leigh Waters in singles?",
+          "url": "https://thekitchenpickle.com/blogs/news/pro-pickleball-anna-leigh-waters-singles-matchups",
+          "summary": "Anna Leigh Waters has gone more than 675 days without losing a match in women's singles. In this article we break down which players are most likely to break that streak. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-06T17:29:18.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
+        },
+        {
+          "id": "https://thekitchenpickle.com/blogs/news/roscoe-bellamy-pickleballers-season-3-episode-9",
+          "title": "Pickleballers Season 3, Episode 9: Roscoe Bellamy on how pickleball changed his life",
+          "url": "https://thekitchenpickle.com/blogs/news/roscoe-bellamy-pickleballers-season-3-episode-9",
+          "summary": "In this episode of Pickleballers, Roscoe Bellamy sits down with Jared Paul and longtime friend Wesley Burroughs for a rare look at the man behind the mic. More",
+          "author": "The Kitchen",
+          "categories": [],
+          "imageUrl": null,
+          "publishedAt": "2026-04-02T19:54:52.000Z",
+          "sourceId": "newsletter-the-kitchen",
+          "sourceName": "The Kitchen",
+          "tier": "T3",
+          "feedUrl": "https://thekitchenpickle.com/blogs/news.atom"
         }
       ],
       "errors": []
@@ -2518,7 +2742,7 @@
     "ppaRankings": {
       "sourceId": "ppa-rankings",
       "ok": true,
-      "retrievedAt": "2026-04-24T08:57:04.760Z",
+      "retrievedAt": "2026-04-23T02:06:51.942Z",
       "url": "https://www.ppatour.com/player-rankings/",
       "rowsFound": 50,
       "rankings": [
@@ -2873,6 +3097,7 @@
           "points": 1425
         }
       ],
+      "note": "Columns: rank · playerName · bracket · eventsPlayed · points. Top-20 names linked to ppatour.com/athlete/ profiles when the slug HEADs 200.",
       "slugCache": {
         "Ben Johns": "https://ppatour.com/athlete/ben-johns/",
         "Gabriel Tardio": "https://ppatour.com/athlete/gabriel-tardio/",
@@ -2894,8 +3119,7 @@
         "Dekel Bar": "https://ppatour.com/athlete/dekel-bar/",
         "Pablo Tellez": "https://ppatour.com/athlete/pablo-tellez/",
         "Connor Garnett": "https://ppatour.com/athlete/connor-garnett/"
-      },
-      "note": "Columns: rank · playerName · bracket · eventsPlayed · points. Top-20 names linked to ppatour.com/athlete/ profiles when the slug HEADs 200."
+      }
     }
   }
 }
