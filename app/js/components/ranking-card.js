@@ -4,7 +4,9 @@ import { escapeHtml } from './confidence-badge.js';
 
 export function rankChipHtml(position) {
   if (position == null) return '<span class="chip-rank">—</span>';
-  return '<span class="chip-rank">' + escapeHtml(String(position)) + '</span>';
+  const str = String(position);
+  const text = /^\d+$/.test(str.trim()) ? '#' + str : str;
+  return '<span class="chip-rank">' + escapeHtml(text) + '</span>';
 }
 
 export function renderRankingRow({ position, displayName, points, country }) {

@@ -223,7 +223,6 @@ h2.section-title:first-child { margin-top: 0; }
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
 }
-.chip-rank::before { content: '#'; opacity: 0.6; }
 
 /* Confidence tier badges */
 .badge-confidence {
