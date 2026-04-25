@@ -12,6 +12,26 @@
 
 const SITE_URL = 'https://jjmgladden.github.io/pickleball-daily/';
 
+const HISTORY_SEED_PATH = require('path').resolve(__dirname, '..', '..', 'data', 'master', 'history-seed.json');
+
+function loadHistoryMilestones() {
+  try { return require('fs').existsSync(HISTORY_SEED_PATH) ? JSON.parse(require('fs').readFileSync(HISTORY_SEED_PATH, 'utf8')).milestones || [] : []; }
+  catch { return []; }
+}
+
+function findOnThisDay(milestones, refDate) {
+  const mm = String(refDate.getMonth() + 1).padStart(2, '0');
+  const dd = String(refDate.getDate()).padStart(2, '0');
+  return (milestones || [])
+    .filter(m => {
+      if (!m.date || typeof m.date !== 'string') return false;
+      const parts = m.date.split('-');
+      if (parts.length < 3) return false;
+      return parts[1] !== '00' && parts[2] !== '00' && parts[1] === mm && parts[2] === dd;
+    })
+    .sort((a, b) => (b.year || 0) - (a.year || 0));
+}
+
 function buildEmail(snapshot) {
   const generatedAt = snapshot && snapshot.generatedAt ? new Date(snapshot.generatedAt) : new Date();
   const dateFormatted = formatLongDate(generatedAt);
@@ -25,10 +45,11 @@ function buildEmail(snapshot) {
   const ratings = ((snapshot && snapshot.sources && snapshot.sources.dupr && snapshot.sources.dupr.top20) || []).slice(0, 5);
   const videos = collectTopVideos(snapshot, 4);
   const news = ((snapshot && snapshot.sources && snapshot.sources.news && snapshot.sources.news.items) || []).slice(0, 3);
+  const onThisDay = findOnThisDay(loadHistoryMilestones(), generatedAt);
 
   const subject = buildSubject(inProgress, upcoming, dateFormatted);
-  const html = buildHtml({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news });
-  const text = buildPlainText({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news });
+  const html = buildHtml({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news, onThisDay });
+  const text = buildPlainText({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news, onThisDay });
 
   return { subject, html, text };
 }
@@ -45,7 +66,7 @@ function buildSubject(inProgress, upcoming, dateFormatted) {
   return "🏓 Ozark Joe's Pickleball Daily — " + dateFormatted;
 }
 
-function buildHtml({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news }) {
+function buildHtml({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news, onThisDay }) {
   return ('' +
     '<!DOCTYPE html>' +
     '<html><head><meta charset="utf-8"></head>' +
@@ -115,6 +136,15 @@ function buildHtml({ dateFormatted, inProgress, upcoming, rankings, ratings, vid
         : ''
       ) +
 
+      // On This Day in Pickleball
+      ((onThisDay && onThisDay.length)
+        ? '<div style="margin-top:24px;">' +
+            '<div style="font-size:13px; font-weight:700; color:#7be5a7; text-transform:uppercase; letter-spacing:0.08em;">On This Day in Pickleball</div>' +
+            onThisDay.map(otdRowHtml).join('') +
+          '</div>'
+        : ''
+      ) +
+
       // CTA
       '<div style="text-align:center; margin:32px 0 20px;">' +
         '<a href="' + SITE_URL + '" style="background:#ffd24a; color:#0e1420; text-decoration:none; padding:14px 28px; border-radius:8px; font-size:16px; font-weight:700; display:inline-block;">Open the full report →</a>' +
@@ -153,7 +183,7 @@ function rankingRowHtml(r) {
       '</td>' +
       '<td style="padding:6px 0; vertical-align:top;">' +
         '<div style="font-size:14px; color:#ffffff; font-weight:600;">' + escapeHtml(r.playerName || '') + '</div>' +
-        '<div style="font-size:12px; color:#9aa4b8;">' + escapeHtml((r.points != null ? r.points + ' pts' : '') + (r.eventsPlayed ? ' · ' + r.eventsPlayed + ' events' : '')) + '</div>' +
+        '<div style="font-size:12px; color:#9aa4b8;">' + escapeHtml((r.points != null ? r.points + ' pts' : '') + (r.age != null ? ' · age ' + r.age : '') + (r.country ? ' · ' + r.country : '')) + '</div>' +
       '</td>' +
     '</tr>'
   );
@@ -209,7 +239,19 @@ function newsRowHtml(n) {
   );
 }
 
-function buildPlainText({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news }) {
+function otdRowHtml(m) {
+  const yearsAgo = m.year ? new Date().getFullYear() - m.year : null;
+  const yearLabel = m.year ? String(m.year) + (yearsAgo > 0 ? ' (' + yearsAgo + ' yr ago)' : '') : '';
+  return (
+    '<div style="background:#151c2d; border:1px solid #263147; border-left:3px solid #7be5a7; border-radius:8px; padding:12px 14px; margin-top:10px;">' +
+      '<div style="font-size:12px; color:#7be5a7; font-weight:700; letter-spacing:0.04em;">' + escapeHtml(yearLabel) + '</div>' +
+      '<div style="font-size:14px; color:#ffffff; font-weight:600; margin-top:2px;">' + escapeHtml(m.displayName || '') + '</div>' +
+      (m.summary ? '<div style="font-size:13px; color:#c8cfdb; margin-top:6px; line-height:1.45;">' + escapeHtml(m.summary) + '</div>' : '') +
+    '</div>'
+  );
+}
+
+function buildPlainText({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news, onThisDay }) {
   const lines = [];
   lines.push("OZARK JOE'S PICKLEBALL DAILY — " + dateFormatted);
   lines.push('');
@@ -265,6 +307,15 @@ function buildPlainText({ dateFormatted, inProgress, upcoming, rankings, ratings
       const meta = [n.sourceName, dateLabel].filter(Boolean).join(' · ');
       if (meta) lines.push('    ' + meta);
       lines.push('    ' + (n.url || ''));
+    });
+    lines.push('');
+  }
+
+  if (onThisDay && onThisDay.length) {
+    lines.push('ON THIS DAY IN PICKLEBALL');
+    onThisDay.forEach(m => {
+      lines.push('  ' + (m.year || '') + ' — ' + (m.displayName || ''));
+      if (m.summary) lines.push('    ' + m.summary);
     });
     lines.push('');
   }

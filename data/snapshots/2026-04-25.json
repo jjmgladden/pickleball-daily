@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-25T12:13:17.549Z",
-  "startedAt": "2026-04-25T12:13:02.539Z",
-  "durationMs": 15010,
+  "generatedAt": "2026-04-25T13:26:04.826Z",
+  "startedAt": "2026-04-25T13:25:50.228Z",
+  "durationMs": 14598,
   "version": "v1",
   "brand": "Ozark Joe's Pickleball Daily Intelligence Report",
   "errors": [],
@@ -10,7 +10,7 @@
     "tournaments": {
       "sourceId": "tournaments",
       "ok": true,
-      "retrievedAt": "2026-04-25T12:13:03.177Z",
+      "retrievedAt": "2026-04-25T13:25:50.238Z",
       "counts": {
         "inProgress": 0,
         "upcoming": 7,
@@ -212,7 +212,7 @@
     "mlp": {
       "sourceId": "mlp",
       "ok": true,
-      "retrievedAt": "2026-04-25T12:13:13.906Z",
+      "retrievedAt": "2026-04-25T13:26:00.871Z",
       "freshness": "live-verified",
       "teams": [
         {
@@ -277,7 +277,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z",
+          "rosterRetrievedAt": "2026-04-25T13:26:00.870Z",
           "rosterMissingIds": [
             "6663"
           ]
@@ -333,7 +333,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "brooklyn-pickleball-team",
@@ -402,7 +402,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "california-black-bears",
@@ -455,7 +455,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "carolina-hogs",
@@ -522,7 +522,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "chicago-slice",
@@ -583,7 +583,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z",
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z",
           "rosterMissingIds": [
             "5062"
           ]
@@ -660,7 +660,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "dallas-flash",
@@ -736,7 +736,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "florida-smash",
@@ -789,7 +789,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "las-vegas-night-owls",
@@ -843,7 +843,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "los-angeles-mad-drops",
@@ -904,7 +904,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "miami-pickleball-club",
@@ -976,7 +976,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "new-jersey-5s",
@@ -1043,7 +1043,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "orlando-squeeze",
@@ -1111,7 +1111,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "palm-beach-royals",
@@ -1203,7 +1203,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "socal-hard-eights",
@@ -1263,7 +1263,7 @@
             }
           ],
           "rosterFreshness": "live-partial",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z",
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z",
           "rosterMissingIds": [
             "83599"
           ]
@@ -1335,7 +1335,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "texas-ranchers",
@@ -1403,7 +1403,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         },
         {
           "teamId": "utah-black-diamonds",
@@ -1471,7 +1471,7 @@
             }
           ],
           "rosterFreshness": "live",
-          "rosterRetrievedAt": "2026-04-25T12:13:13.906Z"
+          "rosterRetrievedAt": "2026-04-25T13:26:00.871Z"
         }
       ],
       "teamsCount": 20,
@@ -1495,7 +1495,7 @@
     "dupr": {
       "sourceId": "dupr",
       "ok": true,
-      "retrievedAt": "2026-04-25T12:13:14.121Z",
+      "retrievedAt": "2026-04-25T13:26:01.455Z",
       "freshness": "seed-only",
       "note": "Phase 1 uses seed ratings; Playwright-scrape of public leaderboard deferred to Phase 2.",
       "top20": [
@@ -1675,7 +1675,7 @@
     "highlights": {
       "sourceId": "highlights",
       "ok": true,
-      "retrievedAt": "2026-04-25T12:13:16.374Z",
+      "retrievedAt": "2026-04-25T13:26:03.606Z",
       "quotaEstimate": 6,
       "channels": [
         {
@@ -1900,7 +1900,7 @@
     "news": {
       "sourceId": "news",
       "ok": true,
-      "retrievedAt": "2026-04-25T12:13:17.533Z",
+      "retrievedAt": "2026-04-25T13:26:04.806Z",
       "sources": [
         {
           "sourceId": "newsletter-the-dink",
@@ -2742,362 +2742,361 @@
     "ppaRankings": {
       "sourceId": "ppa-rankings",
       "ok": true,
-      "retrievedAt": "2026-04-23T02:06:51.942Z",
+      "retrievedAt": "2026-04-25T13:25:39.499Z",
       "url": "https://www.ppatour.com/player-rankings/",
       "rowsFound": 50,
       "rankings": [
         {
           "rank": 1,
           "playerName": "Ben Johns",
-          "bracket": "",
-          "eventsPlayed": 27,
+          "country": null,
+          "age": 27,
           "points": 21300
         },
         {
           "rank": 1,
           "playerName": "Gabriel Tardio",
-          "bracket": "",
-          "eventsPlayed": 20,
+          "country": null,
+          "age": 20,
           "points": 21300
         },
         {
           "rank": 3,
           "playerName": "Christian Alshon",
-          "bracket": "",
-          "eventsPlayed": 25,
+          "country": null,
+          "age": 25,
           "points": 15800
         },
         {
           "rank": 4,
           "playerName": "JW Johnson",
-          "bracket": "",
-          "eventsPlayed": 23,
+          "country": null,
+          "age": 23,
           "points": 14700
         },
         {
           "rank": 5,
           "playerName": "Hayden Patriquin",
-          "bracket": "",
-          "eventsPlayed": 20,
+          "country": null,
+          "age": 20,
           "points": 14600
         },
         {
           "rank": 6,
           "playerName": "Andrei Daescu",
-          "bracket": "",
-          "eventsPlayed": 38,
+          "country": null,
+          "age": 38,
           "points": 14300
         },
         {
           "rank": 7,
           "playerName": "CJ Klinger",
-          "bracket": "",
-          "eventsPlayed": 20,
+          "country": null,
+          "age": 20,
           "points": 14200
         },
         {
           "rank": 8,
           "playerName": "Federico Staksrud",
-          "bracket": "",
-          "eventsPlayed": 30,
+          "country": null,
+          "age": 30,
           "points": 13200
         },
         {
           "rank": 9,
           "playerName": "Eric Oncins",
-          "bracket": "",
-          "eventsPlayed": 24,
+          "country": null,
+          "age": 24,
           "points": 7400
         },
         {
           "rank": 10,
           "playerName": "Dylan Frazier",
-          "bracket": "",
-          "eventsPlayed": 24,
+          "country": null,
+          "age": 24,
           "points": 6100
         },
         {
           "rank": 11,
           "playerName": "Tyson McGuffin",
-          "bracket": "",
-          "eventsPlayed": 36,
+          "country": null,
+          "age": 36,
           "points": 5700
         },
         {
           "rank": 12,
           "playerName": "Jay Devilliers",
-          "bracket": "",
-          "eventsPlayed": 31,
+          "country": null,
+          "age": 31,
           "points": 5450
         },
         {
           "rank": 13,
           "playerName": "Matt Wright",
-          "bracket": "",
-          "eventsPlayed": 48,
+          "country": null,
+          "age": 48,
           "points": 4525
         },
         {
           "rank": 14,
           "playerName": "Noe Khlif",
-          "bracket": "",
-          "eventsPlayed": 27,
+          "country": null,
+          "age": 27,
           "points": 4325
         },
         {
           "rank": 15,
           "playerName": "Riley Newman",
-          "bracket": "",
-          "eventsPlayed": 32,
+          "country": null,
+          "age": 32,
           "points": 4312
         },
         {
           "rank": 16,
           "playerName": "Jaume Martinez Vich",
-          "bracket": "",
-          "eventsPlayed": 32,
+          "country": null,
+          "age": 32,
           "points": 4300
         },
         {
           "rank": 17,
           "playerName": "Augustus Ge",
-          "bracket": "",
-          "eventsPlayed": 29,
+          "country": null,
+          "age": 29,
           "points": 3800
         },
         {
           "rank": 18,
           "playerName": "Dekel Bar",
-          "bracket": "",
-          "eventsPlayed": 33,
+          "country": null,
+          "age": 33,
           "points": 3550
         },
         {
           "rank": 19,
           "playerName": "Pablo Tellez",
-          "bracket": "",
-          "eventsPlayed": 30,
+          "country": null,
+          "age": 30,
           "points": 3300
         },
         {
           "rank": 20,
           "playerName": "Connor Garnett",
-          "bracket": "",
-          "eventsPlayed": 29,
+          "country": null,
+          "age": 29,
           "points": 3200
         },
         {
           "rank": 21,
           "playerName": "Armaan Bhatia",
-          "bracket": "",
-          "eventsPlayed": 27,
+          "country": null,
+          "age": 27,
           "points": 3087
         },
         {
           "rank": 22,
           "playerName": "Jonathan Truong",
-          "bracket": "",
-          "eventsPlayed": 19,
+          "country": null,
+          "age": 19,
           "points": 2900
         },
         {
           "rank": 23,
           "playerName": "Blaine Hovenier",
-          "bracket": "",
-          "eventsPlayed": 25,
+          "country": null,
+          "age": 25,
           "points": 2825
         },
         {
           "rank": 24,
           "playerName": "Zane Navratil",
-          "bracket": "",
-          "eventsPlayed": 30,
+          "country": null,
+          "age": 30,
           "points": 2675
         },
         {
           "rank": 25,
           "playerName": "Max Freeman",
-          "bracket": "",
-          "eventsPlayed": 27,
+          "country": null,
+          "age": 27,
           "points": 2637
         },
         {
           "rank": 26,
           "playerName": "Hunter Johnson",
-          "bracket": "",
-          "eventsPlayed": 31,
+          "country": null,
+          "age": 31,
           "points": 2600
         },
         {
           "rank": 27,
           "playerName": "Jack Sock",
-          "bracket": "",
-          "eventsPlayed": 33,
+          "country": null,
+          "age": 33,
           "points": 2437
         },
         {
           "rank": 28,
           "playerName": "Wyatt Stone",
-          "bracket": "",
-          "eventsPlayed": 20,
+          "country": null,
+          "age": 20,
           "points": 2400
         },
         {
           "rank": 29,
           "playerName": "Collin Johns",
-          "bracket": "",
-          "eventsPlayed": 32,
+          "country": null,
+          "age": 32,
           "points": 2375
         },
         {
           "rank": 30,
           "playerName": "Rafa Hewett",
-          "bracket": "",
-          "eventsPlayed": 31,
+          "country": null,
+          "age": 31,
           "points": 2250
         },
         {
           "rank": 31,
           "playerName": "Tyler Loong",
-          "bracket": "",
-          "eventsPlayed": 34,
+          "country": null,
+          "age": 34,
           "points": 2225
         },
         {
           "rank": 31,
           "playerName": "Darrian Young",
-          "bracket": "",
-          "eventsPlayed": 26,
+          "country": null,
+          "age": 26,
           "points": 2225
         },
         {
           "rank": 33,
           "playerName": "AJ Koller",
-          "bracket": "",
-          "eventsPlayed": 37,
+          "country": null,
+          "age": 37,
           "points": 2075
         },
         {
           "rank": 34,
           "playerName": "Martin Emmrich",
-          "bracket": "",
-          "eventsPlayed": 41,
+          "country": null,
+          "age": 41,
           "points": 1975
         },
         {
           "rank": 35,
           "playerName": "Julian Arnold",
-          "bracket": "",
-          "eventsPlayed": 35,
+          "country": null,
+          "age": 35,
           "points": 1875
         },
         {
           "rank": 36,
           "playerName": "Tama Shimabukuro",
-          "bracket": "",
-          "eventsPlayed": 15,
+          "country": null,
+          "age": 15,
           "points": 1850
         },
         {
           "rank": 37,
           "playerName": "Len Yang",
-          "bracket": "",
-          "eventsPlayed": 22,
+          "country": null,
+          "age": 22,
           "points": 1825
         },
         {
           "rank": 38,
           "playerName": "Brandon French",
-          "bracket": "",
-          "eventsPlayed": 34,
+          "country": null,
+          "age": 34,
           "points": 1800
         },
         {
           "rank": 39,
           "playerName": "Hong kit Wong",
-          "bracket": "",
-          "eventsPlayed": 27,
+          "country": null,
+          "age": 27,
           "points": 1700
         },
         {
           "rank": 39,
           "playerName": "Eunggwon KIM",
-          "bracket": "",
-          "eventsPlayed": 26,
+          "country": null,
+          "age": 26,
           "points": 1700
         },
         {
           "rank": 41,
           "playerName": "Donald Young",
-          "bracket": "",
-          "eventsPlayed": 36,
+          "country": null,
+          "age": 36,
           "points": 1662
         },
         {
           "rank": 42,
           "playerName": "Roscoe Bellamy",
-          "bracket": "",
-          "eventsPlayed": 26,
+          "country": null,
+          "age": 26,
           "points": 1650
         },
         {
           "rank": 42,
           "playerName": "Anouar Braham",
-          "bracket": "",
-          "eventsPlayed": 25,
+          "country": null,
+          "age": 25,
           "points": 1650
         },
         {
           "rank": 44,
           "playerName": "Michael Loyd",
-          "bracket": "",
-          "eventsPlayed": 27,
+          "country": null,
+          "age": 27,
           "points": 1600
         },
         {
           "rank": 45,
           "playerName": "Tom Protzek",
-          "bracket": "",
-          "eventsPlayed": 25,
+          "country": null,
+          "age": 25,
           "points": 1575
         },
         {
           "rank": 46,
           "playerName": "Yuta Funemizu",
-          "bracket": "",
-          "eventsPlayed": 32,
+          "country": null,
+          "age": 32,
           "points": 1537
         },
         {
           "rank": 46,
           "playerName": "Juan Benitez",
-          "bracket": "",
-          "eventsPlayed": 30,
+          "country": null,
+          "age": 30,
           "points": 1537
         },
         {
           "rank": 48,
           "playerName": "John Lucian Goins",
-          "bracket": "",
-          "eventsPlayed": 18,
+          "country": null,
+          "age": 18,
           "points": 1500
         },
         {
           "rank": 49,
           "playerName": "Gregory Dow",
-          "bracket": "",
-          "eventsPlayed": 29,
+          "country": null,
+          "age": 29,
           "points": 1450
         },
         {
           "rank": 50,
           "playerName": "James Ignatowich",
-          "bracket": "",
-          "eventsPlayed": 25,
+          "country": null,
+          "age": 25,
           "points": 1425
         }
       ],
-      "note": "Columns: rank · playerName · bracket · eventsPlayed · points. Top-20 names linked to ppatour.com/athlete/ profiles when the slug HEADs 200.",
       "slugCache": {
         "Ben Johns": "https://ppatour.com/athlete/ben-johns/",
         "Gabriel Tardio": "https://ppatour.com/athlete/gabriel-tardio/",
@@ -3119,7 +3118,8 @@
         "Dekel Bar": "https://ppatour.com/athlete/dekel-bar/",
         "Pablo Tellez": "https://ppatour.com/athlete/pablo-tellez/",
         "Connor Garnett": "https://ppatour.com/athlete/connor-garnett/"
-      }
+      },
+      "note": "Columns: rank · playerName · country · age · points. Country may be empty when rendered as flag image. Ties share rank and skip the next ordinal (1224 convention). Top-20 names linked to ppatour.com/athlete/ profiles when the slug HEADs 200."
     }
   }
 }

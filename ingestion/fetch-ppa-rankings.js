@@ -73,17 +73,22 @@ function toInt(s) {
   return Number.isFinite(n) ? n : null;
 }
 
+// Live column order on ppatour.com/player-rankings/ (verified 2026-04-25, KB-0031):
+//   PPA Rank · Name · Country · Age · Points
+// Country renders as a flag <img> with no textContent → comes through as ''.
+// Earlier mapping mislabeled column 3 as "bracket" and column 4 as "eventsPlayed";
+// "27 events played" for Ben Johns was actually his age. Corrected here.
 function mapRow(cols) {
   if (!Array.isArray(cols)) return null;
   if (cols.length < 4) return null;
-  const [rank, playerName, bracket = '', eventsPlayed = '', points = ''] = cols;
+  const [rank, playerName, country = '', age = '', points = ''] = cols;
   const rankInt = toInt(rank);
   if (rankInt == null) return null;  // skip header rows
   return {
     rank: rankInt,
     playerName: String(playerName || '').trim(),
-    bracket: String(bracket || '').trim(),
-    eventsPlayed: toInt(eventsPlayed),
+    country: String(country || '').trim() || null,
+    age: toInt(age),
     points: toInt(points)
   };
 }
@@ -108,9 +113,12 @@ async function run() {
   const page = await ctx.newPage();
 
   try {
-    await page.goto(URL, { waitUntil: 'networkidle', timeout: TIMEOUT_MS });
-    // Heuristic: wait up to 10s for a table or rankings-list element.
-    try { await page.waitForSelector('table, [class*="rank"]', { timeout: 10_000 }); } catch {}
+    // 'networkidle' hangs on PPA's analytics pings (verified 2026-04-25 KB-0031). Use
+    // domcontentloaded + an explicit wait for a populated row instead.
+    await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });
+    try { await page.waitForSelector('table tbody tr td', { timeout: 15_000 }); } catch {}
+    // Brief settle so any post-paint hydration completes before snapshotting.
+    await page.waitForTimeout(2000);
 
     // Extract via generic table parse — resilient across layout tweaks.
     const rows = await page.evaluate(() => {
@@ -144,7 +152,7 @@ async function run() {
       rowsFound: rows.length,
       rankings,
       slugCache: slugCache.mapping,
-      note: 'Columns: rank · playerName · bracket · eventsPlayed · points. Top-20 names linked to ppatour.com/athlete/ profiles when the slug HEADs 200.'
+      note: 'Columns: rank · playerName · country · age · points. Country may be empty when rendered as flag image. Ties share rank and skip the next ordinal (1224 convention). Top-20 names linked to ppatour.com/athlete/ profiles when the slug HEADs 200.'
     };
     writeCache('ppa-rankings', result);
     return result;

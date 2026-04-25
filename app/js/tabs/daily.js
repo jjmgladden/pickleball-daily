@@ -3,6 +3,7 @@
 import { escapeHtml, confidenceBadgeHtml } from '../components/confidence-badge.js';
 import { renderVideoCard } from '../components/highlights.js';
 import { renderNewsCardCompact } from '../components/news-card.js';
+import { renderOnThisDayHtml } from '../components/on-this-day.js';
 import { fmtDateShort } from '../components/date-utils.js';
 import { getFavorites } from '../components/favorites.js';
 import { loadMaster } from '../data-loader.js';
@@ -94,6 +95,10 @@ export async function renderDaily(root, snapshot) {
   const favs = getFavorites();
   const playersById = (favs.players && favs.players.length) ? await loadPlayersSeed() : {};
 
+  let history = null;
+  try { history = await loadMaster('history-seed'); } catch { /* On-This-Day collapses if seed unavailable */ }
+  const onThisDayHtml = history ? renderOnThisDayHtml(history.milestones || []) : '';
+
   const topHighlights = [];
   for (const ch of (highlights.channels || [])) {
     for (const v of (ch.videos || [])) topHighlights.push({ v, channelTitle: ch.channelTitle });
@@ -110,6 +115,8 @@ export async function renderDaily(root, snapshot) {
 
     '<h2 class="section-title">Upcoming (next 30 days)</h2>' +
     renderUpcoming(t.buckets) +
+
+    onThisDayHtml +
 
     '<h2 class="section-title">Top Highlights</h2>' +
     (topHighlights.length

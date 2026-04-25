@@ -11,8 +11,8 @@ import { friendlyErrorMessage } from '../components/error-messages.js';
 function rankingCard(r, slugCache, rowIndex) {
   const stats = [];
   if (r.points != null) stats.push('<span class="meta"><strong>' + Number(r.points).toLocaleString() + '</strong> pts</span>');
-  if (r.eventsPlayed != null) stats.push('<span class="meta">' + r.eventsPlayed + ' events</span>');
-  if (r.bracket) stats.push('<span class="meta">' + escapeHtml(r.bracket) + '</span>');
+  if (r.age != null) stats.push('<span class="meta">age ' + r.age + '</span>');
+  if (r.country) stats.push('<span class="meta">' + escapeHtml(r.country) + '</span>');
   const name = r.playerName || '—';
   const linkUrl = rowIndex < 20 ? (slugCache && slugCache[name]) : null;
   const nameNode = linkUrl
