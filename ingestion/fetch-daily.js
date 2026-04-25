@@ -16,6 +16,7 @@ const tournaments = require('./fetch-ppa-events');
 const mlp         = require('./fetch-mlp');
 const dupr        = require('./fetch-dupr-leaderboard');
 const highlights  = require('./fetch-highlights');
+const news        = require('./fetch-news');
 
 async function runAll() {
   const started = new Date();
@@ -26,7 +27,8 @@ async function runAll() {
     ['tournaments', tournaments],
     ['mlp',         mlp],
     ['dupr',        dupr],
-    ['highlights',  highlights]
+    ['highlights',  highlights],
+    ['news',        news]
   ]) {
     try {
       console.log('[fetch-daily] running ' + name + '...');

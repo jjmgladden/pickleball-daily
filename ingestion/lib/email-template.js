@@ -24,10 +24,11 @@ function buildEmail(snapshot) {
   const rankings = ((snapshot && snapshot.sources && snapshot.sources.ppaRankings && snapshot.sources.ppaRankings.rankings) || []).slice(0, 5);
   const ratings = ((snapshot && snapshot.sources && snapshot.sources.dupr && snapshot.sources.dupr.top20) || []).slice(0, 5);
   const videos = collectTopVideos(snapshot, 4);
+  const news = ((snapshot && snapshot.sources && snapshot.sources.news && snapshot.sources.news.items) || []).slice(0, 3);
 
   const subject = buildSubject(inProgress, upcoming, dateFormatted);
-  const html = buildHtml({ dateFormatted, inProgress, upcoming, rankings, ratings, videos });
-  const text = buildPlainText({ dateFormatted, inProgress, upcoming, rankings, ratings, videos });
+  const html = buildHtml({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news });
+  const text = buildPlainText({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news });
 
   return { subject, html, text };
 }
@@ -44,7 +45,7 @@ function buildSubject(inProgress, upcoming, dateFormatted) {
   return "🏓 Ozark Joe's Pickleball Daily — " + dateFormatted;
 }
 
-function buildHtml({ dateFormatted, inProgress, upcoming, rankings, ratings, videos }) {
+function buildHtml({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news }) {
   return ('' +
     '<!DOCTYPE html>' +
     '<html><head><meta charset="utf-8"></head>' +
@@ -101,6 +102,15 @@ function buildHtml({ dateFormatted, inProgress, upcoming, rankings, ratings, vid
         ? '<div style="margin-top:24px;">' +
             '<div style="font-size:13px; font-weight:700; color:#4ea8ff; text-transform:uppercase; letter-spacing:0.08em;">Top Highlights</div>' +
             videos.map(videoRowHtml).join('') +
+          '</div>'
+        : ''
+      ) +
+
+      // Top News
+      ((news && news.length)
+        ? '<div style="margin-top:24px;">' +
+            '<div style="font-size:13px; font-weight:700; color:#c69aff; text-transform:uppercase; letter-spacing:0.08em;">Top News</div>' +
+            news.map(newsRowHtml).join('') +
           '</div>'
         : ''
       ) +
@@ -184,7 +194,22 @@ function videoRowHtml(v) {
   );
 }
 
-function buildPlainText({ dateFormatted, inProgress, upcoming, rankings, ratings, videos }) {
+function newsRowHtml(n) {
+  const url = n.url || '#';
+  const dateLabel = n.publishedAt ? shortDate(n.publishedAt.slice(0, 10)) : '';
+  const meta = [n.sourceName, dateLabel].filter(Boolean).join(' · ');
+  return (
+    '<a href="' + escapeHtml(url) + '" style="display:block; text-decoration:none; color:inherit; margin-top:10px;">' +
+      '<div style="background:#151c2d; border:1px solid #263147; border-left:3px solid #c69aff; border-radius:8px; padding:12px 14px;">' +
+        '<div style="font-size:14px; color:#ffffff; font-weight:600; line-height:1.35;">' + escapeHtml(n.title || '') + '</div>' +
+        (meta ? '<div style="font-size:12px; color:#9aa4b8; margin-top:4px;">' + escapeHtml(meta) + '</div>' : '') +
+        (n.summary ? '<div style="font-size:13px; color:#c8cfdb; margin-top:6px; line-height:1.45;">' + escapeHtml(n.summary) + '</div>' : '') +
+      '</div>' +
+    '</a>'
+  );
+}
+
+function buildPlainText({ dateFormatted, inProgress, upcoming, rankings, ratings, videos, news }) {
   const lines = [];
   lines.push("OZARK JOE'S PICKLEBALL DAILY — " + dateFormatted);
   lines.push('');
@@ -228,6 +253,18 @@ function buildPlainText({ dateFormatted, inProgress, upcoming, rankings, ratings
     videos.forEach(v => {
       lines.push('  ' + v.title);
       lines.push('    ' + (v.channelTitle || '') + ' — https://youtu.be/' + v.videoId);
+    });
+    lines.push('');
+  }
+
+  if (news && news.length) {
+    lines.push('TOP NEWS');
+    news.forEach(n => {
+      lines.push('  ' + n.title);
+      const dateLabel = n.publishedAt ? n.publishedAt.slice(0, 10) : '';
+      const meta = [n.sourceName, dateLabel].filter(Boolean).join(' · ');
+      if (meta) lines.push('    ' + meta);
+      lines.push('    ' + (n.url || ''));
     });
     lines.push('');
   }

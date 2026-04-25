@@ -2,6 +2,7 @@
 
 import { escapeHtml, confidenceBadgeHtml } from '../components/confidence-badge.js';
 import { renderVideoCard } from '../components/highlights.js';
+import { renderNewsCardCompact } from '../components/news-card.js';
 import { fmtDateShort } from '../components/date-utils.js';
 import { getFavorites } from '../components/favorites.js';
 import { loadMaster } from '../data-loader.js';
@@ -84,6 +85,8 @@ export async function renderDaily(root, snapshot) {
   const t = (snapshot.sources && snapshot.sources.tournaments) || { buckets: {} };
   const highlights = (snapshot.sources && snapshot.sources.highlights) || { channels: [] };
   const dupr = (snapshot.sources && snapshot.sources.dupr) || { top20: [] };
+  const news = (snapshot.sources && snapshot.sources.news) || { items: [] };
+  const topNews = (news.items || []).slice(0, 3);
   const mlpTeams = (snapshot.sources && snapshot.sources.mlp && snapshot.sources.mlp.teams) || [];
   const teamsById = {};
   for (const team of mlpTeams) teamsById[team.teamId] = team;
@@ -112,6 +115,11 @@ export async function renderDaily(root, snapshot) {
     (topHighlights.length
       ? '<div class="list-grid">' + topHighlights.slice(0, 4).map(h => renderVideoCard(h.v, h.channelTitle)).join('') + '</div>'
       : '<div class="empty">No recent highlights.</div>') +
+
+    '<h2 class="section-title">Top News</h2>' +
+    (topNews.length
+      ? '<div class="news-list-compact">' + topNews.map(renderNewsCardCompact).join('') + '</div>'
+      : '<div class="empty">No news items.</div>') +
 
     '<h2 class="section-title">Top DUPR Ratings (Doubles)</h2>' +
     (topRatings.length
