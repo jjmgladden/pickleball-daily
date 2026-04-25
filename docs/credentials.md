@@ -1,6 +1,6 @@
 # Credentials Inventory
 
-**Version:** 1 | **Last updated:** 2026-04-24 (Session 6 — Path B activated end-to-end: glad-fam.com domain purchased + verified, EMAIL_FROM ✅, EMAIL_RECIPIENTS re-expanded to 3, multi-recipient sending operational)
+**Version:** 1 | **Last updated:** 2026-04-24 (Session 6 FORMAL FINAL SHUTDOWN — Path B end-to-end + glad-fam.com active + EMAIL_FROM/EMAIL_RECIPIENTS/RESEND_API_KEY/YOUTUBE_API_KEY all ✅ Active + Cloudflare account ✅ Active. No credential changes pending. Session 7 starts fresh.)
 
 This is the canonical, living record of every credential (API key, token, account login) that the **pickleball-daily** project uses. Updated whenever a credential is added, rotated, or revoked.
 

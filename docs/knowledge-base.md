@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-04-24 (Session 6 post-shutdown extension — **KB v7 + KB-0034 added**, 34 entries; Path B activated end-to-end same-day as KB-0033 surfaced — `glad-fam.com` purchased + verified + EMAIL_FROM set + multi-recipient sending operational)
+**Last updated:** 2026-04-24 (Session 6 FORMAL FINAL SHUTDOWN — **KB v7**, 34 entries through KB-0034; all Phase 3B + Phase 3C.1 + Phase 3C.2 + cross-cutting docs + post-shutdown Path B extensions captured. Session 7 starts fresh with News tab ATP'd as primary agenda)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
