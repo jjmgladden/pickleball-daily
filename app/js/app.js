@@ -3,7 +3,7 @@
 // APP_VERSION must stay in sync with `CACHE` in app/sw.js. When a shell-file change rolls the
 // SW cache version, update this constant in the same commit.
 
-const APP_VERSION = 'v10';
+const APP_VERSION = 'v11';
 
 import { loadSnapshot } from './data-loader.js';
 import { showSplashIfFirstVisit } from './components/splash.js';
@@ -16,6 +16,7 @@ import { renderStats }       from './tabs/stats.js';
 import { renderHighlights }  from './tabs/highlights.js';
 import { renderNews }        from './tabs/news.js';
 import { renderLearn }       from './tabs/learn.js';
+import { renderAsk }         from './tabs/ask.js';
 
 const RENDERERS = {
   daily:       renderDaily,
@@ -26,7 +27,8 @@ const RENDERERS = {
   stats:       renderStats,
   highlights:  renderHighlights,
   news:        renderNews,
-  learn:       renderLearn
+  learn:       renderLearn,
+  ask:         renderAsk
 };
 
 function setTab(name) {

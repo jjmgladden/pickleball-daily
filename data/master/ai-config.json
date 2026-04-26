@@ -1,0 +1,5 @@
+{
+  "workerBaseUrl": "",
+  "aiEnabled": false,
+  "note": "Set workerBaseUrl to the deployed Cloudflare Worker URL (e.g. https://pickleball-daily-api.YOURSUBDOMAIN.workers.dev) after running `wrangler deploy` from the worker/ directory. Set aiEnabled to true once the Worker is live and ANTHROPIC_API_KEY secret is set on it."
+}

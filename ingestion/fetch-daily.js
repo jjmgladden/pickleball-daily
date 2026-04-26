@@ -91,6 +91,16 @@ async function runAll() {
   console.log('[fetch-daily] wrote ' + latest);
   console.log('[fetch-daily] duration ' + snapshot.durationMs + 'ms, ' + errors.length + ' errors');
 
+  // KB-0008: build the AI Q&A context bundle from the just-written snapshot.
+  // Non-fatal — Q&A can degrade gracefully if this step fails.
+  try {
+    const { build: buildAiContext } = require('./build-ai-context');
+    const ctx = buildAiContext();
+    console.log('[fetch-daily]   ai-context → ' + ctx.tokensApprox + ' tokens (' + ctx.chars + ' chars)');
+  } catch (e) {
+    console.error('[fetch-daily]   ai-context → FAILED: ' + e.message);
+  }
+
   return { snapshotPath: latest, snapshot };
 }
 

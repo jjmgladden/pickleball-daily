@@ -1,6 +1,6 @@
 # Credentials Inventory
 
-**Version:** 1 | **Last updated:** 2026-04-24 (Session 6 FORMAL FINAL SHUTDOWN — Path B end-to-end + glad-fam.com active + EMAIL_FROM/EMAIL_RECIPIENTS/RESEND_API_KEY/YOUTUBE_API_KEY all ✅ Active + Cloudflare account ✅ Active. No credential changes pending. Session 7 starts fresh.)
+**Version:** 2 | **Last updated:** 2026-04-26 (Session 8 mid-session — added `ANTHROPIC_API_KEY` for KB-0008 AI Q&A backend; key created at console.anthropic.com (workspace: Default), $20 monthly spend cap + email notifications at $1/$5/$15 set, $20 prepaid credit balance; pasted into local `.env` + GitHub Secret. Cloudflare Worker `ANTHROPIC_API_KEY` secret pending owner-action `wrangler secret put` after deploy. KB-0044 also added: `YOUTUBE_API_KEY` rotation pending — value exposed in Session 8 chat transcript.)
 
 This is the canonical, living record of every credential (API key, token, account login) that the **pickleball-daily** project uses. Updated whenever a credential is added, rotated, or revoked.
 
@@ -70,8 +70,10 @@ Quick-reference table. Detailed sections below.
 | **`RESEND_API_KEY`** | API key (Resend) | ✅ Active | 2026-04-23 (Session 6) | `ingestion/send-email.js` | GitHub Secret | [Resend → API Keys](https://resend.com/api-keys) |
 | **`EMAIL_RECIPIENTS`** | Plain config | ✅ Active | 2026-04-23 (Session 6) | `ingestion/send-email.js` | GitHub Secret | [Repo Secrets](https://github.com/jjmgladden/pickleball-daily/settings/secrets/actions) |
 | **`EMAIL_FROM`** | Plain config (sender address) | ✅ Active | 2026-04-24 (Session 6) | `ingestion/send-email.js` | GitHub Secret | [Repo Secrets](https://github.com/jjmgladden/pickleball-daily/settings/secrets/actions) |
+| **`ANTHROPIC_API_KEY`** | API key (Anthropic) | ✅ Active (local + GH); ⏸ Pending on Worker until deploy | 2026-04-26 (Session 8) | `worker/src/index.js` (`/ai` route) + future local test scripts | Local `.env` + GitHub Secret + Cloudflare Worker secret (pending) | [console.anthropic.com → API keys](https://console.anthropic.com/settings/keys) |
 | **`glad-fam.com`** (domain) | Owned domain | ✅ Active | 2026-04-24 (Session 6) | Resend sender + future personal use | Cloudflare Registrar (account credentials in password manager) | [Cloudflare Registrar](https://dash.cloudflare.com/?to=/:account/registrar) |
-| **`GITHUB_TOKEN`** (Worker) | Fine-grained PAT | ⏸ Not yet | — | `worker/src/index.js` | Cloudflare Worker secret | [GitHub PAT settings](https://github.com/settings/personal-access-tokens) |
+| **`GITHUB_TOKEN`** (Worker) | Fine-grained PAT | ⏸ Not yet | — | `worker/src/index.js` (`/submit` route) | Cloudflare Worker secret | [GitHub PAT settings](https://github.com/settings/personal-access-tokens) |
+| **Anthropic Console account** | Account credentials | ✅ Active | 2026-04-26 (Session 8) | Holds the `ANTHROPIC_API_KEY` + spend cap + billing | Your password manager | https://console.anthropic.com |
 | **DUPR username/password** | Account credentials | ⏸ Phase 2 | — | `ingestion/lib/dupr-api.js` (Phase 2) | Local `.env` only | dupr.com |
 | **Cloudflare account login** | Account credentials | ⏸ Not yet | — | `wrangler` CLI | Wrangler config | [Cloudflare dashboard](https://dash.cloudflare.com) |
 | **Google Cloud account** | Account credentials | ✅ Active | (pre-existing) | Hosts the YouTube key project | Your password manager | [Google Cloud Console](https://console.cloud.google.com) |
@@ -198,10 +200,33 @@ If you've lost a credential or suspect it's been exposed (committed to git accid
 - **Maintenance log:**
   - 2026-04-24 (Session 6) — first set; sender on verified `glad-fam.com` domain. Path B activated.
 
+### `ANTHROPIC_API_KEY`
+
+- **Type:** Anthropic API key (Workspace-scoped).
+- **Used by:** `worker/src/index.js` `/ai` route — proxies questions to the Anthropic Messages API for the KB-0008 chat tab. Also used by future local test scripts.
+- **Storage:**
+  - Local `.env` (for local test scripts that hit the API directly during build/verification)
+  - GitHub Secret named `ANTHROPIC_API_KEY` (NOT consumed by any current workflow — kept available for future workflow-side AI tooling)
+  - Cloudflare Worker secret (pending — set via `npx wrangler secret put ANTHROPIC_API_KEY` from `worker/` after `wrangler deploy`)
+- **Source dashboard:** [console.anthropic.com → Organization settings → API keys](https://console.anthropic.com/settings/keys)
+- **Format:** `sk-ant-api03-` followed by ~95 alphanumeric characters (mixed case + symbols).
+- **Account:** Workspace = "Default" (the only workspace on the account). Owner email = `jjmgladden@gmail.com`. Account is independent of the Claude.ai subscription (Pro / Max plans don't grant API credit).
+- **Spend posture:**
+  - $20 prepaid credit balance (purchased 2026-04-26; expires 1 year after purchase per Anthropic policy)
+  - Monthly spend cap: $20 (Anthropic Console → Organization settings → Limits → Spend limits)
+  - Auto-reload: **OFF** (kept off so the spend cap is a true ceiling, not a refill trigger)
+  - Email alerts at $1 / $5 / $15 of monthly spend (early-warning canaries during build phase)
+- **Quota / model:** Tier 1 rate limits (50 req/min/model, 50K input tokens/min on Haiku, 10K output tokens/min). Default model in production: `claude-haiku-4-5`. Switchable via Worker env var `AI_MODEL`.
+- **Restrictions to apply at creation:** Workspace = Default. Permissions = Default / All (no narrower scope offered for v1 use case).
+- **If lost or compromised:** Anthropic Console → API keys → click the trash icon next to `pickleball-daily-prod` to revoke immediately. Then create a new key (same name + suffix `-v2`), paste new value into the three storage locations above, dispatch a smoke test against the Worker `/ai` route, confirm response, then delete the revoked key entry.
+- **Rotation history:**
+  - 2026-04-26 (Session 8) — initial creation as `pickleball-daily-prod`. Pasted into local `.env` + GitHub Secret. Worker secret pending owner-action `wrangler secret put` after deploy.
+- **Cross-reference:** [KB-0008](knowledge-base.md#kb-0008--future-ai-qa-layer-phase-4-schema-constraints-now) · [KB-0042](knowledge-base.md#kb-0042--help-anthropic-api-costs-billing-posture-buildtest-budget-full-cost-audit-and-the-chat-tab-vs-widget-decision-kb-0008-atp-dialog) · [KB-0041](knowledge-base.md#kb-0041--future-design--self-hosted-ollama-as-kb-0008-llm-backend-missouri-home-server-github-pages-browser-cloudflare-worker-proxy) (future Ollama backend) · `worker/src/index.js` · `worker/wrangler.toml`
+
 ### `GITHUB_TOKEN` (Worker — fine-grained PAT)
 
 - **Type:** Fine-grained GitHub Personal Access Token.
-- **Used by:** `worker/src/index.js` — creates Issues from form submissions.
+- **Used by:** `worker/src/index.js` `/submit` route — creates Issues from form submissions.
 - **Storage:** Cloudflare Worker secret (set via `npx wrangler secret put GITHUB_TOKEN` from `worker/`).
 - **Source dashboard:** https://github.com/settings/personal-access-tokens
 - **Format:** `github_pat_` followed by ~80 alphanumeric characters.
@@ -301,6 +326,8 @@ Significant credential events worth recording:
 - **2026-04-24 (Session 6)** — `EMAIL_RECIPIENTS` reverted to 1 recipient (owner only) to stop daily failure-email noise. Multi-recipient deferred until Path B (Resend domain verification) lands in a future session. Verification dispatched as workflow run `24873522457`.
 - **2026-04-24 (Session 6, ~22:30 UTC)** — Owner purchased `glad-fam.com` domain via Cloudflare Registrar (~$10/year); domain is now an actively tracked owned asset (see § glad-fam.com domain section).
 - **2026-04-24 (Session 6, ~22:45 UTC)** — Path B activated: Resend Auto-configure pushed SPF/DKIM/DMARC records into Cloudflare DNS, domain verified within ~3 minutes; `EMAIL_FROM` Secret created with `Ozark Joe's Pickleball Daily <daily@glad-fam.com>`; `EMAIL_RECIPIENTS` re-expanded from 1 to 3 recipients. Verification run `24915664144` succeeded with `Recipients: 3`, Resend id `921b759a-caf3-4ca3-9fc9-1147568fe133`. Multi-recipient daily morning email is operational.
+- **2026-04-26 (Session 8)** — Anthropic Console account opened (workspace: Default); $20 prepaid credit purchased; monthly spend cap set to $20; email notifications enabled at $1 / $5 / $15 thresholds; auto-reload deliberately left OFF; API key `pickleball-daily-prod` created. Key pasted into local `.env` + GitHub Secret `ANTHROPIC_API_KEY`. Cloudflare Worker secret pending owner-action `wrangler secret put ANTHROPIC_API_KEY` once Worker is deployed for the first time. Backs the KB-0008 AI Q&A chat tab.
+- **2026-04-26 (Session 8)** — KB-0044 logged: `YOUTUBE_API_KEY` value visible in this session's chat transcript via `.env` screenshot. Owner deferred rotation to a future session (T2). When rotated, this maintenance log entry will be appended with the new rotation timestamp + verification.
 
 ---
 

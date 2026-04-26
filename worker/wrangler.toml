@@ -1,16 +1,29 @@
-name = "pickleball-daily-submit"
+name = "pickleball-daily-api"
 main = "src/index.js"
 compatibility_date = "2026-01-01"
 
-# Free tier: 100k requests/day. This Worker serves a single endpoint that
-# accepts form submissions and opens GitHub Issues via the REST API.
+# Free tier: 100k requests/day. This Worker serves two POST routes:
+#   /submit  — public submission → GitHub Issue (KB-0012, dormant until Suggest UI)
+#   /ai      — AI Q&A proxy → Anthropic Messages API (KB-0008)
+# Plus a GET /health for sanity checks.
 
 [vars]
 GITHUB_REPO     = "jjmgladden/pickleball-daily"
 ALLOWED_ORIGINS = "https://jjmgladden.github.io,http://localhost:1965"
 ALLOWED_TYPES   = "player,event,moment,other"
-WORKER_NAME     = "pickleball-daily-submit"
+WORKER_NAME     = "pickleball-daily-api"
 
-# Secret (set via `wrangler secret put GITHUB_TOKEN`):
-#   GITHUB_TOKEN — fine-grained PAT, Issues:write scope on
-#                  jjmgladden/pickleball-daily only.
+# AI configuration (KB-0008)
+AI_MODEL        = "claude-haiku-4-5"
+AI_DISABLED     = "false"
+AI_CONTEXT_URL  = "https://jjmgladden.github.io/pickleball-daily/data/snapshots/ai-context.json"
+
+# Secrets (set via `wrangler secret put <NAME>` from the worker/ directory):
+#   GITHUB_TOKEN       — fine-grained PAT, Issues:write scope on
+#                        jjmgladden/pickleball-daily only. Required for /submit.
+#                        OK to leave unset until Suggest UI ships (KB-0012).
+#   ANTHROPIC_API_KEY  — Anthropic API key (sk-ant-api03-...). Required for /ai.
+#                        Same key value as GitHub Secret ANTHROPIC_API_KEY.
+
+# To disable the AI feature without redeploying, run:
+#   wrangler secret put AI_DISABLED   (or set AI_DISABLED="true" in [vars] above)

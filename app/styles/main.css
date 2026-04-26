@@ -224,6 +224,84 @@ h2.section-title:first-child { margin-top: 0; }
   letter-spacing: 0.02em;
 }
 
+/* Ask tab — KB-0008 AI Q&A chat (Session 8) */
+.ask-history {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+  min-height: 220px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.ask-empty {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  padding: 8px 4px;
+  line-height: 1.5;
+}
+.ask-msg { margin-bottom: 14px; }
+.ask-msg-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+.ask-msg-body { line-height: 1.55; }
+.ask-msg-body p { margin: 6px 0; }
+.ask-msg-user .ask-msg-label { color: #a5c8ff; }
+.ask-msg-user .ask-msg-body { background: rgba(150, 200, 255, 0.06); border-left: 3px solid #a5c8ff; padding: 8px 12px; border-radius: 0 6px 6px 0; }
+.ask-msg-ai   .ask-msg-label { color: #95e6b4; }
+.ask-msg-ai   .ask-msg-body { background: rgba(180, 255, 200, 0.05); border-left: 3px solid #95e6b4; padding: 8px 12px; border-radius: 0 6px 6px 0; }
+.ask-msg-error .ask-msg-label { color: #ffa5a5; }
+.ask-msg-error .ask-msg-body { background: rgba(255, 165, 165, 0.08); border-left: 3px solid #ffa5a5; padding: 8px 12px; border-radius: 0 6px 6px 0; }
+.ask-msg-meta {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+.ask-controls { display: flex; flex-direction: column; gap: 8px; }
+#ask-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--bg-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+.ask-buttons { display: flex; gap: 8px; }
+.ask-btn-primary, .ask-btn-secondary {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.ask-btn-primary {
+  background: var(--accent, #95e6b4);
+  color: #0e1420;
+  border-color: var(--accent, #95e6b4);
+}
+.ask-btn-primary:disabled { opacity: 0.6; cursor: wait; }
+.ask-btn-secondary {
+  background: transparent;
+  color: var(--text-dim);
+}
+.ask-btn-secondary:disabled { opacity: 0.5; cursor: not-allowed; }
+.ask-hint {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
 /* Stats tab — Rankings + Ratings two-column layout (Session 8 consolidation) */
 .stats-grid {
   display: grid;
