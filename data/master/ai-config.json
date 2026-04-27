@@ -1,5 +1,5 @@
 {
-  "workerBaseUrl": "",
-  "aiEnabled": false,
-  "note": "Set workerBaseUrl to the deployed Cloudflare Worker URL (e.g. https://pickleball-daily-api.YOURSUBDOMAIN.workers.dev) after running `wrangler deploy` from the worker/ directory. Set aiEnabled to true once the Worker is live and ANTHROPIC_API_KEY secret is set on it."
+  "workerBaseUrl": "https://pickleball-daily-api.jjmgladden.workers.dev",
+  "aiEnabled": true,
+  "note": "Worker deployed 2026-04-27 (Session 8). To disable Ask tab without redeploying, set aiEnabled to false here and commit. To rotate the Worker URL after a re-deploy, update workerBaseUrl. The Worker also reads its own env.AI_DISABLED kill switch (wrangler.toml) — that one disables at the server side, this one disables at the browser side."
 }
