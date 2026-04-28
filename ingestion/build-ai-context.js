@@ -181,9 +181,15 @@ function sectionTopNews(snapshot, n = 5) {
   const items = (news.items || []).slice(0, n);
   if (!items.length) return '';
   const lines = ['## TOP NEWS (recent, top ' + items.length + ')'];
+  lines.push('Each item: title (source, date) + URL + Excerpt. Cite the URL when handing it to the user.');
   for (const it of items) {
     const src = it.sourceName || it.sourceId || '—';
-    lines.push('- "' + (it.title || '').slice(0, 100) + '" (' + src + ', ' + (it.publishedAt ? fmtDate(it.publishedAt) : '—') + ')');
+    const url = it.url || it.link || '';
+    const summary = String(it.summary || it.description || '').replace(/\s+/g, ' ').trim();
+    const excerpt = summary.length > 200 ? summary.slice(0, 200).trim() + '...' : summary;
+    lines.push('- "' + (it.title || '').slice(0, 120) + '" (' + src + ', ' + (it.publishedAt ? fmtDate(it.publishedAt) : '—') + ')');
+    if (url) lines.push('  ' + url);
+    if (excerpt) lines.push('  Excerpt: ' + excerpt);
   }
   return lines.join('\n');
 }

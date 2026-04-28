@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-04-27 (Session 8 mid-session — **KB v15**, 44 entries through KB-0044; **KB-0008 CLOSED** — AI Q&A chat tab live in production at /ask, backed by Cloudflare Worker `pickleball-daily-api` + Anthropic Haiku 4.5 with prompt caching + curated 3.9K-token context bundle. First real Anthropic answer ~$0.008 verified end-to-end on 2026-04-27. KB-0044 logged YouTube key rotation needed + this session's Anthropic key rotation event. KB-0043 Stats tab consolidation. KB-0042 KB-0008 ATP cost dialog. KB-0041 Ollama future-design concept. KB-0040 Learn-tab restructure plan. KB-0039 first Help-prefixed entry. KB-0020 closed + KB-0004 closed (universal player index 261). Session 7 shutdown produced KB v8.)
+**Last updated:** 2026-04-27 (Session 8 mid-session — **KB v16**, 45 entries through KB-0045; KB-0045 added — AI context bundle's news section now includes URL + ~200-char excerpt per article (4.2K tokens, +10%), so the AI can summarize articles and hand out clickable links. **KB-0008 CLOSED** earlier — AI Q&A chat tab live at /ask. KB-0044 YouTube key rotation needed + Anthropic key rotation event logged. KB-0043 Stats tab consolidation. KB-0042 KB-0008 ATP cost dialog. KB-0041 Ollama future-design concept. KB-0040 Learn-tab restructure plan. KB-0039 first Help-prefixed entry. KB-0020 closed + KB-0004 closed (universal player index 261). Session 7 shutdown produced KB v8.)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -1250,4 +1250,40 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
 ---
 
-**End of KB. Entry count: 44. Next ID: KB-0045.**
+### KB-0045 | AI context bundle — news section enhanced with URL + ~200-char excerpt per item
+- **Type:** Action
+- **Tier:** T3
+- **Dependency:** Claude
+- **Date:** 2026-04-27 (Session 8)
+- **Category:** Build / Phase 4 / AI / Context
+- **Tags:** ai-context, news, kb-0008, enhancement, prompt-caching, excerpt, url
+- **Finding:** Small follow-up enhancement to KB-0008 closure. Owner observed during smoke test that the AI could see news article TITLES but couldn't summarize content or hand out URLs. Root cause: `ingestion/build-ai-context.js § sectionTopNews` only included title + source + date; the snapshot's news items also have `url` + `summary` fields (RSS-extracted) that were unused.
+
+  **Change:** sectionTopNews now emits 3 lines per article:
+  1. Title (up to 120 chars) + source + date
+  2. URL (the article link)
+  3. Excerpt: first ~200 chars of the RSS summary, whitespace-collapsed
+
+  Plus a one-line lead instruction "Cite the URL when handing it to the user" so the model knows the URLs are quotable.
+
+  **Impact on bundle:**
+  - Before: 3,861 tokens / 15,442 chars
+  - After: 4,229 tokens / 16,913 chars (+10%, within estimate)
+
+  **Cost impact (Haiku 4.5 with prompt caching):**
+  - First call of the day: ~$0.009 (was ~$0.008)
+  - Cached calls within 5-min TTL: ~$0.003 (unchanged — cache discount dominates)
+  - Net: rounding error against the $1/mo expected steady-state
+
+  **Verification:** Local regenerate produced the expected shape (title + URL + Excerpt for top 5 news items). Production verification: ask a news-related question on the live Ask tab after this commit + push deploys to Pages and the Worker fetches the new ai-context.json on next call.
+
+  **Future similar enhancements that might be worth flagging:**
+  - Highlight VIDEO descriptions (currently title-only) — same pattern
+  - Player profile URLs already present for top-N — possibly extend
+  - History milestone source citations — currently just summary; sources field exists in seed
+- **Status:** Closed (shipped, verified locally, awaiting live verification on next user question)
+- **Cross-ref:** KB-0008 (parent — AI Q&A) · KB-0042 (cost dialog) · KB-0035 (News tab — the original RSS pipeline that produces the summary field) · ingestion/build-ai-context.js · data/snapshots/ai-context.json
+
+---
+
+**End of KB. Entry count: 45. Next ID: KB-0046.**
