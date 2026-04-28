@@ -1,6 +1,10 @@
 // learn.js (tab) — rules + history + governance reference.
 // Pulls from data/master/rules-changes-2026.json + data/master/history-seed.json.
 // Section numbers carry caveat per rules-changes-2026.json (verify against USAP PDF).
+//
+// KB-0040 Phase L1: TOC + accordion structure modeled on Travel Project Help tab.
+// Generic CSS classes (.tab-toc / .tab-section / .tab-callout) so the pattern is reusable
+// for the future Help feature anticipated in KB-0039.
 
 import { escapeHtml, confidenceBadgeHtml } from '../components/confidence-badge.js';
 import { loadMaster } from '../data-loader.js';
@@ -104,6 +108,69 @@ function rulebookHeaderHtml(rules) {
   );
 }
 
+function rulesAndAuthorityBodyHtml(rules) {
+  let html = '';
+  html += '<h4>Governance</h4>';
+  html += governanceBlockHtml();
+
+  html += '<h4>2026 Rule Changes</h4>';
+  if (rules && rules.changes && rules.changes.length) {
+    html += rulebookHeaderHtml(rules);
+    html += '<div class="learn-list">' + rules.changes.map(ruleCardHtml).join('') + '</div>';
+    html += (
+      '<div class="tab-callout info">' +
+        '<div class="tab-callout-label">Section-number caveat</div>' +
+        'Section numbers cite secondary summaries (Selkirk · The Dink) where the primary USAP PDF has not been programmatically verified. Always defer to the USAP PDF for authoritative citations.' +
+      '</div>'
+    );
+  } else {
+    html += '<div class="empty">Rule-changes data unavailable.</div>';
+  }
+  return html;
+}
+
+function historyBodyHtml(history) {
+  if (!history || !history.milestones || !history.milestones.length) {
+    return '<div class="empty">History data unavailable.</div>';
+  }
+  const sorted = history.milestones.slice().sort((a, b) => (a.year || 0) - (b.year || 0));
+  let html = '<div class="history-timeline">' + sorted.map(milestoneCardHtml).join('') + '</div>';
+  html += (
+    '<div class="tab-callout">' +
+      '<div class="tab-callout-label">Founding narrative</div>' +
+      'Follows USA Pickleball’s official position. Folk variants (e.g., the dog “Pickles”) are flagged where they exist on individual entries.' +
+    '</div>'
+  );
+  return html;
+}
+
+function moreComingBodyHtml() {
+  return (
+    '<p>Future Learn-tab additions are queued (KB-0040 Phase L2+):</p>' +
+    '<ul>' +
+      '<li><strong>Glossary</strong> — pickleball terminology (dink, ATP, Erne, kitchen, third shot drop, …).</li>' +
+      '<li><strong>Court etiquette</strong> — open-play courtesies + paddle-stack conventions.</li>' +
+      '<li><strong>DUPR explainer</strong> — how ratings move + what the numbers mean.</li>' +
+      '<li><strong>Tournament prep</strong> — what to expect at sanctioned events.</li>' +
+      '<li><strong>Equipment</strong> — USAP-approved paddle reference (informational).</li>' +
+    '</ul>' +
+    '<div class="tab-callout tip">' +
+      '<div class="tab-callout-label">Have a topic in mind?</div>' +
+      'Tell the project owner and it can drop into the curation backlog.' +
+    '</div>'
+  );
+}
+
+function sectionHtml(id, num, title, bodyHtml, opts = {}) {
+  const open = opts.open ? ' open' : '';
+  return (
+    '<details class="tab-section" id="' + id + '"' + open + '>' +
+      '<summary>' + num + '. ' + escapeHtml(title) + '</summary>' +
+      '<div class="tab-section-body">' + bodyHtml + '</div>' +
+    '</details>'
+  );
+}
+
 export async function renderLearn(root, snapshot) {
   root.innerHTML = '<div class="loading">Loading Learn…</div>';
 
@@ -112,31 +179,26 @@ export async function renderLearn(root, snapshot) {
   try { rules = await loadMaster('rules-changes-2026'); } catch (e) { console.warn('rules load', e); }
   try { history = await loadMaster('history-seed'); } catch (e) { console.warn('history load', e); }
 
-  let html = '<h2 class="section-title">Learn</h2>';
+  const sections = [
+    { id: 'learn-rules',   num: 1, title: 'Rules & Authority', body: rulesAndAuthorityBodyHtml(rules), open: true },
+    { id: 'learn-history', num: 2, title: 'History',           body: historyBodyHtml(history) },
+    { id: 'learn-more',    num: 3, title: 'More coming',       body: moreComingBodyHtml() }
+  ];
 
-  // Governance intro
-  html += '<h3 class="section-subtitle">Governance</h3>';
-  html += governanceBlockHtml();
+  const tocItems = sections.map(s =>
+    '<li><a href="#' + s.id + '">' + s.num + '. ' + escapeHtml(s.title) + '</a></li>'
+  ).join('');
 
-  // 2026 rule changes
-  html += '<h3 class="section-subtitle">2026 Rule Changes</h3>';
-  if (rules && rules.changes && rules.changes.length) {
-    html += rulebookHeaderHtml(rules);
-    html += '<div class="learn-list">' + rules.changes.map(ruleCardHtml).join('') + '</div>';
-    html += '<div class="muted">Section numbers cite secondary summaries (Selkirk + The Dink) where the primary USAP PDF has not been programmatically verified. Always defer to the USAP PDF for authoritative citations.</div>';
-  } else {
-    html += '<div class="empty">Rule-changes data unavailable.</div>';
-  }
-
-  // History timeline
-  html += '<h3 class="section-subtitle">History</h3>';
-  if (history && history.milestones && history.milestones.length) {
-    const sorted = history.milestones.slice().sort((a, b) => (a.year || 0) - (b.year || 0));
-    html += '<div class="history-timeline">' + sorted.map(milestoneCardHtml).join('') + '</div>';
-    html += '<div class="muted">Founding narrative follows USA Pickleball’s official position. Folk variants (e.g., the dog “Pickles”) are flagged where they exist.</div>';
-  } else {
-    html += '<div class="empty">History data unavailable.</div>';
-  }
+  let html = '';
+  html += '<h2 class="section-title">Learn</h2>';
+  html += '<p class="learn-intro">Rules, governance, and history of pickleball. Click any section to expand.</p>';
+  html += (
+    '<nav class="tab-toc" aria-label="Learn tab sections">' +
+      '<div class="tab-toc-title">Jump to section</div>' +
+      '<ol>' + tocItems + '</ol>' +
+    '</nav>'
+  );
+  html += sections.map(s => sectionHtml(s.id, s.num, s.title, s.body, { open: s.open })).join('');
 
   root.innerHTML = html;
 }
