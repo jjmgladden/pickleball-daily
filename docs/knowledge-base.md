@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-04-27 (Session 8 mid-session — **KB v16**, 45 entries through KB-0045; KB-0045 added — AI context bundle's news section now includes URL + ~200-char excerpt per article (4.2K tokens, +10%), so the AI can summarize articles and hand out clickable links. **KB-0008 CLOSED** earlier — AI Q&A chat tab live at /ask. KB-0044 YouTube key rotation needed + Anthropic key rotation event logged. KB-0043 Stats tab consolidation. KB-0042 KB-0008 ATP cost dialog. KB-0041 Ollama future-design concept. KB-0040 Learn-tab restructure plan. KB-0039 first Help-prefixed entry. KB-0020 closed + KB-0004 closed (universal player index 261). Session 7 shutdown produced KB v8.)
+**Last updated:** 2026-04-27 (Session 8 mid-session — **KB v17**, 46 entries through KB-0046; KB-0046 added — third "Help-" prefixed entry: comprehensive end-to-end Phase 4 launch playbook covering Anthropic account setup, Cloudflare Worker deploy, key rotations, Windows cmd paste pitfall, OAuth refresh trap, full debugging methodology, every command with explanations, "things that bit us" anti-checklist, and a 4-hour reverse-playbook for the next AI-pattern project. KB-0045 news-section URL + excerpt enhancement. **KB-0008 CLOSED** — AI Q&A chat tab live at /ask. KB-0044 YouTube key rotation. KB-0043 Stats tab consolidation. KB-0042 KB-0008 ATP cost dialog. KB-0041 Ollama future-design. KB-0040 Learn restructure plan. KB-0039 first Help-prefixed entry. KB-0020 closed + KB-0004 closed. Session 7 shutdown produced KB v8.)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -1286,4 +1286,381 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
 ---
 
-**End of KB. Entry count: 45. Next ID: KB-0046.**
+### KB-0046 | Help-End-to-end Phase 4 AI Q&A launch playbook — Anthropic account setup, Cloudflare Worker deploy, key rotations, Windows cmd paste pitfall, OAuth refresh trap, debugging methodology, every command with explanation
+- **Type:** Reference
+- **Date:** 2026-04-27 (Session 8)
+- **Category:** Help / User-Facing / Phase 4 / KB-0008 / Deployment
+- **Tags:** help, kb-0008, anthropic, cloudflare, worker, wrangler, deployment, key-rotation, debugging, lessons-learned, windows-cmd, oauth, playbook
+- **Finding:** Captured for the future Help feature. Comprehensive playbook of the entire Phase 4 AI Q&A buildout from owner's first browser visit to console.anthropic.com through the first successful answer. Most owner-facing setup tasks live here; a small number of Worker-side debugging episodes also recorded so future projects don't re-discover them.
+
+  ## Summary
+
+  | Phase | What happened | Time | Result |
+  |---|---|---|---|
+  | 1. Anthropic account | Sign up, spend cap, payment, alerts, key | ~15 min | Key live in 3 locations |
+  | 2. Wrangler local install | Bypass `npx`-cache `&` path bug (KB-0015) | ~5 min | wrangler 4.85 in worker/ |
+  | 3. Wrangler login | OAuth via browser | ~2 min | Cloudflare auth ✅ |
+  | 4. Worker secret + deploy | First Cloudflare Worker | ~10 min | Live at pickleball-daily-api.jjmgladden.workers.dev |
+  | 5. Subdomain registration | jjmgladden.workers.dev (one-time per account) | ~1 min | Permanent CF Workers home |
+  | 6. Key value mistyped as secret name (incident) | Plaintext exposure → rotation | ~5 min | KB-0044 logged, rotated |
+  | 7. Browser smoke test | First Anthropic 400 with empty body | ~30 min debug | Found root cause via Node script |
+  | 8. Windows cmd paste mangling (incident) | `wrangler secret put` only captured 1 char | ~5 min | Recovery via Cloudflare dashboard |
+  | 9. OAuth refresh trap (incident) | Cancelled silent refresh popup | ~2 min | Recovery via fresh `wrangler login` |
+  | 10. First real Anthropic answer | $0.008 charged | — | KB-0008 closed |
+  | 11. UX cleanup pass | Markdown stripping + URL autolink | ~10 min | Polished output |
+
+  Net: ~90 min wall clock; ~10 of those minutes were debugging unanticipated Windows + wrangler quirks. Estimated cost during build: ~$0.05.
+
+  ---
+
+  ## Phase 1 — Anthropic account setup
+
+  **Why:** the AI backend is the Anthropic Messages API. This is a paid service separate from the Claude.ai chat subscription. API usage is metered per token; the Claude.ai Pro/Max plan does NOT cover API usage.
+
+  **Steps owner took (in order):**
+
+  1. **Sign up** at https://console.anthropic.com using `jjmgladden@gmail.com` (matches existing project identity)
+  2. **Verify email** via the link Anthropic sent
+  3. **Workspace** auto-created as "Default" — owner did NOT need to create a new one. Display name doesn't matter; the system uses it for grouping resources.
+  4. **Spend cap set FIRST** (before adding payment method): `Organization settings → Limits → Spend limits → Monthly limit → Change limit → 20 → Save`. Initial default was $100; reduced to $20.
+  5. **Payment method + prepaid credit purchase:** `Billing → Buy credits → $20 ("Trying it out", the lowest tier)`. Anthropic's lowest credit tier increased from $5 to $20 sometime in 2026. Filled in billing address (required for tax purposes), entered credit card, confirmed.
+  6. **Auto-reload:** when prompted "Turn on auto-reload" with default values $10 trigger / $50 refill, owner clicked **"Skip for now"**. Auto-reload OFF means the spend cap is a true hard ceiling — without it, runaway use cases would silently refill the balance past the visible cap.
+  7. **Notification alerts:** `Limits → Spend limits → Email notifications → Add notification`. Set THREE thresholds:
+     - **$1** — build-phase canary (will fire during initial development testing)
+     - **$5** — confirms first month of production looks normal
+     - **$15** — pre-cap warning (75% of $20 — gives time to react before cap fires)
+  8. **API key creation:** `API keys → + button → Create in Workspace = Default → Name = pickleball-daily-prod → Add`. The key value (`sk-ant-api03-...`, 108 characters) displays ONCE — must copy immediately to LastPass.
+
+  **Critical lessons from Phase 1:**
+  - **Anthropic's prepaid minimum is $20** (was $5 in older docs). Don't budget for $5.
+  - **Auto-reload is a trap if you want a real spend ceiling.** Skip it.
+  - **Multi-threshold notifications are valuable** during early build — $1 catches anomalies fast.
+  - **One key per project rule:** name keys like `pickleball-daily-prod`, not `general-key`. Per-key Anthropic dashboard analytics show per-project spend; rotation can affect just one project.
+
+  **Cost posture set by Phase 1:**
+  - Hard ceiling: $20/month at the API level (Anthropic enforces)
+  - Prepaid balance: $20 (covers ~5 months at expected usage)
+  - Email visibility: alerts at $1/$5/$15 monthly thresholds
+  - Auto-reload: OFF
+  - First charge of any kind: only when actual API call is made
+
+  ---
+
+  ## Phase 2 — Distribute the key to three locations
+
+  Per `docs/credentials.md` § Storage locations, the key needs to live in three places:
+
+  1. **LastPass** — owner's password manager (canonical home)
+  2. **Local `.env`** at project root — for local test scripts (e.g., `scripts/test-anthropic.js`)
+  3. **GitHub Secret named `ANTHROPIC_API_KEY`** — at https://github.com/jjmgladden/pickleball-daily/settings/secrets/actions → "New repository secret" → exact-name match (case-sensitive, including the underscore)
+
+  Cloudflare Worker secret comes later (Phase 4) — owner action gated on Worker existing.
+
+  **Process safety pattern — Option A vs Option B (from KB-0042):**
+  - **Option A (preferred):** owner adds the secret to GitHub themselves via the web UI. Key value never passes through the Claude conversation transcript.
+  - **Option B (faster):** owner pastes key into chat; Claude adds via `gh secret set` from the CLI. Risk: key sits in conversation history.
+
+  Owner chose Option A (correctly). Key never appeared in the transcript via this path.
+
+  ---
+
+  ## Phase 3 — Local wrangler install (work around KB-0015 `&`-in-path)
+
+  **Why local install instead of `npx wrangler`:**
+
+  KB-0015 documents the bug: Windows username `John & Cindy Gladden` contains `&`, which `npx`'s cache fetcher mangles when trying to launch the cached binary. The error looks like `'Cindy' is not recognized as an internal or external command` (cmd interprets `&` as a command separator).
+
+  **Workaround:** install wrangler into `worker/node_modules/` and invoke it via direct `node` path:
+
+  ```
+  cd "C:\Users\John & Cindy Gladden\Desktop\AI\Claude\Pickleball Project\worker"
+  npm install
+  ```
+
+  This populated `node_modules/wrangler/` from `worker/package.json`'s `devDependencies`. Initial install gave wrangler 3.114.17.
+
+  **Wrangler 3 → 4 upgrade (separate problem):** wrangler 3.x has a libuv assertion crash on Node 24.x (`Assertion failed: !(handle->flags & UV_HANDLE_CLOSING), file src\win\async.c, line 76`) that prevented OAuth login from completing. Upgraded:
+
+  ```
+  npm install --save-dev wrangler@latest
+  ```
+
+  Result: wrangler 4.85.0 in `worker/node_modules/`. `worker/package.json` `devDependencies.wrangler` was bumped from `^3.0.0` to `^4.85.0` and committed.
+
+  **All wrangler commands from this point on use the direct-node pattern:**
+
+  ```
+  node ./node_modules/wrangler/bin/wrangler.js <command>
+  ```
+
+  This works because:
+  - `node` accepts paths with `&` natively (unlike `npx`'s wrapper)
+  - The relative path `./node_modules/wrangler/bin/wrangler.js` doesn't trigger any shell substitution
+
+  **Critical lesson from Phase 3:**
+  - **Never use `npx wrangler` on this machine.** Always direct-node-invocation. KB-0015 codifies this.
+  - **Wrangler 3.x is broken on Node 24+.** Always pin `^4.x` or later.
+
+  ---
+
+  ## Phase 4 — Wrangler OAuth login
+
+  ```
+  node ./node_modules/wrangler/bin/wrangler.js login
+  ```
+
+  Opens browser to `dash.cloudflare.com/oauth2/auth?...` with a 2-page consent flow:
+  1. **Page 1:** Sign in confirmation + account selection. Owner kept "Grant access to all accounts" toggle **OFF** (limits wrangler to the single Cloudflare account, not future accounts). Clicked "Review permissions."
+  2. **Page 2:** 14 permissions across "Overall Roles," "Developer Platform," "App Performance" categories. Clicked "Authorize."
+  3. Browser shows "Authorization granted to Wrangler — You can close this window."
+  4. Terminal shows "Successfully logged in."
+
+  **Auth state stored at:** `C:\Users\John & Cindy Gladden\AppData\Roaming\xdg.config\.wrangler\config\` (token file). Persists across terminal sessions until expiry (typically days/weeks).
+
+  **Critical lesson from Phase 4 (added later in session):**
+  - **If a Cloudflare consent popup appears unprompted while wrangler-related work is open, click through it (Authorize), do NOT click Cancel.** That popup is wrangler trying to silently refresh an expiring OAuth token in the background. Cancelling kills the refresh and leaves wrangler with an expired token. Recovery is another full `wrangler login` cycle. (Owner hit this trap in this session — Claude advised "click Cancel, looks unrelated"; that was wrong; cost ~5 min recovery.)
+
+  ---
+
+  ## Phase 5 — Set the Anthropic key as a Worker secret
+
+  ```
+  node ./node_modules/wrangler/bin/wrangler.js secret put ANTHROPIC_API_KEY
+  ```
+
+  **Critical syntax rule:** the secret NAME goes on the command line (`ANTHROPIC_API_KEY`), then wrangler prompts `Enter a secret value:` and the VALUE is pasted at the prompt (masked input — shows only `*`). Pasting the value as the command-line argument exposes it in plaintext (KB-0044 incident).
+
+  **The first attempt this session was a typo:** owner accidentally typed the full `sk-ant-api03-...` value as the supposed secret name instead of the literal string `ANTHROPIC_API_KEY`. The full key value was visible in the terminal scroll buffer + shell history + chat transcript. **Recovery: rotate immediately** (see Phase 6).
+
+  After the second (correct) attempt, wrangler asks: *"There doesn't seem to be a Worker called pickleball-daily-api. Do you want to create a new Worker with that name and add secrets to it?"* Answer **`y`** — first-time secret-put creates a placeholder Worker shell that the next deploy fills with code.
+
+  **Output on success:** `✨ Success! Uploaded secret ANTHROPIC_API_KEY to <worker-name>`
+
+  ---
+
+  ## Phase 6 — First key rotation incident (KB-0044 + KB-0008 closure log)
+
+  **Trigger:** the mistyped command exposed the key value in the conversation transcript.
+
+  **Recovery procedure (from `docs/credentials.md` § Lost / leaked):**
+
+  1. **Anthropic Console** → API keys → trash icon next to `pickleball-daily-prod` → confirm delete. Old key dies instantly; any process using it gets a 401 next request.
+  2. **Create replacement** with the same name (Anthropic does allow same-name reuse if the predecessor is deleted).
+  3. **Update three locations:**
+     - LastPass — overwrite the old entry's value
+     - Local `.env` line — replace `ANTHROPIC_API_KEY=sk-ant-...` value
+     - GitHub Secret at the secrets page — pencil icon → paste new value → "Update secret"
+  4. **Worker secret update** then proceeded as planned (Phase 5 flow).
+
+  **Critical lessons from Phase 6:**
+  - **Rotation is the universal recovery.** Don't try to "un-leak" a key — just kill it and replace.
+  - **Always type the secret NAME on the command line, paste the VALUE at the masked prompt.** Never reverse them.
+  - **Same-name reuse is fine** — Anthropic allows it once the predecessor is deleted.
+
+  ---
+
+  ## Phase 7 — First Worker deploy
+
+  ```
+  node ./node_modules/wrangler/bin/wrangler.js deploy
+  ```
+
+  **What this does:** uploads `worker/src/index.js` (and any imports) to Cloudflare's edge as a new version of the named Worker, attaches all `[vars]` from `wrangler.toml` as plaintext env vars, and binds previously-set secrets (e.g., `ANTHROPIC_API_KEY`) at runtime.
+
+  **First-deploy side prompt — workers.dev subdomain registration:**
+
+  ```
+  WARNING  You need to register a workers.dev subdomain before publishing to workers.dev
+  Would you like to register a workers.dev subdomain now? » (Y/n)
+  ```
+
+  Owner pressed **`y`**. Then prompted *"What would you like your workers.dev subdomain to be?"* — entered `jjmgladden`. **Once-per-Cloudflare-account decision; permanent.** All future Workers across all projects on this account live at `<worker-name>.jjmgladden.workers.dev`.
+
+  Subdomain naming rules: lowercase letters + numbers + hyphens; must be globally unique across all Cloudflare customers. (Owner had a brief invalid-subdomain warning that was actually a typo — `i=` and `=` characters slipped in via stray keystrokes; retyping `jjmgladden` cleanly worked.)
+
+  **Output on success:**
+  ```
+  Deployed pickleball-daily-api triggers (X.XX sec)
+    https://pickleball-daily-api.jjmgladden.workers.dev
+  Current Version ID: <UUID>
+  ```
+
+  Copy that URL — it goes into `data/master/ai-config.json` `workerBaseUrl` field.
+
+  ---
+
+  ## Phase 8 — The empty-400 mystery & debugging methodology
+
+  **Symptom:** Browser Ask tab → ask question → Worker logs `(error) Anthropic non-200: 400` with no body. Browser shows "Anthropic 400. Try again later."
+
+  **Standard culprits ruled out FAST (5 min):**
+  - Model ID `claude-haiku-4-5` (short alias) → bumped to dated `claude-haiku-4-5-20251001` → still 400. Not the model.
+  - Worker secret value differs from `.env` → re-pasted via `wrangler secret put` → still 400. Hmm.
+
+  **Key debugging tool — the local Node test script.** When the Worker fails opaquely, isolate by hitting Anthropic directly from a different runtime (Node) using the SAME key + payload shape. If Node succeeds, the bug is Worker-specific (not key, not request). If Node also fails, the request itself is bad.
+
+  Created `scripts/test-anthropic.js`:
+  - Loads `ANTHROPIC_API_KEY` from `.env`
+  - Logs key length + prefix + whitespace check (sanity)
+  - Mirrors the Worker's exact payload — system prompt + cache_control + same model
+  - Prints full response status + headers + body (zero suppression)
+
+  ```
+  cd "C:\Users\John & Cindy Gladden\Desktop\AI\Claude\Pickleball Project"
+  node scripts/test-anthropic.js
+  ```
+
+  **Result:** `200 OK` + real answer ("Pickleball was invented in 1965"). Bug confirmed Worker-specific.
+
+  **Adding diagnostic logging to the Worker** (KB-0042's "tighter posture" idea applied):
+  ```js
+  console.log('DEBUG-AI keyLen=' + keyLen + ' keyPrefix=' + keyPrefix + ' keyHasWs=' + keyHasWs);
+  ```
+  Plus a second `tail` terminal:
+  ```
+  node ./node_modules/wrangler/bin/wrangler.js tail
+  ```
+  (`tail` streams Worker `console.log`/`console.error` lines in near-real-time.)
+
+  **Smoking gun:** `keyLen=1 keyPrefix=▬`. The Worker's copy of `ANTHROPIC_API_KEY` was a single weird block character. The Windows cmd terminal had eaten the entire 108-char paste during `wrangler secret put`'s masked-input prompt — only one character registered.
+
+  **Recovery:** **paste the key via the Cloudflare dashboard browser UI**, NOT the terminal. Browser inputs handle paste correctly:
+  - https://dash.cloudflare.com → Workers & Pages → pickleball-daily-api → Settings → Variables and Secrets section → ANTHROPIC_API_KEY → click **"Rotate"** (the placeholder text is a clickable link) → paste full key → **Deploy** button at bottom-right.
+
+  Worker picks up new value in ~5 seconds. No `wrangler deploy` needed for secret-only changes.
+
+  **Critical lessons from Phase 8:**
+  - **When Anthropic returns 400 with empty body, suspect the API key.** Anthropic doesn't always return JSON for malformed/revoked keys.
+  - **Direct-call diagnostics in a different runtime** (Node script) is the single most powerful technique for isolating Worker-vs-request bugs.
+  - **Windows cmd masked-input prompts can silently truncate pasted secrets.** Future practice: paste secrets into Cloudflare dashboard via browser, not into terminal.
+  - **`wrangler tail` is essential.** Without it the Worker's `console.log/error` lines never reach the developer.
+  - **wrangler tail can suppress console.error 3rd argument** — combine multi-arg logs into a single string: `console.error('foo: ' + bar + ' baz: ' + qux)` not `console.error('foo:', bar, 'baz:', qux)`.
+
+  ---
+
+  ## Phase 9 — The OAuth refresh trap
+
+  **Symptom:** mid-debugging, owner saw an unprompted Cloudflare consent page appear in the browser. Claude advised "click Cancel, looks unrelated." Cancel clicked.
+
+  **Result:** next `wrangler secret put` failed with `ERROR: A request to the Cloudflare API ... failed. Authentication error [code: 10000] / Invalid access token [code: 9109]`. Wrangler's OAuth token was now dead.
+
+  **Diagnosis:** the unprompted popup WAS wrangler trying to silently refresh an about-to-expire OAuth token. By clicking Cancel, owner killed the refresh. The old token then expired naturally a few minutes later, leaving wrangler unauthenticated.
+
+  **Recovery:** another full `wrangler login` cycle from `worker/`:
+  ```
+  node ./node_modules/wrangler/bin/wrangler.js login
+  ```
+  This time, owner clicked through the consent flow (Review permissions → Authorize). Auth restored. Subsequent commands worked.
+
+  **Critical lesson from Phase 9 — recorded as feedback memory:**
+  - **Unprompted Cloudflare consent popups during wrangler work are silent token refreshes. Always Authorize, never Cancel.**
+
+  ---
+
+  ## Phase 10 — First successful Anthropic answer + cost telemetry
+
+  After all the above, browser → Ask tab → ask question → real answer appears. Per-message metadata at the bottom of each answer shows: `claude-haiku-4-5-20251001 · cache hit · context: 2026-04-27`.
+
+  **First call cost (per Anthropic dashboard):**
+  - 6,176 cache_creation tokens × ~$1.25/Mtok = $0.0077
+  - ~13 fresh input tokens × $1/Mtok = ~$0
+  - 58 output tokens × $5/Mtok = $0.0003
+  - **Total: ~$0.008**
+
+  **Subsequent calls within 5-min cache TTL:** ~5,000 cached input × $0.10/Mtok (90% discount) + ~500 fresh + ~500 output = **~$0.003**.
+
+  **Real production cost projection** (3 readers × 3 questions/day): ~**$1/month**. Well within $20/month spend cap.
+
+  **Verification flow that proved end-to-end success:**
+  1. Browser tab on https://jjmgladden.github.io/pickleball-daily/ Ask tab
+  2. Type question, press Enter
+  3. Worker logs in tail: `POST .../ai - Ok` + `(log) DEBUG-AI keyLen=108 keyPrefix=sk-ant-api03-E4 ...`
+  4. Browser response appears with model ID + cache-hit indicator
+  5. Anthropic dashboard at https://console.anthropic.com/settings/usage ticks up by ~$0.008
+
+  ---
+
+  ## Phase 11 — UX cleanup pass (markdown + URL handling)
+
+  **Issues observed by owner during smoke test:**
+  1. AI returned `# Pickleball Butt` as a heading — rendered as literal `# Pickleball Butt` text (no parsing)
+  2. AI used `**Management**` for bold — rendered as literal asterisks (looked like a glitch)
+  3. AI included `https://pickleballunion.com/...` URL — not clickable
+
+  **Two-part fix:**
+
+  **Server-side (Worker system prompt):** added explicit instruction "Do NOT use markdown formatting of any kind — no asterisks for bold, no underscores for italics, no hash marks for headings, no bullet markers, no code fences. Plain prose only." Plus a hint that http URLs in plain prose will be auto-linked.
+
+  **Client-side (`app/js/tabs/ask.js`):**
+  - `stripMarkdown()` defensive helper — strips `# heading`, `**bold**`, `_italic_`, `- bullet`, ``` `code` ``` even if the model ignores the system prompt
+  - `autolink()` — finds `http(s)://` URLs in escaped HTML and wraps in `<a target="_blank" rel="noopener">`. XSS-safe because URL pattern excludes the chars escapeHtml encodes.
+  - `renderHistoryItem` AI branch reordered: stripMarkdown → split paragraphs → escapeHtml → autolink → wrap in `<p>`.
+
+  Owner action after the fix: one final `wrangler deploy` from `worker/` to push the new system prompt to Cloudflare.
+
+  ---
+
+  ## Cumulative session summary
+
+  - **Files added** (this Phase 4 work alone): 4 — `worker/src/index.js` (rewritten), `ingestion/build-ai-context.js`, `app/js/tabs/ask.js`, `data/master/ai-config.json`, `data/snapshots/ai-context.json`, `scripts/test-anthropic.js` (debug tool kept for future)
+  - **Files modified:** 9 — `worker/wrangler.toml` (renamed pickleball-daily-submit → pickleball-daily-api, added AI vars), `worker/package.json` (wrangler 3 → 4), `worker/package-lock.json` (new), `app/index.html`, `app/js/app.js` (Ask renderer + APP_VERSION v9 → v12), `app/sw.js` (CACHE v9 → v12, ask.js in SHELL_FILES), `app/styles/main.css` (Ask CSS), `ingestion/fetch-daily.js` (calls buildAiContext), `docs/credentials.md` (ANTHROPIC_API_KEY full entry + maintenance log), `docs/knowledge-base.md` (KB-0008 closed; KB-0044 + KB-0045 + KB-0046 added)
+  - **Commits this Phase 4 work:** ~10 across the build + cleanup + enhancement passes
+  - **Owner-action steps total:** ~15 (Anthropic account setup + key distribution + wrangler login + secret put + deploy + dashboard recovery + OAuth refresh recovery + final deploy)
+  - **Cumulative real Anthropic spend during build + verification:** ~$0.05 (well within $1 first-alert threshold)
+
+  ---
+
+  ## "Things that bit us" — anti-checklist for the next AI integration in any project
+
+  1. **`npx <tool>` on a Windows username with `&`** → always install locally + invoke via `node ./node_modules/.../bin/<tool>.js` (KB-0015)
+  2. **wrangler 3.x on Node 24+** → libuv crash; pin `^4`
+  3. **Pasting full secret value as the secret name argument** → exposes in transcript; rotate
+  4. **Pasting secrets into Windows cmd masked-input prompts** → can silently truncate; use Cloudflare dashboard browser UI instead
+  5. **Cancelling unprompted Cloudflare consent popups** → kills wrangler OAuth refresh; always Authorize
+  6. **`anthropic-version: '2023-06-01'`** is the correct stable header for cache_control + standard messages — don't speculate it's the bug; it isn't
+  7. **wrangler tail's multi-arg `console.error()`** suppresses 3rd+ args — combine into single-string log
+  8. **Anthropic 400 with empty body** = almost certainly key-related (truncated, malformed, revoked) — not request-shape
+  9. **Anthropic prepaid minimum is $20** (was $5; 2026 raised it)
+  10. **Auto-reload off** is mandatory if you want the spend cap to be a real ceiling
+  11. **Default model alias `claude-haiku-4-5`** doesn't work for Haiku (must be dated `claude-haiku-4-5-20251001`); Sonnet 4.6 + Opus 4.7 work without dates — inconsistent. Always test the model ID early.
+  12. **Subdomain registration is once-per-account, not per-Worker** — pick the name carefully because it's permanent
+  13. **`wrangler secret put` does NOT redeploy the Worker** — for code changes use `wrangler deploy`; secret changes alone are picked up automatically within seconds, no redeploy needed
+  14. **Worker code changes are not observable via local browser preview** — Worker runs on Cloudflare's edge. Verification requires `wrangler deploy` + a real browser hit.
+
+  ---
+
+  ## Reverse playbook — checklist for the NEXT project that wants this AI pattern
+
+  **Pre-requisites:** Node 18+, GitHub account, Cloudflare account, ~$20 Anthropic credit, a public-static-site frontend (e.g., GitHub Pages).
+
+  **Hour 1 (no code yet):**
+  1. Create Anthropic account; set spend cap; buy $20 credit; set $1/$5/$15 alerts; auto-reload OFF
+  2. Generate API key (one per project — name it `<project>-prod`)
+  3. Add key to LastPass + local `.env` + GitHub Secret
+
+  **Hour 2 (Worker scaffolding):**
+  4. `cd worker && npm install && npm install --save-dev wrangler@latest`
+  5. `node ./node_modules/wrangler/bin/wrangler.js login` (Authorize, don't cancel)
+  6. Adapt the worker/src/index.js handleAi pattern from this project
+  7. wrangler.toml: AI_MODEL = `claude-haiku-4-5-20251001` (dated), AI_DISABLED = "false", AI_CONTEXT_URL pointing at your hosted JSON bundle
+  8. `wrangler secret put ANTHROPIC_API_KEY` — paste at the prompt, NOT on the command line. **If paste fails silently (Windows cmd), fall back to Cloudflare dashboard.**
+  9. `wrangler deploy` — register subdomain when prompted, copy the deploy URL
+
+  **Hour 3 (frontend wiring):**
+  10. Build the curated context bundle script (start small — title + summary fields work for most cases)
+  11. Build the chat UI (input + history + send + loading states)
+  12. Browser-side `ai-config.json` with workerBaseUrl + aiEnabled flag
+  13. Smoke test: ask one question, confirm Anthropic dashboard ticks up by ~$0.01
+
+  **Hour 4 (debug tools — build them BEFORE you need them):**
+  14. `scripts/test-anthropic.js` direct-call diagnostic
+  15. Worker `console.log('DEBUG-AI keyLen=...')` ready behind a debug-mode flag
+  16. `wrangler tail` workflow documented for when things break
+
+  **Total greenfield: ~4 hours if no surprises; budget 6–8 with surprises.**
+- **Status:** Closed (reference content; ready to feed into the planned Help feature)
+- **Cross-ref:** KB-0008 (parent — AI Q&A) · KB-0042 (cost dialog) · KB-0044 (key rotation) · KB-0045 (news enhancement) · KB-0015 (npx + `&` path bug) · KB-0012 (Worker scaffolding origin) · KB-0026 (Worker dormant — superseded by this work) · KB-0041 (future Ollama backend) · `docs/credentials.md` § ANTHROPIC_API_KEY · `worker/src/index.js` · `worker/wrangler.toml` · `scripts/test-anthropic.js` · `ingestion/build-ai-context.js` · `app/js/tabs/ask.js`
+
+---
+
+**End of KB. Entry count: 46. Next ID: KB-0047.**

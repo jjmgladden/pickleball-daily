@@ -1,6 +1,6 @@
 # Credentials Inventory
 
-**Version:** 2 | **Last updated:** 2026-04-26 (Session 8 mid-session — added `ANTHROPIC_API_KEY` for KB-0008 AI Q&A backend; key created at console.anthropic.com (workspace: Default), $20 monthly spend cap + email notifications at $1/$5/$15 set, $20 prepaid credit balance; pasted into local `.env` + GitHub Secret. Cloudflare Worker `ANTHROPIC_API_KEY` secret pending owner-action `wrangler secret put` after deploy. KB-0044 also added: `YOUTUBE_API_KEY` rotation pending — value exposed in Session 8 chat transcript.)
+**Version:** 3 | **Last updated:** 2026-04-27 (Session 8 mid-session — KB-0008 Phase 4 AI Q&A SHIPPED end-to-end. `ANTHROPIC_API_KEY` now ✅ Active in all three locations (local `.env` + GitHub Secret + Cloudflare Worker secret). Cloudflare Worker `pickleball-daily-api` deployed at `https://pickleball-daily-api.jjmgladden.workers.dev`; `jjmgladden.workers.dev` subdomain registered (permanent, will host all future Workers across all owner projects). Two key rotations during session: (1) original Anthropic key value mistyped as the wrangler secret-name argument and exposed in chat transcript; rotated immediately with same name. (2) Same key (no value change) re-pasted via Cloudflare dashboard after Windows cmd terminal mangled the `wrangler secret put` masked-input paste (only 1 char captured). Maintenance log + per-credential detail entry brought current. KB-0044 (T2 owner action) still open — `YOUTUBE_API_KEY` rotation pending.)
 
 This is the canonical, living record of every credential (API key, token, account login) that the **pickleball-daily** project uses. Updated whenever a credential is added, rotated, or revoked.
 
@@ -253,11 +253,14 @@ If you've lost a credential or suspect it's been exposed (committed to git accid
 ### Cloudflare account login
 
 - **Type:** Account credentials.
-- **Used by:** Multiple — (a) owns `glad-fam.com` domain via Cloudflare Registrar; (b) hosts DNS for `glad-fam.com` (Resend SPF/DKIM/DMARC records live here); (c) future Worker deployment will use this same account.
-- **Storage:** Account credentials in owner's password manager. Wrangler will auto-store an OAuth token at `~/.wrangler/config/default.toml` (Windows equivalent) when `wrangler login` runs (not yet, Worker still dormant).
+- **Used by:** Multiple — (a) owns `glad-fam.com` domain via Cloudflare Registrar; (b) hosts DNS for `glad-fam.com` (Resend SPF/DKIM/DMARC records live here); (c) hosts the deployed `pickleball-daily-api` Worker (KB-0008 AI Q&A backend); (d) owns the `jjmgladden.workers.dev` subdomain (registered 2026-04-27 as part of first Worker deploy — permanent, will host all future Workers across all owner projects on this account).
+- **Storage:** Account credentials in owner's password manager. Wrangler stores an OAuth token at `C:\Users\John & Cindy Gladden\AppData\Roaming\xdg.config\.wrangler\config\` after `wrangler login` (refreshes automatically; never click Cancel on unprompted Cloudflare consent popups during wrangler-related work — those are silent token refreshes per KB-0046 Phase 9 lesson).
 - **Source:** https://dash.cloudflare.com (existing account — created 2026-04-24 alongside `glad-fam.com` purchase).
-- **Status:** ✅ Active (account exists, owns `glad-fam.com`, hosts its DNS). Worker deployment via wrangler still pending owner action.
-- **Cross-reference:** `worker/README.md` · § glad-fam.com domain section (below)
+- **Status:** ✅ Active (account exists, owns `glad-fam.com`, hosts its DNS, runs the live `pickleball-daily-api` Worker at https://pickleball-daily-api.jjmgladden.workers.dev).
+- **Worker assets owned via this account:**
+  - `pickleball-daily-api` Worker — deployed 2026-04-27, Version ID format `<UUID>`, two routes (`POST /submit` dormant per KB-0012, `POST /ai` live per KB-0008). Source: `worker/src/index.js`. Config: `worker/wrangler.toml`.
+  - `jjmgladden.workers.dev` subdomain (one-time per-account registration).
+- **Cross-reference:** `worker/README.md` · `worker/wrangler.toml` · § glad-fam.com domain section (below) · KB-0008 · KB-0046
 
 ### `glad-fam.com` domain
 
