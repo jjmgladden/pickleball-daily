@@ -14,7 +14,7 @@ ALLOWED_TYPES   = "player,event,moment,other"
 WORKER_NAME     = "pickleball-daily-api"
 
 # AI configuration (KB-0008)
-AI_MODEL        = "claude-haiku-4-5"
+AI_MODEL        = "claude-haiku-4-5-20251001"
 AI_DISABLED     = "false"
 AI_CONTEXT_URL  = "https://jjmgladden.github.io/pickleball-daily/data/snapshots/ai-context.json"
 
