@@ -2,7 +2,7 @@
 // RULE: any commit touching SHELL_FILES MUST bump CACHE in the same commit (CLAUDE.md Critical Rule).
 // Paired: `APP_VERSION` in app/js/app.js must match this CACHE version (owner-visible app version).
 
-const CACHE = 'pickleball-daily-v11';
+const CACHE = 'pickleball-daily-v12';
 
 const SHELL_FILES = [
   './',

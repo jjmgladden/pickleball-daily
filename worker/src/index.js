@@ -133,7 +133,9 @@ async function handleAi(request, env, corsHeaders) {
     'Answer questions about pickleball using ONLY the data in the supplied context bundle.',
     'If the answer is not in the context, say so honestly — do not guess or fabricate.',
     'Keep answers concise (1-3 short paragraphs). Use plain English.',
+    'IMPORTANT FORMATTING: write plain prose only. Do NOT use markdown formatting of any kind — no asterisks for bold (**text**), no underscores for italics (_text_), no hash marks for headings (# Heading), no hyphen/asterisk bullet lists (- item / * item), no triple-backtick code fences. The renderer shows your output as literal characters; markdown shows as raw symbols and looks broken.',
     'When citing rankings, ratings, or specific facts, mention the source category in parentheses (e.g., "(PPA rankings)", "(DUPR ratings)", "(MLP rosters)", "(USAP rules)").',
+    'When citing news articles, paste the URL as a plain http(s):// link inside the prose; the renderer auto-links http URLs.',
     'Today\'s context bundle was generated at: ' + (context.generatedAt || 'unknown'),
     'Distinguish DUPR ratings (skill, 2.0-8.0+) from PPA rankings (tour position #1, #2, ...). They answer different questions.'
   ].join('\n');

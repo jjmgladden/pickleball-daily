@@ -12,6 +12,30 @@ async function loadConfig() {
   catch { return { workerBaseUrl: '', aiEnabled: false }; }
 }
 
+// Defense-in-depth markdown stripper: the system prompt already tells the
+// model "no markdown," but if it slips through, drop the markup characters
+// so the user sees clean prose rather than raw asterisks/hashes.
+function stripMarkdown(s) {
+  return String(s || '')
+    .replace(/^#{1,6}\s+/gm, '')           // # heading → heading
+    .replace(/\*\*(.+?)\*\*/g, '$1')        // **bold** → bold
+    .replace(/(^|[^*])\*([^*\n]+?)\*(?!\*)/g, '$1$2')  // *italic* → italic (preserve list-bullet asterisks at line start? we strip those next)
+    .replace(/__(.+?)__/g, '$1')            // __bold__ → bold
+    .replace(/(^|\s)_([^_\n]+?)_(?=\s|$)/g, '$1$2')   // _italic_ → italic
+    .replace(/^[\s]*[-*]\s+/gm, '')         // "- item" / "* item" → "item"
+    .replace(/`([^`\n]+?)`/g, '$1');        // `code` → code
+}
+
+// After escapeHtml, find http(s) URLs and wrap them in clickable anchors.
+// Safe because we operate on already-escaped HTML — the URL pattern excludes
+// '<', '>', '"', and '&' which are what escapeHtml encodes.
+function autolink(escapedText) {
+  return escapedText.replace(
+    /(https?:\/\/[^\s<>"]+[^\s<>".,;:!?)\]])/g,
+    '<a href="$1" target="_blank" rel="noopener">$1</a>'
+  );
+}
+
 function renderHistoryItem(item) {
   if (item.role === 'user') {
     return '<div class="ask-msg ask-msg-user"><div class="ask-msg-label">You</div><div class="ask-msg-body">' + escapeHtml(item.text) + '</div></div>';
@@ -22,8 +46,12 @@ function renderHistoryItem(item) {
     if (item.usage && item.usage.cacheHit) meta.push('cache hit');
     if (item.contextGeneratedAt) meta.push('context: ' + escapeHtml(item.contextGeneratedAt.slice(0, 10)));
     const metaLine = meta.length ? '<div class="ask-msg-meta">' + meta.join(' · ') + '</div>' : '';
-    // Render answer text — simple paragraph splitting; no markdown for now (keep server output plain).
-    const paras = (item.text || '').split(/\n\n+/).map(p => '<p>' + escapeHtml(p) + '</p>').join('');
+    // 1. Strip any markdown the model produced despite the system prompt's instruction
+    // 2. Split on blank lines into paragraphs
+    // 3. escapeHtml each paragraph (XSS-safe)
+    // 4. autolink http(s) URLs (operates on escaped HTML — safe)
+    const cleaned = stripMarkdown(item.text || '');
+    const paras = cleaned.split(/\n\n+/).map(p => '<p>' + autolink(escapeHtml(p)) + '</p>').join('');
     return '<div class="ask-msg ask-msg-ai"><div class="ask-msg-label">AI</div><div class="ask-msg-body">' + paras + metaLine + '</div></div>';
   }
   if (item.role === 'error') {
