@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-04-25 (Session 7 shutdown — **KB v8**, 38 entries through KB-0038; News tab + 4 RSS sources + Atom 1.0 support + Learn tab + On-This-Day module + KB-0031 closed via PPA scraper column-mapping fix + KB-0012/KB-0026 closed as deferred-feature pair + KB-0008 trigger conditions updated)
+**Last updated:** 2026-04-27 (Session 8 mid-session — **KB v15**, 44 entries through KB-0044; **KB-0008 CLOSED** — AI Q&A chat tab live in production at /ask, backed by Cloudflare Worker `pickleball-daily-api` + Anthropic Haiku 4.5 with prompt caching + curated 3.9K-token context bundle. First real Anthropic answer ~$0.008 verified end-to-end on 2026-04-27. KB-0044 logged YouTube key rotation needed + this session's Anthropic key rotation event. KB-0043 Stats tab consolidation. KB-0042 KB-0008 ATP cost dialog. KB-0041 Ollama future-design concept. KB-0040 Learn-tab restructure plan. KB-0039 first Help-prefixed entry. KB-0020 closed + KB-0004 closed (universal player index 261). Session 7 shutdown produced KB v8.)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -139,9 +139,29 @@ Static types (Reference, Decision, Limitation) omit Tier.
   1. The 3 daily-email recipients are demonstrably relying on the app for daily reading (signal: questions, requests for features, mentions of specific data points), OR
   2. Owner decides to develop Frontier-Model-LLM integration as a deliberate skill exercise (independent of pickleball value).
 
-  Until one of those conditions surfaces, no Phase 4 work. Schema-readiness is the only Phase-0 commitment and is in place today.
-- **Status:** Open (deferred — Phase 4; awaiting one of two trigger conditions)
-- **Cross-ref:** CLAUDE.md § AI-Retrievable Schema Constraints · docs/phase-0-research.md § 0 · data/snapshots/latest.json
+  **Session 8 ATP + closure (2026-04-26 → 2026-04-27):** Trigger #2 fired — owner ATP'd the build as a reusable-pattern exercise for future projects. KB-0042 captures the full ATP cost dialog. Built and shipped:
+
+  **Architecture as built:**
+  - **Backend:** Anthropic Messages API · model `claude-haiku-4-5-20251001` · prompt caching (5-min ephemeral TTL) · system prompt grounds the model in the curated bundle and forbids fabrication
+  - **Proxy:** Cloudflare Worker `pickleball-daily-api` at `https://pickleball-daily-api.jjmgladden.workers.dev` (revives KB-0012 scaffolding for new use case; submit route preserved alongside)
+  - **Auth + cost guards:** Anthropic spend cap $20/mo (auto-reload OFF) · email alerts at $1/$5/$15 · Worker per-IP rate limit 10/hr + 50/day · `AI_DISABLED` env-var kill switch · CORS locked to `jjmgladden.github.io` + `localhost:1965`
+  - **Context bundle:** `ingestion/build-ai-context.js` produces `data/snapshots/ai-context.json` (~3.9K tokens) with governance + glossary + PPA top-50 + DUPR top-20 + 20 MLP teams + upcoming tournaments + 60-player directory + 2026 rule changes + recent highlights + top news titles + history pointers; cron rebuilds daily after fetch-daily.js
+  - **UI:** `app/js/tabs/ask.js` — chat tab (10th nav slot, freed by KB-0043 Stats consolidation) · in-memory conversation history · Enter to send · Shift+Enter for newline · 5-500 char validation · per-message usage telemetry shown to user (model · cache hit · context date)
+  - **Browser-side gate:** `data/master/ai-config.json` (workerBaseUrl + aiEnabled flag) — the Ask tab shows a friendly dormant-state banner when either is missing/false
+
+  **Verification:** First real Anthropic answer returned successfully on 2026-04-27 (~$0.008 charged for first call, cost-per-call drops to ~$0.003 with cache hit). Smoke test question "what is pickleball butt" answered correctly by citing the Pickleball Union RSS news item title (today's snapshot includes that article).
+
+  **Diagnostic battle scars (recorded for future projects):**
+  - KB-0044: original API key value accidentally exposed in chat transcript via mistyped `wrangler secret put` argument; rotated immediately, full procedure in credentials.md maintenance log
+  - Wrangler 3.x has libuv assertion crash on Node 24; bumped worker/package.json to wrangler ^4
+  - First few questions returned Anthropic 400 with empty body; root cause was Windows cmd terminal mangling the `wrangler secret put` masked-input paste (only 1 char captured); fix was Cloudflare dashboard paste (browser inputs handle paste correctly)
+  - Wrangler OAuth tokens self-refresh via unprompted Cloudflare consent popup; never click Cancel on these (lesson recorded in credentials.md)
+
+  **Future enhancements deferred to follow-up KBs:**
+  - News-item URL + ~200-char excerpt in context bundle (so AI can summarize articles + hand out clickable links) — pending separate small commit immediately after this closure
+  - Self-hosted Ollama backend → see KB-0041 for the future-design concept
+- **Status:** Closed (Session 8 — built, deployed, verified live)
+- **Cross-ref:** KB-0012 (Worker — revived for AI proxy use case) · KB-0026 (Worker dormant — superseded) · KB-0041 (future Ollama backend) · KB-0042 (ATP cost dialog) · KB-0043 (Stats consolidation freed nav slot) · KB-0044 (Anthropic key rotation) · CLAUDE.md § AI-Retrievable Schema Constraints · docs/credentials.md § ANTHROPIC_API_KEY · worker/src/index.js · ingestion/build-ai-context.js · app/js/tabs/ask.js · data/master/ai-config.json · data/snapshots/ai-context.json
 
 ### KB-0009 | Ratings vs Rankings UI distinction
 - **Type:** Decision
@@ -364,17 +384,22 @@ Static types (Reference, Decision, Limitation) omit Tier.
 - **Date:** 2026-04-22 (Session 3)
 - **Category:** UI / Styling
 - **Tags:** chip-rank, ppaRankFlag, cosmetic
-- **Finding:** `app/styles/main.css` sets `.chip-rank::before { content: '#'; }`. That reads well for numeric ranks (`#1`, `#2`) but looks awkward for descriptive `ppaRankFlag` values in `players-seed.json` — e.g. "top-5 across disciplines" renders as "#top-5 across disciplines". Visible in Players tab (existing) and in the Session 3 favorites strip on Daily tab.
+- **Finding:** `app/styles/main.css` set `.chip-rank::before { content: '#'; }`. That read well for numeric ranks (`#1`, `#2`) but looked awkward for descriptive `ppaRankFlag` values in `players-seed.json` — e.g. "top-5 across disciplines" rendered as "#top-5 across disciplines". Visible in Players tab and in the Session 3 favorites strip on Daily tab.
 
-  **Options for a future session:**
-  1. Gate the `::before` on numeric content: add a sibling class (`.chip-rank--numeric`) and apply only there; use `.chip-rank--tag` without prefix for descriptive strings.
-  2. Drop `::before` and explicitly render `#` in the component when the value is numeric.
+  **Session 8 fix (2026-04-25):** went with Option 2 from the original options list (drop `::before`, prepend `#` conditionally in JS).
+  - `app/styles/main.css` — removed the `.chip-rank::before` rule entirely
+  - `app/js/components/ranking-card.js` — `rankChipHtml(position)` now prepends `#` only when the value matches `/^\d+$/` (numeric). Defensive — `rankChipHtml` is called from `rankings.js` with PPA-scraped numeric ranks, but the regex check guards against future misuse
+  - `app/js/tabs/players.js` + `app/js/tabs/daily.js` — unchanged; their inline `<span class="chip-rank">` with `ppaRankFlag` strings now render cleanly without the unwanted `#`
 
-  Keeps KB-0009 (Ratings vs Rankings separation) intact either way.
+  **Verification (live preview):**
+  - Rankings tab: `#1`, `#1`, `#3`, `#4`, `#5` — `#` prefix preserved on numeric ranks (KB-0037 1224 tie still renders correctly)
+  - Players tab: "top-5 across disciplines", "top-3 men's doubles", etc. — descriptive flags render without `#` prefix
+  - Computed `::before` content is `"none"` — CSS rule successfully removed
+  - SW cache + APP_VERSION paired bump v7 → v8
 
-  Scope: cosmetic; does not affect data correctness. Defer until a user-driven prompt or until Players tab gets a redesign.
-- **Status:** Open (T3 — cosmetic)
-- **Cross-ref:** app/styles/main.css · app/js/components/ranking-card.js · app/js/tabs/players.js · app/js/tabs/daily.js (favorites strip)
+  Preserves KB-0009 (Ratings vs Rankings separation) — `.chip-rank` remains the ordinal-rank visual treatment.
+- **Status:** Closed (Session 8 — Option 2 implemented)
+- **Cross-ref:** KB-0009 · KB-0037 · app/styles/main.css · app/js/components/ranking-card.js · app/js/tabs/players.js · app/js/tabs/daily.js (favorites strip) · app/sw.js · app/js/app.js
 
 ### KB-0021 | Phase 1.5 Round 2 bundle — scoped at Session 3 shutdown, queued for Session 4
 - **Type:** Decision
@@ -797,4 +822,432 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
 ---
 
-**End of KB. Entry count: 38. Next ID: KB-0039.**
+### KB-0039 | Help-Local localhost:1965 server vs deployed GitHub Pages site — how they differ and what replaces serve.js when deployed
+- **Type:** Reference
+- **Date:** 2026-04-25 (Session 8)
+- **Category:** Help / User-Facing / Deployment
+- **Tags:** help, local-dev, github-pages, serve-js, service-worker, divergence, cdn
+- **Finding:** Captured for the future Help feature. Two ways to view the app, what differs, and why GitHub Pages needs no equivalent of `scripts/serve.js`.
+
+  **Two entry points:**
+
+  | | `node scripts/serve.js` (localhost:1965) | Link in daily email |
+  |---|---|---|
+  | What it serves | Local working tree on disk | Deployed GitHub Pages site |
+  | URL | `http://localhost:1965/` | `https://jjmgladden.github.io/pickleball-daily/` |
+  | Code shown | Whatever's in the repo right now — including uncommitted edits and unpushed commits | Only what's been pushed to `main` and rebuilt by Pages |
+  | Data shown | Local `data/snapshots/latest.json` | Whatever the last GitHub Actions cron committed (07:00 UTC daily) |
+  | Who can see it | Only the owner, only while the server is running | Anyone on the internet |
+  | Service-worker cache | Fresh per-machine | May serve a stale cached shell until SW `CACHE` constant is bumped |
+  | Reachable from phone | No (unless port is exposed) | Yes |
+
+  **They routinely diverge — that's normal during active development:**
+  - Edit a file → local reflects the change immediately; Pages doesn't see it until `git push`
+  - Commit but don't push → local is ahead of Pages
+  - Push → Pages still serves the old version for ~30s–2min while the deploy action runs
+  - After deploy, the user's browser may still show the **old** version until the SW shell-cache rolls (this is why CLAUDE.md mandates the SW cache + APP_VERSION bump on any shell change)
+  - Local can also be **behind** Pages if the daily.yml bot pushed a snapshot the owner hasn't pulled
+
+  **What replaces `scripts/serve.js` on GitHub Pages:** nothing — Pages is just a CDN serving the static files straight from the repo. There is no Node process, no server logic.
+
+  | Piece | Local | GitHub Pages |
+  |---|---|---|
+  | HTTP server | `scripts/serve.js` (Node, port 1965) | GitHub's edge CDN (Fastly) |
+  | Files served | Working tree on disk | The `main` branch as it exists at deploy time |
+  | Entry point | `http://localhost:1965/` → root `index.html` redirect → `app/index.html` | `https://jjmgladden.github.io/pickleball-daily/` → same redirect via the same root `index.html` |
+  | Trigger to update | Save the file, refresh | `git push` to `main` → Pages build action → CDN updated |
+  | `.nojekyll` | Ignored | Tells Pages "don't run Jekyll, serve files literally" |
+  | Data fetches | `../data/snapshots/latest.json` from disk | Same relative URL, served from CDN |
+
+  `serve.js` exists only because **browsers refuse to load ES modules from `file://`** for security reasons — some HTTP server is required. Locally that's Node; on Pages, GitHub runs the CDN. The actual app code (`app/index.html`, `app/js/*`, etc.) is identical in both places — that's deliberate, and why all asset paths in `app/index.html` are relative.
+
+  **Quick sanity check** for "are they in sync?":
+  - Local header pill vs Pages header pill should match (currently both should read **V7**)
+  - If local is ahead: `git status` shows staged/modified files, or `git log origin/main..HEAD` shows unpushed commits
+  - If Pages is ahead: `git status` says "behind", and `git pull` fixes it
+- **Status:** Closed (reference content; ready to feed into the planned Help feature)
+- **Cross-ref:** scripts/serve.js · app/index.html · app/sw.js · CLAUDE.md § URL Structure · CLAUDE.md § Service Worker Cache — MUST bump on shell changes · KB-0019 (port 1965 leftover-process conflict)
+
+---
+
+### KB-0040 | Learn tab restructure + new Courts standalone tab — finalized scope (plan only, no ATP)
+- **Type:** Action
+- **Tier:** T2
+- **Dependency:** Owner (final ATP per phase) + Claude (implementation)
+- **Date:** 2026-04-25 (Session 8)
+- **Category:** Build / Phase 2 / Learn / Courts
+- **Tags:** phase-2, learn, courts, equipment, glossary, etiquette, dupr-explainer, tournament-prep, where-to-play, scope, plan
+- **Finding:** Session 8 dialog finalized scope for the next major Phase 2 push. Plan is documented; **no ATP yet** — owner will ATP per phase.
+
+  **Final Learn tab shape (sections, in display order):**
+  1. **Rules & Authority** — re-shelved from existing "Governance" + "2026 Rule Changes" under one explicit section header. No content change; just structural re-grouping with an anchor nav.
+  2. **Equipment** — NEW. Informational only — USAP-approved paddle list. **Explicitly NO commerce, no affiliate links, no "where to buy" links.** Owner directive: "informational only."
+  3. **Glossary / Shot Terminology** — NEW. Hand-curated definitions of pickleball-specific terms (Erne, ATP, Bert, dink, third shot drop, kitchen, stacking, poach, lob, drive, drop volley, etc.).
+  4. **Court Etiquette** — NEW. Hand-curated guide: open-play stacking, kitchen-line conventions, calling in/out, paddle-up rotation, paddle stacking on courts.
+  5. **DUPR Explainer** — NEW. Hand-written walkthrough: what DUPR is, how it's calculated, why it differs from PPA rankings (preserves KB-0009 separation), how to find your own rating, what 3.0 vs 4.0 vs 5.0 means in practice.
+  6. **Tournament Prep Guide** — NEW. Hand-written: how to register on PickleballTournaments.com, what sanctioned events are, what to bring, what to expect at check-in, format conventions (round-robin vs single-elim).
+  7. **History** — existing timeline (1965 → 2026), unchanged.
+
+  **DROPPED from earlier plan:** Tips / How-To section (deferred — owner: "Forget the Tips/How To for now").
+
+  **Where to Play → standalone tab (NOT under Learn):** owner ATP'd splitting court-finder out into its own tab per Session 8 recommendation. Transactional UX (input → fetch → map) is structurally different from knowledge browsing. Tab name TBD; recommend **"Courts"** for navbar parallelism with Players/Teams/Tournaments.
+
+  **Courts tab scope:**
+  - Address input + adjustable radius (default 10 mi?)
+  - Court list (name, address, court count, indoor/outdoor, lighted/unlighted, free/paid where known)
+  - Popout Google Map showing pinned courts within radius
+  - Reference Project Travel (`C:\Users\John & Cindy Gladden\Desktop\AI\Claude\Travel Project\` — path TBD verified) for Maps integration pattern + Google API credential reuse
+  - Cost posture: owner's prior Travel-Project research suggests Google Places usage is well below paid tier unless app goes viral
+
+  **Recommended phasing (4 phases):**
+
+  | Phase | Scope | Estimated effort | Risk |
+  |---|---|---|---|
+  | **L1** | Convert Learn tab to **TOC + accordion** layout modeled on the Travel Project's Glacier Trip Planner Help tab (`C:\Users\John & Cindy Gladden\Desktop\AI\Claude\Travel\Glacier_RV_Trip_Planner.html` lines 116–150 + 851–905 for CSS + markup reference). Specific elements to adopt: (a) TOC card at top titled "JUMP TO SECTION" with numbered ordered-list of sections, (b) each section as `<details>` + `<summary>` accordion, (c) first section open by default (`<details open>`), (d) custom rotating ▶ arrow via CSS `summary::before` transform, (e) `scroll-margin-top: 12px` on each section for clean anchor-jump landings, (f) numbered sections matching TOC numbering, (g) `<h4>` subsections inside section bodies, (h) callout box CSS classes (`.help-callout` + `.info` + `.tip` variants) for important notes. Re-shelve existing Rules + History under this new structure. CSS classes named with a generic `.tab-toc` / `.tab-section` / `.tab-callout` prefix (NOT `.help-` prefix) so the same pattern is reusable for the future Help feature anticipated in KB-0039. SW cache + APP_VERSION bump | ~45–60 min (was ~30 min before TOC+accordion design refinement) | Low — pattern is proven in Travel Project; CSS variables already exist in `app/styles/main.css` |
+  | **L2** | Add Glossary + Court Etiquette + DUPR Explainer + Tournament Prep — all hand-curated static content. Each becomes a new `<details>` accordion section under the L1 TOC. New JSON file(s) under `data/master/` for structured content (glossary terms especially); new render functions in `learn.js`; new TOC entries; CSS reused from L1; SW bump | ~3–4 hr (content curation dominates the build time) | Low — no external dependencies; just content writing + plumbing |
+  | **L3** | Add Equipment — USAP-approved paddle list. Investigate first whether USAP exposes a structured feed (JSON/CSV) or paddle list is PDF-only (likely PDF). Build either: (a) hand-curated `data/master/paddles.json` snapshot, OR (b) PDF-extraction script in `ingestion/` if list is large. SW bump | ~1.5–2 hr | Low-medium — depends on USAP source format |
+  | **L4** | New Courts tab. Largest unknown — owner-action gates on data-source decision. Steps: (1) Read Project Travel for Maps pattern + key reuse, (2) Decide data source — **Pickleheads** (largest db, ToS read needed) vs **USAP Places2Play** (T1, smaller coverage) vs **Google Places API** (universal, $$ at scale), (3) Add Maps API key to `.env` + GitHub Secret + `docs/credentials.md`, (4) Build `app/js/tabs/courts.js` with input + radius + list + map embed, (5) Add 11th nav tab + RENDERER + index.html nav button, (6) SW bump | ~6–10 hr | **Highest** — new external API, new credential, ToS reading, mobile-responsive map UX |
+
+  **Ordering rationale:** L1 → L2 → L3 → L4 builds confidence and ships visible value early (low-risk structural change first; static content second; structured-list third; biggest unknown last). Each phase is independently shippable.
+
+  **Owner-action items required before each phase:**
+  - L1: ATP only
+  - L2: ATP + decide whether to include user-visible "last reviewed" timestamps on hand-curated sections (recommend yes — sets expectation that content is reviewed periodically, not stale-and-forgotten)
+  - L3: ATP + decide whether to include only paddles, or expand to balls + nets (USAP doesn't approve those at the same level)
+  - L4: ATP + court-data-source decision + Google Maps API key approach (reuse Travel Project key vs new key) + tab-name decision ("Courts" vs "Where to Play" vs "Find Courts") + decision on whether to grandfather the 11-tab navbar or trigger a separate consolidation pass first (e.g., merge Rankings + Ratings into a single "Stats" tab with subviews)
+
+  **Cumulative effort across all 4 phases:** ~10.5–16.5 hours of build time, spread across 2–4 sessions. L1 + L2 likely fits in one focused session.
+
+  **NOT IN SCOPE:**
+  - Commerce / affiliate links (explicit owner directive)
+  - Tips / How-To section (deferred)
+  - Equipment beyond USAP-approved-paddle reference (no editorial reviews, no comparisons, no rankings)
+  - Crowdsourced court submissions (would re-open KB-0012 Worker dependency — defer)
+- **Status:** Open (T2 — plan finalized, awaiting per-phase ATP)
+- **Cross-ref:** KB-0009 (Ratings vs Rankings) · KB-0012 (Worker — out of scope) · KB-0036 (current Learn tab) · KB-0039 (Help feature — same TOC+accordion CSS classes will be reused) · app/js/tabs/learn.js · data/master/rules-changes-2026.json · data/master/history-seed.json · Project Travel `Glacier_RV_Trip_Planner.html` (lines 116–150 CSS + 851–905 markup — TOC+accordion reference for L1) · Project Travel (Maps integration reference for L4)
+
+---
+
+### KB-0041 | Future design — self-hosted Ollama as KB-0008 LLM backend (Missouri home server, GitHub Pages browser, Cloudflare Worker proxy)
+- **Type:** Concept
+- **Tier:** T3
+- **Dependency:** Owner (hardware procurement + home networking) + Claude (design doc + integration)
+- **Date:** 2026-04-25 (Session 8)
+- **Category:** AI / LLM / Self-Hosting / Architecture
+- **Tags:** ollama, self-hosted, llm, kb-0008, ai-qa, dynamic-dns, cloudflare-tunnel, worker, llama, future-design
+- **Finding:** Owner long-term goal: replace the Claude API backend (initial Phase 4 launch per KB-0008) with a self-hosted Ollama server at the owner's home in Missouri. Browser-side stays on GitHub Pages; Cloudflare Worker continues to proxy; backend swaps from Anthropic API to home Ollama instance.
+
+  **Conceptual flow (owner's mental model is correct):**
+  ```
+  Brother in VA opens Pickleball PWA in browser
+    ↓
+  GitHub Pages serves static HTML/JS (unchanged)
+    ↓
+  Browser fires POST { question } to Cloudflare Worker
+    ↓
+  Worker forwards to home Ollama server in Missouri (auth + rate limit)
+    ↓
+  Ollama runs inference on local hardware
+    ↓
+  Response flows back: Ollama → Worker → Browser
+  ```
+
+  **Detailed design doc deferred to a future session — high-level scope of what that doc must cover:**
+
+  **1. Hardware sizing.**
+  | Model | RAM/VRAM needed | Notes |
+  |---|---|---|
+  | Llama 3.x 8B Q4 | ~6 GB | Runs on CPU comfortably; slow but workable (~10–20 tok/s) |
+  | Llama 3.x 8B Q8 | ~10 GB | Better quality, still CPU-viable |
+  | Llama 3.x 13B Q4 | ~10 GB | Sweet spot for quality at home |
+  | Llama 3.x 70B Q4 | ~40 GB | Requires serious GPU (3090/4090 24GB + offload) or M-series Mac with unified memory |
+  | Mistral / Mixtral | varies | Mixtral 8x7B Q4 ~28 GB |
+
+  Owner's existing hardware capacity needs to be assessed. A used M1/M2 Mac mini 16GB (~$400 used) or a Mini PC + 32GB RAM (~$500) is the entry-level realistic option.
+
+  **2. Networking — exposing home Ollama to the internet safely.**
+  - **Option A: Cloudflare Tunnel (cloudflared)** — RECOMMENDED. Free, no port forwarding, no static IP needed, no certificate management. Owner already has Cloudflare account (KB-0034). Tunnel runs as service on the Ollama box; Worker calls a `*.cfargotunnel.com` URL or a custom subdomain like `ollama.glad-fam.com`.
+  - **Option B: Dynamic DNS + port forward + Let's Encrypt** — traditional, more brittle, exposes home IP, requires router config, requires cert renewal.
+  - **Option C: Tailscale** — works for owner-only access; would require Worker to be on Tailscale too, which Workers don't support natively.
+
+  **3. Worker auth.** Without auth, anyone who learns the tunnel URL can hit the home server (cost: home electricity + bandwidth + potential hardware abuse). Options:
+  - Bearer token shared between Worker and tunnel-side proxy (simplest)
+  - Cloudflare Access policy in front of the tunnel (requires Cloudflare Zero Trust setup; free tier covers 50 users)
+
+  **4. Rate limiting.** Even with auth, want per-IP limits at the Worker (10/hr/IP) and per-token-bucket limits at the home box to prevent runaway loops or abusive patterns from burning home compute.
+
+  **5. Latency posture.** VA → Cloudflare edge (~10ms) → Missouri home (~30ms via Tunnel) → Ollama inference (1–10s depending on model + tokens) → reverse path. Total user-visible: ~1.5–11s per query. Acceptable for ask-and-wait UX; not acceptable for streaming/conversational where Anthropic API gives sub-second time-to-first-token.
+
+  **6. Uptime.** Home power outages, ISP outages, router reboots, Ollama service crashes. Mitigation:
+  - UPS for the Ollama box (~$80 — the network gear AND the Ollama box need backup power)
+  - systemd / launchd service definition with auto-restart
+  - Worker fallback: if Ollama call fails or times out >5s, fall back to "AI is offline; try again later" copy (do NOT silently fall back to Claude API — defeats the cost-savings purpose; better to fail visibly)
+
+  **7. Quality vs Claude API.** Llama 3.1 8B and 70B are competitive with GPT-3.5 / Haiku for general Q&A but worse at structured-citation following. Will need prompt-engineering iteration. Output quality on the curated-context-bundle approach (KB-0008 §4) should be evaluated against Claude baseline before fully cutting over.
+
+  **8. Migration sequencing.**
+  - Stage A: Ship KB-0008 on Anthropic API (current plan)
+  - Stage B: Stand up Ollama at home; smoke-test with curl to the tunnel
+  - Stage C: Add Worker route variant `/ai-ollama` parallel to `/ai-claude`; A/B compare answer quality on real queries
+  - Stage D: Once Ollama quality acceptable, flip default; keep Claude as backup behind feature flag
+  - Stage E: Eventually retire Claude path if cost savings are real and quality holds
+
+  **9. Cost crossover analysis.** Claude API at expected ~$1/mo for Pickleball-only usage means the hardware doesn't pay back fast. Real win is when this pattern serves OTHER projects (per owner pattern: build reusable infra here for future projects). At ~$15/mo across multiple projects, a $500 mini-PC pays back in ~33 months — long. The non-cost wins are stronger: privacy, no API cost ceiling, can fine-tune on owner-specific data, learning experience.
+
+  **Trigger to build the detailed design doc:**
+  - KB-0008 has been live on Anthropic API for 4+ weeks
+  - Owner has selected hardware (or wants help selecting)
+  - At least one other project would benefit from the same Ollama backend
+
+  Until then this entry stands as the conceptual record — the corner-cases owner should know about before committing hardware spend.
+- **Status:** Open (T3 — future design; concept captured, detailed doc deferred per owner request)
+- **Cross-ref:** KB-0008 (parent — Phase 4 AI Q&A initial Anthropic launch) · KB-0012 (Worker — to be revived for KB-0008) · KB-0034 (glad-fam.com domain on Cloudflare) · docs/concepts-primer.md (Workers, Cloudflare patterns)
+
+---
+
+### KB-0042 | Help-Anthropic API costs, billing posture, build/test budget, full cost audit, and the chat-tab-vs-widget decision (KB-0008 ATP dialog)
+- **Type:** Reference
+- **Date:** 2026-04-25 (Session 8)
+- **Category:** Help / User-Facing / Cost / Billing / API / KB-0008
+- **Tags:** help, anthropic, claude-api, billing, costs, atp, kb-0008, kb-0041, ollama, chat-tab, rate-limit, spend-cap, worker, free-tier
+- **Finding:** Captured for the future Help feature. Five owner questions asked during the KB-0008 ATP gate, with the full reasoning and numbers.
+
+  ## Summary
+
+  | Question | Short answer |
+  |---|---|
+  | Does API usage fall under my Claude Plan? | **No** — separate billing at console.anthropic.com, pay-as-you-go |
+  | What's the per-query cost? | **~$0.003–0.008** with Haiku 4.5 + curated bundle + prompt caching → ~$1/mo at expected use |
+  | Future self-hosted Ollama? | Captured as **KB-0041** future-design Concept; detailed doc deferred |
+  | UX shape — chat tab vs inline widget? | **Chat tab** chosen (eleventh nav tab) — reusable pattern for future projects |
+  | Curated context limits with Ollama? | **Same recommendation** (~20K tokens) but for different reasons (latency + quality vs cost) |
+  | Account/key with no usage = costs? | **$0** — no monthly fee, no key-sitting fee, charges only on actual API calls |
+  | Build/testing cost? | **~$0.15–0.30** total for full build + verification cycle |
+  | Any other costs introduced by ATP? | **No** beyond Anthropic ~$1/mo. All other surfaces free-tier or already-paid |
+
+  ---
+
+  ## Q1: Anthropic API costs + relationship to Claude Plan
+
+  **The Claude.ai subscription (Pro / Max) covers usage in the Claude.ai chat UI and Claude Code CLI. API usage is separate and metered.** Need to add credit or a payment method at console.anthropic.com under Workspace Settings → Billing.
+
+  **Concrete pricing (Haiku 4.5):** $1/Mtok input, $5/Mtok output.
+
+  **Per-query math with prompt caching:**
+  - First query of the day: ~5K input tokens (curated context bundle) + ~500 question + ~500 output = **~$0.008**
+  - Subsequent queries that day: ~5K **cached input** at 10% rate ($0.10/Mtok) + ~500 fresh + ~500 output = **~$0.003 each**
+
+  **Projected steady-state usage:**
+  - 3 readers × 3 queries/day each = ~$0.03/day = **~$1/month**
+  - Heavy usage 50 queries/day = ~$5/month
+
+  **Sonnet 4.6 ($3/Mtok input, $15/Mtok output)** runs ~3× costlier. Recommendation: start on Haiku, escalate to Sonnet only if quality demands it.
+
+  ---
+
+  ## Q2: Future self-hosted Ollama design
+
+  Owner long-term goal: replace the Claude API backend with self-hosted Ollama in Missouri. Browser stays on GitHub Pages; Cloudflare Worker continues to proxy; backend swaps from Anthropic to home Ollama.
+
+  Owner's mental model is correct:
+  ```
+  Brother in VA → Browser → GitHub Pages (static)
+                ↓ POST { question }
+  Cloudflare Worker (auth + rate limit)
+                ↓ proxy
+  Home Ollama in Missouri (Cloudflare Tunnel exposes it)
+                ↓ inference
+  Response back: Ollama → Worker → Browser
+  ```
+
+  **Detailed design doc deferred — captured as separate KB.** See **KB-0041** for full conceptual scope: hardware sizing (8B/13B/70B model RAM requirements), networking options (Cloudflare Tunnel recommended over DDNS+port-forward+LE certs), Worker auth (bearer token or Cloudflare Access), rate limiting, latency posture (~1.5–11s round-trip), uptime concerns (UPS, systemd auto-restart, fail-visible vs silent fallback), quality vs Claude API, migration sequencing (5-stage rollout), and cost crossover analysis (single-project vs multi-project ROI).
+
+  Trigger to build the detailed design doc: KB-0008 has been live for 4+ weeks AND owner has selected hardware AND ≥1 other project would benefit.
+
+  ---
+
+  ## Q3 & Decisions 2–5 outcomes
+
+  **Decision 2 — Where API key lives:** Cloudflare Worker proxy (revives KB-0012 scaffolding for new use case; "deferred before because the other part was deferred — now has a reason to live").
+
+  **Decision 3 — UX shape:** **Chat tab as the eleventh nav tab**, NOT inline ask widget. Owner directive: "build the desired endstate up front" because this project is being used to develop reusable functionality for future projects with higher usage. Risk/complexity assessed as medium not high — chat UI is well-understood (input + scrollable history + send button + loading state). Adds ~1.5 hr vs the inline widget. Worth it for the reusable-pattern goal.
+
+  **Decision 4 — Curated context limits:** ~20K-token bundle with prompt caching for both Claude API and future Ollama backends. Same recommendation, different reasons:
+
+  | Concern | Claude API (cloud) | Self-hosted Ollama (home) |
+  |---|---|---|
+  | Token cost | Direct $ per token | Zero marginal cost |
+  | Inference latency | Sub-second TTFT | Scales with context — 5K on Llama 8B Q4 ≈ 1s; 50K ≈ 10s |
+  | Quality | Holds at large contexts | Degrades past ~8K on 8B-class models ("lost in the middle") |
+  | Hardware load | None (Anthropic's problem) | Owner's home box CPU/GPU |
+
+  Future enhancement (flagged in KB-0041 Stage C): when Ollama is in play, dynamically choose context size based on which model is loaded.
+
+  **Decision 5 — Cost safeguards:** Per-IP rate limit at Worker (10/hr, 50/day) + Anthropic spend cap + env-var kill switch (panic button to disable feature entirely).
+
+  ---
+
+  ## Q4: Account creation costs
+
+  **No charges for just having the account or the API key sitting unused.** Pure pay-as-you-go.
+
+  - Account creation: **$0**
+  - Adding payment method: **$0** (no monthly subscription, no minimum)
+  - Generating an API key: **$0**
+  - Setting spend limit / monthly cap: **$0**
+  - Key sitting unused: **$0**
+  - Charges begin: only when an actual API call is made (any source — code, anyone with the key, any test request)
+
+  **Recommended safeguards at account creation:**
+  1. Spend limit at Workspace Settings → Billing → hard monthly cap. Recommend **$5** (well above expected $1/mo, low enough to stop runaway loops fast).
+  2. Email alerts at 50% and 80% of the cap.
+
+  **Watch for after going live:**
+  - **Free credits expiration** — Anthropic sometimes grants $5 trial credits to new accounts; expire after a few months. If applied first, no charges visible until consumed. Worth knowing for billing-statement clarity.
+  - **Pre-funding minimums** — some payment flows ask for ~$5 initial credit purchase rather than charging only after usage. Easy to misread as a fee — it's prepaid credit you'll consume over time.
+
+  ---
+
+  ## Q5: Build / testing costs
+
+  Honest accounting of API calls needed during build + verification:
+
+  | Test | Purpose | Calls | Tokens | Cost |
+  |---|---|---|---|---|
+  | Smoke test after Worker deploy | Confirm key + Worker proxy work | 1–2 | ~1K each | ~$0.01 |
+  | Curated-bundle build verify | Confirm ~5K bundle gets cached | 1–2 | ~5K each | ~$0.02 |
+  | Cache-hit verify | Confirm subsequent calls hit cache (90% discount) | 2–3 | 5K cached + 500 fresh | ~$0.01 |
+  | Citation-format iteration | Tweak system prompt for clean source citations | 5–15 | ~6K each | ~$0.05–0.15 |
+  | End-to-end UX verify | Real questions through chat tab | 5–10 | ~6K each | ~$0.03–0.06 |
+  | Rate-limit test | Send 11 requests in an hour to verify limit triggers | 11 | ~1K each | ~$0.01 |
+  | **Total estimate** | | **~25–40 calls** | | **~$0.15–0.30** |
+
+  **Worst case ~$0.50 for a full build + verification cycle.** Well within $5 spend cap; nothing relative to ongoing $1/mo expected steady-state.
+
+  **Practical implications:**
+  - Pre-funding minimum (if Anthropic asks for $5 prepaid) covers all build testing AND ~5 months of expected production. Not a recurring spend.
+  - With $5/mo cap, build-day testing uses ~10% of cap. Visible in dashboard.
+  - Claude (assistant) commits to telling owner in real time when about to make a real API call (e.g., "running smoke test — 1 API call coming") so owner can watch dashboard live.
+
+  **Tighter posture available:** Build everything *except* actual API integration in dry-run mode (mock Worker responses, hardcoded sample answers), then batch all real-call testing in a single session at the end where owner watches dashboard live. Same total cost, more controlled.
+
+  ---
+
+  ## Q6: Full cost audit — anything else?
+
+  **Direct $ costs introduced by this ATP:**
+
+  | Source | Cost | Frequency | Notes |
+  |---|---|---|---|
+  | Anthropic API | $0.50 build + ~$1/mo steady | One-time + monthly | Discussed above |
+  | Cloudflare Worker (free tier) | $0 | — | Free = 100k req/day, far above projection. Paid tier ~$5/mo only above that. Not realistic for Pickleball. |
+  | Cloudflare Workers KV / D1 | $0 | — | Only needed for persistent rate limits; in-memory at single edge instance is fine for v1. Skip. |
+  | glad-fam.com domain renewal | ~$10/yr | Annual | Already known, doesn't change. Worker uses subdomain like `ai.glad-fam.com` (free under existing zone) or default `*.workers.dev` (free, less branded). |
+  | GitHub Actions | $0 | — | Free tier covers usage; AI work doesn't add cron load. |
+  | GitHub Pages | $0 | — | Static hosting unchanged. |
+
+  **Direct cost change: ~$1/mo new (Anthropic), $0 everything else. No hidden fees.**
+
+  **Cost risks (potential, mitigated):**
+
+  | Risk | Potential | Likelihood | Mitigation |
+  |---|---|---|---|
+  | API key compromised (leaked to repo, browser, console.log) | Hundreds of $ in hours | Low if built correctly | $5/mo spend cap HARD STOPS; key only in Secrets + Worker env, never browser; `scripts/check-secrets.js` catches `sk-ant-` patterns; pre-push gate enforced |
+  | Bot/scraper hits public AI endpoint | Could blow monthly budget in a day | Medium-low (Worker URL must be discovered) | Per-IP rate limit at Worker; spend cap stops at API layer regardless |
+  | Recursive bug in chat UI (loop re-fires queries on render) | $$$/hr if undetected | Low with proper testing | Build-time testing budget (~$0.50) catches; spend cap stops; env-var kill switch is panic button |
+  | Anthropic raises prices | ~doubles bill if 2× | Low — Anthropic has only cut prices since launch | Ollama path (KB-0041) becomes faster ROI |
+  | Kid/friend/family heavy chat use | Few $ extra/mo | Low | Per-IP rate limit caps it |
+
+  **Things that have $0 cost despite seeming like they might:**
+  - Adding a payment method to Anthropic
+  - Generating multiple API keys
+  - Cloudflare Worker custom domain (existing glad-fam.com zone)
+  - Wrangler CLI tool
+  - Service worker cache bumps (CDN bandwidth in Pages free tier)
+  - Adding the eleventh tab (no new vendor)
+
+  **Time costs (non-$, but real):**
+  - Owner: ~30 min one-time: create Anthropic account + payment + spend cap + key (10 min); approve Worker deploy walkthrough or run `wrangler deploy` (10 min); review chat tab UX once built (10 min). Zero recurring after.
+  - Claude (assistant): ~6–10 hr build, spread across 1–3 sessions per owner preference.
+
+  **Net answer:** Beyond ~$1/mo Anthropic spend (capped at $5/mo via spend limit), no additional costs introduced by this ATP — assuming correct build. Every paid surface is either already paid (glad-fam.com), explicitly free-tier (Cloudflare, GitHub), or guarded (Anthropic spend cap + rate limits + kill switch + secrets scanner). Biggest cost-risk is key compromise or runaway bug — both stopped by spend cap at $5 worst case before owner would notice. That's the safety net.
+- **Status:** Closed (reference content; ready to feed into the planned Help feature)
+- **Cross-ref:** KB-0008 (parent — Phase 4 AI Q&A) · KB-0041 (future Ollama design) · KB-0012 (Worker — to be revived for KB-0008) · KB-0034 (glad-fam.com Cloudflare zone) · KB-0039 (Help-prefix convention origin) · scripts/check-secrets.js (key-leak guard) · docs/credentials.md (where ANTHROPIC_API_KEY entry will go on creation)
+
+---
+
+### KB-0043 | Stats tab shipped — Rankings + Ratings consolidated into one tab (two-column desktop / stacked mobile)
+- **Type:** Action
+- **Tier:** T2
+- **Dependency:** Claude
+- **Date:** 2026-04-25 (Session 8)
+- **Category:** Build / Delivery / UX / Navbar / KB-0009
+- **Tags:** stats, rankings, ratings, consolidation, navbar, two-column, responsive, kb-0009, slot-freeing
+- **Finding:** Rankings tab + Ratings tab consolidated into a single new "Stats" tab in commit `43a396c`. Frees a navbar slot ahead of the KB-0008 Ask tab build (navbar went 10 → 9; will be 10 once Ask lands instead of 11).
+
+  **Motivation:** Owner observed the single-column Rankings and Ratings tabs left wide empty margins on desktop — wasted space. Two-column side-by-side layout uses the horizontal real estate.
+
+  **KB-0009 compliance:** The "Ratings vs Rankings UI distinction" rule was about visual distinction (separate components, distinct labels, different chip styles), NOT about being on separate tabs. Two-column layout with explicit "PPA Tour Ranking (52-Week)" + "DUPR Doubles Ratings — Top N" headers + the existing distinct chip treatments (ordinal `chip-rank` left column vs numeric `chip-rating` right column) satisfies the rule. Side-by-side actually *reinforces* the distinction by making "these are different things" visually obvious.
+
+  **Implementation:**
+  - **New** `app/js/tabs/stats.js` — thin wrapper that calls `renderRankings()` into a left column and `renderRatings()` into a right column. The two underlying modules (`rankings.js` + `ratings.js`) are unchanged — still imported, just no longer top-level RENDERERS entries.
+  - `app/index.html` — replaced 2 nav buttons + 2 tab-panels with single Stats tab + panel (`tab-stats`).
+  - `app/js/app.js` — removed rankings/ratings imports + RENDERERS entries; added stats. APP_VERSION v9 → v10.
+  - `app/styles/main.css` — `.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }`. `.stats-col { min-width: 0; }` (allows grid children to shrink below content width). Responsive breakpoint at `@media (max-width: 768px)` collapses to single column with smaller gap.
+  - `app/sw.js` — added `stats.js` to SHELL_FILES; CACHE v9 → v10 (paired with APP_VERSION).
+
+  **Verification (live preview):**
+  - Desktop (1280×800): Rankings col at left=169 with 200 cards; Ratings col at left=645 with 16 cards; `sideBySide: true`.
+  - Mobile (375×812): Both columns at left=16, width=343; Ratings top is far below Rankings bottom (`stacked: true`).
+  - Navbar: 9 tabs (was 10).
+  - App version pill: v10.
+  - No console errors. ESM clean (25 modules — added stats.js).
+
+  **Net effect:** identical functionality to the old separate tabs, better space usage on desktop, navbar comfort restored ahead of the eventual Ask tab addition.
+- **Status:** Closed (shipped + verified live)
+- **Cross-ref:** KB-0009 (Ratings vs Rankings UI distinction — preserved) · KB-0008 (Ask tab — Stats consolidation freed the slot) · commit 43a396c · app/js/tabs/stats.js · app/styles/main.css (stats-grid + breakpoint) · app/index.html
+
+---
+
+### KB-0044 | YOUTUBE_API_KEY rotation needed — value exposed in Session 8 chat transcript
+- **Type:** Action
+- **Tier:** T2
+- **Dependency:** Owner (rotation in Google Cloud Console + redistribute to all storage locations)
+- **Date:** 2026-04-26 (Session 8)
+- **Category:** Security / Credentials / Rotation
+- **Tags:** youtube-api-key, rotation, kb-0006, credentials, exposure, transcript
+- **Finding:** During Session 8 owner shared a screenshot of the local `.env` file to confirm where to add the new `ANTHROPIC_API_KEY` entry. The screenshot included the full `YOUTUBE_API_KEY` value (`AIzaSy...`) on line 5. The key is now present in this conversation's transcript.
+
+  **Risk posture:**
+  - Transcript is private (only owner + assistant access directly)
+  - Anthropic safety-team review of conversations is policy-permitted
+  - Key remains in chat history until conversation cleared
+  - Key is restricted to YouTube Data API v3 only (not full Google Cloud account access)
+  - Key is behind the YouTube Data API daily quota (10,000 units/day default)
+
+  Net: low practical exposure risk, but inconsistent with the project's credential discipline ("treat each credential like a house key" per `docs/credentials.md` § Quick primer).
+
+  **Owner decision (2026-04-26):** rotate later, not now. Tracked here as T2 action.
+
+  **Rotation procedure (per `docs/credentials.md` § Rotating a credential):**
+  1. Open https://console.cloud.google.com/apis/credentials
+  2. Find the YouTube Data API v3 key
+  3. Click **REGENERATE KEY** — generates new value, immediately invalidates the exposed one
+  4. Copy the new value
+  5. Update in **four locations** (per KB-0006 — key is shared with sibling Baseball Project):
+     - LastPass (canonical home)
+     - Local `.env` line 5 (Pickleball Project)
+     - GitHub Secrets `YOUTUBE_API_KEY` at https://github.com/jjmgladden/pickleball-daily/settings/secrets/actions
+     - Sibling Baseball Project `.env` and its GitHub Secret (per KB-0006 — shared key, separate Secret entries)
+  6. Notify Claude: "YouTube key rotated, please update credentials.md"
+  7. Claude adds maintenance log entry to `docs/credentials.md` per Session-End Protocol Step 2
+
+  **Until rotated:** no action required. The exposed key still works; the rotation is hygiene, not crisis response.
+
+  **Future hygiene reminder:** when sharing screenshots of config files, crop or block out the value lines. Recorded as a session-feedback item — Claude won't ask for `.env` screenshots; owner crops if sharing voluntarily.
+- **Status:** Open (T2 — owner action; rotation deferred to a future session at owner's convenience)
+- **Cross-ref:** KB-0006 (YouTube key shared with sibling Baseball Project) · docs/credentials.md § Rotating a credential · docs/credentials.md § YOUTUBE_API_KEY entry · GitHub Secret `YOUTUBE_API_KEY` · sibling Baseball Project .env
+
+---
+
+**End of KB. Entry count: 44. Next ID: KB-0045.**

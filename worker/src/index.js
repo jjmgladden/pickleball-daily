@@ -166,20 +166,18 @@ async function handleAi(request, env, corsHeaders) {
         'x-api-key': env.ANTHROPIC_API_KEY,
         'anthropic-version': '2023-06-01'
       },
-      body: JSON.stringify({
-        model,
-        max_tokens: 600,
-        system,
-        messages
-      })
+      body: JSON.stringify({ model, max_tokens: 600, system, messages })
     });
   } catch (e) {
     return json({ error: 'Anthropic API call failed: ' + (e.message || e) }, 502, corsHeaders);
   }
 
   if (!apiRes.ok) {
+    // Combined into single string so wrangler tail surfaces the body too.
+    // Server log keeps the detail; client gets a generic message to avoid
+    // leaking Anthropic-side error text into the browser.
     const errText = await apiRes.text();
-    console.error('Anthropic non-200:', apiRes.status, errText.slice(0, 300));
+    console.error('Anthropic ' + apiRes.status + ' body: ' + errText);
     return json({ error: 'Anthropic API ' + apiRes.status + '. Try again later.' }, 502, corsHeaders);
   }
 
