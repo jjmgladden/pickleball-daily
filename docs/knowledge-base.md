@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-04-27 (Session 8 mid-session — **KB v17**, 46 entries through KB-0046; KB-0046 added — third "Help-" prefixed entry: comprehensive end-to-end Phase 4 launch playbook covering Anthropic account setup, Cloudflare Worker deploy, key rotations, Windows cmd paste pitfall, OAuth refresh trap, full debugging methodology, every command with explanations, "things that bit us" anti-checklist, and a 4-hour reverse-playbook for the next AI-pattern project. KB-0045 news-section URL + excerpt enhancement. **KB-0008 CLOSED** — AI Q&A chat tab live at /ask. KB-0044 YouTube key rotation. KB-0043 Stats tab consolidation. KB-0042 KB-0008 ATP cost dialog. KB-0041 Ollama future-design. KB-0040 Learn restructure plan. KB-0039 first Help-prefixed entry. KB-0020 closed + KB-0004 closed. Session 7 shutdown produced KB v8.)
+**Last updated:** 2026-04-28 (Session 9 shutdown — **KB v18**, 47 entries through KB-0047; KB-0047 added — KB-0040 Phase L1 launch entry: TOC + accordion restructure shipped (commit 89eed8e); generic CSS classes (.tab-toc / .tab-section / .tab-callout) reusable for KB-0039 Help feature. KB-0040 sub-status updated: L1 complete, L2-L4 still Open. Session 8 shutdown produced KB v17 (KB-0046 Help-prefix #3, full Phase 4 launch playbook).)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -923,8 +923,13 @@ Static types (Reference, Decision, Limitation) omit Tier.
   - Tips / How-To section (deferred)
   - Equipment beyond USAP-approved-paddle reference (no editorial reviews, no comparisons, no rankings)
   - Crowdsourced court submissions (would re-open KB-0012 Worker dependency — defer)
-- **Status:** Open (T2 — plan finalized, awaiting per-phase ATP)
-- **Cross-ref:** KB-0009 (Ratings vs Rankings) · KB-0012 (Worker — out of scope) · KB-0036 (current Learn tab) · KB-0039 (Help feature — same TOC+accordion CSS classes will be reused) · app/js/tabs/learn.js · data/master/rules-changes-2026.json · data/master/history-seed.json · Project Travel `Glacier_RV_Trip_Planner.html` (lines 116–150 CSS + 851–905 markup — TOC+accordion reference for L1) · Project Travel (Maps integration reference for L4)
+- **Sub-status (Session 9, 2026-04-28):**
+  - **L1 — DONE** (commit 89eed8e on main, live at v13). TOC + accordion structure shipped. Generic CSS classes (`.tab-toc` / `.tab-section` / `.tab-callout`) reusable for KB-0039 Help feature. See KB-0047 for launch details.
+  - **L2 — Open** (Glossary + Court Etiquette + DUPR Explainer + Tournament Prep, ~3–4 hr, content writing dominates)
+  - **L3 — Open** (Equipment, ~1.5–2 hr, USAP-approved paddle list)
+  - **L4 — Open** (Courts standalone tab, ~6–10 hr, new Maps API + credential)
+- **Status:** Open (T2 — L1 done; L2/L3/L4 awaiting per-phase ATP)
+- **Cross-ref:** KB-0009 (Ratings vs Rankings) · KB-0012 (Worker — out of scope) · KB-0036 (current Learn tab) · KB-0039 (Help feature — same TOC+accordion CSS classes will be reused) · KB-0047 (L1 launch) · app/js/tabs/learn.js · app/styles/main.css · data/master/rules-changes-2026.json · data/master/history-seed.json · Project Travel `Glacier_RV_Trip_Planner.html` (lines 116–150 CSS + 851–905 markup — TOC+accordion reference for L1) · Project Travel (Maps integration reference for L4)
 
 ---
 
@@ -1663,4 +1668,40 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
 ---
 
-**End of KB. Entry count: 46. Next ID: KB-0047.**
+### KB-0047 | KB-0040 Phase L1 launched — Learn tab TOC + accordion restructure
+- **Type:** Action
+- **Date:** 2026-04-28 (Session 9)
+- **Category:** Build / Phase 2 / Learn / UI / KB-0040 sub-task
+- **Tags:** kb-0040, learn, toc, accordion, details-summary, ui, phase-l1, generic-css, kb-0039-prep
+- **Finding:** Phase L1 of the KB-0040 Learn-tab restructure plan shipped on commit `89eed8e` to `main`, live at v13. Three numbered sections under a TOC jump-nav, each as a `<details>` accordion. Section 1 (Rules & Authority) re-shelves the existing Governance + 2026 Rule Changes blocks; Section 2 (History) wraps the existing milestone timeline; Section 3 (More coming) teases the L2+ content plan. First section is `<details open>` by default. Custom rotating ▶ marker via CSS `summary::before` transform; `scroll-margin-top: 12px` on each section for clean anchor-jump landings.
+
+  **CSS classes are deliberately generic** (`.tab-toc`, `.tab-section`, `.tab-section-body`, `.tab-callout` + `.info` / `.tip` variants, `.tab-callout-label`, `.tab-toc-title`) rather than `.learn-`-prefixed. This is per the KB-0040 design rationale — the same pattern is reusable for the future Help feature anticipated in KB-0039 (Help-prefix #1) without a CSS rename pass.
+
+  **Files touched (4):**
+  - `app/js/tabs/learn.js` — rewritten; `renderLearn` now builds a sections array, generates TOC + accordion HTML; per-section body builders for rules+governance / history / "more coming"
+  - `app/styles/main.css` — appended ~104 lines of new classes
+  - `app/sw.js` — `CACHE` v12 → v13
+  - `app/js/app.js` — `APP_VERSION` v12 → v13
+
+  **Verification (DOM-level via preview eval, screenshot tool was hanging but page itself was fine):**
+  - APP_VERSION pill = v13 ✓
+  - 3 sections rendered with correct numbered titles ✓
+  - 10 rule cards + governance dl + USAP rulebook header in Section 1 ✓
+  - 22 history milestones in Section 2 ✓
+  - 3 callouts (1 info in Sec 1, 1 standard in Sec 2, 1 tip in Sec 3) ✓
+  - TOC jump-link tested (`hash=#learn-history`, `windowScrollY=4698`) ✓
+  - Section 1 `<details open>` by default ✓
+  - Accordion toggle cycle works ✓
+  - `scroll-margin-top: 12px` applied ✓
+  - Mobile (375px viewport) → content fits at 343px wide, summary 16.8px, no horizontal overflow ✓
+  - Zero console errors ✓
+  - Verification gates passed: secrets ✓, ESM 26/26 ✓
+  - Race-with-rebase recovery against this morning's daily snapshot commit (`e2f19ea`) was clean
+
+  **What L1 deliberately did NOT do:** any new content. L1 is structural-only. New hand-curated content (Glossary, Court Etiquette, DUPR Explainer, Tournament Prep, Equipment) lands in L2/L3.
+- **Status:** Closed (shipped + verified)
+- **Cross-ref:** KB-0040 (parent plan — L2/L3/L4 still Open) · KB-0039 (Help feature prep — same CSS pattern) · KB-0036 (predecessor Learn tab) · app/js/tabs/learn.js · app/styles/main.css · Project Travel `Glacier_RV_Trip_Planner.html` (TOC+accordion design source)
+
+---
+
+**End of KB. Entry count: 47. Next ID: KB-0048.**
