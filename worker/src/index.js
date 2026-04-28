@@ -47,25 +47,28 @@ export default {
     if (request.method === 'OPTIONS') {
       return new Response(null, { status: 204, headers: corsHeaders });
     }
-    if (!originAllowed) {
-      return json({ error: 'Origin not allowed' }, 403, corsHeaders);
-    }
 
     const url = new URL(request.url);
     const path = url.pathname.replace(/\/+$/, '');
 
-    if (path === '/submit') return handleSubmit(request, env, corsHeaders);
-    if (path === '/ai')     return handleAi(request, env, corsHeaders);
-
-    // Health/info endpoint for sanity checks
+    // Health endpoint — open to anyone (info-only, no PII, no API spend).
+    // Lets owner sanity-check the deploy from a browser address bar or curl.
     if (request.method === 'GET' && (path === '' || path === '/' || path === '/health')) {
       return json({
         ok: true,
         worker: env.WORKER_NAME || 'pickleball-daily-api',
         routes: ['POST /submit', 'POST /ai'],
         aiEnabled: env.AI_DISABLED !== 'true'
-      }, 200, corsHeaders);
+      }, 200, { 'Access-Control-Allow-Origin': '*' });
     }
+
+    // Real routes require an allowed Origin (CORS protection for cost + abuse).
+    if (!originAllowed) {
+      return json({ error: 'Origin not allowed' }, 403, corsHeaders);
+    }
+
+    if (path === '/submit') return handleSubmit(request, env, corsHeaders);
+    if (path === '/ai')     return handleAi(request, env, corsHeaders);
 
     return json({ error: 'Not found' }, 404, corsHeaders);
   }
