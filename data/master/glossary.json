@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "version": "v1",
+  "displayName": "Pickleball Glossary",
+  "summary": "Common pickleball terminology — shots, court geography, scoring, strategy, and open-play conventions.",
+  "lastReviewed": "2026-05-01",
+  "categories": [
+    { "id": "court", "label": "Court & Lines" },
+    { "id": "serve", "label": "Serve & Return" },
+    { "id": "shots", "label": "Shots — Foundational" },
+    { "id": "shots-advanced", "label": "Shots — Advanced" },
+    { "id": "strategy", "label": "Strategy & Movement" },
+    { "id": "scoring", "label": "Scoring & Format" },
+    { "id": "open-play", "label": "Open Play" }
+  ],
+  "terms": [
+    {
+      "term": "Kitchen (Non-Volley Zone, NVZ)",
+      "category": "court",
+      "definition": "The 7-foot zone on each side of the net. You may not volley (hit the ball out of the air) while standing in it — or while any part of your body or paddle is touching its line. You may stand in the kitchen at any other time."
+    },
+    {
+      "term": "Baseline",
+      "category": "court",
+      "definition": "The back line of the court. The serve must be hit from behind it."
+    },
+    {
+      "term": "Sideline",
+      "category": "court",
+      "definition": "The outer side line of the court. In doubles the full width is in play; in singles the same lines apply (no narrowed singles court like tennis)."
+    },
+    {
+      "term": "Transition zone (\"the no-man's land\")",
+      "category": "court",
+      "definition": "The mid-court area between the kitchen line and the baseline. The hardest place to play from — too far from the net to volley well, too close to react comfortably to drives. Move through it, don't camp in it."
+    },
+    {
+      "term": "Drop serve",
+      "category": "serve",
+      "definition": "A legal serve where the ball is dropped from any height (no toss/release upward) and struck after one bounce. Permitted as an alternative to the traditional underhand serve since 2021."
+    },
+    {
+      "term": "Volley serve (traditional serve)",
+      "category": "serve",
+      "definition": "Underhand serve where the ball is struck out of the air. Contact must be below the waist, paddle head below the wrist, and the motion upward."
+    },
+    {
+      "term": "Let",
+      "category": "serve",
+      "definition": "A serve that touches the net and lands in the correct service court. Since 2021, lets are played (no replay) — the ball stays live."
+    },
+    {
+      "term": "Two-bounce rule",
+      "category": "serve",
+      "definition": "After the serve, the receiving team must let it bounce, and the serving team must let the return bounce, before either team may volley. After those two bounces, anyone may volley. Prevents serve-and-volley dominance."
+    },
+    {
+      "term": "Dink",
+      "category": "shots",
+      "definition": "A soft shot hit from near the kitchen line that arcs over the net and lands in the opponent's kitchen. Used to neutralize the point and force opponents to hit upward."
+    },
+    {
+      "term": "Drive",
+      "category": "shots",
+      "definition": "A hard, low, flat groundstroke — typically off the third shot or a return. Trades pace for less margin; opens up the next-ball reset or attack."
+    },
+    {
+      "term": "Lob",
+      "category": "shots",
+      "definition": "A high-arcing shot designed to go over opponents stationed at the kitchen line. Effective when timed; punished severely if it sits short."
+    },
+    {
+      "term": "Drop volley",
+      "category": "shots",
+      "definition": "A volley taken with soft hands that drops just over the net. A reset tool when an opponent's hard shot reaches you above the net."
+    },
+    {
+      "term": "Third shot drop",
+      "category": "shots",
+      "definition": "A soft shot played as the serving team's third shot of the rally — it arcs into the opponents' kitchen so the serving team can advance to the kitchen line. The single most important shot in doubles."
+    },
+    {
+      "term": "Third shot drive",
+      "category": "shots",
+      "definition": "A hard third shot, hit when a drop is unsafe (e.g., too tight a return). Earns time to advance but rarely wins outright at the pro level."
+    },
+    {
+      "term": "Reset",
+      "category": "shots",
+      "definition": "Any soft shot — usually from the transition zone — designed to land in the opponent's kitchen and slow the rally back down. The defining defensive skill in modern pickleball."
+    },
+    {
+      "term": "Roll / Roll volley",
+      "category": "shots",
+      "definition": "A topspin shot hit with an upward brushing motion. A roll volley is hit out of the air with topspin to dip the ball downward — counters the dink and forces an upward reply."
+    },
+    {
+      "term": "Speed-up",
+      "category": "shots",
+      "definition": "Suddenly attacking from a soft dink rally. Usually struck from a high contact point and aimed at the opponent's body or shoulder."
+    },
+    {
+      "term": "Erne",
+      "category": "shots-advanced",
+      "definition": "A volley taken next to the net post, where the player has either jumped over the corner of the kitchen or stepped around it. Legal because the player is outside the kitchen — feet land beyond the sideline."
+    },
+    {
+      "term": "ATP (Around-the-Post)",
+      "category": "shots-advanced",
+      "definition": "A shot that travels around the outside of the net post — passing below the height of the net is legal. Set up by an angled dink that pulls an opponent wide."
+    },
+    {
+      "term": "Bert",
+      "category": "shots-advanced",
+      "definition": "An Erne hit by reaching across in front of your partner — the Bert poacher takes a ball that would have been their partner's. Aggressive and risky; relies on signaling."
+    },
+    {
+      "term": "Scorpion",
+      "category": "shots-advanced",
+      "definition": "A high-paddle, elbow-up forehand counter against a body shot — paddle held in a scorpion-tail pose at face height to block-attack."
+    },
+    {
+      "term": "Chicken wing",
+      "category": "shots-advanced",
+      "definition": "An awkward backhand defensive volley taken near the dominant shoulder, paddle face open, elbow up. Last-resort block against a body attack."
+    },
+    {
+      "term": "Stacking",
+      "category": "strategy",
+      "definition": "A doubles formation strategy where partners deliberately switch sides so each plays their preferred forehand-middle position. Triggered before each point — both partners must end up in the legal serving / receiving order."
+    },
+    {
+      "term": "Poach",
+      "category": "strategy",
+      "definition": "Crossing the centerline to take a shot that would have been your partner's. Effective on dink rallies and in attacking points; requires partner trust and signaling."
+    },
+    {
+      "term": "Shake-and-bake",
+      "category": "strategy",
+      "definition": "A two-shot pattern: the partner drives a third (the \"shake\"), the other partner crashes the kitchen line and puts away the resulting weak return (the \"bake\")."
+    },
+    {
+      "term": "Switch",
+      "category": "strategy",
+      "definition": "Partners cross sides mid-point — usually called by the player who just hit a lob, an ATP, or chased a wide ball. Communicated with the word \"switch\" or \"you\"/\"me\"."
+    },
+    {
+      "term": "Signaling",
+      "category": "strategy",
+      "definition": "Hand signals behind a partner's back (open hand / closed fist) before a serve or return to indicate stacking intent or planned poach. Standard in serious doubles."
+    },
+    {
+      "term": "Rally scoring",
+      "category": "scoring",
+      "definition": "Scoring system where every rally awards a point regardless of who served. MLP uses rally scoring to a fixed number; PPA Tour uses traditional side-out scoring in singles and doubles."
+    },
+    {
+      "term": "Side-out scoring",
+      "category": "scoring",
+      "definition": "Traditional pickleball scoring — only the serving team can score. Games are typically to 11, win by 2."
+    },
+    {
+      "term": "Score call (doubles)",
+      "category": "scoring",
+      "definition": "Three numbers called before each serve: server's team score, receiving team's score, server number (1 or 2). E.g., \"5–3–2\" means server's team has 5, opponents have 3, this is the second server."
+    },
+    {
+      "term": "Server number",
+      "category": "scoring",
+      "definition": "In side-out scoring doubles, both players on a team serve before a side-out — except the very first service of the game (only the second server serves on game one). Tracked as \"1\" or \"2\" in the score call."
+    },
+    {
+      "term": "DreamBreaker",
+      "category": "scoring",
+      "definition": "MLP's tiebreaker singles rotation when a team match is split 2–2. Each player rotates in for a fixed number of points; the team that crosses 21 first wins."
+    },
+    {
+      "term": "Golden pickle",
+      "category": "scoring",
+      "definition": "Winning a game 11–0 without losing the serve — i.e., the losing team never scored. Bragging-rights term, not an official statistic."
+    },
+    {
+      "term": "Paddle stack",
+      "category": "open-play",
+      "definition": "Open-play queueing convention: arriving players place their paddles in a designated stack or rack near the court. The next four paddles in the stack get the next court."
+    },
+    {
+      "term": "Paddles up",
+      "category": "open-play",
+      "definition": "Call made to confirm the next group ready to play. \"Paddles up?\" → players whose paddles are next confirm they are present and ready."
+    },
+    {
+      "term": "Calling lines",
+      "category": "open-play",
+      "definition": "In rec play (no referee), the team on whose side the ball lands makes the in/out call. Convention: if you can't call it out with certainty, it's in. Benefit of the doubt goes to the opponent."
+    },
+    {
+      "term": "Skinny singles",
+      "category": "open-play",
+      "definition": "Singles played using only one half of the court (cross-court or down-the-line halves). Half-court drilling format that builds dink + drive control."
+    }
+  ]
+}

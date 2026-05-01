@@ -815,3 +815,29 @@ footer.app-footer {
   letter-spacing: 0.05em;
   margin-bottom: 4px;
 }
+
+/* Glossary list — term/definition pairs grouped by category */
+.glossary-intro {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin-bottom: 12px;
+}
+.glossary-list {
+  margin: 0 0 18px;
+  padding: 0;
+}
+.glossary-list dt {
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 12px;
+  font-size: 0.98rem;
+}
+.glossary-list dt:first-child { margin-top: 0; }
+.glossary-list dd {
+  margin: 4px 0 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
