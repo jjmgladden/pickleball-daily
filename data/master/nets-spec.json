@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "version": "v1",
+  "displayName": "USAP Net Specifications",
+  "summary": "USA Pickleball does not publish an approved-net product list. Nets are governed by a written specification in the rulebook (Section 2.B). Any net meeting these dimensions is acceptable for sanctioned play.",
+  "lastReviewed": "2026-05-01",
+  "rulebookSection": "2.B",
+  "source": {
+    "id": "usap-rulebook-2026",
+    "displayName": "USA Pickleball Rulebook (Section 2.B — The Net)",
+    "url": "https://usapickleball.org/rulebook/"
+  },
+  "specs": [
+    {
+      "label": "Total length (post-to-post)",
+      "value": "22 feet (264 inches)",
+      "note": "Measured between the inside of the posts."
+    },
+    {
+      "label": "Court width covered",
+      "value": "20 feet",
+      "note": "Court is 20 ft wide; net extends 1 ft beyond each sideline (post setback)."
+    },
+    {
+      "label": "Net height at the sidelines (posts)",
+      "value": "36 inches",
+      "note": "Top of the net at the posts."
+    },
+    {
+      "label": "Net height at the center",
+      "value": "34 inches",
+      "note": "The net sags 2 inches at center; a center strap pulls it down to spec."
+    },
+    {
+      "label": "Mesh size",
+      "value": "Small enough that the ball cannot pass through",
+      "note": "No specific weave or mesh hole-size dimension is mandated."
+    },
+    {
+      "label": "Top tape / cord",
+      "value": "Required — must run the full length",
+      "note": "A 2-inch white binding along the top edge is standard."
+    },
+    {
+      "label": "Center strap",
+      "value": "Required",
+      "note": "Pulls the net down to the 34-inch center height. Adjustable on most regulation-grade nets."
+    },
+    {
+      "label": "Post diameter",
+      "value": "Maximum 3 inches",
+      "note": "Posts must not interfere with play. Round or oval cross-section."
+    }
+  ],
+  "buyerNotes": [
+    {
+      "label": "Portable vs permanent",
+      "text": "Sanctioned tournaments use permanent in-ground nets. Permanent nets hold tension better and meet the 36/34-inch heights consistently. Portable nets vary widely in tension; cheap portable nets often sag below regulation when warm."
+    },
+    {
+      "label": "What to look for",
+      "text": "(1) Adjustable center strap, (2) regulation 22-ft length, (3) tensioning system that won't loosen mid-match, (4) sturdy posts that don't bow under tension."
+    },
+    {
+      "label": "What to avoid",
+      "text": "Tennis nets cut down (height is wrong), badminton nets (lighter mesh fails repeatedly under pickleball impact), and nets without a center strap (they will sag below 34 inches at the middle)."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+name: Equipment refresh (USAP paddles + balls)
+
+# Quarterly refresh of the USAP-approved paddle list (~5,114 entries) and
+# ball list (~368 entries). The scrape is heavy (~85 min) so it runs ON A
+# SEPARATE WORKFLOW from the daily snapshot — never blocks the morning report.
+#
+# KB-0040 Phase L3 — refresh cadence A2+A3:
+#   - Scheduled: 1st of Jan / Apr / Jul / Oct at 06:00 UTC (quarterly)
+#   - Manual: workflow_dispatch escape hatch for ad-hoc refresh
+#
+# GitHub default failure-email goes to the repo owner. No separate notification.
+
+on:
+  schedule:
+    - cron: '0 6 1 1,4,7,10 *'   # 1st of Jan/Apr/Jul/Oct at 06:00 UTC
+  workflow_dispatch: {}            # manual trigger from Actions tab
+
+permissions:
+  contents: write                  # push refreshed paddles.json + balls.json to main
+
+concurrency:
+  group: equipment-refresh
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180           # 3 hr ceiling — scrape is ~90 min in practice
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Playwright (Chromium + deps)
+        run: npx playwright install chromium --with-deps
+
+      - name: Scrape USAP equipment (paddles + balls)
+        run: node ingestion/fetch-usap-equipment.js
+
+      - name: Verify outputs
+        run: |
+          test -s data/master/paddles.json
+          test -s data/master/balls.json
+          node -e "const p=require('./data/master/paddles.json'); \
+            if(!p.schemaVersion) throw new Error('paddles.json missing schemaVersion'); \
+            if(!p.totalCount || p.totalCount < 1000) throw new Error('paddles.json suspiciously small: '+p.totalCount); \
+            console.log('paddles ok — totalCount='+p.totalCount);"
+          node -e "const b=require('./data/master/balls.json'); \
+            if(!b.schemaVersion) throw new Error('balls.json missing schemaVersion'); \
+            if(!b.totalCount || b.totalCount < 100) throw new Error('balls.json suspiciously small: '+b.totalCount); \
+            console.log('balls ok — totalCount='+b.totalCount);"
+
+      - name: Commit refreshed equipment data back to main
+        run: |
+          git config user.name  "pickleball-daily-bot"
+          git config user.email "noreply@github.com"
+          git add data/master/paddles.json data/master/balls.json
+          if git diff --cached --quiet; then
+            echo "no equipment changes — skipping commit"
+            exit 0
+          fi
+          git commit -m "data: USAP equipment refresh $(date -u +%F)"
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "push succeeded (attempt $attempt)"
+              exit 0
+            fi
+            echo "push rejected (attempt $attempt) — rebasing on origin/main and retrying"
+            git pull --rebase -X theirs origin main || {
+              echo "::error::rebase failed on attempt $attempt"
+              exit 1
+            }
+          done
+          echo "::error::push failed after 3 attempts"
+          exit 1

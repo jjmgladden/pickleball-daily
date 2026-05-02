@@ -841,3 +841,213 @@ footer.app-footer {
   font-size: 0.95rem;
   line-height: 1.55;
 }
+
+/* Sub-tab strip — pill segmented control (KB-0040 L3) */
+.sub-tab-strip {
+  display: inline-flex;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 18px;
+  gap: 2px;
+}
+.sub-tab-strip button {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.sub-tab-strip button:hover { color: var(--text); }
+.sub-tab-strip button.active {
+  background: var(--accent-2);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+/* Equipment sub-tab — sections + paddle search/grid */
+.equipment-intro {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin-bottom: 14px;
+}
+.equipment-section {
+  margin-top: 22px;
+  scroll-margin-top: 12px;
+}
+.equipment-section h3 {
+  color: var(--text);
+  font-size: 1.15rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin: 0 0 10px;
+}
+.equipment-section-intro {
+  color: var(--text);
+  margin: 6px 0 12px;
+}
+.paddle-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+.paddle-controls input[type="search"],
+.paddle-controls select {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  flex: 1 1 180px;
+  min-width: 0;
+}
+.paddle-controls input[type="search"]:focus,
+.paddle-controls select:focus {
+  outline: none;
+  border-color: var(--accent-2);
+}
+.paddle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+.paddle-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.paddle-thumb {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  background: var(--bg-3);
+  border-radius: 6px;
+}
+.paddle-thumb-placeholder {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: var(--bg-3);
+  border-radius: 6px;
+  opacity: 0.5;
+}
+.paddle-info { display: flex; flex-direction: column; gap: 4px; }
+.paddle-brand { font-weight: 700; color: var(--text); font-size: 0.95rem; letter-spacing: 0.02em; }
+.paddle-model { color: var(--text); font-size: 0.95rem; line-height: 1.3; }
+.paddle-added { color: var(--text-dim); font-size: 0.82rem; }
+.paddle-specs {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.paddle-spec {
+  font-size: 0.84rem;
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+.paddle-spec-label { color: var(--text-dim); flex: 0 0 50px; }
+.paddle-spec-value { color: var(--text); }
+.paddle-link {
+  color: var(--accent-2);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+.paddle-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 18px 0 4px;
+  flex-wrap: wrap;
+}
+.paddle-pagination button {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.paddle-pagination button:hover:not(:disabled) { background: rgba(78,168,255,0.08); }
+.paddle-pagination button:disabled { opacity: 0.4; cursor: not-allowed; }
+.paddle-page-indicator { color: var(--text-dim); font-size: 0.9rem; }
+
+/* Balls — grouped definition list */
+.ball-group { margin: 16px 0; }
+.ball-group h4 {
+  color: var(--text);
+  font-size: 1.0rem;
+  margin: 12px 0 6px;
+}
+.ball-group-count { color: var(--text-dim); font-weight: 400; font-size: 0.88rem; }
+.ball-list { margin: 0; padding: 0; }
+.ball-list dt {
+  color: var(--text);
+  font-size: 0.94rem;
+  margin-top: 8px;
+}
+.ball-list dt:first-child { margin-top: 0; }
+.ball-list dd {
+  color: var(--text-dim);
+  font-size: 0.84rem;
+  margin: 0 0 0 12px;
+}
+
+/* Nets — spec rows + buyer notes */
+.nets-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+  margin: 12px 0 18px;
+}
+.nets-spec-row {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+.nets-spec-label {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.nets-spec-value { color: var(--text); font-weight: 600; font-size: 1.0rem; }
+.nets-spec-note { color: var(--text-dim); font-size: 0.84rem; margin-top: 4px; line-height: 1.4; }
+.nets-notes-list { display: flex; flex-direction: column; gap: 8px; margin: 8px 0 14px; }
+.nets-note {
+  border-left: 3px solid var(--accent-2);
+  background: rgba(78,168,255,0.06);
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+}
+.nets-note-label {
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.nets-note-text { color: var(--text); font-size: 0.93rem; line-height: 1.5; }

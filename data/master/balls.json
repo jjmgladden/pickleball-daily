@@ -1,0 +1,2203 @@
+{
+  "schemaVersion": 1,
+  "version": "v1",
+  "generatedAt": "2026-05-02T06:24:58.917Z",
+  "source": {
+    "id": "usap-equipment",
+    "url": "https://equipment.usapickleball.org/ball-list/",
+    "retrievedAt": "2026-05-02T06:22:41.363Z"
+  },
+  "totalCount": 365,
+  "balls": [
+    {
+      "brand": "A11N SPORTS",
+      "model": "A11N G40: Green",
+      "ballType": "Out",
+      "listedDate": "2023-08-15"
+    },
+    {
+      "brand": "A11N SPORTS",
+      "model": "A11N S26: Yellow",
+      "ballType": "Ind",
+      "listedDate": "2023-06-22"
+    },
+    {
+      "brand": "A11N SPORTS",
+      "model": "A11N S26: Blue",
+      "ballType": "Ind",
+      "listedDate": "2023-06-22"
+    },
+    {
+      "brand": "A11N SPORTS",
+      "model": "A11N S40:Fuchsia",
+      "ballType": "Out",
+      "listedDate": "2022-11-17"
+    },
+    {
+      "brand": "A11N SPORTS",
+      "model": "A11N S40:Tangerine",
+      "ballType": "Out",
+      "listedDate": "2022-11-17"
+    },
+    {
+      "brand": "A11N SPORTS",
+      "model": "A11N S40: Neon Green",
+      "ballType": null,
+      "listedDate": "2021-03-02"
+    },
+    {
+      "brand": "ACROSS THE POND (ATP)",
+      "model": "ATP - PICKLE BALL",
+      "ballType": "Out",
+      "listedDate": "2023-11-27"
+    },
+    {
+      "brand": "Airavat",
+      "model": "AER 40",
+      "ballType": "Out",
+      "listedDate": "2025-11-20"
+    },
+    {
+      "brand": "Akawav",
+      "model": "SOL40",
+      "ballType": "Out",
+      "listedDate": "2023-08-08"
+    },
+    {
+      "brand": "Akawav",
+      "model": "MANI26",
+      "ballType": "Ind",
+      "listedDate": "2023-08-08"
+    },
+    {
+      "brand": "AKpro Pickleball",
+      "model": "AK-X",
+      "ballType": "Out",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "Albad",
+      "model": "Q1",
+      "ballType": null,
+      "listedDate": "2020-12-29"
+    },
+    {
+      "brand": "ALL YOUNG",
+      "model": "HK-40",
+      "ballType": "I/O",
+      "listedDate": "2026-02-06"
+    },
+    {
+      "brand": "Alpha",
+      "model": "Zero",
+      "ballType": null,
+      "listedDate": "2021-08-10"
+    },
+    {
+      "brand": "AMA Sport Goods Co., Ltd",
+      "model": "X-ACE 40",
+      "ballType": "Out",
+      "listedDate": "2024-05-23"
+    },
+    {
+      "brand": "Amazin' Aces",
+      "model": "Maven 40R",
+      "ballType": null,
+      "listedDate": "2020-07-28"
+    },
+    {
+      "brand": "Amazon Basics",
+      "model": "AB-02",
+      "ballType": "Out",
+      "listedDate": "2025-08-14"
+    },
+    {
+      "brand": "Amoswiz",
+      "model": "B-2DB01",
+      "ballType": "I/O",
+      "listedDate": "2026-01-16"
+    },
+    {
+      "brand": "Armour Pickleball",
+      "model": "Armour Air 40",
+      "ballType": "Out",
+      "listedDate": "2023-01-08"
+    },
+    {
+      "brand": "ARRONAX",
+      "model": "X-5",
+      "ballType": "Out",
+      "listedDate": "2025-10-24"
+    },
+    {
+      "brand": "Asbocer",
+      "model": "As-P20",
+      "ballType": "Out",
+      "listedDate": "2023-05-04"
+    },
+    {
+      "brand": "Astes",
+      "model": "FlyingPea Pro",
+      "ballType": "Out",
+      "listedDate": "2024-08-14"
+    },
+    {
+      "brand": "Athletic Works",
+      "model": "COW0625056",
+      "ballType": "Out",
+      "listedDate": "2024-03-20"
+    },
+    {
+      "brand": "B-MART INCORPORATED",
+      "model": "Cultec 26",
+      "ballType": null,
+      "listedDate": "2021-05-23"
+    },
+    {
+      "brand": "Baden Sports",
+      "model": "Pro1",
+      "ballType": "Out",
+      "listedDate": "2024-08-13"
+    },
+    {
+      "brand": "Baden Sports",
+      "model": "Rival 40",
+      "ballType": "I/O",
+      "listedDate": "2023-09-29"
+    },
+    {
+      "brand": "Ball Boys",
+      "model": "Velocity 40 Pink",
+      "ballType": "Out",
+      "listedDate": "2021-08-11"
+    },
+    {
+      "brand": "Ball Boys",
+      "model": "Velocity 40 Orange",
+      "ballType": "Out",
+      "listedDate": "2021-08-01"
+    },
+    {
+      "brand": "Ball Boys",
+      "model": "Velocity 40 Yellow",
+      "ballType": "Out",
+      "listedDate": "2019-02-20"
+    },
+    {
+      "brand": "Ball Boys",
+      "model": "Velocity 40 Green",
+      "ballType": "Out",
+      "listedDate": "2019-02-20"
+    },
+    {
+      "brand": "Baseline Racket Sports",
+      "model": "Baseline -G40-",
+      "ballType": "Out",
+      "listedDate": "2023-09-29"
+    },
+    {
+      "brand": "Black Knight PH",
+      "model": "BK40 Orange",
+      "ballType": "Out",
+      "listedDate": "2026-03-11"
+    },
+    {
+      "brand": "Black Knight PH",
+      "model": "BK26",
+      "ballType": "Ind",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "Black Knight PH",
+      "model": "BK40",
+      "ballType": "Out",
+      "listedDate": "2024-04-22"
+    },
+    {
+      "brand": "BLAZESTAR",
+      "model": "PRO-X4",
+      "ballType": "I/O",
+      "listedDate": "2025-09-09"
+    },
+    {
+      "brand": "BlooBallz",
+      "model": "Xtreme 40",
+      "ballType": "Out",
+      "listedDate": "2023-12-26"
+    },
+    {
+      "brand": "Booma",
+      "model": "BOOMA 26 Orange",
+      "ballType": "Ind",
+      "listedDate": "2023-09-26"
+    },
+    {
+      "brand": "BOOMA",
+      "model": "BOOMA 26 GREEN",
+      "ballType": "Ind",
+      "listedDate": "2023-03-28"
+    },
+    {
+      "brand": "BOOMA",
+      "model": "BOOMA 40 GREEN",
+      "ballType": "Out",
+      "listedDate": "2023-03-28"
+    },
+    {
+      "brand": "BOOMA",
+      "model": "BOOMA 40 YELLOW",
+      "ballType": "Out",
+      "listedDate": "2023-03-28"
+    },
+    {
+      "brand": "BOOMA",
+      "model": "BOOMA 40 ORANGE",
+      "ballType": "Out",
+      "listedDate": "2023-03-28"
+    },
+    {
+      "brand": "BOOMA",
+      "model": "BOOMA 26 YELLOW",
+      "ballType": "Ind",
+      "listedDate": null
+    },
+    {
+      "brand": "Bread and Butter Pickleball Company",
+      "model": "BB40",
+      "ballType": "Out",
+      "listedDate": "2023-08-02"
+    },
+    {
+      "brand": "BSK",
+      "model": "H-40",
+      "ballType": "Out",
+      "listedDate": "2023-11-24"
+    },
+    {
+      "brand": "BTOP",
+      "model": "BT02",
+      "ballType": "Out",
+      "listedDate": "2023-10-10"
+    },
+    {
+      "brand": "BTOP",
+      "model": "BT01",
+      "ballType": "Out",
+      "listedDate": "2023-10-02"
+    },
+    {
+      "brand": "Centaur Republic",
+      "model": "‎Strength-40",
+      "ballType": "Out",
+      "listedDate": "2024-04-22"
+    },
+    {
+      "brand": "Champick Sports",
+      "model": "C",
+      "ballType": "I/O",
+      "listedDate": "2025-09-26"
+    },
+    {
+      "brand": "Champion",
+      "model": "Roto Molded Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Champion Sports",
+      "model": "Injected Molded Indoor Ball",
+      "ballType": "Ind",
+      "listedDate": "2019-02-07"
+    },
+    {
+      "brand": "Champion Sports",
+      "model": "Injected Molded Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": "2019-02-07"
+    },
+    {
+      "brand": "Cheetah Pickleball",
+      "model": "Cheetah M45",
+      "ballType": null,
+      "listedDate": "2021-07-16"
+    },
+    {
+      "brand": "Chung Yaw Co., Ltd",
+      "model": "Cultec",
+      "ballType": null,
+      "listedDate": "2021-05-25"
+    },
+    {
+      "brand": "Core Pickleball",
+      "model": "ECO",
+      "ballType": "Out",
+      "listedDate": "2025-07-21"
+    },
+    {
+      "brand": "CORE Pickleball",
+      "model": "Rhombus 40 Neon Green",
+      "ballType": "Out",
+      "listedDate": "2022-12-03"
+    },
+    {
+      "brand": "CORE Pickleball",
+      "model": "Pro",
+      "ballType": "I/O",
+      "listedDate": "2022-01-26"
+    },
+    {
+      "brand": "CORE Pickleball",
+      "model": "Rhombus 40",
+      "ballType": "Out",
+      "listedDate": "2021-12-21"
+    },
+    {
+      "brand": "CORE Pickleball",
+      "model": "CORE",
+      "ballType": "Out",
+      "listedDate": "2020-12-21"
+    },
+    {
+      "brand": "CRBN",
+      "model": "C40",
+      "ballType": "Out",
+      "listedDate": "2025-06-12"
+    },
+    {
+      "brand": "CROWN PICKLEBALL",
+      "model": "CROWN PICKLEBALL OUTDOOR",
+      "ballType": "Out",
+      "listedDate": "2023-08-08"
+    },
+    {
+      "brand": "CYCLOTRON",
+      "model": "P-40",
+      "ballType": "Out",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "CYCLOTRON",
+      "model": "002",
+      "ballType": "I/O",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "CYCLOTRON",
+      "model": "001",
+      "ballType": "I/O",
+      "listedDate": "2025-02-16"
+    },
+    {
+      "brand": "DASH",
+      "model": "DASH 40",
+      "ballType": "Out",
+      "listedDate": "2025-11-22"
+    },
+    {
+      "brand": "DECATHLON",
+      "model": "PKL Outdoor",
+      "ballType": "Out",
+      "listedDate": "2026-03-23"
+    },
+    {
+      "brand": "Diadem Sports",
+      "model": "Official",
+      "ballType": "I/O",
+      "listedDate": "2024-04-26"
+    },
+    {
+      "brand": "Diadem Sports",
+      "model": "Power Pickleball Indoor",
+      "ballType": "Ind",
+      "listedDate": "2023-09-06"
+    },
+    {
+      "brand": "Diadem Sports",
+      "model": "Premier Power",
+      "ballType": "I/O",
+      "listedDate": "2023-01-08"
+    },
+    {
+      "brand": "DIKETONE",
+      "model": "DK40",
+      "ballType": "Out",
+      "listedDate": "2024-01-31"
+    },
+    {
+      "brand": "diNGK Sports, Inc.",
+      "model": "G-Force 40",
+      "ballType": "Out",
+      "listedDate": "2020-09-03"
+    },
+    {
+      "brand": "Dink N' Dilly",
+      "model": "Dill Ball - Dilly Green",
+      "ballType": "I/O",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "DinkersClub",
+      "model": "DC 40 Pro",
+      "ballType": "Out",
+      "listedDate": "2024-04-19"
+    },
+    {
+      "brand": "DinkersClub",
+      "model": "DC 26 Pro",
+      "ballType": "Ind",
+      "listedDate": "2024-04-19"
+    },
+    {
+      "brand": "Dinkly",
+      "model": "DK-40",
+      "ballType": "I/O",
+      "listedDate": "2025-06-12"
+    },
+    {
+      "brand": "DINQ",
+      "model": "DINQ PRO BALL",
+      "ballType": "Out",
+      "listedDate": "2024-09-27"
+    },
+    {
+      "brand": "DONG LUC",
+      "model": "DONG LUC",
+      "ballType": "Out",
+      "listedDate": "2025-06-30"
+    },
+    {
+      "brand": "Dunlop",
+      "model": "PRO-SPHERE",
+      "ballType": "Out",
+      "listedDate": "2025-12-18"
+    },
+    {
+      "brand": "DUOPRO",
+      "model": "1.0",
+      "ballType": "I/O",
+      "listedDate": "2025-07-21"
+    },
+    {
+      "brand": "Eastpoint Sports",
+      "model": "Topspin Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Eastpoint Sports Ltd.",
+      "model": "Topspin Outdoor",
+      "ballType": "Out",
+      "listedDate": "2019-05-21"
+    },
+    {
+      "brand": "Element 6 Pickleball",
+      "model": "E6 Pro Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "Engage",
+      "model": "Tour 40 Outdoor",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Engage Pickleball",
+      "model": "Engage Pulse",
+      "ballType": "Out",
+      "listedDate": "2025-09-08"
+    },
+    {
+      "brand": "Engage Pickleball",
+      "model": "Tour Neon 2.0",
+      "ballType": "I/O",
+      "listedDate": "2022-09-25"
+    },
+    {
+      "brand": "Engage Pickleball",
+      "model": "Tour Neon",
+      "ballType": "Out",
+      "listedDate": "2021-01-27"
+    },
+    {
+      "brand": "EP American",
+      "model": "M#1 - Red",
+      "ballType": "Out",
+      "listedDate": "2025-11-11"
+    },
+    {
+      "brand": "EP American",
+      "model": "M#1 - White",
+      "ballType": "Out",
+      "listedDate": "2025-11-11"
+    },
+    {
+      "brand": "EP American",
+      "model": "M#1 - Blue",
+      "ballType": "Out",
+      "listedDate": "2025-11-11"
+    },
+    {
+      "brand": "EP American",
+      "model": "RAFY AMERICAN - Yellow",
+      "ballType": "Out",
+      "listedDate": "2025-10-07"
+    },
+    {
+      "brand": "EP American",
+      "model": "EPAF-Yellow",
+      "ballType": "Out",
+      "listedDate": "2025-07-17"
+    },
+    {
+      "brand": "EP American",
+      "model": "EPAF-Green",
+      "ballType": "Out",
+      "listedDate": "2025-07-17"
+    },
+    {
+      "brand": "EP American",
+      "model": "Mina - Green",
+      "ballType": "Out",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "Everyday Social",
+      "model": "THE ASAMA CLASSIC BALL",
+      "ballType": "Out",
+      "listedDate": "2024-10-16"
+    },
+    {
+      "brand": "Evolute Pickleball",
+      "model": "EV-11",
+      "ballType": "Out",
+      "listedDate": "2024-08-12"
+    },
+    {
+      "brand": "Facolos",
+      "model": "F-Eco",
+      "ballType": "Out",
+      "listedDate": "2026-01-15"
+    },
+    {
+      "brand": "Facolos",
+      "model": "F-Pro Gen2",
+      "ballType": "Out",
+      "listedDate": "2025-01-20"
+    },
+    {
+      "brand": "Facolos",
+      "model": "F-Pro",
+      "ballType": "Out",
+      "listedDate": "2024-07-20"
+    },
+    {
+      "brand": "Ferocia",
+      "model": "Energy S",
+      "ballType": "Out",
+      "listedDate": "2024-06-30"
+    },
+    {
+      "brand": "FILA",
+      "model": "F-Pro",
+      "ballType": "Out",
+      "listedDate": "2025-06-12"
+    },
+    {
+      "brand": "FILA",
+      "model": "F-Pro Lite​",
+      "ballType": "I/O",
+      "listedDate": "2025-06-12"
+    },
+    {
+      "brand": "FirstEdge",
+      "model": "PRO-40",
+      "ballType": "Out",
+      "listedDate": "2025-08-14"
+    },
+    {
+      "brand": "FITROVERTS",
+      "model": "FITROVERTS",
+      "ballType": "Out",
+      "listedDate": "2022-04-20"
+    },
+    {
+      "brand": "FRANC",
+      "model": "PRO_40",
+      "ballType": "Out",
+      "listedDate": "2025-09-09"
+    },
+    {
+      "brand": "Franklin Sports",
+      "model": "FS Pro Indoor",
+      "ballType": "Ind",
+      "listedDate": "2025-02-10"
+    },
+    {
+      "brand": "Franklin Sports",
+      "model": "X-40 Purple",
+      "ballType": "Out",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "Franklin Sports",
+      "model": "X-40 Blue",
+      "ballType": "Out",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "Franklin Sports",
+      "model": "X-40 Green",
+      "ballType": "Out",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "Franklin Sports",
+      "model": "FS PRO OUTDOOR",
+      "ballType": "Out",
+      "listedDate": "2024-11-04"
+    },
+    {
+      "brand": "Franklin Sports",
+      "model": "ECO BETA",
+      "ballType": "Out",
+      "listedDate": "2024-02-22"
+    },
+    {
+      "brand": "Franklin Sports",
+      "model": "X-40 Lava",
+      "ballType": "Out",
+      "listedDate": "2021-03-02"
+    },
+    {
+      "brand": "Franklin Sports",
+      "model": "X-40 Ember",
+      "ballType": "Out",
+      "listedDate": "2021-03-02"
+    },
+    {
+      "brand": "Franklin Sports",
+      "model": "X-26: Orange",
+      "ballType": "Ind",
+      "listedDate": "2020-10-22"
+    },
+    {
+      "brand": "Franklin Sports",
+      "model": "X-26",
+      "ballType": "Ind",
+      "listedDate": "2020-06-01"
+    },
+    {
+      "brand": "Franklin Sports Inc.",
+      "model": "X-26 Indoor Ball",
+      "ballType": "Ind",
+      "listedDate": "2018-12-01"
+    },
+    {
+      "brand": "Franklin Sports Inc.",
+      "model": "X-26 Indoor Ball",
+      "ballType": "Ind",
+      "listedDate": "2018-12-01"
+    },
+    {
+      "brand": "Franklin Sports Inc.",
+      "model": "X-40 Performance Pickleball",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Freedom Goods",
+      "model": "FG-017b",
+      "ballType": null,
+      "listedDate": "2021-08-10"
+    },
+    {
+      "brand": "FZ FORZA",
+      "model": "FZ_CP Outdoor",
+      "ballType": "Out",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "Gamma",
+      "model": "Photon Indoor Ball",
+      "ballType": "Ind",
+      "listedDate": null
+    },
+    {
+      "brand": "Gamma Sports",
+      "model": "CHUCK",
+      "ballType": "Out",
+      "listedDate": "2023-12-15"
+    },
+    {
+      "brand": "Gamma Sports",
+      "model": "Gamma Photon Outdoor",
+      "ballType": "Out",
+      "listedDate": "2019-02-07"
+    },
+    {
+      "brand": "GATORSTRIKE LLC",
+      "model": "QUICK STRIKE 40",
+      "ballType": "Out",
+      "listedDate": "2024-08-13"
+    },
+    {
+      "brand": "Gearbox",
+      "model": "GB1",
+      "ballType": "Out",
+      "listedDate": "2023-07-21"
+    },
+    {
+      "brand": "GIGAPOWER",
+      "model": "BSAA004",
+      "ballType": "Out",
+      "listedDate": "2022-08-30"
+    },
+    {
+      "brand": "GITOE",
+      "model": "GT 40",
+      "ballType": "Out",
+      "listedDate": "2024-10-08"
+    },
+    {
+      "brand": "GOALSO",
+      "model": "GOALSO Dark Blue",
+      "ballType": "I/O",
+      "listedDate": "2023-07-16"
+    },
+    {
+      "brand": "GOALSO",
+      "model": "GOALSO Blue",
+      "ballType": "I/O",
+      "listedDate": "2023-07-16"
+    },
+    {
+      "brand": "GOALSO",
+      "model": "GOALSO Neon Green",
+      "ballType": "I/O",
+      "listedDate": "2023-07-16"
+    },
+    {
+      "brand": "GOALSO",
+      "model": "GOALSO Pink",
+      "ballType": "I/O",
+      "listedDate": "2023-07-16"
+    },
+    {
+      "brand": "GOALSO",
+      "model": "GOALSO Purple",
+      "ballType": "I/O",
+      "listedDate": "2023-07-16"
+    },
+    {
+      "brand": "GOALSO",
+      "model": "GOALSO Red",
+      "ballType": "I/O",
+      "listedDate": "2023-07-16"
+    },
+    {
+      "brand": "GOALSO",
+      "model": "GOALSO Turquoise",
+      "ballType": "I/O",
+      "listedDate": "2023-07-16"
+    },
+    {
+      "brand": "GOALSO",
+      "model": "GOALSO Yellow",
+      "ballType": "I/O",
+      "listedDate": "2023-07-16"
+    },
+    {
+      "brand": "Golden Set",
+      "model": "Endure 40",
+      "ballType": "Out",
+      "listedDate": "2023-11-16"
+    },
+    {
+      "brand": "Gorilla Gear",
+      "model": "Pickleball- Indoor",
+      "ballType": "Ind",
+      "listedDate": "2025-02-15"
+    },
+    {
+      "brand": "GoSports",
+      "model": "GS 40",
+      "ballType": "Out",
+      "listedDate": "2023-04-21"
+    },
+    {
+      "brand": "GRAND SLAM",
+      "model": "GRAND SLAM",
+      "ballType": "Out",
+      "listedDate": "2025-02-14"
+    },
+    {
+      "brand": "Gualta",
+      "model": "Gualta123",
+      "ballType": "Out",
+      "listedDate": "2023-06-22"
+    },
+    {
+      "brand": "Gualta",
+      "model": "Gualta1234",
+      "ballType": "Out",
+      "listedDate": "2023-06-22"
+    },
+    {
+      "brand": "Gutuguin",
+      "model": "YO-40",
+      "ballType": "Out",
+      "listedDate": "2024-04-19"
+    },
+    {
+      "brand": "Hajimari",
+      "model": "30902 Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": "2022-09-16"
+    },
+    {
+      "brand": "Hajimari",
+      "model": "30901 Indoor Ball",
+      "ballType": "Ind",
+      "listedDate": "2022-09-16"
+    },
+    {
+      "brand": "Handz Pickleball Co.",
+      "model": "Handz - 40",
+      "ballType": "I/O",
+      "listedDate": "2023-07-20"
+    },
+    {
+      "brand": "HEAD",
+      "model": "TOUR 40",
+      "ballType": "Out",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "HEAD",
+      "model": "HEAD C40",
+      "ballType": "Out",
+      "listedDate": "2023-12-12"
+    },
+    {
+      "brand": "HEAD",
+      "model": "HEAD C26",
+      "ballType": "Ind",
+      "listedDate": "2023-12-12"
+    },
+    {
+      "brand": "HEAD",
+      "model": "HEAD P40",
+      "ballType": "Out",
+      "listedDate": "2023-12-12"
+    },
+    {
+      "brand": "HEAD",
+      "model": "Pro Penn 40",
+      "ballType": "Out",
+      "listedDate": "2022-01-25"
+    },
+    {
+      "brand": "HEAD",
+      "model": "Penn 26",
+      "ballType": "Ind",
+      "listedDate": "2021-06-01"
+    },
+    {
+      "brand": "HEAD",
+      "model": "Penn 40",
+      "ballType": "Out",
+      "listedDate": "2018-07-07"
+    },
+    {
+      "brand": "HEICK",
+      "model": "G1",
+      "ballType": null,
+      "listedDate": "2021-10-08"
+    },
+    {
+      "brand": "Hiro",
+      "model": "Hiro",
+      "ballType": "Out",
+      "listedDate": "2020-09-03"
+    },
+    {
+      "brand": "HNDRD",
+      "model": "Delta P500 PRO",
+      "ballType": "Out",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "Hudef Sports",
+      "model": "HUDEF HD-40H",
+      "ballType": "Out",
+      "listedDate": "2022-01-28"
+    },
+    {
+      "brand": "HyperDot",
+      "model": "Pro 40",
+      "ballType": "Out",
+      "listedDate": "2025-11-03"
+    },
+    {
+      "brand": "IANONI",
+      "model": "IANONI G01 OUTDOOR BALL",
+      "ballType": "Out",
+      "listedDate": "2023-03-29"
+    },
+    {
+      "brand": "ICKM",
+      "model": "ICKM",
+      "ballType": "I/O",
+      "listedDate": "2023-11-24"
+    },
+    {
+      "brand": "INFMARC",
+      "model": "TW-40",
+      "ballType": "Out",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "innovative",
+      "model": "CY401",
+      "ballType": "Out",
+      "listedDate": "2026-04-20"
+    },
+    {
+      "brand": "innovative",
+      "model": "CY402",
+      "ballType": "Out",
+      "listedDate": "2026-04-20"
+    },
+    {
+      "brand": "INV",
+      "model": "INV01",
+      "ballType": "Out",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "JCM",
+      "model": "JCM01",
+      "ballType": "Out",
+      "listedDate": "2024-06-30"
+    },
+    {
+      "brand": "Jeonpickleball",
+      "model": "PANDA",
+      "ballType": "Out",
+      "listedDate": "2025-02-14"
+    },
+    {
+      "brand": "JIRU",
+      "model": "TOUR X-7",
+      "ballType": "Out",
+      "listedDate": "2025-04-14"
+    },
+    {
+      "brand": "JNICE",
+      "model": "J45",
+      "ballType": "Out",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "JOGARBOLA",
+      "model": "COREX Pro",
+      "ballType": "I/O",
+      "listedDate": "2026-03-16"
+    },
+    {
+      "brand": "JOOLA",
+      "model": "JOOLA Primo Indoor Plus",
+      "ballType": "Ind",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "JOOLA",
+      "model": "JOOLA Heleus",
+      "ballType": "Out",
+      "listedDate": "2023-05-31"
+    },
+    {
+      "brand": "JOOLA",
+      "model": "JOOLA Primo",
+      "ballType": "Out",
+      "listedDate": "2022-03-20"
+    },
+    {
+      "brand": "Jugs Inc.",
+      "model": "26 Hole Indoor",
+      "ballType": "Ind",
+      "listedDate": null
+    },
+    {
+      "brand": "KAIROS",
+      "model": "KS101-Yellow",
+      "ballType": "Out",
+      "listedDate": "2023-09-06"
+    },
+    {
+      "brand": "KAIWIN",
+      "model": "PRO",
+      "ballType": "I/O",
+      "listedDate": "2025-04-14"
+    },
+    {
+      "brand": "Kamito",
+      "model": "Kamito X- FORCE",
+      "ballType": "I/O",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "Kenetik",
+      "model": "Air Bender Pro - Sunburst Orange",
+      "ballType": "Out",
+      "listedDate": "2025-07-29"
+    },
+    {
+      "brand": "KENKO",
+      "model": "OLA-40",
+      "ballType": "Out",
+      "listedDate": "2026-02-04"
+    },
+    {
+      "brand": "KINGTEK",
+      "model": "K-ELITE",
+      "ballType": "I/O",
+      "listedDate": "2025-04-14"
+    },
+    {
+      "brand": "Komodo pickleball",
+      "model": "Bioball",
+      "ballType": "Out",
+      "listedDate": "2024-09-18"
+    },
+    {
+      "brand": "Komodo pickleball",
+      "model": "K - 40",
+      "ballType": "Out",
+      "listedDate": "2023-01-08"
+    },
+    {
+      "brand": "KOMTIK",
+      "model": "Jade",
+      "ballType": "Out",
+      "listedDate": "2025-10-06"
+    },
+    {
+      "brand": "Konnek Sports LLC",
+      "model": "KNNK",
+      "ballType": "I/O",
+      "listedDate": "2025-09-08"
+    },
+    {
+      "brand": "Kuche Sports LLC",
+      "model": "PickleOn",
+      "ballType": "Out",
+      "listedDate": "2023-09-06"
+    },
+    {
+      "brand": "Kunpick",
+      "model": "KAMAZ",
+      "ballType": "I/O",
+      "listedDate": "2025-09-09"
+    },
+    {
+      "brand": "Li Ning",
+      "model": "PG40",
+      "ballType": "Out",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "Lotto",
+      "model": "Lotto Tour",
+      "ballType": "Out",
+      "listedDate": "2024-05-01"
+    },
+    {
+      "brand": "LOTUS",
+      "model": "Lotus Five Stars",
+      "ballType": "Out",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "Luft",
+      "model": "TOUR 40",
+      "ballType": "Out",
+      "listedDate": "2024-01-30"
+    },
+    {
+      "brand": "Luft",
+      "model": "ARROW 40",
+      "ballType": "Out",
+      "listedDate": "2024-01-30"
+    },
+    {
+      "brand": "Luft",
+      "model": "ARROW 26",
+      "ballType": "Ind",
+      "listedDate": "2024-01-30"
+    },
+    {
+      "brand": "M40",
+      "model": "M40",
+      "ballType": null,
+      "listedDate": "2021-02-28"
+    },
+    {
+      "brand": "Maisse",
+      "model": "Luna Pro",
+      "ballType": "Out",
+      "listedDate": "2024-08-20"
+    },
+    {
+      "brand": "Manh Thang Pickleball",
+      "model": "E-WIN",
+      "ballType": "I/O",
+      "listedDate": "2025-09-08"
+    },
+    {
+      "brand": "Mas Pow",
+      "model": "MP 40",
+      "ballType": "Out",
+      "listedDate": "2025-04-10"
+    },
+    {
+      "brand": "Master Athletics",
+      "model": "M40 Outdoor",
+      "ballType": "Out",
+      "listedDate": "2023-09-29"
+    },
+    {
+      "brand": "Matrix",
+      "model": "084-4799-6",
+      "ballType": "Out",
+      "listedDate": "2025-10-06"
+    },
+    {
+      "brand": "Matrix",
+      "model": "184-0154-6",
+      "ballType": "Ind",
+      "listedDate": "2025-10-06"
+    },
+    {
+      "brand": "MAXBOLT",
+      "model": "M77",
+      "ballType": "Out",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "Mercer Pickleball",
+      "model": "Mercer",
+      "ballType": "Out",
+      "listedDate": "2023-11-02"
+    },
+    {
+      "brand": "Mint",
+      "model": "Cannonballz™ Outdoor Pickleballs",
+      "ballType": "Out",
+      "listedDate": "2025-04-10"
+    },
+    {
+      "brand": "Mint",
+      "model": "Cannonballz™ Indoor Pickleballs",
+      "ballType": "Ind",
+      "listedDate": "2025-04-10"
+    },
+    {
+      "brand": "Monarch",
+      "model": "Monarch Indoor Ball",
+      "ballType": "Ind",
+      "listedDate": null
+    },
+    {
+      "brand": "Monarch",
+      "model": "Monarch Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Monarch",
+      "model": "Monarch 2nd Gen Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "MOTIVE",
+      "model": "Ball No.1",
+      "ballType": "I/O",
+      "listedDate": "2025-11-24"
+    },
+    {
+      "brand": "MOZKUIB",
+      "model": "002",
+      "ballType": "I/O",
+      "listedDate": "2025-02-14"
+    },
+    {
+      "brand": "MOZKUIB",
+      "model": "001 Lime Green",
+      "ballType": "Out",
+      "listedDate": "2023-03-27"
+    },
+    {
+      "brand": "MTEN",
+      "model": "MT-12",
+      "ballType": "Out",
+      "listedDate": "2023-09-20"
+    },
+    {
+      "brand": "Neoslick",
+      "model": "Vega 40",
+      "ballType": "Out",
+      "listedDate": "2022-10-24"
+    },
+    {
+      "brand": "Net World Sports",
+      "model": "Vermont Competition Outdoor",
+      "ballType": "Out",
+      "listedDate": "2020-06-03"
+    },
+    {
+      "brand": "Net World Sports",
+      "model": "Vermont Competition Indoor",
+      "ballType": "Ind",
+      "listedDate": "2020-06-03"
+    },
+    {
+      "brand": "Niupipo",
+      "model": "MX-27 Green",
+      "ballType": "Out",
+      "listedDate": "2022-05-07"
+    },
+    {
+      "brand": "Niupipo",
+      "model": "MX-21 Orange",
+      "ballType": null,
+      "listedDate": "2021-07-02"
+    },
+    {
+      "brand": "Niupipo",
+      "model": "MX-21 Yellow",
+      "ballType": null,
+      "listedDate": "2021-07-01"
+    },
+    {
+      "brand": "NIVIA",
+      "model": "ZPRO",
+      "ballType": "Out",
+      "listedDate": "2025-11-03"
+    },
+    {
+      "brand": "O'BON",
+      "model": "S-45",
+      "ballType": "Out",
+      "listedDate": "2025-07-29"
+    },
+    {
+      "brand": "Odysportsz",
+      "model": "Odysportsz 40",
+      "ballType": "Out",
+      "listedDate": "2023-09-06"
+    },
+    {
+      "brand": "OLIN",
+      "model": "ULTRA40",
+      "ballType": "I/O",
+      "listedDate": "2024-06-14"
+    },
+    {
+      "brand": "Omni Tech",
+      "model": "Omni Tech 40",
+      "ballType": "Out",
+      "listedDate": "2026-04-20"
+    },
+    {
+      "brand": "Onix Sports",
+      "model": "503 Outdoor",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Onix Sports",
+      "model": "Fuse Indoor Ball",
+      "ballType": "Ind",
+      "listedDate": null
+    },
+    {
+      "brand": "Onix Sports",
+      "model": "Fuse Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Onix Sports",
+      "model": "Fuse G2 Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Orca Paddle Company",
+      "model": "Orca Pi 26",
+      "ballType": null,
+      "listedDate": "2024-04-26"
+    },
+    {
+      "brand": "Orca Paddle Company",
+      "model": "Orca Pi 40",
+      "ballType": "Out",
+      "listedDate": "2024-04-26"
+    },
+    {
+      "brand": "Orca Paddle Company",
+      "model": "Orca Pro 26",
+      "ballType": null,
+      "listedDate": "2024-03-01"
+    },
+    {
+      "brand": "Orca Paddle Company",
+      "model": "Orca Pro 40",
+      "ballType": "Out",
+      "listedDate": "2023-11-30"
+    },
+    {
+      "brand": "Osaka",
+      "model": "PT40",
+      "ballType": "I/O",
+      "listedDate": "2025-10-16"
+    },
+    {
+      "brand": "Oso Pickleball",
+      "model": "Fury",
+      "ballType": "Out",
+      "listedDate": "2022-09-08"
+    },
+    {
+      "brand": "Oso Pickleball",
+      "model": "Oso",
+      "ballType": "Out",
+      "listedDate": "2021-03-02"
+    },
+    {
+      "brand": "OSUNO",
+      "model": "OSUNO BALL",
+      "ballType": "Out",
+      "listedDate": "2026-01-26"
+    },
+    {
+      "brand": "Ovare Ventures",
+      "model": "BaddleBall 40",
+      "ballType": null,
+      "listedDate": "2021-02-05"
+    },
+    {
+      "brand": "OWL SPORT, INC.",
+      "model": "OWL CK-40",
+      "ballType": "Out",
+      "listedDate": "2023-12-27"
+    },
+    {
+      "brand": "OXIKEN",
+      "model": "S40",
+      "ballType": "Out",
+      "listedDate": "2023-10-20"
+    },
+    {
+      "brand": "OZO",
+      "model": "MP-40",
+      "ballType": "Out",
+      "listedDate": "2025-06-25"
+    },
+    {
+      "brand": "PACE",
+      "model": "P-FORTY",
+      "ballType": "Out",
+      "listedDate": "2025-06-30"
+    },
+    {
+      "brand": "paddlemvp",
+      "model": "PADDLE MVP",
+      "ballType": "Out",
+      "listedDate": "2024-03-01"
+    },
+    {
+      "brand": "PASSION",
+      "model": "Passion pro - 40",
+      "ballType": "I/O",
+      "listedDate": "2025-02-10"
+    },
+    {
+      "brand": "PB Pro",
+      "model": "PB40",
+      "ballType": null,
+      "listedDate": "2021-08-12"
+    },
+    {
+      "brand": "PCKL",
+      "model": "Optic Indoor Orange",
+      "ballType": "Ind",
+      "listedDate": "2023-09-06"
+    },
+    {
+      "brand": "PCKL",
+      "model": "Optic Outdoor Pickleballs - Green",
+      "ballType": "Out",
+      "listedDate": "2023-07-06"
+    },
+    {
+      "brand": "PCKL",
+      "model": "Optic Outdoor Pickleballs - Yellow",
+      "ballType": "Out",
+      "listedDate": "2023-07-06"
+    },
+    {
+      "brand": "PCKL",
+      "model": "Elite 40",
+      "ballType": "Out",
+      "listedDate": "2023-02-20"
+    },
+    {
+      "brand": "PICAPICA",
+      "model": "P40 Pro",
+      "ballType": "I/O",
+      "listedDate": "2026-03-11"
+    },
+    {
+      "brand": "PICKA",
+      "model": "Ballie",
+      "ballType": "Out",
+      "listedDate": "2026-01-29"
+    },
+    {
+      "brand": "Pickle Jargon",
+      "model": "The Jar 2.0",
+      "ballType": "Out",
+      "listedDate": "2025-09-09"
+    },
+    {
+      "brand": "Pickle O Joe",
+      "model": "POJ LE Members Performance Ball",
+      "ballType": "Out",
+      "listedDate": "2025-04-14"
+    },
+    {
+      "brand": "Pickleball Central",
+      "model": "TOP",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Pickleball Inc.",
+      "model": "Dura Fast 40",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Pickleball Inc.",
+      "model": "Dura Fast 26",
+      "ballType": "Ind",
+      "listedDate": null
+    },
+    {
+      "brand": "Pickleball Korea",
+      "model": "deufox df40",
+      "ballType": "Out",
+      "listedDate": "2024-11-04"
+    },
+    {
+      "brand": "Picklemaster",
+      "model": "X40",
+      "ballType": "I/O",
+      "listedDate": "2024-08-28"
+    },
+    {
+      "brand": "PickPeak",
+      "model": "P-40",
+      "ballType": "I/O",
+      "listedDate": "2024-08-13"
+    },
+    {
+      "brand": "PIXA Pickleball",
+      "model": "Titan Pro 26",
+      "ballType": "Ind",
+      "listedDate": "2025-02-14"
+    },
+    {
+      "brand": "PIXA Pickleball",
+      "model": "Velocity Pro 40 Yellow",
+      "ballType": "Out",
+      "listedDate": "2024-08-13"
+    },
+    {
+      "brand": "PIXA Pickleball",
+      "model": "Velocity Pro 40 Green",
+      "ballType": "Out",
+      "listedDate": "2024-08-13"
+    },
+    {
+      "brand": "PIXA Pickleball",
+      "model": "ProPick 40 Green",
+      "ballType": "Out",
+      "listedDate": "2024-05-23"
+    },
+    {
+      "brand": "PIXA Pickleball",
+      "model": "ProPick 40 Yellow",
+      "ballType": "Out",
+      "listedDate": "2024-05-23"
+    },
+    {
+      "brand": "PlayBolt",
+      "model": "PB PRO 40",
+      "ballType": "I/O",
+      "listedDate": "2026-03-11"
+    },
+    {
+      "brand": "Prado",
+      "model": "Taino Sun Pickleball Ball",
+      "ballType": "Out",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "Precise",
+      "model": "A-40",
+      "ballType": "Out",
+      "listedDate": "2025-08-14"
+    },
+    {
+      "brand": "Preston",
+      "model": "Mach 40",
+      "ballType": "Out",
+      "listedDate": "2024-12-11"
+    },
+    {
+      "brand": "Prince",
+      "model": "Prince Indoor 3-PACK PICKLEBALL",
+      "ballType": "Ind",
+      "listedDate": "2025-03-28"
+    },
+    {
+      "brand": "Prince",
+      "model": "Prince Outdoor 3-PACK PICKLEBALL BALL",
+      "ballType": "Out",
+      "listedDate": "2025-03-28"
+    },
+    {
+      "brand": "Prince",
+      "model": "Prince Performance Pickleballs",
+      "ballType": "Out",
+      "listedDate": "2024-01-05"
+    },
+    {
+      "brand": "Pro Aviana",
+      "model": "Tempo",
+      "ballType": "Out",
+      "listedDate": "2023-12-09"
+    },
+    {
+      "brand": "Pro Aviana",
+      "model": "Aviana Outdoor Green A210G",
+      "ballType": "Out",
+      "listedDate": "2021-12-01"
+    },
+    {
+      "brand": "Pro Aviana",
+      "model": "AA301",
+      "ballType": null,
+      "listedDate": "2020-02-05"
+    },
+    {
+      "brand": "PRO-SPIN",
+      "model": "PS-40",
+      "ballType": "Out",
+      "listedDate": "2024-07-20"
+    },
+    {
+      "brand": "Pro38",
+      "model": "Pro38 L",
+      "ballType": "I/O",
+      "listedDate": "2022-01-26"
+    },
+    {
+      "brand": "Pro38",
+      "model": "Pro38 S",
+      "ballType": "Out",
+      "listedDate": "2022-01-19"
+    },
+    {
+      "brand": "Professor Sports LLC",
+      "model": "Professor Premo 40",
+      "ballType": "I/O",
+      "listedDate": "2023-12-09"
+    },
+    {
+      "brand": "Prokennex",
+      "model": "Premium Indoor 26",
+      "ballType": "Ind",
+      "listedDate": "2025-07-29"
+    },
+    {
+      "brand": "Prokennex",
+      "model": "Premium Outdoor 40",
+      "ballType": "Out",
+      "listedDate": "2025-07-29"
+    },
+    {
+      "brand": "Protech XP",
+      "model": "XP40",
+      "ballType": "I/O",
+      "listedDate": "2025-03-26"
+    },
+    {
+      "brand": "ProXR Pickleball",
+      "model": "The Universal Ball",
+      "ballType": "Out",
+      "listedDate": "2024-12-10"
+    },
+    {
+      "brand": "PURE Pickleball",
+      "model": "P7 Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Qiangtai",
+      "model": "Fitprowin",
+      "ballType": "I/O",
+      "listedDate": "2025-10-06"
+    },
+    {
+      "brand": "Qiangtai",
+      "model": "QT40",
+      "ballType": "Out",
+      "listedDate": "2024-03-25"
+    },
+    {
+      "brand": "Qranc",
+      "model": "Q",
+      "ballType": "I/O",
+      "listedDate": "2023-12-27"
+    },
+    {
+      "brand": "Qranc",
+      "model": "Qranc Hudson Professional Outdoor",
+      "ballType": "Out",
+      "listedDate": "2022-10-31"
+    },
+    {
+      "brand": "QSPORT",
+      "model": "H-40",
+      "ballType": "I/O",
+      "listedDate": "2025-08-14"
+    },
+    {
+      "brand": "Queen City Pickleball Hub Inc.",
+      "model": "Crown Premium",
+      "ballType": "Out",
+      "listedDate": "2023-06-02"
+    },
+    {
+      "brand": "Quickhand",
+      "model": "Q-40",
+      "ballType": "I/O",
+      "listedDate": "2024-02-22"
+    },
+    {
+      "brand": "Quietstorm",
+      "model": "QUIET SLAM MAGENTA",
+      "ballType": "I/O",
+      "listedDate": "2025-04-10"
+    },
+    {
+      "brand": "RAD Pickleball Co.",
+      "model": "Rad Ball",
+      "ballType": "Out",
+      "listedDate": "2023-06-02"
+    },
+    {
+      "brand": "RAE.X SPORTS",
+      "model": "RAE.X PRO SERIES",
+      "ballType": "Out",
+      "listedDate": "2026-02-23"
+    },
+    {
+      "brand": "Raise",
+      "model": "Raise",
+      "ballType": "Out",
+      "listedDate": "2025-06-30"
+    },
+    {
+      "brand": "Ramsports",
+      "model": "RAM",
+      "ballType": "Ind",
+      "listedDate": "2026-01-15"
+    },
+    {
+      "brand": "River",
+      "model": "V-40",
+      "ballType": "Out",
+      "listedDate": "2025-06-25"
+    },
+    {
+      "brand": "Sanrio",
+      "model": "Hello Kitty",
+      "ballType": "Out",
+      "listedDate": "2024-10-08"
+    },
+    {
+      "brand": "scuddles",
+      "model": "Scuddles",
+      "ballType": null,
+      "listedDate": "2020-09-24"
+    },
+    {
+      "brand": "Scuffle Pickleball",
+      "model": "FORTY",
+      "ballType": null,
+      "listedDate": "2020-05-30"
+    },
+    {
+      "brand": "Selkirk Sport",
+      "model": "Pro S1",
+      "ballType": "Out",
+      "listedDate": "2023-02-25"
+    },
+    {
+      "brand": "Selkirk Sport",
+      "model": "SLK Hybrid",
+      "ballType": "Out",
+      "listedDate": "2020-07-28"
+    },
+    {
+      "brand": "Shenzhen Yunzhongyun Technology Co., Ltd.",
+      "model": "IUZIT",
+      "ballType": null,
+      "listedDate": "2021-08-10"
+    },
+    {
+      "brand": "SIMSII",
+      "model": "S-40 Yellow",
+      "ballType": "Out",
+      "listedDate": "2024-08-13"
+    },
+    {
+      "brand": "SIMSII",
+      "model": "S-40 Orange",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Singa Megatrades Pte Ltd",
+      "model": "Riffball",
+      "ballType": null,
+      "listedDate": "2020-09-24"
+    },
+    {
+      "brand": "SLAPP Pickleball",
+      "model": "SlappSHOT 40",
+      "ballType": "Out",
+      "listedDate": "2024-03-15"
+    },
+    {
+      "brand": "SLK by Selkirk",
+      "model": "SLK Hybrid+",
+      "ballType": "I/O",
+      "listedDate": "2023-02-25"
+    },
+    {
+      "brand": "SLK By Selkirk",
+      "model": "SLK Competition",
+      "ballType": null,
+      "listedDate": "2020-12-01"
+    },
+    {
+      "brand": "Spark Sport",
+      "model": "SPARK 100",
+      "ballType": "Out",
+      "listedDate": "2024-03-01"
+    },
+    {
+      "brand": "Spartan Pickleball",
+      "model": "CRISP40",
+      "ballType": "I/O",
+      "listedDate": "2024-12-10"
+    },
+    {
+      "brand": "SPIKOPOLL",
+      "model": "SPI-40 ELITE",
+      "ballType": "Out",
+      "listedDate": "2024-09-28"
+    },
+    {
+      "brand": "SPIKOPOLL",
+      "model": "SPI-40",
+      "ballType": "Out",
+      "listedDate": "2024-06-14"
+    },
+    {
+      "brand": "SPYDERPICK",
+      "model": "SP40 Orange",
+      "ballType": "Out",
+      "listedDate": "2025-06-30"
+    },
+    {
+      "brand": "Srikel",
+      "model": "XS-40",
+      "ballType": "I/O",
+      "listedDate": "2025-10-24"
+    },
+    {
+      "brand": "Supra",
+      "model": "Supra-Ball",
+      "ballType": null,
+      "listedDate": "2019-02-20"
+    },
+    {
+      "brand": "Sweetspot",
+      "model": "CS40",
+      "ballType": "I/O",
+      "listedDate": "2024-04-25"
+    },
+    {
+      "brand": "SWELL PBG PICKLEBALL",
+      "model": "PBG-40",
+      "ballType": "Out",
+      "listedDate": "2025-07-29"
+    },
+    {
+      "brand": "SWELL PBG PICKLEBALL LLC",
+      "model": "PBG 40",
+      "ballType": "Out",
+      "listedDate": "2024-03-15"
+    },
+    {
+      "brand": "SWELL PBG PICKLEBALL LLC",
+      "model": "PBG 26",
+      "ballType": "Ind",
+      "listedDate": "2024-03-15"
+    },
+    {
+      "brand": "Swin",
+      "model": "Swin Pro T40",
+      "ballType": "Out",
+      "listedDate": "2024-10-04"
+    },
+    {
+      "brand": "Synergy Pickleball",
+      "model": "All In 40 Green",
+      "ballType": "I/O",
+      "listedDate": "2024-06-30"
+    },
+    {
+      "brand": "Synergy Pickleball",
+      "model": "All In 40 Yellow",
+      "ballType": "I/O",
+      "listedDate": "2024-06-30"
+    },
+    {
+      "brand": "Synergy Pickleball",
+      "model": "All In 40 Pink",
+      "ballType": "I/O",
+      "listedDate": "2024-06-30"
+    },
+    {
+      "brand": "T TICCI",
+      "model": "PKB001",
+      "ballType": null,
+      "listedDate": "2021-08-10"
+    },
+    {
+      "brand": "Takeya USA",
+      "model": "Takeya Pickleball Ball",
+      "ballType": "Out",
+      "listedDate": "2023-01-08"
+    },
+    {
+      "brand": "Takeya USA",
+      "model": "Takeya_Susan G. Komen Pink ball",
+      "ballType": "Out",
+      "listedDate": "2022-10-24"
+    },
+    {
+      "brand": "Tensindo Sports",
+      "model": "Tensindo Shine Outdoor",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Thanh Phat",
+      "model": "XPRO-40",
+      "ballType": "I/O",
+      "listedDate": "2026-02-23"
+    },
+    {
+      "brand": "Things Of Skill",
+      "model": "TOSB",
+      "ballType": "Out",
+      "listedDate": "2023-06-02"
+    },
+    {
+      "brand": "Things Of Skill",
+      "model": "TOS",
+      "ballType": "Out",
+      "listedDate": "2023-04-21"
+    },
+    {
+      "brand": "TIENTRUONG BUILDING MATERIALS TRADING CO., LTD",
+      "model": "T-PICK",
+      "ballType": "Ind",
+      "listedDate": "2025-11-24"
+    },
+    {
+      "brand": "Titan Pickleball",
+      "model": "TP",
+      "ballType": "Out",
+      "listedDate": "2024-08-13"
+    },
+    {
+      "brand": "Topball USA",
+      "model": "Topball USA 1",
+      "ballType": "Out",
+      "listedDate": "2023-04-21"
+    },
+    {
+      "brand": "Triple Ace",
+      "model": "T 40",
+      "ballType": "Out",
+      "listedDate": "2022-12-24"
+    },
+    {
+      "brand": "TRUPICKLEBALL",
+      "model": "TRU-40",
+      "ballType": "Out",
+      "listedDate": "2024-04-25"
+    },
+    {
+      "brand": "Tumaz",
+      "model": "PQ01",
+      "ballType": null,
+      "listedDate": "2021-08-29"
+    },
+    {
+      "brand": "Unique Sports",
+      "model": "Tourna Strike Indoor",
+      "ballType": "Ind",
+      "listedDate": "2019-02-17"
+    },
+    {
+      "brand": "Unique Sports",
+      "model": "Tourna Strike Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": null
+    },
+    {
+      "brand": "Universal Sourcing Solutions, LLC.",
+      "model": "PickleBallz Z40",
+      "ballType": "Out",
+      "listedDate": "2022-08-26"
+    },
+    {
+      "brand": "Urane",
+      "model": "Urane",
+      "ballType": "Out",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "VICC",
+      "model": "H-40",
+      "ballType": "Out",
+      "listedDate": "2025-06-12"
+    },
+    {
+      "brand": "Vigel",
+      "model": "Vigel 40",
+      "ballType": "Out",
+      "listedDate": "2023-03-01"
+    },
+    {
+      "brand": "VINSA",
+      "model": "Vinsa Green",
+      "ballType": "Out",
+      "listedDate": "2024-06-14"
+    },
+    {
+      "brand": "Vivid Sports",
+      "model": "VS40",
+      "ballType": "Out",
+      "listedDate": "2022-08-12"
+    },
+    {
+      "brand": "VOAS",
+      "model": "Gold",
+      "ballType": "I/O",
+      "listedDate": "2024-08-13"
+    },
+    {
+      "brand": "Volair",
+      "model": "Volair Outdoor Ball",
+      "ballType": "Out",
+      "listedDate": "2023-03-01"
+    },
+    {
+      "brand": "Vole Sporting Goods Company Limited",
+      "model": "AeroPro",
+      "ballType": "I/O",
+      "listedDate": "2025-02-14"
+    },
+    {
+      "brand": "Vulcan Sporting Goods",
+      "model": "VTRU Classic Indoor Pickleball",
+      "ballType": "Ind",
+      "listedDate": "2025-04-14"
+    },
+    {
+      "brand": "Vulcan Sporting Goods",
+      "model": "VPRO Flight Outdoor",
+      "ballType": "Out",
+      "listedDate": "2023-05-05"
+    },
+    {
+      "brand": "Warping Point",
+      "model": "ASCENT-40",
+      "ballType": "Out",
+      "listedDate": "2024-06-14"
+    },
+    {
+      "brand": "Wika",
+      "model": "W-PRO",
+      "ballType": "Out",
+      "listedDate": "2025-03-18"
+    },
+    {
+      "brand": "Wilson",
+      "model": "Max 40",
+      "ballType": "Out",
+      "listedDate": "2024-04-22"
+    },
+    {
+      "brand": "Wilson",
+      "model": "TRU 32 INDOOR",
+      "ballType": "Ind",
+      "listedDate": "2023-11-02"
+    },
+    {
+      "brand": "Wilson",
+      "model": "TRU 32 Pro",
+      "ballType": "Out",
+      "listedDate": "2020-12-01"
+    },
+    {
+      "brand": "Wilson",
+      "model": "PB Team",
+      "ballType": null,
+      "listedDate": "2019-11-14"
+    },
+    {
+      "brand": "Wilson",
+      "model": "TRU32",
+      "ballType": "Out",
+      "listedDate": "2019-06-19"
+    },
+    {
+      "brand": "WINX40",
+      "model": "WIN X40",
+      "ballType": "I/O",
+      "listedDate": "2025-09-08"
+    },
+    {
+      "brand": "Wowlly Sports Inc.",
+      "model": "Comet",
+      "ballType": "I/O",
+      "listedDate": "2023-06-22"
+    },
+    {
+      "brand": "WSI",
+      "model": "Test",
+      "ballType": null,
+      "listedDate": "2020-10-01"
+    },
+    {
+      "brand": "Xenon Paddle",
+      "model": "Pro 40",
+      "ballType": "I/O",
+      "listedDate": "2023-03-22"
+    },
+    {
+      "brand": "XenonPaddle",
+      "model": "Tour 40",
+      "ballType": "I/O",
+      "listedDate": "2026-01-22"
+    },
+    {
+      "brand": "Xowak",
+      "model": "Ace Flight 26",
+      "ballType": "Ind",
+      "listedDate": "2024-08-13"
+    },
+    {
+      "brand": "Xowak",
+      "model": "Ace Flight 40",
+      "ballType": "Out",
+      "listedDate": "2024-06-30"
+    },
+    {
+      "brand": "Yaan Composite",
+      "model": "Y-40",
+      "ballType": "Out",
+      "listedDate": "2025-11-03"
+    },
+    {
+      "brand": "YAIT",
+      "model": "Rovo",
+      "ballType": "I/O",
+      "listedDate": "2026-04-20"
+    },
+    {
+      "brand": "YMA",
+      "model": "PK Ball#Pink",
+      "ballType": "I/O",
+      "listedDate": "2026-01-22"
+    },
+    {
+      "brand": "YUDINO",
+      "model": "YUDINO40",
+      "ballType": "I/O",
+      "listedDate": "2025-10-06"
+    },
+    {
+      "brand": "ZCEBRA",
+      "model": "Madness 40",
+      "ballType": "I/O",
+      "listedDate": "2023-03-28"
+    },
+    {
+      "brand": "ZCEBRA",
+      "model": "ONSIGHT SERIES",
+      "ballType": null,
+      "listedDate": "2021-08-03"
+    },
+    {
+      "brand": "Zocker",
+      "model": "Five Star Gen 2",
+      "ballType": "I/O",
+      "listedDate": "2025-07-29"
+    },
+    {
+      "brand": "Zocker",
+      "model": "ZB01",
+      "ballType": "Out",
+      "listedDate": "2024-09-28"
+    },
+    {
+      "brand": "Zone Pickleball",
+      "model": "Zone PB Neon",
+      "ballType": null,
+      "listedDate": "2021-05-23"
+    },
+    {
+      "brand": "Zsports",
+      "model": "ZBALL",
+      "ballType": "Out",
+      "listedDate": "2024-10-01"
+    }
+  ]
+}
