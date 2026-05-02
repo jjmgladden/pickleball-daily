@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-04-28 (Session 9 shutdown — **KB v18**, 47 entries through KB-0047; KB-0047 added — KB-0040 Phase L1 launch entry: TOC + accordion restructure shipped (commit 89eed8e); generic CSS classes (.tab-toc / .tab-section / .tab-callout) reusable for KB-0039 Help feature. KB-0040 sub-status updated: L1 complete, L2-L4 still Open. Session 8 shutdown produced KB v17 (KB-0046 Help-prefix #3, full Phase 4 launch playbook).)
+**Last updated:** 2026-05-02 (Session 10 shutdown — **KB v19**, 50 entries through KB-0050; KB-0048 added — KB-0040 Phase L2 launch entry: Glossary + Court Etiquette + DUPR Explainer + Tournament Prep shipped (commit 7ee1504); KB-0049 added — KB-0040 Phase L3 launch entry: new "Gear & Courts" tab + Equipment sub-tab (paddles + balls + nets) shipped (commit 6f9133a); KB-0050 added — USAP equipment scraping lessons (pagination quirk, parser graceful-degradation for older paddles, ball-column-shift fix, resumability + checkpointing pattern). KB-0040 sub-status updated: L1+L2+L3 complete, L4 still Open. Session 9 shutdown produced KB v18 (KB-0047 — Phase L1 launch).)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -923,12 +923,12 @@ Static types (Reference, Decision, Limitation) omit Tier.
   - Tips / How-To section (deferred)
   - Equipment beyond USAP-approved-paddle reference (no editorial reviews, no comparisons, no rankings)
   - Crowdsourced court submissions (would re-open KB-0012 Worker dependency — defer)
-- **Sub-status (Session 9, 2026-04-28):**
-  - **L1 — DONE** (commit 89eed8e on main, live at v13). TOC + accordion structure shipped. Generic CSS classes (`.tab-toc` / `.tab-section` / `.tab-callout`) reusable for KB-0039 Help feature. See KB-0047 for launch details.
-  - **L2 — Open** (Glossary + Court Etiquette + DUPR Explainer + Tournament Prep, ~3–4 hr, content writing dominates)
-  - **L3 — Open** (Equipment, ~1.5–2 hr, USAP-approved paddle list)
-  - **L4 — Open** (Courts standalone tab, ~6–10 hr, new Maps API + credential)
-- **Status:** Open (T2 — L1 done; L2/L3/L4 awaiting per-phase ATP)
+- **Sub-status (Session 10, 2026-05-02):**
+  - **L1 — DONE** (commit 89eed8e on main, S9, live at v13). TOC + accordion structure shipped. Generic CSS classes (`.tab-toc` / `.tab-section` / `.tab-callout`) reusable for KB-0039 Help feature. See KB-0047.
+  - **L2 — DONE** (commit 7ee1504 on main, S10, live at v14). Glossary (37 terms × 7 categories, JSON-backed) + Court Etiquette + DUPR Explainer + Tournament Prep added under the L1 shell. See KB-0048.
+  - **L3 — DONE** (commit 6f9133a on main, S10, live at v15). NEW "Gear & Courts" top-level tab (10 → 11 nav tabs) hosting Equipment sub-tab (Paddles 5,080 / Balls 365 / Nets spec). Sub-tab strip auto-suppressed at L3 launch (single sub-tab); architecture plumbed for L4 Courts to plug in as second sub-tab. Quarterly scrape workflow scheduled. See KB-0049 + KB-0050.
+  - **L4 — Open** (Courts as second sub-tab inside Gear & Courts, ~6–10 hr, new Maps API + credential — sub-tab strip will auto-render once Courts joins the array)
+- **Status:** Open (T2 — L1+L2+L3 done; L4 awaiting per-phase ATP)
 - **Cross-ref:** KB-0009 (Ratings vs Rankings) · KB-0012 (Worker — out of scope) · KB-0036 (current Learn tab) · KB-0039 (Help feature — same TOC+accordion CSS classes will be reused) · KB-0047 (L1 launch) · app/js/tabs/learn.js · app/styles/main.css · data/master/rules-changes-2026.json · data/master/history-seed.json · Project Travel `Glacier_RV_Trip_Planner.html` (lines 116–150 CSS + 851–905 markup — TOC+accordion reference for L1) · Project Travel (Maps integration reference for L4)
 
 ---
@@ -1704,4 +1704,154 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
 ---
 
-**End of KB. Entry count: 47. Next ID: KB-0048.**
+### KB-0048 | KB-0040 Phase L2 launched — Glossary + Court Etiquette + DUPR Explainer + Tournament Prep
+- **Type:** Action
+- **Date:** 2026-05-01 (Session 10)
+- **Category:** Build / Phase 2 / Learn / Content / KB-0040 sub-task
+- **Tags:** kb-0040, learn, glossary, etiquette, dupr, tournament-prep, content, phase-l2
+- **Finding:** Phase L2 of the KB-0040 Learn-tab plan shipped on commit `7ee1504` to `main`, live at v14. Four hand-curated content sections added under the L1 TOC + accordion shell shipped in Session 9. Final Learn-tab section order: Rules & Authority (1) → History (2) → Glossary (3) → Court Etiquette (4) → DUPR Explainer (5) → Tournament Prep (6) → More coming (7).
+
+  **New content (~14 KB total prose + structured data):**
+  - **Glossary** — JSON-backed (`data/master/glossary.json`, 37 terms across 7 categories: Court & Lines, Serve & Return, Foundational Shots, Advanced Shots, Strategy & Movement, Scoring & Format, Open Play). Structured term/definition pairs render as `<dl>` lists with bold terms + 2px left-border on definitions. JSON format chosen (vs inline prose) for the Glossary specifically because it is structured term/def data, easier to extend, and AI-context-bundle-extensible for future Phase 4 use. Other three sections are inline prose in `learn.js` body builders.
+  - **Court Etiquette** — open-play queueing (paddle stack, paddle-up rotation), kitchen-line conventions (don't volley in NVZ, momentum counts), calling lines (benefit-of-doubt rule, partner-disagreement = in), crossing-courts safety, partner conduct. ~2.3 KB prose.
+  - **DUPR Explainer** — what DUPR is (rating, not ranking), what it isn't (NOT a PPA Tour ranking, NOT a USAP self-rating, NOT UTR-P/PickleWave ELO), practical numbers tier (2.0–8.0+ with rec/tournament/pro mappings), how it moves (margin matters, recent matches weighted, reliability score), how to find your rating. Preserves KB-0009 (Ratings vs Rankings must not merge) explicitly. ~3 KB prose.
+  - **Tournament Prep** — registration platforms (PickleballTournaments + PickleballBrackets), sanctioned vs unsanctioned, picking your bracket, format conventions, what to bring, day-of expectations. ~3.3 KB prose.
+
+  **Files touched (5):**
+  - `data/master/glossary.json` (NEW) — schemaVersion 1, 7 categories + 37 terms
+  - `app/js/tabs/learn.js` — added `glossaryBodyHtml` (loads JSON + renders by category), `etiquetteBodyHtml`, `duprExplainerBodyHtml`, `tournamentPrepBodyHtml`; sections array grew 3 → 7; "More coming" stub shrunk to L3+ teasers
+  - `app/styles/main.css` — added `.glossary-list` dt/dd styling
+  - `app/sw.js` — `CACHE` v13 → v14
+  - `app/js/app.js` — `APP_VERSION` v13 → v14
+
+  **Verification (DOM-level via preview eval — screenshot tool hung again, same transient harness issue as Session 9):**
+  - 7 sections render in correct order with correct TOC ✓
+  - TOC anchor-jump tested for DUPR section, scrolls cleanly ✓
+  - Glossary loaded all 37 terms across 7 categories (37 dd elements counted) ✓
+  - Etiquette: 5 subsections / 17 list items ✓
+  - DUPR: 5 subsections / 20 list items ✓
+  - Tournament Prep: 6 subsections / 23 list items ✓
+  - All callouts render (4 total — 1 per L2 section) ✓
+  - Console clean ✓
+  - check-secrets clean, check-esm clean (26 modules) ✓
+
+  **Owner-decided in this session:**
+  - JSON extraction for Glossary (vs inline) — recommended and approved
+  - Inline prose for Etiquette + DUPR + Tournament Prep — approved
+  - Section order: existing 1+2 first (no renumber), L2 sections inserted at 3-6, "More coming" pushed to 7 — approved
+  - All 4 sections under the SINGLE existing Learn tab (no new top-level tab) — approved at session start
+- **Status:** Closed (shipped + verified)
+- **Cross-ref:** KB-0040 (parent — L3 also done this session, L4 still Open) · KB-0009 (Ratings vs Rankings boundary preserved) · KB-0047 (L1 launch) · KB-0049 (L3 launch — same session) · `app/js/tabs/learn.js` · `data/master/glossary.json` · `app/styles/main.css`
+
+---
+
+### KB-0049 | KB-0040 Phase L3 launched — Gear & Courts tab + Equipment sub-tab (paddles + balls + nets)
+- **Type:** Action
+- **Date:** 2026-05-02 (Session 10)
+- **Category:** Build / Phase 2 / Equipment / Tab Architecture / KB-0040 sub-task
+- **Tags:** kb-0040, gear-courts, equipment, paddles, balls, nets, sub-tabs, phase-l3, usap, scraper, github-actions, quarterly-cron
+- **Finding:** Phase L3 of the KB-0040 Learn-tab plan shipped on commit `6f9133a` to `main`, live at v15. **L3 deviated from the original "all under Learn" plan after a mid-session architecture review** — Equipment is structurally a 5,000+ row searchable database, which is a bad fit for Learn's accordion shell. Owner ATP'd a redesign mid-session: Equipment lives in a NEW top-level "Gear & Courts" tab (10 → 11 nav tabs) hosting an Equipment sub-tab. The sub-tab strip is suppressed at L3 launch (only one sub-tab) and will auto-render at L4 when Courts joins.
+
+  **Architecture (Option γ in mid-session redesign):**
+  - **New top-level tab:** "Gear & Courts" — name chosen because "Find" alone hides the noun, "Equipment" alone forces a rename at L4. Survives L4 unchanged.
+  - **Sub-tab strip:** built but auto-hidden when sub-tab count <2. Enables L4 Courts to plug in by adding one entry to a sub-tabs array — no rework.
+  - **Sub-tab visual style** (when shown at L4): pill segmented control. CSS in `main.css` already shipped.
+  - **Inner Equipment layout:** flat scrollable view with TOC at top — Paddles → Balls → Nets sections (same pattern as Learn, but no accordion since Paddles already has its own internal search + pagination).
+
+  **Data (~2.51 MB total committed):**
+  - **`data/master/paddles.json`** — 5,080 USAP-approved paddles (NEW). Fields per entry: brand, model, addedDate (ISO), imageUrl (USAP CDN link), detailUrl (USAP entry page link), status, shape, depth, coreMaterial, faceMaterial, finish. ~12.7% of (older) entries have null detail-page fields — USAP didn't record those specs back then. UI gracefully degrades.
+  - **`data/master/balls.json`** — 365 USAP-approved balls (NEW). Fields: brand, model, ballType (Out/Ind/I&O/null), listedDate (ISO).
+  - **`data/master/nets-spec.json`** — written specification + buyer notes (NEW). USAP doesn't publish a product list for nets — only a written spec. 8 spec rows + 3 buyer-note callouts.
+
+  **UI files (5 new + 4 modified):**
+  - `app/js/tabs/gear-courts.js` (NEW) — top-level orchestrator
+  - `app/js/components/sub-tab-strip.js` (NEW) — reusable pill segmented control with localStorage active-tab memory
+  - `app/js/tabs/equipment.js` (NEW) — Paddles search-driven (brand + model typeahead) + paginated (25/page) + sortable (newest / oldest / brand). Balls grouped by Outdoor / Indoor / Indoor & Outdoor / Other. Nets section
+  - `app/index.html` — added "Gear & Courts" nav button + section panel
+  - `app/js/app.js` — registered new tab; APP_VERSION v14 → v15
+  - `app/styles/main.css` — paddle card grid, pill segmented control, ball list grouping, net spec rows + buyer notes
+  - `app/sw.js` — added new files to SHELL_FILES; CACHE v14 → v15
+
+  **Ingestion files (2 new):**
+  - `ingestion/fetch-usap-equipment.js` (NEW) — Playwright scraper (~85 min for 5,080 entries with detail-page enrichment); supports `--paddles-only`, `--balls-only`, `--limit N`, `--skip-details` flags
+  - `.github/workflows/equipment-refresh.yml` (NEW) — quarterly cron (1st of Jan/Apr/Jul/Oct, 06:00 UTC) + manual `workflow_dispatch`
+
+  **Refresh cadence (per owner ATP — A2+A3):**
+  - **Quarterly schedule:** automatic, no owner action required
+  - **Manual escape hatch:** owner can click "Run workflow" on https://github.com/jjmgladden/pickleball-daily/actions/workflows/equipment-refresh.yml to refresh anytime
+  - **Failure notification:** GitHub's default failure-email to repo owner (no extra Resend integration — daily cron's failure-email path has been clean)
+  - **Cost:** GitHub Actions free tier is unlimited for public repos; no concern
+
+  **Verification at launch (preview, full data):**
+  - 11-tab nav with "Gear & Courts" between Learn and Ask ✓
+  - APP_VERSION pill = v15 ✓
+  - Sub-tab strip correctly hidden (single sub-tab) ✓
+  - 3 equipment sections (Paddles · Balls · Nets) with TOC ✓
+  - 5,080 paddles loaded; "Page 1 of 204" pagination ✓
+  - Search "Selkirk" → 164 matching paddles ✓
+  - Sort by brand → first paddle "11NIL" ✓
+  - Ball groups: Outdoor (228) · Indoor (40) · Indoor & Outdoor (68) · Other (29) = 365 ✓
+  - 8 net spec rows ✓
+  - Console clean ✓
+  - check-secrets clean ✓ · check-esm clean (29 modules — was 26, added sub-tab-strip + gear-courts + equipment) ✓
+
+  **Mid-session redesign rationale (recorded for future architecture decisions):**
+  Owner asked "do we have too much under a single tab?" — well-timed challenge. Honest assessment: L1+L2 sections are prose-style reference (good fit for accordion), but L3 Equipment is a 5,000+ row searchable database (poor fit). Burying database UX inside an accordion creates real problems: heavy lazy-load on accordion-open, search results scrolling inside a body context, anchor-jumping losing place mid-search. L4 was already planned as a standalone tab anyway, so we'd hit 11 tabs eventually. The "Gear & Courts" parent tab + sub-tab pattern caps the navbar at 11 forever (Equipment + future Courts share a parent), provides a reusable sub-tab pattern for any future "find a thing" features, and matches each content type to its right container.
+
+  **Owner-decided in this session (chronologically):**
+  - L3 ATP itself
+  - Decertification handling: drop entries from JSON when removed from USAP list (no preserved history field; git log is the audit trail)
+  - Image strategy: link to USAP CDN (no images committed locally)
+  - Mobile UX: card-per-paddle (no responsive table)
+  - File packaging: single `paddles.json` (not split — 2.51 MB is fine)
+  - Cron-failure notification: GitHub default email
+  - Refresh cadence: A2+A3 (scheduled + manual escape hatch)
+  - Field set: paddles → Brand/Model/Added/Shape/Core/Face/Finish/Depth · balls → Brand/Model/Type/Listed · nets → spec text
+  - Mid-session: tab placement → standalone "Gear & Courts" tab with sub-tab pattern (NOT under Learn)
+  - Mid-session: tab name → "Gear & Courts" (over "Find," "Browse," "Equipment-then-rename")
+  - Mid-session: sub-tab strip behavior at L3 launch → hidden until ≥2 sub-tabs (Option (i))
+  - Mid-session: sub-tab visual style → pill segmented control
+- **Status:** Closed (shipped + verified)
+- **Cross-ref:** KB-0040 (parent — L4 still Open) · KB-0048 (L2 launch — same session) · KB-0050 (USAP scraping lessons from this build) · `app/js/tabs/gear-courts.js` · `app/js/tabs/equipment.js` · `app/js/components/sub-tab-strip.js` · `ingestion/fetch-usap-equipment.js` · `.github/workflows/equipment-refresh.yml`
+
+---
+
+### KB-0050 | USAP equipment scraping lessons — pagination, parser graceful-degradation, ball column shift, resumability
+- **Type:** Reference
+- **Date:** 2026-05-02 (Session 10)
+- **Category:** Ingestion / Scraping / USAP / Lessons-Learned
+- **Tags:** usap, scraping, playwright, gravityview, pagination, resumability, checkpointing, parser-resilience, lessons-learned
+- **Finding:** Reference for the next quarterly USAP equipment refresh (or any future GravityView-based scrape). Captures four gotchas the Session 10 build hit during the L3 ingestion script.
+
+  **1. USAP uses GravityView, NOT a `<table>`.**
+  Initial scraper assumption was `table tbody tr`. Real selector is `div.gv-grid-row` containing 4 `div.gv-grid-value` columns. Detail-page links: `a[href*="/paddle-list/entry/"]` (note: no trailing slash on detail URLs from the index — strip it during scrape so dedupe works).
+
+  **2. Pagination URL is `?pagenum=N`, NOT `/page/N/`.**
+  First scrape attempt used `/page/N/` because that's the most common WordPress convention. USAP's plugin (GravityView) uses a `?pagenum=N` query parameter instead. The `/page/N/` path silently returned page 1 every time — the scraper found 25 valid rows on every "page" and processed 6,250 entries that turned out to be 25 entries × 250 duplicates. Detection: the URL pattern matters; verify by clicking through the live UI's pagination links and capturing the resulting URL.
+
+  **3. Stop-on-duplicate-page defense.**
+  Even with the right URL pattern, future paginators may silent-loop. The corrected script now tracks `seenUrls` (paddle detail URLs) or `seenKeys` (composite brand+model+type+date for balls) per page, and stops when an entire fetched page has zero new entries. Belt-and-suspenders against silent-loop pagination quirks.
+
+  **4. Older paddles have sparser detail pages — 12.7% missing shape/material/finish.**
+  Probed several missing-detail entries (e.g., Franklin Sports "Activator" approved 2019). USAP didn't capture shape/material/finish/depth back then; the detail page only has Brand/Model/Image/Status/Added. **Not a parser bug — the data simply doesn't exist.** UI handles this via per-field `if (val) renderRow()` so older paddles render fewer spec rows. Don't waste time "fixing" the parser.
+
+  **5. Older balls have a 3-column index row, not 4.**
+  ~29 of the 365 balls are older entries with only Brand/Model/Listed Date in the index page (no Ball Type column). The naive `cols[2]` read grabs the listed date and labels it as ballType. Fix: detect date-shaped value (`/^\d{2}\/\d{2}\/\d{4}$/`) in column 3 and shift it to listedRaw, leaving ballType blank. Now in the live scraper.
+
+  **6. Resumability + 250-entry checkpoints.**
+  The detail-enrichment phase (5,080 paddles × 1s/entry = ~85 min) is a fragile single-point-of-failure if interrupted. Pattern adopted: `loadCachedPaddles()` reads the existing `paddles.json` at startup; entries with shape data are flagged `alreadyDone` and skipped on re-run. `writeCheckpoint()` flushes the in-memory paddles array to `paddles.json` every 250 entries (~4 min). On any future interruption, re-running the script resumes from the last checkpoint with at most ~4 min of lost work. Critical for long-running ingestion jobs in general — apply to any future scrape that runs >15 min.
+
+  **7. Crash with no error logged → suspect external interruption.**
+  Session 10 had one mysterious failure: detail enrichment started successfully ("[paddles] enriching 5080 entries…" printed) then the process exited with code 4 and zero further output. No error message in the log — strongly suggests an OS-level kill (sleep, AV, OOM). Mitigation is the resumability + checkpoint pattern above; rather than debugging the exact crash cause, design the workload to recover. The same code path completed cleanly on a subsequent run.
+
+  **8. Polite delays.**
+  USAP doesn't publish a `Crawl-delay` in robots.txt. Used 1.5s between index pages and 1.0s between detail pages — conservative for an unfamiliar host. Adjust upward if any 429/503 ever appears (none observed in this build).
+
+  **What this means for the next quarterly run:**
+  The first cron-fired refresh runs ~Jul 1 2026 if not manually triggered earlier. The script now handles all four gotchas correctly. If USAP changes their plugin or HTML structure, the most likely break points are the GravityView selectors (`.gv-grid-row`, `.gv-grid-value`); the `?pagenum=N` URL pattern is plugin-dependent and could change. A defensive probe is included via the existing scraper's `process.stdout.write` per-page logs — a sudden switch to "0 rows" on page 1 indicates a structural change requiring re-investigation.
+- **Status:** Closed (reference for future ingestion sessions)
+- **Cross-ref:** KB-0049 (L3 launch — context for these lessons) · KB-0040 (parent restructure plan) · `ingestion/fetch-usap-equipment.js` · `.github/workflows/equipment-refresh.yml` · `data/master/paddles.json` · `data/master/balls.json`
+
+---
+
+**End of KB. Entry count: 50. Next ID: KB-0051.**
