@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-05-02 (Session 10 shutdown — **KB v19**, 50 entries through KB-0050; KB-0048 added — KB-0040 Phase L2 launch entry: Glossary + Court Etiquette + DUPR Explainer + Tournament Prep shipped (commit 7ee1504); KB-0049 added — KB-0040 Phase L3 launch entry: new "Gear & Courts" tab + Equipment sub-tab (paddles + balls + nets) shipped (commit 6f9133a); KB-0050 added — USAP equipment scraping lessons (pagination quirk, parser graceful-degradation for older paddles, ball-column-shift fix, resumability + checkpointing pattern). KB-0040 sub-status updated: L1+L2+L3 complete, L4 still Open. Session 9 shutdown produced KB v18 (KB-0047 — Phase L1 launch).)
+**Last updated:** 2026-05-03 (Session 10 post-shutdown follow-up — **KB v20**, 50 entries unchanged; KB-0049 appended with "Post-launch verification scheduling" subsection capturing the one-time Claude Code routine `trig_01NNgGLLedBTwrL8PLiXWvPe` (fires Jul 2 2026 12:00 UTC verifying the equipment-refresh.yml first-cron-fire on Jul 1 2026) + the Google Calendar reminder pinned to owner's calendar Jul 2 2026 9:00 AM CDT with 7-day-prior popup. Session 10 shutdown earlier the same day produced KB v19 — KB-0048 (L2 launch), KB-0049 (L3 launch), KB-0050 (USAP scraping lessons); KB-0040 sub-status updated to L1+L2+L3 complete with L4 still Open.)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -1811,8 +1811,34 @@ Static types (Reference, Decision, Limitation) omit Tier.
   - Mid-session: tab name → "Gear & Courts" (over "Find," "Browse," "Equipment-then-rename")
   - Mid-session: sub-tab strip behavior at L3 launch → hidden until ≥2 sub-tabs (Option (i))
   - Mid-session: sub-tab visual style → pill segmented control
-- **Status:** Closed (shipped + verified)
-- **Cross-ref:** KB-0040 (parent — L4 still Open) · KB-0048 (L2 launch — same session) · KB-0050 (USAP scraping lessons from this build) · `app/js/tabs/gear-courts.js` · `app/js/tabs/equipment.js` · `app/js/components/sub-tab-strip.js` · `ingestion/fetch-usap-equipment.js` · `.github/workflows/equipment-refresh.yml`
+  **Post-launch verification scheduling (Session 10 follow-up, 2026-05-03):**
+
+  Owner asked whether the new equipment-refresh workflow needed a manual `workflow_dispatch` smoke-test before the first scheduled fire (~Jul 1 2026). Honest cost-benefit assessment surfaced that ~70% of failure modes are pre-validated by daily.yml's similar steps; the remaining ~30% (script-on-Ubuntu behavior, JSON validators, total runtime vs 180-min cap) would be validated by a manual run. **Cleaner alternative chosen:** instead of burning a redundant 85-min manual run, schedule a one-time Claude Code routine to verify the actual scheduled fire after the fact. This tests the cron path end-to-end in production rather than the manual `workflow_dispatch` path.
+
+  **Routine details:**
+  - **ID:** `trig_01NNgGLLedBTwrL8PLiXWvPe`
+  - **Fires:** 2026-07-02 at 12:00 UTC (7:00 AM CDT) — one-time, auto-disables after firing
+  - **Model:** claude-sonnet-4-6
+  - **Allowed tools:** Bash, Read, Glob, Grep
+  - **Repo source:** jjmgladden/pickleball-daily
+  - **Manage at:** https://claude.ai/code/routines/trig_01NNgGLLedBTwrL8PLiXWvPe
+
+  **What the routine does:**
+  1. `gh run list --workflow=equipment-refresh.yml --limit=3` — confirm a Jul 1 run completed
+  2. `gh api commits` — confirm a "data: USAP equipment refresh" bot commit landed Jul 1–2
+  3. Check `paddles.json` + `balls.json` `generatedAt` is from Jul 1 (paddles ≥5,000; balls ≥350)
+  4. Reports ✅/⚠️/❌ in <200 words, only notifies owner if any step did NOT pass
+
+  **Calendar reminder (owner's primary Google Calendar):**
+  - **Event:** "Check Pickleball equipment-refresh Q3 2026 cron report"
+  - **When:** Thu Jul 2 2026, 9:00–9:30 AM CDT (2 hr after routine fire — gives time for agent's report to land)
+  - **Notification:** popup 7 days prior (owner adjusted from 30-min default)
+  - **Color:** Peacock (blue)
+  - Description embeds full routine details + manage link + diagnosis pointers to KB-0050
+
+  **Posture:** silence is success. If the routine reports green, owner hears nothing. The calendar event still pings 7 days early so owner is mentally prepared even if the routine reports green. Either way, this records the project-side action for future-session continuity (so the next shutdown protocol doesn't lose the trail).
+- **Status:** Closed (shipped + verified; post-launch verification scheduled for Jul 2 2026)
+- **Cross-ref:** KB-0040 (parent — L4 still Open) · KB-0048 (L2 launch — same session) · KB-0050 (USAP scraping lessons from this build) · `app/js/tabs/gear-courts.js` · `app/js/tabs/equipment.js` · `app/js/components/sub-tab-strip.js` · `ingestion/fetch-usap-equipment.js` · `.github/workflows/equipment-refresh.yml` · Claude Code routine `trig_01NNgGLLedBTwrL8PLiXWvPe`
 
 ---
 
