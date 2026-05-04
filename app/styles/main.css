@@ -1051,3 +1051,160 @@ footer.app-footer {
   margin-bottom: 4px;
 }
 .nets-note-text { color: var(--text); font-size: 0.93rem; line-height: 1.5; }
+
+/* ---------- Player Comparison (Session 11) ---------- */
+
+/* Compare checkbox on player cards */
+.cmp-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 6px;
+  padding: 2px 8px;
+  background: rgba(120, 180, 255, 0.06);
+  border: 1px solid rgba(120, 180, 255, 0.25);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+}
+.cmp-toggle:hover { background: rgba(120, 180, 255, 0.12); color: var(--text); }
+.cmp-toggle input { margin: 0; cursor: pointer; }
+.cmp-toggle-disabled { opacity: 0.4; cursor: not-allowed; }
+.cmp-toggle-disabled:hover { background: rgba(120, 180, 255, 0.06); color: var(--text-dim); }
+
+/* Selected card highlight */
+.card-cmp-selected {
+  border-color: rgba(120, 180, 255, 0.55) !important;
+  box-shadow: 0 0 0 1px rgba(120, 180, 255, 0.25);
+}
+
+/* Sticky compare banner above the player list */
+.cmp-banner {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  margin: 8px 0 4px;
+  background: rgba(120, 180, 255, 0.10);
+  border: 1px solid rgba(120, 180, 255, 0.4);
+  border-radius: 8px;
+  font-size: 0.92rem;
+}
+.cmp-banner-hint {
+  background: rgba(255, 200, 100, 0.08);
+  border-color: rgba(255, 200, 100, 0.3);
+}
+.cmp-cta {
+  padding: 6px 14px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cmp-cta:hover { filter: brightness(1.1); }
+.cmp-clear {
+  padding: 6px 12px;
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.cmp-clear:hover { color: var(--text); border-color: var(--text-dim); }
+
+/* Comparison view */
+.cmp-toolbar { margin: 8px 0 12px; }
+.cmp-back {
+  padding: 6px 12px;
+  background: transparent;
+  color: var(--accent-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.cmp-back:hover { color: var(--accent); border-color: var(--accent-2); }
+
+.cmp-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.cmp-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr;
+  background: var(--bg-2);
+  align-items: stretch;
+}
+.cmp-row-header { background: var(--bg-1); }
+.cmp-label {
+  padding: 10px 12px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+.cmp-cell {
+  padding: 10px 12px;
+  color: var(--text);
+  font-size: 0.95rem;
+  border-right: 1px solid var(--border);
+  word-wrap: break-word;
+}
+.cmp-cell:last-child { border-right: none; }
+.cmp-header-cell {
+  padding: 12px;
+  border-right: 1px solid var(--border);
+}
+.cmp-header-cell:last-child { border-right: none; }
+.cmp-player-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Mobile stack — sub-640 */
+@media (max-width: 639px) {
+  .cmp-row {
+    grid-template-columns: 1fr;
+  }
+  .cmp-label {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+  .cmp-cell {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 8px 12px;
+  }
+  .cmp-cell:last-child { border-bottom: none; }
+  .cmp-cell::before {
+    content: attr(data-player);
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+  .cmp-header-cell { border-right: none; border-bottom: 1px solid var(--border); }
+  .cmp-header-cell:last-child { border-bottom: none; }
+}

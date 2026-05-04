@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-05-03 (Session 10 post-shutdown follow-up — **KB v20**, 50 entries unchanged; KB-0049 appended with "Post-launch verification scheduling" subsection capturing the one-time Claude Code routine `trig_01NNgGLLedBTwrL8PLiXWvPe` (fires Jul 2 2026 12:00 UTC verifying the equipment-refresh.yml first-cron-fire on Jul 1 2026) + the Google Calendar reminder pinned to owner's calendar Jul 2 2026 9:00 AM CDT with 7-day-prior popup. Session 10 shutdown earlier the same day produced KB v19 — KB-0048 (L2 launch), KB-0049 (L3 launch), KB-0050 (USAP scraping lessons); KB-0040 sub-status updated to L1+L2+L3 complete with L4 still Open.)
+**Last updated:** 2026-05-03 (Session 11 — **KB v22**, 52 entries; KB-0052 added — Phase 2 depth bundle: On-This-Day cascading 4-level fallback (SAME_DAY → SAME_WEEK → SAME_MONTH → ROTATING) + Player Comparison feature (inline-toggle, ephemeral 2-player Set, side-by-side ≥640px / stacked <640px) shipped; Player Detail Page deferred (γ) pending DUPR API or ranking-history rollup or per-player results ingestion. SW cache + APP_VERSION rolled v15 → v16. Earlier same-day: KB v20 → v21 added KB-0051 — Phase L4 (Courts sub-tab) deferred after pre-build investigation found Pickleheads has anti-bot + unreadable ToS, USAP Places2Play robots.txt blanket-disallows scraping, Google Places API costs ~$120–$200/yr; KB-0040 L4 sub-status flipped to Deferred. KB v19 → v20 (post-shutdown 2026-05-03) appended KB-0049 with verification-scheduling subsection. Session 10 shutdown produced KB v19 — KB-0048 (L2 launch), KB-0049 (L3 launch), KB-0050 (USAP scraping lessons).)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -927,8 +927,8 @@ Static types (Reference, Decision, Limitation) omit Tier.
   - **L1 — DONE** (commit 89eed8e on main, S9, live at v13). TOC + accordion structure shipped. Generic CSS classes (`.tab-toc` / `.tab-section` / `.tab-callout`) reusable for KB-0039 Help feature. See KB-0047.
   - **L2 — DONE** (commit 7ee1504 on main, S10, live at v14). Glossary (37 terms × 7 categories, JSON-backed) + Court Etiquette + DUPR Explainer + Tournament Prep added under the L1 shell. See KB-0048.
   - **L3 — DONE** (commit 6f9133a on main, S10, live at v15). NEW "Gear & Courts" top-level tab (10 → 11 nav tabs) hosting Equipment sub-tab (Paddles 5,080 / Balls 365 / Nets spec). Sub-tab strip auto-suppressed at L3 launch (single sub-tab); architecture plumbed for L4 Courts to plug in as second sub-tab. Quarterly scrape workflow scheduled. See KB-0049 + KB-0050.
-  - **L4 — Open** (Courts as second sub-tab inside Gear & Courts, ~6–10 hr, new Maps API + credential — sub-tab strip will auto-render once Courts joins the array)
-- **Status:** Open (T2 — L1+L2+L3 done; L4 awaiting per-phase ATP)
+  - **L4 — DEFERRED** (Session 11, 2026-05-03; see KB-0051). Pre-build data-source investigation found neither candidate static-scrape source is cleanly available: Pickleheads uses active anti-bot defenses (Cloudflare 403 on `/terms`, `/about`, `/legal` — written ToS unreadable from a non-browser UA) and USAP Places2Play robots.txt blanket-disallows all bots except major search engines. The only sanctioned alternative (Google Places API) carries ~$120–$200/yr at our scope; owner declined. Architecture remains plumbed (sub-tab strip auto-renders once a second sub-tab is registered). Unblocking criteria recorded in KB-0051. Status flips back to Open if any of: (a) Pickleheads publishes a public API or partner program, (b) USAP relaxes Places2Play robots.txt or publishes a feed, (c) owner accepts Google Places cost, (d) owner approves curated-snapshot scope (Option γ — owner's region + top US metros, ~500 courts hand-curated).
+- **Status:** Open (T2 — L1+L2+L3 done; L4 deferred per KB-0051; parent KB stays Open until either L4 lands or the L-plan is formally closed)
 - **Cross-ref:** KB-0009 (Ratings vs Rankings) · KB-0012 (Worker — out of scope) · KB-0036 (current Learn tab) · KB-0039 (Help feature — same TOC+accordion CSS classes will be reused) · KB-0047 (L1 launch) · app/js/tabs/learn.js · app/styles/main.css · data/master/rules-changes-2026.json · data/master/history-seed.json · Project Travel `Glacier_RV_Trip_Planner.html` (lines 116–150 CSS + 851–905 markup — TOC+accordion reference for L1) · Project Travel (Maps integration reference for L4)
 
 ---
@@ -1880,4 +1880,206 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
 ---
 
-**End of KB. Entry count: 50. Next ID: KB-0051.**
+### KB-0051 | Phase L4 (Courts sub-tab) — DEFERRED after data-source investigation; full record of issues + revised options
+- **Type:** Decision
+- **Date:** 2026-05-03 (Session 11)
+- **Category:** Phase 2 / Learn-Restructure / Data Sources / Deferral
+- **Tags:** kb-0040, l4, courts, deferred, pickleheads, places2play, google-places, scraping, anti-bot, tos, decision-record
+- **Finding:** Session 11 opened with owner ATP for Option A from the Kickoff Session 11 prompt — KB-0040 Phase L4 (Courts as second sub-tab inside the existing Gear & Courts top-level tab). Per the kickoff's pre-ATP-decisions list, code work was gated on a data-source decision. Investigation surfaced stop-sign signals on both static-scrape candidates and a non-trivial cost on the only fully-sanctioned alternative. Owner elected to **defer L4** and asked for a full record of the issues + revised options so a future session can re-open with full context.
+
+  **Pre-ATP decisions locked before investigation began:**
+  | # | Decision | Owner choice |
+  |---|---|---|
+  | D1 | Court data source | Pickleheads scrape → static `courts.json` (USAP Places2Play as fallback if ToS blocks) |
+  | D2 | Default location strategy (Maps API "near me" UX) | Skipped (no live Maps API in L4 per D1) |
+  | D3 | Geographic scope | US-only |
+  | D4 | Field set per court | `courtId`, `name`, `address`, `city`, `state`, `zip`, `lat`/`lng`, `numberOfCourts`, `indoor/outdoor`, `lighting`, `surface`, `feeStatus` (free/paid/membership), `sourceUrl` |
+
+  **Investigation findings (each candidate):**
+
+  **1. Pickleheads (`pickleheads.com`) — recommended source per Kickoff + my pre-ATP recommendation.**
+
+  - ✅ `robots.txt` (fetched 200 OK):
+    - Allows `/courts/*` paths
+    - Disallows `/api/`, `/search?*`, `/login`, `/signup`, `/courts/edit`, `/courts/new`, `/ai-chat`, `/chat`, `/complete-stripe-payment`, `/deduplicate`, `/go-to-listing`, `/lessons?*`, `/paddle-quiz/*`, `/round-robin-simulator?*`, `/round-robin-calculator-embed`, `/organizers`, `/tournament-time-calculator-embed`, `/test-round-robin/new`
+    - No `Crawl-delay` specified
+    - Special grant: `meta-externalagent: Allow: /` (Meta's training crawler)
+    - Sitemap pointer: `https://www.pickleheads.com/sitemap.xml`
+  - ✅ Sitemap (fetched 200 OK): `/sitemap.xml?section=courts` enumerates ~1,000+ URLs per file with clean URL pattern `/courts/{country}/{state}/{city}/{slug}` (sample URLs verified — both US and international entries present, e.g., `/courts/us/ohio/avon-lake/...`, `/courts/ca/ontario/toronto/...`, `/courts/ni/chinandega/...`). Each entry carries a `lastmod` timestamp ranging 2022–2026.
+  - ❌ **Active anti-bot defenses:** `/terms`, `/terms-of-service`, `/legal`, `/about` all returned **HTTP 403** to a non-browser User-Agent (WebFetch). The selectivity (robots.txt + sitemap serve fine, but content/legal pages 403) is the signature of a Cloudflare WAF rule explicitly excluding non-browser clients from substantive content.
+  - ❌ **Cannot read written ToS** — the gating step before any scrape build was unreadable. Could not confirm or deny clauses on automated access, redistribution rights, attribution requirements, or commercial-vs-non-commercial terms.
+
+  **Posture read for Pickleheads:** They want humans, not bots. Even if a Playwright browser could mimic a real user past the 403 (sites like this generally allow real-Chrome traffic through), doing so without a readable ToS = sneaking past defenses they put up deliberately. This is a meaningfully different posture than USAP's permissive paddle portal (which served WebFetch happily, had no anti-bot, and exposed structured data via GravityView). The L3 pattern does NOT transfer cleanly.
+
+  **2. USAP Places2Play (`places2play.org`) — original fallback per kickoff.**
+
+  - ❌ **`robots.txt` blanket-disallows all bots:** `Disallow: /` for `User-agent: *`. Only specific search-engine bots are exempted (`msnbot`, `Mediapartners-Google`, `Slurp`, `Googlebot`, `Googlebot-Mobile`).
+  - This is unambiguous: scraping is explicitly forbidden in writing. Different from Pickleheads' implicit/technical signal — this is the explicit/written signal.
+  - Coverage is also smaller than Pickleheads (community estimates ~10–12k vs Pickleheads' 22k+).
+  - **Disqualified.**
+
+  **3. Google Places API — sanctioned alternative.**
+
+  - ✅ **Legitimate, sanctioned, structured.** No ToS gray area. Reuses Google Cloud project already hosting `YOUTUBE_API_KEY` (KB-0044); just enable Places API on it. New credential would be `GOOGLE_PLACES_API_KEY` repo Secret.
+  - ✅ **Architecture stays identical to L3:** quarterly cron → `data/master/courts.json` → static UI. Browser never hits Places API. Same shape as `paddles.json`/`balls.json`.
+  - ❌ **Cost reality (corrected — pre-research framing was too optimistic):**
+    - Nearby Search: $32/1k requests
+    - Place Details: $17/1k requests
+    - One-time US-state-grid sweep producing ~10k courts ≈ **~$150**
+    - Quarterly delta refresh ≈ **~$30–$50/quarter** = **~$120–$200/yr ongoing**
+    - Could be reduced with smarter partitioning (e.g., zip-code-prefix sampling, lastmod-based incremental fetch from a free index source) but that's added complexity for marginal cost reduction.
+  - ❌ Owner declined the recurring cost.
+
+  **4. Manual curation (Option γ from the revised-options table).**
+
+  - ✅ Zero risk, zero cost.
+  - ✅ Matches the project's "personal tool" framing.
+  - ❌ Poor coverage; manual upkeep.
+  - Scope sketch: owner's region (Ozark/Springfield/Branson MO) + top 50 US metros = ~500 courts hand-curated. Smaller than Pickleheads' ~22k or Places2Play's ~10k but ships a real feature with zero risk.
+  - **Not pursued in Session 11** — owner deferred without selecting between γ and δ; default outcome is δ.
+
+  **Revised options table (verbatim, as presented to owner pre-deferral):**
+
+  | Option | Pros | Cons | Cost |
+  |---|---|---|---|
+  | **α. Pickleheads via Playwright (mimic browser past 403)** | Largest data | Sneaks past anti-bot; no readable ToS; reputational/legal gray area; could get IP-banned | $0 |
+  | **β. Google Places API** | Legitimate + sanctioned; structured data; no ToS gray area; same quarterly-cron static-JSON architecture | Cost; new credential | ~$120–$200/yr |
+  | **γ. Manual curation (owner's region + top metros)** | Zero risk; matches "personal tool" framing | Poor coverage; manual upkeep | $0 |
+  | **δ. Defer L4** | Honest acknowledgment that the data-source landscape isn't friendly | Leaves Phase 2 Learn-restructure at 75% | $0 |
+
+  **Owner decision:** **δ (defer L4)** — "is fully fair but i want all the issues you ran into along with the revised options fully documented." This KB entry is that documentation.
+
+  **What's still in place (preserved investment):**
+  - Sub-tab strip component (`app/js/components/sub-tab-strip.js`) auto-renders the moment a second sub-tab is registered in `app/js/tabs/gear-courts.js` — no UI rebuild needed if/when L4 unblocks
+  - `app/js/tabs/gear-courts.js` `SUB_TABS` array is a one-line append to add Courts later
+  - Generic `.tab-*` and `.sub-tab-*` CSS classes (S9 KB-0047 + S10 KB-0049) cover the base styling
+  - Equipment scrape pattern (KB-0050: pagination, resumability, checkpointing, parser graceful-degradation) is the template for any future structured-source ingestion if a permissive courts source emerges
+
+  **Unblocking criteria — re-open L4 if any of these become true:**
+  1. **Pickleheads publishes a public API or partner program** (their `/api/*` is robots-disallowed today; would need explicit API offering)
+  2. **USAP relaxes Places2Play robots.txt** OR publishes a structured feed (CSV/JSON/sitemap with structured data)
+  3. **Owner accepts Google Places API cost** (~$120–$200/yr) — would also need a new repo Secret + credentials.md update + USAGE-cap configuration on Google Cloud project to prevent runaway billing
+  4. **Owner approves curated-snapshot scope** (Option γ — start ~500 courts hand-curated; can grow over time via curation backlog if KB-0012 Worker dependency is later revived)
+  5. **A new T1 source emerges** (e.g., a future PPA or MLP partner courts directory — none exist today)
+
+  **What this means for the next session that re-opens L4:**
+  Re-read this KB entry first. The data-source decision is the gating step; if none of the unblocking criteria above are met, defer again. If one is met, the build itself is straightforward — sub-tab plumbing is already in place, fields are decided (D4 above), scope is decided (D3 above, US-only), and the L3 architecture (cron → JSON → static UI) translates one-for-one regardless of which source ends up feeding the cron.
+
+  **Effort still estimated at ~6–10 hr** for the build itself once a source is in hand (matches the original L4 estimate from KB-0040). Pre-build investigation in Session 11 took ~30 min — the deferral cost is small, the avoided cost (building against a fragile/risky source) is large.
+- **Status:** Closed (deferral decision committed; future re-opening tracked via KB-0040 sub-status which now points back to this entry)
+- **Cross-ref:** KB-0040 (parent — L4 sub-status now "Deferred" pointing here) · KB-0044 (Google Cloud project hosting `YOUTUBE_API_KEY` — same project would host `GOOGLE_PLACES_API_KEY` if Option β is later chosen) · KB-0049 (L3 launch — sub-tab architecture preserved for L4 drop-in) · KB-0050 (USAP scraping pattern — template for any future structured-source courts feed) · KB-0012 (Cloudflare Worker — would re-open if Option γ scales via crowdsourced submissions)
+
+---
+
+### KB-0052 | Phase 2 depth bundle — On-This-Day fallback levels + Player Comparison + Player Detail deferral
+- **Type:** Decision
+- **Date:** 2026-05-03 (Session 11)
+- **Category:** Phase 2 / Depth / Players / History
+- **Tags:** session-11, phase-2, on-this-day, player-comparison, player-detail, fallback-levels, ephemeral-state, kb-0040-sibling
+- **Finding:** Session 11 Option B from the Kickoff Session 11 prompt — Phase 2 depth bundle. Three sub-features ATP'd together; all owner-decided pre-build per the Decision 1 / 2a–e / 3 dialog. Two shipped, one deferred. Live at SW cache `pickleball-daily-v16` and `APP_VERSION='v16'` (paired bump from v15).
+
+  **Sub-feature 1: On-This-Day expansion → 4-level fallback (SHIPPED)**
+
+  Original kickoff framing was inaccurate ("currently surfaces a single milestone; could expand to 2-3 entries with rotating selection") — the existing `app/js/components/on-this-day.js` already returned ALL same-day matches and rendered them in a loop. The real issue was that the history seed has 22 milestones across 60 years, mostly with `MM-00` or `0000-00-00` placeholders, so MOST days have zero exact-date matches and the section disappears entirely.
+
+  **Decision (Decision 1 = d combo):** Cascade through 4 fallback levels and always show something:
+  1. **SAME_DAY** — exact MM-DD match (existing behavior)
+  2. **SAME_WEEK** — within ±3 days of today (requires full date on the milestone)
+  3. **SAME_MONTH** — same MM, any DD (excludes the same-day item)
+  4. **ROTATING** — deterministic daily rotation (`dayOfYear % milestones.length`)
+
+  Each level renders with its own header label so user understands what they're seeing. Non-same-day fallbacks cap at 3 entries to prevent flooding. Public API now returns `{level, label, items}` so callers can introspect; `renderOnThisDayHtml` consumes this internally.
+
+  **Verification (May 3 2026):** Today has no SAME_DAY, SAME_WEEK, or SAME_MONTH match in the seed. Module fell through to ROTATING and surfaced "International Federation of Pickleball founded (2008, 18 yr ago)" deterministically. Section never disappears.
+
+  **File:** `app/js/components/on-this-day.js` (rewritten — was 56 lines, now 137 lines).
+
+  ---
+
+  **Sub-feature 2: Player Comparison (SHIPPED)**
+
+  New capability — pick any two players from the Players tab, see them side-by-side with all card-derivable fields aligned in a comparison table.
+
+  **Decisions (locked pre-build):**
+  | # | Decision | Choice |
+  |---|---|---|
+  | 2a | UI placement | **Inline toggle on Players tab** — Compare checkbox on each card; sticky banner appears when 1+ selected; CTA opens comparison view in-tab |
+  | 2b | Comparison count | **2 only** (matches doubles-team mental model) |
+  | 2c | Field set | **Card fields + recent-snapshot data** (see scope-correction below) |
+  | 2d | Mobile UX | **Side-by-side ≥640px, stacked <640px** (CSS grid-template-columns flips at media query) |
+  | 2e | Persist comparison state | **Ephemeral** — module-level `Set`, not localStorage; comparison choice does not survive reload |
+  | 3 | Player Detail Page | **Deferred (γ)** — fold into Player Comparison's "deeper view" need |
+
+  **Scope correction discovered during build (Decision 2c):** Snapshot tournaments carry event metadata only (no per-player results). Without per-player results ingestion (which doesn't exist today and is a sibling KB-0004 expansion concern), there's no recent-results data to display. Comparison view shows "— pending per-player results data —" placeholder for that row. The architecture is in place; populates automatically when a future ingestion lands. Honest reframe; no overpromise.
+
+  **Field rows (11 + header):** PPA Rank · DUPR Doubles · DUPR Singles · Country · MLP Team (2026) · Handedness · Age · PPA Points · Known For · Recent Results (placeholder) · Profiles.
+
+  **Implementation notes:**
+  - State module: `app/js/components/player-compare.js` — module-level `Set` for selected IDs (ephemeral), pub/sub for re-renders, `MAX_SELECTED = 2`
+  - View toggle within `app/js/tabs/players.js` (no router added — `viewState` closure variable swaps `renderListView()` ↔ `renderCompareView()`)
+  - Compare checkbox sits next to favorite ★ in card header — pill-style label with subtle blue tint to distinguish from favorite
+  - Selected cards get `card-cmp-selected` class (1px accent ring)
+  - When 2 selected: ALL other cards' Compare checkboxes get `disabled` attribute + `cmp-toggle-disabled` styling
+  - Banner is `position: sticky; top: 0` so it stays visible while scrolling the player list
+  - Back button on comparison view returns to list with selection state PRESERVED (allowing user to refine)
+
+  **Files added/changed:**
+  - NEW: `app/js/components/player-compare.js` (~140 lines)
+  - REWRITTEN: `app/js/tabs/players.js` (~120 → ~190 lines)
+  - APPENDED: `app/styles/main.css` (~150 lines under `/* ---------- Player Comparison (Session 11) ---------- */` header)
+  - SHELL: `app/sw.js` — added `./js/components/player-compare.js`; CACHE v15 → v16
+  - SHELL: `app/js/app.js` — APP_VERSION v15 → v16 (paired)
+
+  **Verification (preview, all green):**
+  - 109 player cards rendered with Compare toggles ✓
+  - 1-selected hint banner: "1 selected: pick one more to compare" ✓
+  - 2-selected CTA banner: "2 selected: Andrei Daescu vs Catherine Parenteau Compare these 2 → Clear" ✓
+  - 107 remaining toggles disabled when 2 selected ✓
+  - Comparison view renders 11 field rows + 2 header cells ✓
+  - Back button preserves selection state ✓
+  - Clear button drops selection + collapses banner ✓
+  - Mobile (375px) — grid-template flips to 1fr, label right-border collapses to bottom-border ✓
+  - Console clean ✓ · ESM check 30/30 ✓ · check-secrets clean ✓
+  - `preview_screenshot` timed out (KB-0049/KB-0050 documented harness issue — third session in a row) — DOM verification via `preview_eval` is authoritative
+
+  ---
+
+  **Sub-feature 3: Player Detail Page — DEFERRED (Decision 3 = γ)**
+
+  Owner-approved deferral after honest pre-ATP reframe. Original kickoff estimated ~2-3 hr, but a Player Detail Page derives its value from data NOT shown on the card. Today we have:
+
+  | Data | Available? | Source |
+  |---|---|---|
+  | Card fields (name, rank, rating, country, MLP, knownFor, profile links) | ✅ Yes | Already shown on card |
+  | Snapshot points + age (when populated) | ✅ Yes | Already shown on card |
+  | **Ranking history (time-series)** | ❌ No | Would require daily-snapshot rollup pipeline |
+  | **DUPR rating history (time-series)** | ❌ No | DUPR per-player API is KB-0004 deferred |
+  | **Bio prose** beyond `knownFor` | ❌ No | Would require manual curation OR Wikipedia/PPA scrape |
+  | **Recent tournament results** | ⚠️ Partial | Tournaments in snapshot have no participants/winners field |
+
+  Without a meaningful data delta, Player Detail Page would have been "card rendered larger." Player Comparison delivers a real new capability (2-up view that doesn't exist anywhere today). Owner agreed to defer.
+
+  **Unblocking criteria — re-open Player Detail if any becomes true:**
+  1. **DUPR per-player API access** secured (currently KB-0004 deferred; would need DUPR partner program OR scraping logged-in DUPR pages)
+  2. **Snapshot rollup pipeline built** that aggregates daily ranking/rating snapshots into per-player time-series JSON (modest engineering — ~3-4 hr of ingestion work)
+  3. **Per-player results ingestion built** (cross-reference player names to tournament results from PickleballBrackets / PBT)
+  4. **Owner approves bio curation** for top ~30 players (manual, ~2-3 hr per pass)
+
+  Any one of these would deliver enough new data to justify a dedicated detail page. None today.
+
+  ---
+
+  **Architecture preserved for future expansion:**
+  - Player Comparison's `playersById` lookup + render pattern is reusable for a future Detail Page (just slot a single-player render variant)
+  - Recent Results placeholder row in Comparison auto-populates if/when per-player results data becomes available
+  - Ephemeral Set state pattern (no localStorage) is the established lightweight approach for transient UI state in this codebase
+
+  **Cross-feature observations:**
+  - Owner pattern continues to be: ATP after pre-build decisions, surface scope corrections honestly during build (e.g., recent-results data gap), defer rather than over-promise
+  - "Flag don't build" rule + "fresh reasoning warranted" pattern both fired this session (On-This-Day reframe + Player Detail deferral); both produced cleaner outcomes than blindly executing the kickoff text
+- **Status:** Closed (2 of 3 sub-features shipped + 1 sub-feature deferral committed; this entry is the canonical record for all three)
+- **Cross-ref:** KB-0004 (Player index expansion — sibling to Player Detail unblocking criteria #1) · KB-0035 (original on-this-day implementation) · KB-0040 (Phase 2 Learn-restructure — separate Phase 2 track) · KB-0049 (sub-tab pattern from L3 — same architectural posture of in-tab view-swap rather than new routing) · KB-0050 (preview_screenshot harness issue — now documented S9+S10+S11) · `app/js/components/on-this-day.js` · `app/js/components/player-compare.js` · `app/js/tabs/players.js` · `app/styles/main.css` · `app/sw.js` · `app/js/app.js`
+
+---
+
+**End of KB. Entry count: 52. Next ID: KB-0053.**
