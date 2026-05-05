@@ -1,7 +1,10 @@
-// gear-courts.js — top-level "Gear & Courts" tab.
-// Hosts sub-tabs via sub-tab-strip.js. At L3 launch only Equipment exists,
-// so the strip is suppressed (single-pill = no chrome). At L4, Courts joins
-// the array and the strip auto-renders.
+// gear-courts.js — top-level "Gear" tab orchestrator (filename retained
+// for git stability; user-visible label was renamed Gear & Courts → Gear
+// in S12 after L4 (Courts) was deferred per KB-0051. If/when Courts ships
+// later it will be a SEPARATE top-level tab, not a sub-tab here.
+//
+// Hosts sub-tabs via sub-tab-strip.js. Currently only Equipment exists,
+// so the strip is suppressed (single-pill = no chrome).
 //
 // KB-0040 Phase L3 launch shape.
 

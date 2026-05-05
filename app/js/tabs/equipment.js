@@ -1,4 +1,6 @@
-// equipment.js — Gear & Courts > Equipment sub-tab content.
+// equipment.js — Gear tab > Equipment sub-tab content.
+// (Internal route key remains "gear-courts" for stability; user-visible
+//  label was renamed Gear & Courts → Gear in S12 after L4 deferral.)
 // Renders three sections (TOC + flat scroll): Paddles · Balls · Nets specs.
 // Per KB-0040 L3 / KB-0048: no commerce, no affiliate, no editorial reviews.
 //

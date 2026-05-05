@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-05-03 (Session 11 — **KB v22**, 52 entries; KB-0052 added — Phase 2 depth bundle: On-This-Day cascading 4-level fallback (SAME_DAY → SAME_WEEK → SAME_MONTH → ROTATING) + Player Comparison feature (inline-toggle, ephemeral 2-player Set, side-by-side ≥640px / stacked <640px) shipped; Player Detail Page deferred (γ) pending DUPR API or ranking-history rollup or per-player results ingestion. SW cache + APP_VERSION rolled v15 → v16. Earlier same-day: KB v20 → v21 added KB-0051 — Phase L4 (Courts sub-tab) deferred after pre-build investigation found Pickleheads has anti-bot + unreadable ToS, USAP Places2Play robots.txt blanket-disallows scraping, Google Places API costs ~$120–$200/yr; KB-0040 L4 sub-status flipped to Deferred. KB v19 → v20 (post-shutdown 2026-05-03) appended KB-0049 with verification-scheduling subsection. Session 10 shutdown produced KB v19 — KB-0048 (L2 launch), KB-0049 (L3 launch), KB-0050 (USAP scraping lessons).)
+**Last updated:** 2026-05-04 (Session 12 — **KB v23**, 53 entries; KB-0053 added — tab rename "Gear & Courts" → "Gear" after L4 deferral, with future-direction note that if Courts ever ships it will be a SEPARATE top-level tab (not a sub-tab inside Gear) because Equipment data is already large. SW cache + APP_VERSION rolled v16 → v17. Earlier (Session 11) — KB v22 added KB-0052 (Phase 2 depth bundle: On-This-Day cascading fallback + Player Comparison shipped; Player Detail Page deferred (γ)); KB v21 added KB-0051 — Phase L4 (Courts sub-tab) deferred after pre-build investigation found Pickleheads has anti-bot + unreadable ToS, USAP Places2Play robots.txt blanket-disallows scraping, Google Places API costs ~$120–$200/yr; KB-0040 L4 sub-status flipped to Deferred. KB v20 (post-S10 follow-up 2026-05-03) appended KB-0049 with verification-scheduling subsection. Session 10 shutdown produced KB v19 — KB-0048 (L2 launch), KB-0049 (L3 launch), KB-0050 (USAP scraping lessons).)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -2082,4 +2082,53 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
 ---
 
-**End of KB. Entry count: 52. Next ID: KB-0053.**
+### KB-0053 | Tab rename "Gear & Courts" → "Gear" after L4 deferral; future Courts = separate top-level tab
+- **Type:** Decision
+- **Date:** 2026-05-04 (Session 12)
+- **Category:** UX / Navigation / Naming
+- **Tags:** session-12, rename, gear-tab, l4-deferral, courts-future, ux-honesty
+- **Finding:** Owner observation post-S11: with KB-0040 L4 (Courts sub-tab) deferred per KB-0051 and no committed timeline to ship Courts, the user-visible nav label "Gear & Courts" was misleading — the tab contained only Equipment (Paddles + Balls + Nets). Owner ATP'd: rename label "Gear & Courts" → "Gear" and remove courts references; if Courts ever ships, it will be a **separate top-level tab**, NOT a sub-tab inside Gear (because the Gear/Equipment content is already large — 5,080 paddles, 365 balls, nets spec).
+
+  **Architectural change captured:** S10 KB-0049 originally chose Option γ — parent "Gear & Courts" tab with sub-tab pattern (Equipment + future Courts as siblings). That decision is now superseded for the Courts side: if/when L4 unblocks per KB-0051's 5 criteria, Courts will be implemented as its own top-level tab (12th tab in nav), not a sub-tab. Equipment remains alone inside Gear.
+
+  **Implications for the still-open sub-tab pattern:**
+  - `app/js/components/sub-tab-strip.js` remains in place (auto-suppressed at single-sub-tab — invisible to users)
+  - `app/js/tabs/gear-courts.js` orchestrator pattern remains in place (renders Equipment as its only sub-tab)
+  - Both are now arguably overengineered for a single-sub-tab parent; documented as "vestigial but functional, no user-visible cost." Future cleanup-by-removal could collapse `gear-courts.js` → render Equipment directly into the tab root, but doing so today would just churn files for zero user-visible improvement.
+  - Sub-tab pattern is still claimed reusable for any future tab that legitimately needs sub-tabs.
+
+  **What was changed (minimal-scope rename):**
+  - `app/index.html` — nav button label "Gear &amp; Courts" → "Gear"; loading placeholder "Loading Gear &amp; Courts…" → "Loading Gear…"
+  - `app/js/tabs/equipment.js` — header comment updated
+  - `app/js/tabs/gear-courts.js` — header comment expanded to capture the rename + future-Courts-separate-tab direction
+  - `app/sw.js` — CACHE v16 → v17 (paired with APP_VERSION; index.html change is a SHELL_FILES touch)
+  - `app/js/app.js` — APP_VERSION v16 → v17
+
+  **What was deliberately NOT changed (and why):**
+  - **Internal route key `gear-courts`** stays — never user-visible; changing it would churn URL hashes if owner saved any
+  - **Section ID `tab-gear-courts`** stays — internal selector; no user-visible bleed
+  - **localStorage key `'gear-courts-active'`** stays — used by sub-tab-strip; only sub-tab-strip references it; no user-visible bleed
+  - **Filename `gear-courts.js`** stays — git rename + SW SHELL_FILES update + import-path update would be churn for zero user-visible benefit. The header comment makes the historical context explicit.
+
+  **Verification (preview, all green):**
+  - Nav button reads **"Gear"** ✓
+  - APP_VERSION pill = v17, SW cache = pickleball-daily-v17 ✓
+  - 11-tab nav intact: Daily · Live · Tournaments · MLP Teams · Players · Stats · Highlights · News · Learn · **Gear** · Ask ✓
+  - Gear tab opens to Equipment heading + 25 paddle cards (page 1) ✓
+  - Sub-tab strip correctly suppressed (single sub-tab — by design) ✓
+  - Console clean (zero errors) ✓ · ESM check 30/30 ✓ · check-secrets clean ✓
+
+  **Future-direction note (locked-in):**
+  When/if KB-0051's unblocking criteria are met for L4 Courts, the implementation pattern is:
+  1. New top-level tab "Courts" registered in `app/js/app.js` + `app/index.html` nav array (12th tab)
+  2. New `app/js/tabs/courts.js` module
+  3. NOT folded back into the Gear tab as a sub-tab
+  4. The sub-tab orchestrator in `gear-courts.js` can either: (a) be cleaned up at that point if no other sub-tabs are anticipated, or (b) stay in place if Equipment grows into Equipment + something else
+
+  This decision is owner-driven, not architectural inertia: Equipment data is already large (~2.5 MB JSON, 5,080 paddle entries) and should not share a tab with another large feature.
+- **Status:** Closed (rename shipped; future-direction note locked in)
+- **Cross-ref:** KB-0040 (Phase 2 Learn-restructure parent — L4 still Open via KB-0051) · KB-0049 (original Gear & Courts launch — sub-tab γ decision now superseded for Courts) · KB-0051 (L4 deferral with unblocking criteria — when met, Courts ships as separate top-level tab per this KB) · `app/index.html` · `app/js/app.js` · `app/sw.js` · `app/js/tabs/gear-courts.js` · `app/js/tabs/equipment.js`
+
+---
+
+**End of KB. Entry count: 53. Next ID: KB-0054.**
