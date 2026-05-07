@@ -78,6 +78,47 @@ function rankChip(p) {
   return '';
 }
 
+function rankTrendHtml(entries) {
+  if (!entries || !entries.length) return '';
+  const ranked = entries.filter(e => typeof e.ppaRank === 'number');
+  if (!ranked.length) {
+    const dupred = entries.filter(e => typeof e.duprDoubles === 'number');
+    if (!dupred.length) return '';
+    const first = dupred[0].duprDoubles;
+    const last = dupred[dupred.length - 1].duprDoubles;
+    const delta = +(last - first).toFixed(3);
+    const arrow = delta > 0 ? '▲' : (delta < 0 ? '▼' : '·');
+    const cls = delta > 0 ? 'trend-up' : (delta < 0 ? 'trend-down' : 'trend-flat');
+    return (
+      '<div class="trend">' +
+        '<span class="trend-label">DUPR</span> ' +
+        '<span class="trend-current">' + escapeHtml(String(last)) + '</span> ' +
+        '<span class="' + cls + '">' + arrow + (delta === 0 ? ' flat' : ' ' + (delta > 0 ? '+' : '') + delta) + '</span> ' +
+        '<span class="trend-meta">over ' + dupred.length + 'd</span>' +
+      '</div>'
+    );
+  }
+  const first = ranked[0].ppaRank;
+  const last = ranked[ranked.length - 1].ppaRank;
+  const best = Math.min.apply(null, ranked.map(e => e.ppaRank));
+  const worst = Math.max.apply(null, ranked.map(e => e.ppaRank));
+  const delta = last - first;
+  const arrow = delta < 0 ? '▲' : (delta > 0 ? '▼' : '·');
+  const cls = delta < 0 ? 'trend-up' : (delta > 0 ? 'trend-down' : 'trend-flat');
+  const path = ranked.map(e => '#' + e.ppaRank).join(' → ');
+  const summary = (delta === 0)
+    ? 'flat'
+    : (delta < 0 ? '+' + (-delta) : '−' + delta);
+  return (
+    '<div class="trend">' +
+      '<span class="trend-current">#' + escapeHtml(String(last)) + '</span> ' +
+      '<span class="' + cls + '">' + arrow + ' ' + summary + '</span> ' +
+      '<span class="trend-meta">best #' + best + (best !== worst ? ' · worst #' + worst : '') + ' over ' + ranked.length + 'd</span>' +
+      '<div class="trend-path" title="' + escapeHtml(path) + '">' + escapeHtml(path) + '</div>' +
+    '</div>'
+  );
+}
+
 function profileLinksHtml(p) {
   const links = [];
   if (p.ppaPlayerUrl) links.push('<a class="profile-link" href="' + escapeHtml(p.ppaPlayerUrl) + '" target="_blank" rel="noopener">PPA ↗</a>');
@@ -94,10 +135,16 @@ function playerHeaderCell(p) {
   );
 }
 
-export function renderComparisonHtml(playerA, playerB) {
+export function renderComparisonHtml(playerA, playerB, opts) {
   if (!playerA || !playerB) {
     return '<div class="empty">Comparison requires two players.</div>';
   }
+  const history = (opts && opts.history) || {};
+  const aHist = history[playerA.playerId];
+  const bHist = history[playerB.playerId];
+  const trendA = rankTrendHtml(aHist) || '<span class="muted">— no trend data yet —</span>';
+  const trendB = rankTrendHtml(bHist) || '<span class="muted">— no trend data yet —</span>';
+
   const headerRow =
     '<div class="cmp-row cmp-row-header">' +
       '<div class="cmp-label"></div>' +
@@ -107,6 +154,7 @@ export function renderComparisonHtml(playerA, playerB) {
 
   const rows = [
     fieldRow('PPA Rank', rankChip(playerA), rankChip(playerB)),
+    fieldRow('Rank Trend', trendA, trendB),
     fieldRow('DUPR Doubles', ratingChip(playerA.duprDoubles), ratingChip(playerB.duprDoubles)),
     fieldRow('DUPR Singles', ratingChip(playerA.duprSingles), ratingChip(playerB.duprSingles)),
     fieldText('Country', playerA.country, playerB.country),
@@ -115,7 +163,6 @@ export function renderComparisonHtml(playerA, playerB) {
     fieldText('Age', playerA.age, playerB.age),
     fieldText('PPA Points', playerA.ppaPoints != null ? Number(playerA.ppaPoints).toLocaleString() : '', playerB.ppaPoints != null ? Number(playerB.ppaPoints).toLocaleString() : ''),
     fieldText('Known For', playerA.knownFor, playerB.knownFor),
-    fieldRow('Recent Results', '<span class="muted">— pending per-player results data —</span>', '<span class="muted">— pending per-player results data —</span>'),
     fieldRow('Profiles', profileLinksHtml(playerA), profileLinksHtml(playerB)),
   ].join('');
 

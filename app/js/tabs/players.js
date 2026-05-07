@@ -5,7 +5,7 @@
 
 import { escapeHtml, confidenceBadgeHtml } from '../components/confidence-badge.js';
 import { getFavorites, togglePlayer } from '../components/favorites.js';
-import { loadMaster } from '../data-loader.js';
+import { loadMaster, loadRankingHistory } from '../data-loader.js';
 import {
   getSelected as getCmpSelected,
   isSelected as isCmpSelected,
@@ -63,6 +63,15 @@ export async function renderPlayers(root, snapshot) {
 
   const playersById = {};
   for (const p of players) playersById[p.playerId] = p;
+
+  // Phase C5: per-player time-series for the comparison Rank Trend row.
+  const rankingHistoryById = {};
+  try {
+    const rh = await loadRankingHistory();
+    if (rh && Array.isArray(rh.players)) {
+      for (const r of rh.players) rankingHistoryById[r.playerId] = r.history;
+    }
+  } catch (e) { /* non-fatal — comparison row falls back to muted placeholder */ }
 
   // Two view states inside this tab: 'list' and 'compare'.
   let viewState = 'list';
@@ -199,7 +208,7 @@ export async function renderPlayers(root, snapshot) {
         '<button id="cmp-back" class="cmp-back">← Back to all players</button>' +
       '</div>' +
       '<h2 class="section-title">Compare Players</h2>' +
-      renderComparisonHtml(a, b);
+      renderComparisonHtml(a, b, { history: rankingHistoryById });
 
     root.querySelector('#cmp-back').addEventListener('click', () => {
       viewState = 'list';

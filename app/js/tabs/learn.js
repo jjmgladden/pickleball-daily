@@ -157,7 +157,10 @@ function glossaryBodyHtml(glossary) {
     byCat[t.category].push(t);
   });
 
-  let html = '<p class="glossary-intro">Common terminology — alphabetical within each grouping. Tap a category to scan, or scroll through.</p>';
+  const reviewedLine = glossary.lastReviewed
+    ? ' <span class="glossary-reviewed">Last reviewed ' + escapeHtml(glossary.lastReviewed) + '.</span>'
+    : '';
+  let html = '<p class="glossary-intro">Common terminology — alphabetical within each grouping. Tap a category to scan, or scroll through.' + reviewedLine + '</p>';
   cats.forEach(cat => {
     const list = byCat[cat.id] || [];
     if (!list.length) return;

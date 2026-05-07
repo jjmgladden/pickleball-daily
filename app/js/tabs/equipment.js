@@ -24,7 +24,10 @@ function formatDate(iso) {
 
 function paddleCardHtml(p) {
   const img = p.imageUrl
-    ? '<img class="paddle-thumb" src="' + escapeHtml(p.imageUrl) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">'
+    ? '<div class="paddle-thumb-wrap">' +
+        '<div class="paddle-thumb-placeholder" aria-hidden="true">🏓</div>' +
+        '<img class="paddle-thumb" src="' + escapeHtml(p.imageUrl) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">' +
+      '</div>'
     : '<div class="paddle-thumb-placeholder" aria-hidden="true">🏓</div>';
 
   const specRow = (label, val) => val

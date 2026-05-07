@@ -101,6 +101,16 @@ async function runAll() {
     console.error('[fetch-daily]   ai-context → FAILED: ' + e.message);
   }
 
+  // Phase C5: per-player ranking + rating time-series rollup across all snapshots.
+  // Non-fatal — UI consumers (Player Detail Page / Player Comparison) handle absence.
+  try {
+    const { build: buildRankingHistory } = require('./build-ranking-history');
+    const r = buildRankingHistory();
+    console.log('[fetch-daily]   ranking-history → ' + r.playerCount + ' players across ' + r.snapshotCount + ' snapshots');
+  } catch (e) {
+    console.error('[fetch-daily]   ranking-history → FAILED: ' + e.message);
+  }
+
   return { snapshotPath: latest, snapshot };
 }
 

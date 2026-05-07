@@ -822,6 +822,10 @@ footer.app-footer {
   font-size: 0.92rem;
   margin-bottom: 12px;
 }
+.glossary-reviewed {
+  color: var(--text);
+  font-weight: 600;
+}
 .glossary-list {
   margin: 0 0 18px;
   padding: 0;
@@ -928,6 +932,11 @@ footer.app-footer {
   flex-direction: column;
   gap: 8px;
 }
+.paddle-thumb-wrap {
+  position: relative;
+  width: 100%;
+  height: 140px;
+}
 .paddle-thumb {
   width: 100%;
   height: 140px;
@@ -935,6 +944,12 @@ footer.app-footer {
   background: var(--bg-3);
   border-radius: 6px;
 }
+.paddle-thumb-wrap .paddle-thumb,
+.paddle-thumb-wrap .paddle-thumb-placeholder {
+  position: absolute;
+  inset: 0;
+}
+.paddle-thumb-wrap .paddle-thumb { z-index: 1; }
 .paddle-thumb-placeholder {
   width: 100%;
   height: 140px;
@@ -1179,6 +1194,42 @@ footer.app-footer {
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--text);
+}
+
+/* Rank Trend cell (Phase C5) — sparkline-text rendering of ranking-history.json */
+.trend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+.trend-label {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+.trend-current {
+  font-weight: 700;
+  color: var(--text);
+}
+.trend-up   { color: #4ade80; font-weight: 600; }
+.trend-down { color: #f87171; font-weight: 600; }
+.trend-flat { color: var(--text-dim); font-weight: 600; }
+.trend-meta {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+.trend-path {
+  flex-basis: 100%;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-family: ui-monospace, "Cascadia Mono", "JetBrains Mono", Consolas, monospace;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  margin-top: 2px;
 }
 
 /* Mobile stack — sub-640 */

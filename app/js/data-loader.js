@@ -19,3 +19,12 @@ export async function loadSnapshot() {
 export async function loadMaster(name) {
   return fetchJson('../data/master/' + name + '.json');
 }
+
+export async function loadRankingHistory() {
+  try {
+    return await fetchJson('../data/snapshots/ranking-history.json');
+  } catch (e) {
+    console.warn('No ranking-history yet — comparison trend rows will be empty:', e.message);
+    return null;
+  }
+}
