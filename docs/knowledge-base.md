@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-05-04 (Session 12 — **KB v23**, 53 entries; KB-0053 added — tab rename "Gear & Courts" → "Gear" after L4 deferral, with future-direction note that if Courts ever ships it will be a SEPARATE top-level tab (not a sub-tab inside Gear) because Equipment data is already large. SW cache + APP_VERSION rolled v16 → v17. Earlier (Session 11) — KB v22 added KB-0052 (Phase 2 depth bundle: On-This-Day cascading fallback + Player Comparison shipped; Player Detail Page deferred (γ)); KB v21 added KB-0051 — Phase L4 (Courts sub-tab) deferred after pre-build investigation found Pickleheads has anti-bot + unreadable ToS, USAP Places2Play robots.txt blanket-disallows scraping, Google Places API costs ~$120–$200/yr; KB-0040 L4 sub-status flipped to Deferred. KB v20 (post-S10 follow-up 2026-05-03) appended KB-0049 with verification-scheduling subsection. Session 10 shutdown produced KB v19 — KB-0048 (L2 launch), KB-0049 (L3 launch), KB-0050 (USAP scraping lessons).)
+**Last updated:** 2026-05-06 (Session 13 — **KB v25**, 56 entries; KB-0056 added — Player Detail Page shipped + reusable inline-SVG sparkline component (two consumers: Detail Page + Comparison Rank Trend). Lifts the KB-0052 γ deferral after S12's KB-0055 satisfied unblocking criterion #2. SW cache + APP_VERSION rolled v19 → v20. Earlier in this session: discovered KB-0054 + KB-0055 (the S12 work) had never actually been written to the KB file despite the S12 kickoff text claiming v24 with 55 entries — both retroactively appended in this shutdown so the record matches reality. Session 12 (2026-05-06 chronologically AFTER S12) shipped: Phase B polish (B.1 glossary timestamp + B.2 image-fallback wrap pattern + B.3 equipment-refresh.yml registration verified) and Phase C5 (ranking-history rollup + #1 Comparison Rank Trend wiring). SW cache + APP_VERSION rolled v17 → v18 → v19 across S12. Earliest in S12 (mid-session) was KB-0053 — tab rename "Gear & Courts" → "Gear" after L4 deferral, future-direction note (if Courts ever ships, separate top-level tab). Session 11 — KB v22 added KB-0052 (Phase 2 depth bundle: On-This-Day cascading fallback + Player Comparison shipped; Player Detail Page deferred (γ) — γ now lifted by KB-0056); KB v21 added KB-0051 — Phase L4 (Courts sub-tab) deferred after pre-build investigation found Pickleheads has anti-bot + unreadable ToS, USAP Places2Play robots.txt blanket-disallows scraping, Google Places API costs ~$120–$200/yr; KB-0040 L4 sub-status flipped to Deferred. KB v20 (post-S10 follow-up 2026-05-03) appended KB-0049 with verification-scheduling subsection. Session 10 shutdown produced KB v19 — KB-0048 (L2 launch), KB-0049 (L3 launch), KB-0050 (USAP scraping lessons).)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -2077,8 +2077,8 @@ Static types (Reference, Decision, Limitation) omit Tier.
   **Cross-feature observations:**
   - Owner pattern continues to be: ATP after pre-build decisions, surface scope corrections honestly during build (e.g., recent-results data gap), defer rather than over-promise
   - "Flag don't build" rule + "fresh reasoning warranted" pattern both fired this session (On-This-Day reframe + Player Detail deferral); both produced cleaner outcomes than blindly executing the kickoff text
-- **Status:** Closed (2 of 3 sub-features shipped + 1 sub-feature deferral committed; this entry is the canonical record for all three)
-- **Cross-ref:** KB-0004 (Player index expansion — sibling to Player Detail unblocking criteria #1) · KB-0035 (original on-this-day implementation) · KB-0040 (Phase 2 Learn-restructure — separate Phase 2 track) · KB-0049 (sub-tab pattern from L3 — same architectural posture of in-tab view-swap rather than new routing) · KB-0050 (preview_screenshot harness issue — now documented S9+S10+S11) · `app/js/components/on-this-day.js` · `app/js/components/player-compare.js` · `app/js/tabs/players.js` · `app/styles/main.css` · `app/sw.js` · `app/js/app.js`
+- **Status:** Closed (2 of 3 sub-features shipped + 1 sub-feature deferral committed; γ deferral lifted in S13 after KB-0055 satisfied unblocking criterion #2 — see KB-0056 for the Detail Page build)
+- **Cross-ref:** KB-0004 (Player index expansion — sibling to Player Detail unblocking criteria #1) · KB-0035 (original on-this-day implementation) · KB-0040 (Phase 2 Learn-restructure — separate Phase 2 track) · KB-0049 (sub-tab pattern from L3 — same architectural posture of in-tab view-swap rather than new routing) · KB-0050 (preview_screenshot harness issue — now documented S9+S10+S11) · KB-0055 (ranking-history rollup — satisfied γ unblocking criterion #2) · KB-0056 (Player Detail Page — γ lifted) · `app/js/components/on-this-day.js` · `app/js/components/player-compare.js` · `app/js/tabs/players.js` · `app/styles/main.css` · `app/sw.js` · `app/js/app.js`
 
 ---
 
@@ -2131,4 +2131,105 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
 ---
 
-**End of KB. Entry count: 53. Next ID: KB-0054.**
+### KB-0054 | Phase B polish bundle — glossary timestamp + image-fallback wrap pattern + equipment-refresh.yml registration verified
+- **Type:** Decision
+- **Date:** 2026-05-06 (Session 12)
+- **Category:** UX polish / Equipment / GitHub Actions
+- **Tags:** session-12, phase-b, glossary, image-fallback, layout-stability, equipment-refresh, retro-recorded-s13
+- **Finding:** Session 12 Option B from kickoff. Three sub-items shipped together as one polish pass.
+
+  **B.1 — Glossary "Last reviewed YYYY-MM-DD" timestamp surfaced in section intro line.** Was buried in the maintenance footer at the bottom of the Glossary sub-tab; users couldn't tell at-a-glance how fresh the definitions were. Moved to a prominent intro line just under the section header with a `.glossary-reviewed` CSS class for emphasis. Pure UX visibility fix; no behavioral change.
+
+  **B.2 — Equipment paddle thumbnail layout-stability on image-load failure.** Previously, when a CDN-hosted paddle thumbnail returned a 404 (intermittent on mobile), the `onerror` handler swapped the img for a placeholder div, which caused a layout reflow as the placeholder filled the same grid slot. Owner reported visible "jitter" on slow connections. Fix: wrap pattern (`.paddle-thumb-wrap`) renders BOTH placeholder and `<img>` always — the placeholder sits in the grid slot occupying space, the img layers on top. On `onerror`, the img sets `display:none`, exposing the placeholder beneath. Zero reflow on image failure. Pattern is reusable for any future thumbnail (highlights / MLP logos / etc.).
+
+  **B.3 — `equipment-refresh.yml` workflow registration verified on remote.** Workflow file was committed in S11 but never confirmed registered with GitHub Actions. Verified via `gh workflow list --repo jjmgladden/pickleball-daily`: workflow ID 269810371 active, `workflow_dispatch` trigger present, 0 runs. Owner picked option (ii) from a presented two-option menu: skip end-to-end manual fire (would have produced a real snapshot commit), rely on the natural Jul 1 2026 quarterly cron + KB-0049's verification routine on Jul 2 2026.
+
+  **Why retro-recorded in S13 shutdown:** S12 kickoff text (drafted at S12 close) claimed KB v24 with KB-0054 + KB-0055 added. Actual S12 commit `426f0cf` did NOT include any KB updates — the KB file was last touched in mid-S12 commit `028ceba` (KB-0053 rename). Discovered during S13 shutdown when the kickoff narrative didn't match the file state. Both entries appended now so the historical record matches reality. No behavioral impact (the work shipped in S12 commit `426f0cf`); only documentation drift. **Lesson for future sessions: shutdown protocol Step 1 ("Update knowledge-base.md") must actually edit the file, not just mention it in the kickoff/handoff for the next session.**
+- **Status:** Closed (B.1 + B.2 + B.3 all shipped in S12 commit `426f0cf`; this entry recorded retroactively in S13 shutdown)
+- **Cross-ref:** KB-0049 (Gear & Courts launch — Equipment thumbnail rendering parent) · KB-0048 (Glossary launch — original timestamp location) · `ingestion/equipment/refresh-paddles.js` · `.github/workflows/equipment-refresh.yml` · `app/js/tabs/equipment.js` · `app/styles/main.css` · `app/js/tabs/learn.js` (Glossary sub-tab)
+
+---
+
+### KB-0055 | Phase C5 — ranking-history rollup + #1 Player Comparison Rank Trend wiring
+- **Type:** Decision
+- **Date:** 2026-05-06 (Session 12)
+- **Category:** Phase 2 / Players / Trend / Snapshot Pipeline
+- **Tags:** session-12, phase-c5, ranking-history, comparison, rank-trend, time-series, retro-recorded-s13
+- **Finding:** Session 12 Phase C5 + Recommendation #1 from S11 kickoff carry-over. Shipped together in S12 commit `426f0cf`. Lifts KB-0052 γ (Player Detail Page) unblocking criterion #2 — "snapshot rollup pipeline that aggregates daily ranking/rating snapshots into per-player time-series JSON."
+
+  **Phase C5 — Ranking-History Rollup:**
+  - New `ingestion/build-ranking-history.js` — scans `data/snapshots/*.json` and emits a per-player time-series. Output schema: `{ schemaVersion, generatedAt, snapshotDateRange: {first, last, count}, playerCount, players: [{playerId, displayName, history: [{date, ppaRank, ppaPoints, duprDoubles?, duprSingles?}]}] }`.
+  - Wired into `ingestion/fetch-daily.js` as a non-fatal step (runs after snapshot generation; errors logged but don't fail the workflow).
+  - First rollup: 258 players × 13 daily snapshots (April 22 – May 4, 2026).
+  - **Idempotent / append-only:** rebuilt from scratch every daily run; no merge logic. Consumers must handle absence (missing days, missing players) gracefully.
+  - Output committed alongside daily snapshot in the regular `git add data/snapshots/` step of `daily.yml`.
+
+  **#1 — Player Comparison Rank Trend (UX Recommendation from S11 kickoff carry-over):**
+  - New "Rank Trend" row added to the Comparison view (between PPA Rank and DUPR Doubles).
+  - `rankTrendHtml(entries)` in `player-compare.js` — renders current rank chip, delta over window (▲ / ▼ / · with green/red color), best-#N (and worst-#N if different), and full path string ("#33 → #33 → #34").
+  - Falls back to DUPR-doubles delta when no PPA-rank history exists (planned for future when DUPR enters history; today's history only carries `ppaRank` + `ppaPoints`).
+  - `data-loader.js` gained `loadRankingHistory()` helper.
+  - `players.js` loads ranking-history, maps `playerId → history[]`, passes via `opts.history` to `renderComparisonHtml`.
+
+  **Workflow timing artifact discovered in S13 session-start:** S12 commit `426f0cf` was pushed AFTER S12's overnight cron had already completed, so S12's `ranking-history.json` carries the May 5 manual-build timestamp. S13's overnight cron (May 6) ALSO ran before the cron-detection of the new wiring (cron checked out `b33eb93` from May 5). The May 7 cron will be the first to actually exercise the new build step in production. Not a bug; just timing.
+
+  **Why retro-recorded in S13 shutdown:** see KB-0054 same-issue note — S12 kickoff claimed KB v24 with KB-0055 included; actually never written to file. Recorded now.
+
+  **Reusable artifacts shipped:**
+  - `rankTrendHtml(entries)` shape — reused on Player Detail Page in S13 (KB-0056) as the basis for the larger trend block.
+  - `loadRankingHistory()` data-loader helper — reused on Detail Page (S13 KB-0056).
+  - `data/snapshots/ranking-history.json` — same data feed serves Detail Page + Comparison + future AI-context-bundle enhancement (Option B from S13 kickoff, not yet built).
+- **Status:** Closed (rollup + comparison wiring both shipped in S12 commit `426f0cf`; this entry recorded retroactively in S13 shutdown)
+- **Cross-ref:** KB-0052 γ (Player Detail Page deferral — criterion #2 satisfied by this entry) · KB-0056 (Player Detail Page — first consumer of the rollup) · KB-0044 (YouTube API key rotation — orthogonal owner-action item, still Open) · `ingestion/build-ranking-history.js` · `ingestion/fetch-daily.js` · `data/snapshots/ranking-history.json` · `app/js/data-loader.js` · `app/js/components/player-compare.js` · `app/js/tabs/players.js`
+
+---
+
+### KB-0056 | Player Detail Page (KB-0052 γ lifted) + reusable inline-SVG sparkline component
+- **Type:** Decision
+- **Date:** 2026-05-06 (Session 13)
+- **Category:** Phase 2 / Players / Detail Page / UX
+- **Tags:** session-13, kb-0052-gamma-lifted, player-detail, sparkline, svg, in-tab-swap, two-consumers, reusable-component
+- **Finding:** Session 13 Option A from kickoff. Shipped in commit `5cbe746` on `main`. Live at SW cache `pickleball-daily-v20` and `APP_VERSION='v20'` (paired bump from v19). Owner ATP'd Option A based on the kickoff's "Recommended" framing — KB-0052 γ unblocking criterion #2 had been satisfied by S12's KB-0055 (`ranking-history.json` rollup), so the Detail Page could now render meaningful time-series content beyond what a single-player card already shows.
+
+  **Routing pattern:** went with kickoff option (iii) — in-tab swap inside the Players tab, same pattern as the existing Comparison view. Three view states now: `'list'`, `'compare'`, `'detail'`. Selected by closure-held `viewState` + `detailPlayerId`. Ephemeral state per the established KB-0052 Decision 2e pattern (no localStorage, no URL hash). Back button returns to list (filter input is reset — same behavior as comparison-back).
+
+  **New components shipped:**
+
+  - **`app/js/components/sparkline.js`** — pure inline-SVG mini-chart, single-purpose. Two consumers in this session: Player Detail Page (large, 320×60) + Player Comparison Rank Trend cells (small, 180×32). Supports `type: 'rank'` (lower=better, y-axis inverted so #1 sits at top) and `type: 'rating'` (higher=better, normal y-axis). Native `<title>` tooltips on endpoint dots and the whole `<svg>` for hover-to-read date+value pairs. Exports `sparklineSvg(points, opts)` and a convenience `seriesFrom(history, field)` helper.
+
+  - **`app/js/tabs/player-detail.js`** — full-page renderer accepting `(player, history)`. Sections: header (name + confidence badge + source chips + meta line + known-for + profile links), PPA Ranking (current rank chip + delta/best/worst summary), DUPR Ratings (Doubles + Singles labelled chips), Rank Trend (sparkline frame + path string). Graceful degradation: seed-only or sub-PPA-200 players render without rank-trend section + show "no rank trend yet" placeholder; players with no DUPR data show "no DUPR data" placeholder.
+
+  **Modified files:**
+  - `app/js/tabs/players.js` — added third view state, made player names a `.player-name-btn` (transparent button styled as link), wired click handler to set `detailPlayerId` + `viewState = 'detail'` + render. Back-button wired similarly.
+  - `app/js/components/player-compare.js` — `rankTrendHtml()` now embeds a small sparkline above the existing path text. Strict UX upgrade — no behavior change. Single component, two consumers (Detail Page + Comparison), as recommended in kickoff Option A note.
+  - `app/styles/main.css` — `.player-name-btn`, full `.pd-*` block (~30 selectors), `svg.sparkline`, `.trend-spark`. CSS variables already provided dark-theme colors (`--accent-2` for clickable name, `--bg-2` for card bg, `--rank-text` for sparkline stroke).
+  - `app/sw.js` — CACHE `v19` → `v20`; registered both new files (`sparkline.js` + `player-detail.js`) in SHELL_FILES.
+  - `app/js/app.js` — `APP_VERSION` `v19` → `v20`.
+
+  **Verification (preview server, all green):**
+  - 32/32 ES modules imported cleanly via `scripts/check-esm.js` (was 30, +2 new files).
+  - Header pill renders **v20**.
+  - AJ Koller (PPA-ranked, in `ranking-history.json`): full Detail Page with header + sources + meta + #34 current rank chip + "flat over 8 snapshots · best #33" summary + 8-point sparkline path + endpoint tooltips + rank-path string ("#33 → #33 → ... → #33").
+  - Anna Bright (seed-only, has `ppaRankFlag` editorial label rather than numeric `ppaRank`, not in `ranking-history.json`): Detail Page degrades gracefully — header + meta + DUPR chip block render; "no rank trend yet" placeholder shows; no sparkline frame.
+  - Comparison view (AJ Koller vs Andrei Daescu): both trend cells now show sparklines (`sparkCount: 2`); existing path strings preserved beneath. No regression.
+  - Back-button flows: detail → list ✓, compare → list ✓.
+  - 0 console errors.
+  - **`preview_screenshot` timed out twice** (per S12 kickoff Critical Reminder #15 — historically broken harness; S12 noted it worked but S13 hit the timeout again). DOM verification via `preview_eval` + `preview_inspect` used as substitute. Sufficient for validating render correctness.
+
+  **Data observation (informational, not a defect):** PPA rankings update weekly, so the current `ranking-history.json` window (13 days, April 22 – May 4) shows zero rank movement for any player. All sparklines render as horizontal lines today. As weeks accumulate, the rollup will gain shape. Design and rendering are correct; the visual will mature naturally.
+
+  **Architectural patterns established this session (reusable in future sessions):**
+  - **Inline-SVG sparkline component** with type-discriminated y-axis inversion — reusable for any future "value-over-time" widget (DUPR trend, Points trend, etc.). Stateless, no dependencies beyond `escapeHtml`.
+  - **In-tab swap with three view states** (list / detail / compare) — pattern can be applied to Tournaments tab (event list → event detail), Teams tab (team roster → player detail cross-link), or any tab with a "drill-in" UX need.
+  - **`.player-name-btn` clickable-text-as-button** pattern — semantically a button, visually a link. Reusable wherever a list item needs a primary action target without adding visual chrome.
+
+  **What was NOT shipped (deliberately, in scope for future sessions if owner ATPs):**
+  - Per-player results / head-to-head record (would require KB-0052 γ unblocking criterion #3 — per-player results ingestion, ~3-4 hr).
+  - Manual bio prose for top ~30 players (criterion #4 — owner-decision item).
+  - Rank-Trend sparkline width adjustment for mobile (currently 320×60 fixed; on sub-360 viewports it caps at 100% via `max-width: 100%` but loses visual fidelity. Acceptable for v1; can refine if owner reports an issue).
+- **Status:** Closed (Detail Page shipped, sparkline shipped to two consumers, KB-0052 γ deferral lifted)
+- **Cross-ref:** KB-0052 γ (Player Detail Page deferral — now lifted; this is the canonical lift entry) · KB-0055 (ranking-history rollup — direct upstream dependency; provides the `history[]` data the Detail Page renders) · KB-0049 (sub-tab pattern — same architectural posture of in-tab view-swap rather than new routing) · KB-0050 (preview_screenshot harness issue — encountered again S13) · `app/js/components/sparkline.js` · `app/js/tabs/player-detail.js` · `app/js/tabs/players.js` · `app/js/components/player-compare.js` · `app/styles/main.css` · `app/sw.js` · `app/js/app.js`
+
+---
+
+**End of KB. Entry count: 56. Next ID: KB-0057.**
