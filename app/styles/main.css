@@ -1231,6 +1231,128 @@ footer.app-footer {
   overflow-wrap: anywhere;
   margin-top: 2px;
 }
+.trend-spark {
+  flex-basis: 100%;
+  margin-top: 4px;
+}
+
+/* Sparkline (Session 13) — inline-SVG mini chart, two consumers:
+   Player Detail Page (large) + Player Comparison Rank Trend (small). */
+svg.sparkline {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Player Detail Page (Session 13, KB-0052 γ unblocked) */
+.player-name-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent-2);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+}
+.player-name-btn:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+.pd-toolbar { margin: 8px 0 12px; }
+.pd-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px 22px;
+}
+.pd-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.pd-name {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--text);
+}
+.pd-sources { display: flex; gap: 6px; flex-wrap: wrap; }
+.pd-meta {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+.pd-known-for {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-top: 2px;
+}
+.pd-profiles { margin-top: 4px; }
+.pd-section {
+  margin-top: 16px;
+}
+.pd-section:first-of-type { margin-top: 0; }
+.pd-section-title {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+}
+.pd-rank-current {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+.pd-rank-current .chip-rank {
+  font-size: 1.1rem;
+  padding: 4px 12px;
+}
+.pd-rank-summary {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+.pd-no-trend {
+  font-size: 0.85rem;
+}
+.pd-rating-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.pd-chip-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pd-chip-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+}
+.pd-chip-block .chip-rating {
+  font-size: 1rem;
+  padding: 4px 12px;
+}
+.pd-trend-section .pd-spark-frame {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: inline-block;
+}
+.pd-rank-path {
+  margin-top: 8px;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-family: ui-monospace, "Cascadia Mono", "JetBrains Mono", Consolas, monospace;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
 
 /* Mobile stack — sub-640 */
 @media (max-width: 639px) {

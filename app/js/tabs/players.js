@@ -13,6 +13,7 @@ import {
   clearSelected as clearCmpSelected,
   renderComparisonHtml,
 } from '../components/player-compare.js';
+import { renderPlayerDetailHtml } from './player-detail.js';
 
 function sourceChips(p) {
   const out = [];
@@ -73,8 +74,9 @@ export async function renderPlayers(root, snapshot) {
     }
   } catch (e) { /* non-fatal — comparison row falls back to muted placeholder */ }
 
-  // Two view states inside this tab: 'list' and 'compare'.
+  // Three view states inside this tab: 'list', 'compare', 'detail'.
   let viewState = 'list';
+  let detailPlayerId = null;
 
   function renderListView() {
     const favs = getFavorites();
@@ -141,7 +143,11 @@ export async function renderPlayers(root, snapshot) {
             '<span>Compare</span>' +
           '</label>';
         return '<div class="card' + (checked ? ' card-cmp-selected' : '') + '">' +
-          '<h3>' + escapeHtml(p.displayName) + (p.confidence ? confidenceBadgeHtml(p.confidence) : '') +
+          '<h3>' +
+            '<button class="player-name-btn" data-open="' + escapeHtml(p.playerId) + '" title="View detail">' +
+              escapeHtml(p.displayName) +
+            '</button>' +
+            (p.confidence ? confidenceBadgeHtml(p.confidence) : '') +
             ' <button data-fav="' + escapeHtml(p.playerId) + '" ' +
             'style="background:transparent;border:none;color:' + (isFav ? 'var(--accent)' : 'var(--text-dim)') + ';cursor:pointer;font-size:1rem">' +
             (isFav ? '★' : '☆') + '</button>' +
@@ -174,6 +180,14 @@ export async function renderPlayers(root, snapshot) {
           renderListView();
           const f = root.querySelector('#player-filter');
           if (f) f.value = filter || '';
+        });
+      });
+
+      node.querySelectorAll('[data-open]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          detailPlayerId = btn.dataset.open;
+          viewState = 'detail';
+          renderDetailView();
         });
       });
     }
@@ -212,6 +226,23 @@ export async function renderPlayers(root, snapshot) {
 
     root.querySelector('#cmp-back').addEventListener('click', () => {
       viewState = 'list';
+      renderListView();
+    });
+  }
+
+  function renderDetailView() {
+    const p = playersById[detailPlayerId];
+    if (!p) {
+      viewState = 'list';
+      renderListView();
+      return;
+    }
+    const history = rankingHistoryById[detailPlayerId] || [];
+    root.innerHTML = renderPlayerDetailHtml(p, history);
+    const back = root.querySelector('#pd-back');
+    if (back) back.addEventListener('click', () => {
+      viewState = 'list';
+      detailPlayerId = null;
       renderListView();
     });
   }

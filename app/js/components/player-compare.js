@@ -8,6 +8,7 @@
 // When a per-player results ingestion lands, populate via cross-reference.
 
 import { escapeHtml, confidenceBadgeHtml } from './confidence-badge.js';
+import { sparklineSvg, seriesFrom } from './sparkline.js';
 
 const MAX_SELECTED = 2;
 const selected = new Set();
@@ -109,11 +110,16 @@ function rankTrendHtml(entries) {
   const summary = (delta === 0)
     ? 'flat'
     : (delta < 0 ? '+' + (-delta) : '−' + delta);
+  const series = seriesFrom(ranked, 'ppaRank');
+  const spark = (series.length >= 2)
+    ? sparklineSvg(series, { type: 'rank', width: 180, height: 32, strokeColor: '#ffd28c' })
+    : '';
   return (
     '<div class="trend">' +
       '<span class="trend-current">#' + escapeHtml(String(last)) + '</span> ' +
       '<span class="' + cls + '">' + arrow + ' ' + summary + '</span> ' +
       '<span class="trend-meta">best #' + best + (best !== worst ? ' · worst #' + worst : '') + ' over ' + ranked.length + 'd</span>' +
+      (spark ? '<div class="trend-spark">' + spark + '</div>' : '') +
       '<div class="trend-path" title="' + escapeHtml(path) + '">' + escapeHtml(path) + '</div>' +
     '</div>'
   );
