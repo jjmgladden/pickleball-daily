@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-22T10:19:03.217Z",
+  "generatedAt": "2026-05-23T08:58:34.794Z",
   "snapshotDateRange": {
     "first": "2026-04-22",
-    "last": "2026-05-22",
-    "count": 31
+    "last": "2026-05-23",
+    "count": 32
   },
   "playerCount": 258,
   "players": [
@@ -81,6 +81,11 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 50,
+          "ppaPoints": 1350
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 50,
           "ppaPoints": 1350
         }
@@ -218,6 +223,11 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 38,
+          "ppaPoints": 2175
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 38,
           "ppaPoints": 2175
         }
@@ -360,6 +370,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.34
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.34
         }
       ]
     },
@@ -489,6 +503,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.71
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.71
         }
       ]
     },
@@ -607,6 +625,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.41
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.41
         }
       ]
     },
@@ -724,6 +746,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.83
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.83
         }
       ]
@@ -913,6 +939,12 @@
           "ppaRank": 4,
           "ppaPoints": 14900,
           "duprDoubles": 7.012
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 4,
+          "ppaPoints": 14900,
+          "duprDoubles": 7.012
         }
       ]
     },
@@ -1053,6 +1085,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.38
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.38
         }
       ]
     },
@@ -1171,6 +1207,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 6.528
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 6.528
         }
       ]
     },
@@ -1288,6 +1328,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.889
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.889
         }
       ]
@@ -1415,6 +1459,11 @@
           "date": "2026-05-22",
           "ppaRank": 45,
           "ppaPoints": 1700
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 45,
+          "ppaPoints": 1700
         }
       ]
     },
@@ -1539,6 +1588,11 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 18,
+          "ppaPoints": 3887
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 18,
           "ppaPoints": 3887
         }
@@ -1729,6 +1783,12 @@
           "ppaRank": 19,
           "ppaPoints": 3600,
           "duprDoubles": 6.6
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 19,
+          "ppaPoints": 3600,
+          "duprDoubles": 6.6
         }
       ]
     },
@@ -1857,6 +1917,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.32
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.32
         }
       ]
@@ -2024,6 +2088,12 @@
           "ppaRank": 1,
           "ppaPoints": 22300,
           "duprDoubles": 7.094
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 1,
+          "ppaPoints": 22300,
+          "duprDoubles": 7.094
         }
       ]
     },
@@ -2187,6 +2257,12 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 23,
+          "ppaPoints": 3050,
+          "duprDoubles": 5.99
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 23,
           "ppaPoints": 3050,
           "duprDoubles": 5.99
@@ -2367,6 +2443,12 @@
           "ppaRank": 42,
           "ppaPoints": 1750,
           "duprDoubles": 5.95
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 42,
+          "ppaPoints": 1750,
+          "duprDoubles": 5.95
         }
       ]
     },
@@ -2506,6 +2588,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.85
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.85
         }
       ]
@@ -2658,6 +2744,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.92
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.92
         }
       ]
     },
@@ -2800,6 +2890,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.56
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.56
         }
       ]
     },
@@ -2920,6 +3014,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.47
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.47
         }
       ]
     },
@@ -3037,6 +3135,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.2
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.2
         }
       ]
@@ -3156,6 +3258,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.75
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.75
         }
       ]
     },
@@ -3273,6 +3379,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.64
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.64
         }
       ]
@@ -3437,6 +3547,12 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 3,
+          "ppaPoints": 15200,
+          "duprDoubles": 6.861
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 3,
           "ppaPoints": 15200,
           "duprDoubles": 6.861
@@ -3639,6 +3755,12 @@
           "ppaRank": 8,
           "ppaPoints": 12400,
           "duprDoubles": 6.695
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 8,
+          "ppaPoints": 12400,
+          "duprDoubles": 6.695
         }
       ]
     },
@@ -3838,6 +3960,12 @@
           "ppaRank": 31,
           "ppaPoints": 2475,
           "duprDoubles": 6.55
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 31,
+          "ppaPoints": 2475,
+          "duprDoubles": 6.55
         }
       ]
     },
@@ -4004,6 +4132,12 @@
           "ppaRank": 13,
           "ppaPoints": 5100,
           "duprDoubles": 6.74
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 13,
+          "ppaPoints": 5100,
+          "duprDoubles": 6.74
         }
       ]
     },
@@ -4145,6 +4279,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.14
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.14
         }
       ]
@@ -4297,6 +4435,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.23
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.23
         }
       ]
     },
@@ -4421,6 +4563,11 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 39,
+          "ppaPoints": 2125
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 39,
           "ppaPoints": 2125
         }
@@ -4589,6 +4736,12 @@
           "ppaRank": 24,
           "ppaPoints": 2950,
           "duprDoubles": 6.77
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 24,
+          "ppaPoints": 2950,
+          "duprDoubles": 6.77
         }
       ]
     },
@@ -4706,6 +4859,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.29
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.29
         }
       ]
@@ -4831,6 +4988,11 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 46,
+          "ppaPoints": 1662
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 46,
           "ppaPoints": 1662
         }
@@ -4996,6 +5158,12 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 11,
+          "ppaPoints": 5800,
+          "duprDoubles": 6.86
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 11,
           "ppaPoints": 5800,
           "duprDoubles": 6.86
@@ -5209,6 +5377,12 @@
           "ppaRank": 9,
           "ppaPoints": 7700,
           "duprDoubles": 6.4
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 9,
+          "ppaPoints": 7700,
+          "duprDoubles": 6.4
         }
       ]
     },
@@ -5329,6 +5503,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 6.28
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 6.28
         }
       ]
     },
@@ -5446,6 +5624,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.63
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.63
         }
       ]
@@ -5593,6 +5775,11 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 36,
+          "ppaPoints": 2200
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 36,
           "ppaPoints": 2200
         }
@@ -5761,6 +5948,12 @@
           "ppaRank": 6,
           "ppaPoints": 14600,
           "duprDoubles": 6.721
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 6,
+          "ppaPoints": 14600,
+          "duprDoubles": 6.721
         }
       ]
     },
@@ -5878,6 +6071,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 4.83
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 4.83
         }
       ]
@@ -6007,6 +6204,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.867
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.867
         }
       ]
@@ -6185,6 +6386,12 @@
           "ppaRank": 1,
           "ppaPoints": 22300,
           "duprDoubles": 6.88
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 1,
+          "ppaPoints": 22300,
+          "duprDoubles": 6.88
         }
       ]
     },
@@ -6303,6 +6510,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.75
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.75
         }
       ]
     },
@@ -6420,6 +6631,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.69
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.69
         }
       ]
@@ -6675,6 +6890,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.3
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.3
         }
       ]
     },
@@ -6863,6 +7082,12 @@
           "ppaRank": 5,
           "ppaPoints": 14800,
           "duprDoubles": 6.925
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 5,
+          "ppaPoints": 14800,
+          "duprDoubles": 6.925
         }
       ]
     },
@@ -6980,6 +7205,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 4.96
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 4.96
         }
       ]
@@ -7127,6 +7356,11 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 36,
+          "ppaPoints": 2200
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 36,
           "ppaPoints": 2200
         }
@@ -7306,6 +7540,12 @@
           "ppaRank": 29,
           "ppaPoints": 2600,
           "duprDoubles": 6.62
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 29,
+          "ppaPoints": 2600,
+          "duprDoubles": 6.62
         }
       ]
     },
@@ -7423,6 +7663,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.339
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.339
         }
       ]
@@ -7553,6 +7797,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.65
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.65
         }
       ]
     },
@@ -7672,6 +7920,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.16
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.16
         }
       ]
@@ -7850,6 +8102,12 @@
           "ppaRank": 26,
           "ppaPoints": 2837,
           "duprDoubles": 6.56
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 26,
+          "ppaPoints": 2837,
+          "duprDoubles": 6.56
         }
       ]
     },
@@ -7967,6 +8225,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.253
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.253
         }
       ]
@@ -8096,6 +8358,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.241
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.241
         }
       ]
@@ -8260,6 +8526,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.88
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.88
         }
       ]
@@ -8505,6 +8775,12 @@
           "ppaRank": 16,
           "ppaPoints": 4400,
           "duprDoubles": 6.7
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 16,
+          "ppaPoints": 4400,
+          "duprDoubles": 6.7
         }
       ]
     },
@@ -8671,6 +8947,12 @@
           "ppaRank": 12,
           "ppaPoints": 5700,
           "duprDoubles": 6.67
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 12,
+          "ppaPoints": 5700,
+          "duprDoubles": 6.67
         }
       ]
     },
@@ -8799,6 +9081,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.93
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.93
         }
       ]
@@ -8970,6 +9256,11 @@
           "date": "2026-05-22",
           "ppaRank": 47,
           "ppaPoints": 1650
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 47,
+          "ppaPoints": 1650
         }
       ]
     },
@@ -9096,6 +9387,11 @@
           "date": "2026-05-22",
           "ppaRank": 25,
           "ppaPoints": 2900
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 25,
+          "ppaPoints": 2900
         }
       ]
     },
@@ -9213,6 +9509,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.242
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.242
         }
       ]
@@ -9402,6 +9702,12 @@
           "ppaRank": 48,
           "ppaPoints": 1462,
           "duprDoubles": 5.75
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 48,
+          "ppaPoints": 1462,
+          "duprDoubles": 5.75
         }
       ]
     },
@@ -9531,6 +9837,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.65
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.65
         }
       ]
     },
@@ -9655,6 +9965,11 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 41,
+          "ppaPoints": 1775
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 41,
           "ppaPoints": 1775
         }
@@ -9823,6 +10138,12 @@
           "ppaRank": 7,
           "ppaPoints": 12900,
           "duprDoubles": 7.011
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 7,
+          "ppaPoints": 12900,
+          "duprDoubles": 7.011
         }
       ]
     },
@@ -9952,6 +10273,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.65
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.65
         }
       ]
     },
@@ -10070,6 +10395,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.83
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.83
         }
       ]
     },
@@ -10094,6 +10423,11 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 49,
+          "ppaPoints": 1450
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 49,
           "ppaPoints": 1450
         }
@@ -10247,6 +10581,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.94
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.94
         }
       ]
     },
@@ -10364,6 +10702,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 4.6
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 4.6
         }
       ]
@@ -10483,6 +10825,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.36
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.36
         }
       ]
     },
@@ -10600,6 +10946,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.96
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.96
         }
       ]
@@ -10738,6 +11088,11 @@
           "date": "2026-05-22",
           "ppaRank": 33,
           "ppaPoints": 2325
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 33,
+          "ppaPoints": 2325
         }
       ]
     },
@@ -10856,6 +11211,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.69
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.69
         }
       ]
     },
@@ -10973,6 +11332,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.58
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.58
         }
       ]
@@ -11169,6 +11532,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.17
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.17
         }
       ]
     },
@@ -11297,6 +11664,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.07
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.07
         }
       ]
@@ -11435,6 +11806,11 @@
           "date": "2026-05-22",
           "ppaRank": 40,
           "ppaPoints": 1975
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 40,
+          "ppaPoints": 1975
         }
       ]
     },
@@ -11552,6 +11928,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.6
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.6
         }
       ]
@@ -11688,6 +12068,11 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 17,
+          "ppaPoints": 4225
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 17,
           "ppaPoints": 4225
         }
@@ -11827,6 +12212,11 @@
           "date": "2026-05-22",
           "ppaRank": 30,
           "ppaPoints": 2537
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 30,
+          "ppaPoints": 2537
         }
       ]
     },
@@ -11956,6 +12346,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 6.31
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 6.31
         }
       ]
     },
@@ -12074,6 +12468,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.8
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.8
         }
       ]
     },
@@ -12191,6 +12589,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.43
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.43
         }
       ]
@@ -12358,6 +12760,12 @@
           "ppaRank": 42,
           "ppaPoints": 1750,
           "duprDoubles": 6.26
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 42,
+          "ppaPoints": 1750,
+          "duprDoubles": 6.26
         }
       ]
     },
@@ -12486,6 +12894,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.77
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.77
         }
       ]
@@ -12670,6 +13082,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 4.9
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 4.9
         }
       ]
@@ -12914,6 +13330,12 @@
           "ppaRank": 15,
           "ppaPoints": 4550,
           "duprDoubles": 6.49
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 15,
+          "ppaPoints": 4550,
+          "duprDoubles": 6.49
         }
       ]
     },
@@ -13102,6 +13524,12 @@
           "ppaRank": 20,
           "ppaPoints": 3500,
           "duprDoubles": 6.62
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 20,
+          "ppaPoints": 3500,
+          "duprDoubles": 6.62
         }
       ]
     },
@@ -13219,6 +13647,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.238
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.238
         }
       ]
@@ -13340,6 +13772,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 6.49
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 6.49
         }
       ]
     },
@@ -13459,6 +13895,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.37
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.37
         }
       ]
@@ -13588,6 +14028,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.42
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.42
         }
       ]
@@ -13740,6 +14184,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.5
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.5
         }
       ]
     },
@@ -13857,6 +14305,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.209
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.209
         }
       ]
@@ -14021,6 +14473,12 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 35,
+          "ppaPoints": 2250,
+          "duprDoubles": 6.49
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 35,
           "ppaPoints": 2250,
           "duprDoubles": 6.49
@@ -14209,6 +14667,12 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 14,
+          "ppaPoints": 4912,
+          "duprDoubles": 6.83
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 14,
           "ppaPoints": 4912,
           "duprDoubles": 6.83
@@ -14411,6 +14875,12 @@
           "ppaRank": 22,
           "ppaPoints": 3150,
           "duprDoubles": 6.11
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 22,
+          "ppaPoints": 3150,
+          "duprDoubles": 6.11
         }
       ]
     },
@@ -14530,6 +15000,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.89
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.89
         }
       ]
@@ -14695,6 +15169,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.95
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.95
         }
       ]
     },
@@ -14812,6 +15290,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.4
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.4
         }
       ]
@@ -14963,6 +15445,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.52
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.52
         }
       ]
@@ -15167,6 +15653,11 @@
           "date": "2026-05-22",
           "ppaRank": 21,
           "ppaPoints": 3400
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 21,
+          "ppaPoints": 3400
         }
       ]
     },
@@ -15285,6 +15776,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.43
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.43
         }
       ]
     },
@@ -15402,6 +15897,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.01
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.01
         }
       ]
@@ -15532,6 +16031,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 6.07
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 6.07
         }
       ]
     },
@@ -15650,6 +16153,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 6.28
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 6.28
         }
       ]
     },
@@ -15767,6 +16274,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.6
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.6
         }
       ]
@@ -15894,6 +16405,11 @@
           "date": "2026-05-22",
           "ppaRank": 44,
           "ppaPoints": 1725
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 44,
+          "ppaPoints": 1725
         }
       ]
     },
@@ -16013,6 +16529,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.63
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.63
         }
       ]
@@ -16202,6 +16722,12 @@
           "ppaRank": 34,
           "ppaPoints": 2300,
           "duprDoubles": 6.52
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 34,
+          "ppaPoints": 2300,
+          "duprDoubles": 6.52
         }
       ]
     },
@@ -16368,6 +16894,12 @@
           "ppaRank": 10,
           "ppaPoints": 5900,
           "duprDoubles": 6.78
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 10,
+          "ppaPoints": 5900,
+          "duprDoubles": 6.78
         }
       ]
     },
@@ -16519,6 +17051,10 @@
         {
           "date": "2026-05-22",
           "duprDoubles": 5.99
+        },
+        {
+          "date": "2026-05-23",
+          "duprDoubles": 5.99
         }
       ]
     },
@@ -16636,6 +17172,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 5.87
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 5.87
         }
       ]
@@ -16756,6 +17296,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.41
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.41
         }
       ]
@@ -16887,6 +17431,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.64
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.64
         }
       ]
@@ -17065,6 +17613,12 @@
           "ppaRank": 32,
           "ppaPoints": 2400,
           "duprDoubles": 6.04
+        },
+        {
+          "date": "2026-05-23",
+          "ppaRank": 32,
+          "ppaPoints": 2400,
+          "duprDoubles": 6.04
         }
       ]
     },
@@ -17195,6 +17749,10 @@
         },
         {
           "date": "2026-05-22",
+          "duprDoubles": 6.26
+        },
+        {
+          "date": "2026-05-23",
           "duprDoubles": 6.26
         }
       ]
@@ -17359,6 +17917,12 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 27,
+          "ppaPoints": 2737,
+          "duprDoubles": 5.7
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 27,
           "ppaPoints": 2737,
           "duprDoubles": 5.7
@@ -17569,6 +18133,12 @@
         },
         {
           "date": "2026-05-22",
+          "ppaRank": 28,
+          "ppaPoints": 2675,
+          "duprDoubles": 6.54
+        },
+        {
+          "date": "2026-05-23",
           "ppaRank": 28,
           "ppaPoints": 2675,
           "duprDoubles": 6.54
