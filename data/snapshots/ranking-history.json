@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-24T09:15:55.761Z",
+  "generatedAt": "2026-05-25T11:09:56.380Z",
   "snapshotDateRange": {
     "first": "2026-04-22",
-    "last": "2026-05-24",
-    "count": 33
+    "last": "2026-05-25",
+    "count": 34
   },
-  "playerCount": 258,
+  "playerCount": 279,
   "players": [
     {
       "playerId": "ppa-aanik-lohani",
@@ -91,6 +91,11 @@
         },
         {
           "date": "2026-05-24",
+          "ppaRank": 50,
+          "ppaPoints": 1350
+        },
+        {
+          "date": "2026-05-25",
           "ppaRank": 50,
           "ppaPoints": 1350
         }
@@ -238,6 +243,11 @@
         },
         {
           "date": "2026-05-24",
+          "ppaRank": 38,
+          "ppaPoints": 2175
+        },
+        {
+          "date": "2026-05-25",
           "ppaRank": 38,
           "ppaPoints": 2175
         }
@@ -977,6 +987,12 @@
           "ppaRank": 4,
           "ppaPoints": 14900,
           "duprDoubles": 7.012
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 4,
+          "ppaPoints": 14900,
+          "duprDoubles": 7.012
         }
       ]
     },
@@ -1251,6 +1267,10 @@
         {
           "date": "2026-05-24",
           "duprDoubles": 6.528
+        },
+        {
+          "date": "2026-05-25",
+          "duprDoubles": 6.528
         }
       ]
     },
@@ -1376,6 +1396,10 @@
         },
         {
           "date": "2026-05-24",
+          "duprDoubles": 6.889
+        },
+        {
+          "date": "2026-05-25",
           "duprDoubles": 6.889
         }
       ]
@@ -1513,6 +1537,11 @@
           "date": "2026-05-24",
           "ppaRank": 45,
           "ppaPoints": 1700
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 45,
+          "ppaPoints": 1700
         }
       ]
     },
@@ -1647,6 +1676,11 @@
         },
         {
           "date": "2026-05-24",
+          "ppaRank": 18,
+          "ppaPoints": 3887
+        },
+        {
+          "date": "2026-05-25",
           "ppaRank": 18,
           "ppaPoints": 3887
         }
@@ -1849,6 +1883,17 @@
           "ppaRank": 19,
           "ppaPoints": 3600,
           "duprDoubles": 6.6
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-augustus-ge",
+      "displayName": "Augustus Ge",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 19,
+          "ppaPoints": 3600
         }
       ]
     },
@@ -2164,6 +2209,12 @@
           "ppaRank": 1,
           "ppaPoints": 22300,
           "duprDoubles": 7.094
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 1,
+          "ppaPoints": 22300,
+          "duprDoubles": 7.094
         }
       ]
     },
@@ -2342,6 +2393,17 @@
           "ppaRank": 23,
           "ppaPoints": 3050,
           "duprDoubles": 5.99
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-blaine-hovenier",
+      "displayName": "Blaine Hovenier",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 23,
+          "ppaPoints": 3050
         }
       ]
     },
@@ -2531,6 +2593,17 @@
           "ppaRank": 42,
           "ppaPoints": 1750,
           "duprDoubles": 5.95
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-brandon-french",
+      "displayName": "Brandon French",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 42,
+          "ppaPoints": 1750
         }
       ]
     },
@@ -3672,6 +3745,12 @@
           "ppaRank": 3,
           "ppaPoints": 15200,
           "duprDoubles": 6.861
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 3,
+          "ppaPoints": 15200,
+          "duprDoubles": 6.861
         }
       ]
     },
@@ -3880,6 +3959,12 @@
         },
         {
           "date": "2026-05-24",
+          "ppaRank": 8,
+          "ppaPoints": 12400,
+          "duprDoubles": 6.695
+        },
+        {
+          "date": "2026-05-25",
           "ppaRank": 8,
           "ppaPoints": 12400,
           "duprDoubles": 6.695
@@ -4098,6 +4183,17 @@
       ]
     },
     {
+      "playerId": "ppa-collin-johns",
+      "displayName": "Collin Johns",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 31,
+          "ppaPoints": 2475
+        }
+      ]
+    },
+    {
       "playerId": "mlp-5127",
       "displayName": "Connor Garnett",
       "history": [
@@ -4272,6 +4368,17 @@
           "ppaRank": 13,
           "ppaPoints": 5100,
           "duprDoubles": 6.74
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-connor-garnett",
+      "displayName": "Connor Garnett",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 13,
+          "ppaPoints": 5100
         }
       ]
     },
@@ -4717,6 +4824,11 @@
           "date": "2026-05-24",
           "ppaRank": 39,
           "ppaPoints": 2125
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 39,
+          "ppaPoints": 2125
         }
       ]
     },
@@ -4895,6 +5007,17 @@
           "ppaRank": 24,
           "ppaPoints": 2950,
           "duprDoubles": 6.77
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-dekel-bar",
+      "displayName": "Dekel Bar",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 24,
+          "ppaPoints": 2950
         }
       ]
     },
@@ -5157,6 +5280,11 @@
           "date": "2026-05-24",
           "ppaRank": 46,
           "ppaPoints": 1662
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 46,
+          "ppaPoints": 1662
         }
       ]
     },
@@ -5335,6 +5463,11 @@
           "ppaRank": 11,
           "ppaPoints": 5800,
           "duprDoubles": 6.86
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 11,
+          "ppaPoints": 5800
         }
       ]
     },
@@ -5557,6 +5690,17 @@
           "ppaRank": 9,
           "ppaPoints": 7700,
           "duprDoubles": 6.4
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-eric-oncins",
+      "displayName": "Eric Oncins",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 9,
+          "ppaPoints": 7700
         }
       ]
     },
@@ -5969,6 +6113,11 @@
           "date": "2026-05-24",
           "ppaRank": 36,
           "ppaPoints": 2200
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 36,
+          "ppaPoints": 2200
         }
       ]
     },
@@ -6144,6 +6293,12 @@
         },
         {
           "date": "2026-05-24",
+          "ppaRank": 6,
+          "ppaPoints": 14600,
+          "duprDoubles": 6.721
+        },
+        {
+          "date": "2026-05-25",
           "ppaRank": 6,
           "ppaPoints": 14600,
           "duprDoubles": 6.721
@@ -6410,6 +6565,10 @@
         {
           "date": "2026-05-24",
           "duprDoubles": 6.867
+        },
+        {
+          "date": "2026-05-25",
+          "duprDoubles": 6.867
         }
       ]
     },
@@ -6599,6 +6758,17 @@
           "ppaRank": 1,
           "ppaPoints": 22300,
           "duprDoubles": 6.88
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-gabriel-tardio",
+      "displayName": "Gabriel Tardio",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 1,
+          "ppaPoints": 22300
         }
       ]
     },
@@ -7313,6 +7483,12 @@
           "ppaRank": 5,
           "ppaPoints": 14800,
           "duprDoubles": 6.925
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 5,
+          "ppaPoints": 14800,
+          "duprDoubles": 6.925
         }
       ]
     },
@@ -7597,6 +7773,11 @@
           "date": "2026-05-24",
           "ppaRank": 36,
           "ppaPoints": 2200
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 36,
+          "ppaPoints": 2200
         }
       ]
     },
@@ -7786,6 +7967,11 @@
           "ppaRank": 29,
           "ppaPoints": 2600,
           "duprDoubles": 6.62
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 29,
+          "ppaPoints": 2600
         }
       ]
     },
@@ -7911,6 +8097,10 @@
         },
         {
           "date": "2026-05-24",
+          "duprDoubles": 6.339
+        },
+        {
+          "date": "2026-05-25",
           "duprDoubles": 6.339
         }
       ]
@@ -8366,6 +8556,11 @@
           "ppaRank": 26,
           "ppaPoints": 2837,
           "duprDoubles": 6.56
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 26,
+          "ppaPoints": 2837
         }
       ]
     },
@@ -8491,6 +8686,10 @@
         },
         {
           "date": "2026-05-24",
+          "duprDoubles": 6.253
+        },
+        {
+          "date": "2026-05-25",
           "duprDoubles": 6.253
         }
       ]
@@ -8628,6 +8827,10 @@
         },
         {
           "date": "2026-05-24",
+          "duprDoubles": 6.241
+        },
+        {
+          "date": "2026-05-25",
           "duprDoubles": 6.241
         }
       ]
@@ -9061,6 +9264,17 @@
       ]
     },
     {
+      "playerId": "ppa-jaume-martinez-vich",
+      "displayName": "Jaume Martinez Vich",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 16,
+          "ppaPoints": 4400
+        }
+      ]
+    },
+    {
       "playerId": "mlp-5086",
       "displayName": "Jay Devilliers",
       "history": [
@@ -9235,6 +9449,17 @@
           "ppaRank": 12,
           "ppaPoints": 5700,
           "duprDoubles": 6.67
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-jay-devilliers",
+      "displayName": "Jay Devilliers",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 12,
+          "ppaPoints": 5700
         }
       ]
     },
@@ -9552,6 +9777,11 @@
           "date": "2026-05-24",
           "ppaRank": 47,
           "ppaPoints": 1650
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 47,
+          "ppaPoints": 1650
         }
       ]
     },
@@ -9688,6 +9918,11 @@
           "date": "2026-05-24",
           "ppaRank": 25,
           "ppaPoints": 2900
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 25,
+          "ppaPoints": 2900
         }
       ]
     },
@@ -9813,6 +10048,10 @@
         },
         {
           "date": "2026-05-24",
+          "duprDoubles": 6.242
+        },
+        {
+          "date": "2026-05-25",
           "duprDoubles": 6.242
         }
       ]
@@ -10014,6 +10253,17 @@
           "ppaRank": 48,
           "ppaPoints": 1462,
           "duprDoubles": 5.75
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-juan-benitez",
+      "displayName": "Juan Benitez",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 48,
+          "ppaPoints": 1462
         }
       ]
     },
@@ -10287,6 +10537,11 @@
           "date": "2026-05-24",
           "ppaRank": 41,
           "ppaPoints": 1775
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 41,
+          "ppaPoints": 1775
         }
       ]
     },
@@ -10462,6 +10717,12 @@
         },
         {
           "date": "2026-05-24",
+          "ppaRank": 7,
+          "ppaPoints": 12900,
+          "duprDoubles": 7.011
+        },
+        {
+          "date": "2026-05-25",
           "ppaRank": 7,
           "ppaPoints": 12900,
           "duprDoubles": 7.011
@@ -10762,6 +11023,11 @@
         },
         {
           "date": "2026-05-24",
+          "ppaRank": 49,
+          "ppaPoints": 1450
+        },
+        {
+          "date": "2026-05-25",
           "ppaRank": 49,
           "ppaPoints": 1450
         }
@@ -11446,6 +11712,11 @@
         },
         {
           "date": "2026-05-24",
+          "ppaRank": 33,
+          "ppaPoints": 2325
+        },
+        {
+          "date": "2026-05-25",
           "ppaRank": 33,
           "ppaPoints": 2325
         }
@@ -12187,6 +12458,11 @@
           "date": "2026-05-24",
           "ppaRank": 40,
           "ppaPoints": 1975
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 40,
+          "ppaPoints": 1975
         }
       ]
     },
@@ -12460,6 +12736,11 @@
           "date": "2026-05-24",
           "ppaRank": 17,
           "ppaPoints": 4225
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 17,
+          "ppaPoints": 4225
         }
       ]
     },
@@ -12605,6 +12886,11 @@
         },
         {
           "date": "2026-05-24",
+          "ppaRank": 30,
+          "ppaPoints": 2537
+        },
+        {
+          "date": "2026-05-25",
           "ppaRank": 30,
           "ppaPoints": 2537
         }
@@ -13174,6 +13460,17 @@
           "ppaRank": 42,
           "ppaPoints": 1750,
           "duprDoubles": 6.26
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-michael-loyd",
+      "displayName": "Michael Loyd",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 42,
+          "ppaPoints": 1750
         }
       ]
     },
@@ -13762,6 +14059,17 @@
       ]
     },
     {
+      "playerId": "ppa-noe-khlif",
+      "displayName": "Noe Khlif",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 15,
+          "ppaPoints": 4550
+        }
+      ]
+    },
+    {
       "playerId": "ppa-oliver-frank",
       "displayName": "Oliver Frank",
       "history": [
@@ -13962,6 +14270,17 @@
       ]
     },
     {
+      "playerId": "ppa-pablo-tellez",
+      "displayName": "Pablo Tellez",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 20,
+          "ppaPoints": 3500
+        }
+      ]
+    },
+    {
       "playerId": "parris-todd",
       "displayName": "Parris Todd",
       "history": [
@@ -14083,6 +14402,10 @@
         },
         {
           "date": "2026-05-24",
+          "duprDoubles": 6.238
+        },
+        {
+          "date": "2026-05-25",
           "duprDoubles": 6.238
         }
       ]
@@ -14762,6 +15085,10 @@
         {
           "date": "2026-05-24",
           "duprDoubles": 6.209
+        },
+        {
+          "date": "2026-05-25",
+          "duprDoubles": 6.209
         }
       ]
     },
@@ -14940,6 +15267,17 @@
           "ppaRank": 35,
           "ppaPoints": 2250,
           "duprDoubles": 6.49
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-rafa-hewett",
+      "displayName": "Rafa Hewett",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 35,
+          "ppaPoints": 2250
         }
       ]
     },
@@ -15140,6 +15478,17 @@
           "ppaRank": 14,
           "ppaPoints": 4912,
           "duprDoubles": 6.83
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-riley-newman",
+      "displayName": "Riley Newman",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 14,
+          "ppaPoints": 4912
         }
       ]
     },
@@ -15351,6 +15700,17 @@
           "ppaRank": 22,
           "ppaPoints": 3150,
           "duprDoubles": 6.11
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-roscoe-bellamy",
+      "displayName": "Roscoe Bellamy",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 22,
+          "ppaPoints": 3150
         }
       ]
     },
@@ -16149,6 +16509,11 @@
           "date": "2026-05-24",
           "ppaRank": 21,
           "ppaPoints": 3400
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 21,
+          "ppaPoints": 3400
         }
       ]
     },
@@ -16926,6 +17291,11 @@
           "date": "2026-05-24",
           "ppaRank": 44,
           "ppaPoints": 1725
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 44,
+          "ppaPoints": 1725
         }
       ]
     },
@@ -17258,6 +17628,17 @@
       ]
     },
     {
+      "playerId": "ppa-tyler-loong",
+      "displayName": "Tyler Loong",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 34,
+          "ppaPoints": 2300
+        }
+      ]
+    },
+    {
       "playerId": "tyson-mcguffin",
       "displayName": "Tyson McGuffin",
       "history": [
@@ -17432,6 +17813,11 @@
           "ppaRank": 10,
           "ppaPoints": 5900,
           "duprDoubles": 6.78
+        },
+        {
+          "date": "2026-05-25",
+          "ppaRank": 10,
+          "ppaPoints": 5900
         }
       ]
     },
@@ -18177,6 +18563,17 @@
       ]
     },
     {
+      "playerId": "ppa-wyatt-stone",
+      "displayName": "Wyatt Stone",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 32,
+          "ppaPoints": 2400
+        }
+      ]
+    },
+    {
       "playerId": "ppa-yaamunan-venkatesan",
       "displayName": "Yaamunan Venkatesan",
       "history": [
@@ -18494,6 +18891,17 @@
       ]
     },
     {
+      "playerId": "ppa-yuta-funemizu",
+      "displayName": "Yuta Funemizu",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 27,
+          "ppaPoints": 2737
+        }
+      ]
+    },
+    {
       "playerId": "ppa-zach-gonnering",
       "displayName": "Zach Gonnering",
       "history": [
@@ -18712,6 +19120,17 @@
           "ppaRank": 28,
           "ppaPoints": 2675,
           "duprDoubles": 6.54
+        }
+      ]
+    },
+    {
+      "playerId": "ppa-zane-navratil",
+      "displayName": "Zane Navratil",
+      "history": [
+        {
+          "date": "2026-05-25",
+          "ppaRank": 28,
+          "ppaPoints": 2675
         }
       ]
     }
