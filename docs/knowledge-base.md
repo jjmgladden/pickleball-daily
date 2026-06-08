@@ -2,7 +2,7 @@
 
 Living record of decisions, open issues, and action items. Updated every session.
 
-**Last updated:** 2026-05-06 (Session 13 — **KB v25**, 56 entries; KB-0056 added — Player Detail Page shipped + reusable inline-SVG sparkline component (two consumers: Detail Page + Comparison Rank Trend). Lifts the KB-0052 γ deferral after S12's KB-0055 satisfied unblocking criterion #2. SW cache + APP_VERSION rolled v19 → v20. Earlier in this session: discovered KB-0054 + KB-0055 (the S12 work) had never actually been written to the KB file despite the S12 kickoff text claiming v24 with 55 entries — both retroactively appended in this shutdown so the record matches reality. Session 12 (2026-05-06 chronologically AFTER S12) shipped: Phase B polish (B.1 glossary timestamp + B.2 image-fallback wrap pattern + B.3 equipment-refresh.yml registration verified) and Phase C5 (ranking-history rollup + #1 Comparison Rank Trend wiring). SW cache + APP_VERSION rolled v17 → v18 → v19 across S12. Earliest in S12 (mid-session) was KB-0053 — tab rename "Gear & Courts" → "Gear" after L4 deferral, future-direction note (if Courts ever ships, separate top-level tab). Session 11 — KB v22 added KB-0052 (Phase 2 depth bundle: On-This-Day cascading fallback + Player Comparison shipped; Player Detail Page deferred (γ) — γ now lifted by KB-0056); KB v21 added KB-0051 — Phase L4 (Courts sub-tab) deferred after pre-build investigation found Pickleheads has anti-bot + unreadable ToS, USAP Places2Play robots.txt blanket-disallows scraping, Google Places API costs ~$120–$200/yr; KB-0040 L4 sub-status flipped to Deferred. KB v20 (post-S10 follow-up 2026-05-03) appended KB-0049 with verification-scheduling subsection. Session 10 shutdown produced KB v19 — KB-0048 (L2 launch), KB-0049 (L3 launch), KB-0050 (USAP scraping lessons).)
+**Last updated:** 2026-05-07 (Session 14 — **KB v26**, 57 entries; KB-0057 added — All scheduled cron workflows + morning email paused per owner direction. Both `daily.yml` (07:00 UTC daily ingestion + email step) and `equipment-refresh.yml` (quarterly) disabled via `gh workflow disable`. Duration undetermined. Codebase healthy at pause-time. GitHub Issue [#1](https://github.com/jjmgladden/pickleball-daily/issues/1) filed as the canonical operational record with full restart playbook (first GitHub Issue ever filed on this repo — establishes the Issues lane as the natural home for operational records). Independent of the pause, this session also: added `.tmp/` to `.gitignore` per cross-project XPL-012 (project-hygiene improvement; standardizes scratch-file location for the Bash + Write tool pair); added XPL-014 (Session-end protocol drift — narrated KB updates can silently fail to land in the file) to `~/.claude/CLAUDE.md` at session start (retro from S13's S12-drift discovery). No user-facing site changes shipped this session; site is paused at the 2026-05-06 snapshot. Session 13 (2026-05-06) — **KB v25**, KB-0056 added — Player Detail Page shipped + reusable inline-SVG sparkline component (two consumers: Detail Page + Comparison Rank Trend). Lifts the KB-0052 γ deferral after S12's KB-0055 satisfied unblocking criterion #2. SW cache + APP_VERSION rolled v19 → v20. Earlier in this session: discovered KB-0054 + KB-0055 (the S12 work) had never actually been written to the KB file despite the S12 kickoff text claiming v24 with 55 entries — both retroactively appended in this shutdown so the record matches reality. Session 12 (2026-05-06 chronologically AFTER S12) shipped: Phase B polish (B.1 glossary timestamp + B.2 image-fallback wrap pattern + B.3 equipment-refresh.yml registration verified) and Phase C5 (ranking-history rollup + #1 Comparison Rank Trend wiring). SW cache + APP_VERSION rolled v17 → v18 → v19 across S12. Earliest in S12 (mid-session) was KB-0053 — tab rename "Gear & Courts" → "Gear" after L4 deferral, future-direction note (if Courts ever ships, separate top-level tab). Session 11 — KB v22 added KB-0052 (Phase 2 depth bundle: On-This-Day cascading fallback + Player Comparison shipped; Player Detail Page deferred (γ) — γ now lifted by KB-0056); KB v21 added KB-0051 — Phase L4 (Courts sub-tab) deferred after pre-build investigation found Pickleheads has anti-bot + unreadable ToS, USAP Places2Play robots.txt blanket-disallows scraping, Google Places API costs ~$120–$200/yr; KB-0040 L4 sub-status flipped to Deferred. KB v20 (post-S10 follow-up 2026-05-03) appended KB-0049 with verification-scheduling subsection. Session 10 shutdown produced KB v19 — KB-0048 (L2 launch), KB-0049 (L3 launch), KB-0050 (USAP scraping lessons).)
 
 **Tier convention (dynamic types only — adopted from MODR):**
 - **T1** — Critical / production-impacting; fix first
@@ -2232,4 +2232,52 @@ Static types (Reference, Decision, Limitation) omit Tier.
 
 ---
 
-**End of KB. Entry count: 56. Next ID: KB-0057.**
+### KB-0057 | All scheduled cron workflows + morning email paused (operational pause)
+- **Type:** Decision
+- **Tier:** T2
+- **Dependency:** Owner (decides when to restart)
+- **Date:** 2026-05-07 (Session 14)
+- **Source:** Owner direction during Session 14; pause executed during the session
+- **Category:** Operational / Workflows / Email
+- **Tags:** session-14, pause, daily-yml, equipment-refresh, email, cron, github-actions, reversible
+- **Finding:** On 2026-05-07, both scheduled GitHub Actions workflows + the morning email were paused at owner's request. Duration undetermined — could be short-term or long-term.
+
+  **What was paused:**
+  - `.github/workflows/daily.yml` (07:00 UTC daily — ingestion + morning email step at lines 95-103)
+  - `.github/workflows/equipment-refresh.yml` (quarterly cadence; next would-have-been firing ~Jul 1, 2026)
+
+  Both disabled via `gh workflow disable <file> --repo jjmgladden/pickleball-daily`. Owner ran the commands from PowerShell `PS C:\Windows\System32>` (folder-independent because `--repo` flag is explicit). Both confirmed disabled: `gh workflow list` returns only `pages-build-deployment` as active.
+
+  **Email pause mechanism:** the morning email step (`Send morning email`, lines 95-103 of `daily.yml`) lives INSIDE the daily workflow rather than as a separate workflow. Disabling `daily.yml` therefore stops both ingestion AND email in one command. No code change required — the workflow was designed for "secret-toggle disable" (skips silently if `RESEND_API_KEY` or `EMAIL_RECIPIENTS` are absent) but workflow-disable is the simpler off switch when the goal is stop both.
+
+  **What is still running (intentionally untouched):**
+  - `pages-build-deployment` workflow (GitHub-auto-generated; fires on push to main, not on schedule)
+  - Cloudflare Worker `pickleball-daily-api.jjmgladden.workers.dev` (`/ai` route serves Ask tab Q&A; independent of crons; $20/mo Anthropic cap unchanged)
+  - GitHub Pages site `jjmgladden.github.io/pickleball-daily` (live; data frozen at 2026-05-06 snapshot — last successful run before pause was 2026-05-06T09:15:46Z, completed 1m12s, run id 25426695487)
+  - All GitHub Secrets (untouched; disabled workflows can't read them, so leaving in place keeps restart simple)
+
+  **Operational record:** GitHub Issue [#1](https://github.com/jjmgladden/pickleball-daily/issues/1) — "All cron workflows paused (2026-05-07) — restart instructions inside" — filed in this session as the canonical pause + restart playbook. Issue covers exact commands for restart, verification steps, and "things to check first if restart fails" (YouTube API key rotation per KB-0044, site-scraper drift, etc.). Filing the project's first GitHub Issue establishes the GitHub Issues lane as the natural home for operational records of this kind going forward.
+
+  **Restart instructions (summary — full version in Issue #1):**
+  ```
+  gh workflow enable daily.yml --repo jjmgladden/pickleball-daily
+  gh workflow enable equipment-refresh.yml --repo jjmgladden/pickleball-daily
+  gh workflow run daily.yml --repo jjmgladden/pickleball-daily   # manual verify
+  ```
+  Then verify next 07:00 UTC scheduled run succeeds + email arrives.
+
+  **Rationale for pause:** owner's call; not driven by any tech debt or production failure. Codebase was healthy at pause-time. Reversible at any time with no data loss (snapshot history preserved in `data/snapshots/*.json`; ranking-history rollup preserved in `data/snapshots/ranking-history.json`).
+
+  **Things to recheck before restart (the longer the pause, the more relevant):**
+  - `YOUTUBE_API_KEY` rotation (KB-0044, still open T2 owner-action at pause time)
+  - PPA / MLP / DUPR / USAP site-structure drift — each scraper is non-fatal in the workflow so individual failures degrade gracefully
+  - Resend API key (shared with sibling Baseball Project per cross-project XPL-004; if sibling has been sending, this key is fine)
+
+  **Closing protocol when restart happens:** Issue #1 gets a closing comment dated the restart date + one-line confirmation; this KB entry gets a closing note added in the same session's shutdown (flip Status to Closed; add a "Restarted on YYYY-MM-DD" line).
+
+- **Status:** Open (pause is active; will close when crons are re-enabled)
+- **Cross-ref:** GitHub Issue [#1](https://github.com/jjmgladden/pickleball-daily/issues/1) · `.github/workflows/daily.yml` · `.github/workflows/equipment-refresh.yml` · `ingestion/send-email.js` · KB-0044 (YouTube API key rotation — still open T2 owner-action item; would block restart if not addressed pre-restart) · `~/.claude/CLAUDE.md` XPL-004 (Resend posture — Resend key unchanged) · `~/.claude/CLAUDE.md` XPL-014 (drift discipline — applied this shutdown by verifying KB file save)
+
+---
+
+**End of KB. Entry count: 57. Next ID: KB-0058.**

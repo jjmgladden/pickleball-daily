@@ -35,6 +35,10 @@ desktop.ini
 # Claude runtime
 .claude/settings.local.json
 
+# Project-local scratch (per XPL-012 — used by Claude Code for temp files
+# that need to be visible to both Bash and Write tools)
+.tmp/
+
 # Internal workflow docs — stay local, not public (PII in path references)
 PICKLEBALL_Session1_KickoffPrompt.md
 sessions/
